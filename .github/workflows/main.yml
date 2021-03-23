@@ -23,7 +23,7 @@ jobs:
 
       - name: Set environment variables for theme
         run: |
-          echo "destplugin=wp@b9zba9k.myraidbox.de:/home/wp/disk/wordpress/wp-content/themes/ks-theme" >> $GITHUB_ENV
+          echo "desttheme=wp@b9zba9k.myraidbox.de:/home/wp/disk/wordpress/wp-content/themes/ks-theme" >> $GITHUB_ENV
 
       - name: Sync Kein Schlussstrich Theme with Raidboxes
         run: |
