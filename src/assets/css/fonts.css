@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 400;
+  src: url("assets/fonts/silka_web/roman/silka-regular-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/roman/silka-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 500;
+  src: url("assets/fonts/silka_web/roman/silka-medium-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/roman/silka-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 700;
+  src: url("assets/fonts/silka_web/roman/silka-bold-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/roman/silka-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 900;
+  src: url("assets/fonts/silka_web/roman/silka-black-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/roman/silka-black-webfont.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 400;
+  font-style: italic;
+  src: url("assets/fonts/silka_web/italic/silka-regularitalic-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/italic/silka-regularitalic-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 500;
+  font-style: italic;
+  src: url("assets/fonts/silka_web/italic/silka-mediumitalic-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/italic/silka-mediumitalic-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 700;
+  font-style: italic;
+  src: url("assets/fonts/silka_web/italic/silka-bolditalic-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/italic/silka-bolditalic-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Silka Web";
+  font-weight: 900;
+  font-style: italic;
+  src: url("assets/fonts/silka_web/italic/silka-blackitalic-webfont.woff2") format("woff2"),
+    url("assets/fonts/silka_web/italic/silka-blackitalic-webfont.woff") format("woff");
+}

@@ -1,0 +1,11 @@
+@layer utilities {
+  .grid-12 {
+    @apply grid grid-cols-12 gap-x-2;
+  }
+
+  @screen md {
+    .grid-12 {
+      @apply gap-x-3;
+    }
+  }
+}
