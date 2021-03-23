@@ -11,3 +11,5 @@ add_action('wp_enqueue_scripts', 'js_scripts_jquery', 0);
 add_action('wp_enqueue_scripts', 'js_scripts_custom', 1);
 add_action('admin_head', 'gb_gutenberg_admin_styles');
 add_action('acf/init', 'acf_init_blocks');
+add_action( 'init', 'cpt_event' );
+
