@@ -1,0 +1,7 @@
+.button {
+  @apply bg-blue text-white uppercase font-bold italic rounded-lg py-1 px-2 cursor-pointer animated;
+
+  &:hover {
+    @apply bg-green;
+  }
+}
