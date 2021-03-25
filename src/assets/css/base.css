@@ -8,4 +8,12 @@
       @apply gap-x-3;
     }
   }
+
+  .animated {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .container {
+    @apply mx-2;
+  }
 }
