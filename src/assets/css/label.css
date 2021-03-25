@@ -1,0 +1,7 @@
+.label {
+  @apply bg-gray text-white uppercase px-2 py-1 mr-1 rounded-lg animated cursor-pointer;
+  
+  &:hover {
+    @apply bg-lightGray text-gray;
+  }
+}
