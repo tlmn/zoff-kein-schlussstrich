@@ -1,45 +1,78 @@
 <?php
 get_header();
 
-global $themeColor;
+$args = array(
+	'numberposts'	=> 1,
+	'post_type'		=> 'event',
+	'meta_query'	=> array(
+		'key'		=> 'meta_occurences_$_timestamp',
+		'compare'	=> '=',
+		'value'		=> '2021-03-26 19:32:00',
+	)
+);
 
-if (have_posts()) :
-	while (have_posts()) : the_post();
-		$schwerpunktField = get_field('schwerpunkt');
-		$schwerpunkt = $schwerpunktField[0];
-		$schwerpunktPost = get_post($schwerpunkt);
-		$blocks = parse_blocks($schwerpunktPost->post_content);
+$the_query = new WP_Query($args);
 
-		the_content();
-?>
-		<div class="bg-gray hover:bg-<?php print $themeColor; ?> py-2 px-2 sm:px-0">
-			<div class="w-full mx-auto md:container grid-12">
-				<?php
-				$projects = array();
+function date_long($date)
+{
+	$date_split = str_split($date, 2);
+	return "20" . $date_split[2] . "-" . $date_split[1] . "-" . $date_split[0];
+}
 
-				foreach ($blocks as $block) {
-					if ($block['blockName'] === 'acf/projektteaser-karte') {
-						if (isset($block['attrs']['data']['link'])) {
-							array_push($projects, $block['attrs']['data']['link']);
+isset($_GET['date']) ? $date = $_GET['date'] : $date = 0;
+
+if ($the_query->have_posts()) : ?>
+	<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+		<div class="container grid-12">
+			<div class="col-span-12 my-2">
+				<span>Datum, Uhrzeit</span>
+				<h1 class="text-5xl font-black uppercase"><?php the_title(); ?></h1>
+
+				<div class="w-full flex justify-between items-center">
+					<div class="labels__bar">
+						<?php
+						$tax_labels = get_the_terms($post->ID, 'label');
+
+						if (isset($tax_labels[0])) {
+							foreach ($tax_labels as $tax_label) {
+						?>
+								<span class="label">
+									<?php echo $tax_label->name; ?>
+								</span>
+						<?php
+							}
 						}
-					}
-				}
-				$projectsNavigationCurrent = array_search(get_the_ID(), $projects);
-				$projectsNavigation = array(
-					0 => ($projectsNavigationCurrent - 1) < 0 ? end($projects) : $projects[$projectsNavigationCurrent - 1],
-					1 => get_the_ID(),
-					2 => ($projectsNavigationCurrent + 1) > (count($projects) - 1) ? $projects[0] : $projects[$projectsNavigationCurrent + 1]
-				);
+						?>
+					</div>
+					<span class="button">Tickets</span>
+				</div>
+
+				<?php
+				$items = get_field("meta");
+
+				while (have_rows("meta")) : the_row();
+					if (have_rows("occurences")) :
+						while (have_rows("occurences")) : the_row();
+							$timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
 				?>
-				<div class="col-span-4 flex justify-start">
-					<a href="<?php print get_permalink($projectsNavigation[0]); ?>" class="navBottom navBottom__prev" data-projecttitle="<?php print get_the_title($projectsNavigation[0]); ?>"></a>
-				</div>
-				<div class="col-span-4 flex justify-center">
-					<div class="navBottom navBottom__current cursor-pointer" id="navBottom__current" data-projecttitle="<?php print get_the_title($projectsNavigation[1]); ?>"></div>
-				</div>
-				<div class="col-span-4 flex justify-end">
-					<a href="<?php print get_permalink($projectsNavigation[2]); ?>" class="navBottom navBottom__next" data-projecttitle="<?php print get_the_title($projectsNavigation[2]); ?>"></a>
-				</div>
+							<a href="<?php echo get_page_uri(); ?>?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="bg-gray">
+								<?php
+								echo get_sub_field('city') . ", " . date("d.m.Y", $timestamp) . " " . date("H:i", $timestamp) . " Uhr";
+								?>
+							</a>
+				<?php
+						endwhile;
+					endif;
+				endwhile; ?>
+			</div>
+			<div class="">
+				<img srcset="" />
+			</div>
+			<div class="">
+				<?php
+				the_content();
+
+				?>
 			</div>
 		</div>
 <?php
