@@ -7,19 +7,19 @@ const cleancss = require("gulp-clean-css");
 const sass = require("gulp-sass");
 const postCSSNesting = require("postcss-nesting");
 
-gulp.task("dev:copy", function () {
+gulp.task("dev:theme:copy", function () {
   return gulp
-    .src(["src/**/*", "!src/assets/css/**/*"])
+    .src(["src/theme/**/*", "!src/theme/assets/css/**/*"])
     .pipe(gulp.dest("./wp-content/themes/ks-theme/"));
 });
 
-gulp.task("dev:copy:JS", function () {
+gulp.task("dev:theme:copy:JS", function () {
   return gulp
-    .src(["src/assets/js/**/*.js"])
+    .src(["src/theme/assets/js/**/*.js"])
     .pipe(gulp.dest("./wp-content/themes/ks-theme/assets/js"));
 });
 
-gulp.task("dev:postcss", function () {
+gulp.task("dev:theme:postcss", function () {
   const config = (file) => ({
     plugins: [
       require("postcss-import")({ root: file.dirname }),
@@ -27,7 +27,7 @@ gulp.task("dev:postcss", function () {
     ],
   });
   return gulp
-    .src("src/assets/css/style.css")
+    .src("src/theme/assets/css/style.css")
     .pipe(postcss(config))
     .pipe(
       postcss([
@@ -41,13 +41,13 @@ gulp.task("dev:postcss", function () {
     .pipe(gulp.dest("./wp-content/themes/ks-theme/"));
 });
 
-gulp.task("build:copy", function () {
+gulp.task("build:theme:copy", function () {
   return gulp
-    .src(["src/**/*", "!src/assets/css/**/*"])
-    .pipe(gulp.dest("./dist/"));
+    .src(["src/theme/**/*", "!src/assets/css/**/*"])
+    .pipe(gulp.dest("./dist/theme/"));
 });
 
-gulp.task("build:postcss", function () {
+gulp.task("build:theme:postcss", function () {
   const config = (file) => ({
     plugins: [
       require("postcss-import")({ root: file.dirname }),
@@ -55,7 +55,7 @@ gulp.task("build:postcss", function () {
     ],
   });
   return gulp
-    .src("src/assets/css/style.css")
+    .src("src/theme/assets/css/style.css")
     .pipe(postcss(config))
     .pipe(
       postcss([
@@ -66,24 +66,24 @@ gulp.task("build:postcss", function () {
       ])
     )
     .pipe(cleancss())
-    .pipe(gulp.dest("./dist/"));
+    .pipe(gulp.dest("./dist/theme/"));
 });
 
-gulp.task("dev:watch", function () {
+gulp.task("dev:theme:watch", function () {
   browserSync.init({
     proxy: "localhost:8000",
     notify: false,
   });
   gulp
-    .watch("src/assets/js/**/*.js", gulp.series(["dev:copy:JS"]))
+    .watch("src/theme/assets/js/**/*.js", gulp.series(["dev:theme:copy:JS"]))
     .on("change", browserSync.reload);
   gulp
-    .watch("src/assets/css/**/*.css", gulp.series(["dev:postcss"]))
+    .watch("src/theme/assets/css/**/*.css", gulp.series(["dev:theme:postcss"]))
     .on("change", browserSync.reload);
   gulp
-    .watch("src/**/*.php", gulp.series(["dev:copy"]))
+    .watch("src/theme/**/*.php", gulp.series(["dev:theme:copy"]))
     .on("change", browserSync.reload);
 });
 
-gulp.task("dev", gulp.series(["dev:postcss", "dev:copy", "dev:watch"]));
-gulp.task("build", gulp.series(["build:postcss", "build:copy"]));
+gulp.task("dev", gulp.series(["dev:theme:postcss", "dev:theme:copy", "dev:theme:watch"]));
+gulp.task("build", gulp.series(["build:theme:postcss", "build:theme:copy"]));
