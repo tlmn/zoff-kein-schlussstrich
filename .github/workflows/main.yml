@@ -27,9 +27,22 @@ jobs:
 
       - name: Sync Kein Schlussstrich Theme with Raidboxes
         run: |
-          cd dist/
+          cd dist/theme
           echo "${{secrets.DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key
           rsync -chav --delete \
             -e 'ssh -p 22 -i ./deploy_key -o StrictHostKeyChecking=no' \
             ./ $desttheme
+      
+      - name: Set environment variables for plugin
+        run: |
+          echo "destplugin=wp@b9zba9k.myraidbox.de:/home/wp/disk/wordpress/wp-content/plugins/ks-calendar" >> $GITHUB_ENV
+
+      - name: Sync Kein Schlussstrich Plugin with Raidboxes
+        run: |
+          cd dist/plugin
+          echo "${{secrets.DEPLOY_KEY}}" > deploy_key
+          chmod 600 ./deploy_key
+          rsync -chav --delete \
+            -e 'ssh -p 22 -i ./deploy_key -o StrictHostKeyChecking=no' \
+            ./ $destplugin
