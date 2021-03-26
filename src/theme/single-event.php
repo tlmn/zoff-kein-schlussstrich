@@ -1,13 +1,28 @@
 <?php
 get_header();
 
+isset($_GET['date']) ? $date = date_long($_GET['date']) : $date = 0;
+isset($_GET['time']) ? $time = time_long($_GET['time']) : $time = 0;
+
+
+function occurences_where($where)
+{
+	$where = str_replace("meta_key = 'meta_occurences_$", "meta_key LIKE 'meta_occurences_%", $where);
+	return $where;
+}
+
+add_filter('posts_where', 'occurences_where');
+
+
 $args = array(
 	'numberposts'	=> 1,
 	'post_type'		=> 'event',
 	'meta_query'	=> array(
-		'key'		=> 'meta_occurences_$_timestamp',
-		'compare'	=> '=',
-		'value'		=> '2021-03-26 19:32:00',
+		array(
+			'key'		=> 'meta_occurences_$_timestamp',
+			'compare'	=> 'LIKE',
+			'value'		=> $date . " " . $time,
+		)
 	)
 );
 
@@ -19,13 +34,19 @@ function date_long($date)
 	return "20" . $date_split[2] . "-" . $date_split[1] . "-" . $date_split[0];
 }
 
-isset($_GET['date']) ? $date = $_GET['date'] : $date = 0;
+function time_long($time)
+{
+	$time_split = str_split($time, 2);
+	return $time_split[0] . ":" . $time_split[1] . ":00";
+}
 
-if ($the_query->have_posts()) : ?>
-	<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+if ($the_query->have_posts()) :
+	$currentEvent['timestamp'] = strtotime(str_replace('/', '-', get_sub_field('meta')));
+
+	while ($the_query->have_posts()) : $the_query->the_post(); ?>
 		<div class="container grid-12">
 			<div class="col-span-12 my-2">
-				<span>Datum, Uhrzeit</span>
+				<span><?php print_r(get_fields()['meta']['occurences'][0]); ?></span>
 				<h1 class="text-5xl font-black uppercase"><?php the_title(); ?></h1>
 
 				<div class="w-full flex justify-between items-center">
@@ -80,3 +101,5 @@ if ($the_query->have_posts()) : ?>
 endif;
 
 get_footer();
+
+wp_reset_query();
