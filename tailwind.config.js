@@ -11,16 +11,21 @@ module.exports = {
     },
   },
   theme: {
+    extend: {
+      gridTemplateColumns: {
+        6: "repeat(6, minmax(0, 1fr))",
+        16: "repeat(16, minmax(0, 1fr))",
+      },
+    },
     fontFamily: {
       sans: ["Silka Web", "Helvetica", "Arial", "sans-serif"],
     },
     lineHeight: {
       none: 1,
-      tight: 1.15,
-      snug: 1.25,
-      wider: 1.33,
-      normal: 1.5,
-      xl: 1.8
+      tight: 1.05,
+      snug: 1.1,
+      wider: 1.3,
+      normal: 1.6,
     },
     letterSpacing: {
       tight: "0.2px",
@@ -40,23 +45,17 @@ module.exports = {
       10: "280px",
     },
     fontSize: {
-      xs: "12px",
-      sm: "14px",
-      tiny: "16px",
-      base: "18px",
-      lg: "20px",
-      xl: "22px",
-      "2xl": "24px",
-      "3xl": "26px",
-      "4xl": "28px",
-      "5xl": "30px",
-      "6xl": "32px",
-      "7xl": "44px",
-      "8xl": "48px",
-      "9xl": "52px",
-      "10xl": "58px",
-      "11xl": "68px",
-      "12xl": "72px"
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      m: "1.25rem",
+      lg: "1.5rem",
+      xl: "1.875rem",
+      "2xl": "2.25rem",
+      "3xl": "3rem",
+      "4xl": "3.5rem",
+      "5xl": "4rem",
+      "7xl": "18rem",
     },
     screens: {
       sm: "576px",

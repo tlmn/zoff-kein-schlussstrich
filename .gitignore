@@ -3,3 +3,5 @@ dist/
 wp.sql/
 wp-content/
 .DS_Store
+src/plugin/widget/node_modules
+src/plugin/widget/build

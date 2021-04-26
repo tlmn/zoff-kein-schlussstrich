@@ -1,12 +1,22 @@
-@layer utilities {
-  .grid-12 {
-    @apply grid grid-cols-12 gap-x-2;
+@responsive {
+  .grid-6 {
+    @apply grid grid-cols-6 gap-x-2;
   }
 
-  @screen md {
-    .grid-12 {
-      @apply gap-x-3;
-    }
+  .grid-16 {
+    @apply grid grid-cols-16 gap-x-2;
+  }
+
+  .ratio--2-1 {
+    padding-top: calc(1/2*100%);
+  }
+
+  .ratio--3-2 {
+    padding-top: calc(2/3*100%);
+  }
+
+  .ratio--16-9 {
+    padding-top: calc(9/16*100%);
   }
 
   .animated {
