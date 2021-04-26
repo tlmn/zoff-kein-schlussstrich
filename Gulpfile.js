@@ -55,8 +55,13 @@ gulp.task("dev:theme:postcss", function () {
 gulp.task("build:clean", run("rm -rf ./dist"));
 
 gulp.task(
+  "build:plugin:npmInstall",
+  run("npm install", { cwd: "src/plugin/widget/" })
+);
+
+gulp.task(
   "build:plugin:build",
-  run("cd ./src/plugin/widget/ && npm install && npm run build")
+  run("npm run build", { cwd: "src/plugin/widget/" })
 );
 
 gulp.task("build:plugin:copy:build", function () {
@@ -67,17 +72,13 @@ gulp.task("build:plugin:copy:build", function () {
 
 gulp.task("build:plugin:copy:includes", function () {
   return gulp
-    .src([
-      "src/plugin/includes/**/*",
-    ])
+    .src(["src/plugin/includes/**/*"])
     .pipe(gulp.dest("./dist/plugin/includes/"));
 });
 
 gulp.task("build:plugin:copy:pluginFile", function () {
   return gulp
-    .src([
-      "src/plugin/ks-calendar.php",
-    ])
+    .src(["src/plugin/ks-calendar.php"])
     .pipe(gulp.dest("./dist/plugin/"));
 });
 
@@ -147,6 +148,7 @@ gulp.task(
     "build:clean",
     "build:theme:postcss",
     "build:theme:copy",
+    "build:plugin:npmInstall",
     "build:plugin:build",
     "build:plugin:copy:build",
     "build:plugin:copy:pluginFile",
