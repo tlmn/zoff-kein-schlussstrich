@@ -61,7 +61,7 @@ gulp.task(
 
 gulp.task(
   "build:plugin:build",
-  run("npm run build", { cwd: "src/plugin/widget/" })
+  run("npm run build CI=false", { cwd: "src/plugin/widget/" })
 );
 
 gulp.task("build:plugin:copy:build", function () {
