@@ -114,7 +114,10 @@ export const generateSrcSet = (sizes) => {
 
 export const loadEvents = async (setData) => {
   const response = await fetch(
-    "http://b9zba9k.myraidbox.de/wp-json/wp/v2/event?_fields=acf,link,title,division,labels"
+    typeof window !== undefined &&
+      `http://${window.location.hostname}${
+        window.location.port === "3000" ? `:8000` : ``
+      }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels`
   );
 
   if (!response.ok) {
@@ -158,7 +161,10 @@ export const scrollToDate = (filteredDates, currentDate, listRef) => {
 
 export const loadTaxonomies = async (setData) => {
   const response = await fetch(
-    "http://b9zba9k.myraidbox.de/wp-json/wp/v2/division?_fields=id,name"
+    typeof window !== undefined &&
+      `http://${window.location.hostname}${
+        window.location.port === "3000" ? `:8000` : ``
+      }/wp-json/wp/v2/division?_fields=id,name`
   );
 
   if (!response.ok) {
