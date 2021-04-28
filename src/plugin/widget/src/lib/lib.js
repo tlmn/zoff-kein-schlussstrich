@@ -86,7 +86,7 @@ export const parseEvents = (eventsRaw, venuesData) => {
             division: item.division.length !== 0 ? item.division[0] : 0,
             duration: item.duration,
             feature_image: {
-              url: item.acf.meta.feature_image.image.url,
+              sizes: item.acf.meta.feature_image.image.sizes,
               alt: item.acf.meta.feature_image.image.alt,
             },
             link: generateLink(item.link, new Date(occ.timestamp).toJSON()),
@@ -106,7 +106,7 @@ export const parseEvents = (eventsRaw, venuesData) => {
                 ? venuesData[occ.venue[0].ID.toString()] !== undefined
                   ? venuesData[occ.venue[0].ID.toString()].acf
                   : ""
-                : {},
+                : "",
           })
       )
     );
@@ -139,13 +139,20 @@ export const loadEvents = async (setData, venuesData) => {
 
   const WPevents = await response.json();
   const parsedWPEvents = parseEvents(WPevents, venuesData);
-  //const filterExpressionCities = jsonata(`$sort($distinct(*.city))`);
+  const filterExpressionCities = jsonata(`$sort($distinct(*.city))`);
 
   setData((prev) => ({
     ...prev,
     eventData: {
       initialEvents: parsedWPEvents,
       filteredEvents: parsedWPEvents,
+    },
+    taxonomies: {
+      ...prev.taxonomies,
+      cities: concat(
+        "alle Orte",
+        filterExpressionCities.evaluate(parsedWPEvents)
+      ),
     },
   }));
 };

@@ -7,13 +7,14 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
     className="col-span-full grid-6 md:grid-16 no-underline py-2 border-b-2"
     style={{ minHeight: "230px" }}
   >
-    {eventData.feature_image.image && (
+    {eventData.feature_image.sizes && (
       <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-3">
         <LazyLoad>
           <div className="relative w-full ratio--3-2">
             <img
-              srcSet={generateSrcSet(eventData.feature_image.image.sizes)}
+              srcSet={generateSrcSet(eventData.feature_image.sizes)}
               className="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover image-bw"
+              alt={eventData.feature_image.alt}
             />
           </div>
         </LazyLoad>
