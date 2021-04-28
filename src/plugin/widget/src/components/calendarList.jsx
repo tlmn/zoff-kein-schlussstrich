@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { filterEvents, loadEvents, scrollToDate } from "../lib/lib";
+import React, { useEffect, useRef } from "react";
+import { filterEvents, scrollToDate } from "../lib/lib";
 
 import EventTeaser from "./eventTeaser";
 import useCalendarContext from "../hooks/useCalendarContext";
@@ -19,10 +19,6 @@ const CalendarList = () => {
   useEffect(() => {
     filterEvents(data, setData);
   }, [division, city]);
-
-  useEffect(() => {
-    loadEvents(setData);
-  }, []);
 
   useEffect(() => {
     scrollToDate(filteredDates, currentDate, listRef);
