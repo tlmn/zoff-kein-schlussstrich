@@ -8,7 +8,8 @@ import useCalendarContext from "../hooks/useCalendarContext";
 const Calendar = () => {
   const { setData, data } = useCalendarContext();
 
-  const { eventData, venuesData } = data;
+  const { venuesData } = data;
+  
   useEffect(() => {
     loadTaxonomies(setData);
     loadVenues(setData);
@@ -22,7 +23,6 @@ const Calendar = () => {
     <div className="max-h-screen" style={{ margin: "0 auto" }}>
       <CalendarHeader />
       <CalendarList />
-      <pre>{JSON.stringify(eventData, null, 2)}</pre>
     </div>
   );
 };
