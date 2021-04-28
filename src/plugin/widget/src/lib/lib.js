@@ -70,7 +70,7 @@ const getLongDate = (datetime) => {
   return `${date.getUTCDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 };
 
-export const parseEvents = (eventsRaw) => {
+export const parseEvents = (eventsRaw, venuesData) => {
   let eventsParsed = [];
 
   typeof eventsRaw != undefined &&
@@ -80,20 +80,33 @@ export const parseEvents = (eventsRaw) => {
           occ.show_in_calendar === true &&
           eventsParsed.push({
             alarm: occ.alarm,
-            city: occ.city,
             dateLong: getLongDate(new Date(occ.timestamp)),
             dateShort: getShortDate(new Date(occ.timestamp)),
             datetime: convertToDate(new Date(occ.timestamp)),
             division: item.division.length !== 0 ? item.division[0] : 0,
             duration: item.duration,
-            feature_image: item.acf.meta.feature_image,
+            feature_image: {
+              url: item.acf.meta.feature_image.image.url,
+              alt: item.acf.meta.feature_image.image.alt,
+            },
             link: generateLink(item.link, new Date(occ.timestamp).toJSON()),
             short_description: item.acf.meta.short_description,
             ticketlink: occ.ticketlink,
             time: getTime(new Date(occ.timestamp)),
-            timestamp: new Date(occ.timestamp).toJSON(),
+            timestamp: new Date(occ.timestamp).getTime(),
             title: item.title.rendered,
-            venue: occ.venue,
+            city:
+              occ.venue.length > 0
+                ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                  ? venuesData[occ.venue[0].ID.toString()].acf.address.city
+                  : ""
+                : null,
+            venue:
+              occ.venue.length > 0
+                ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                  ? venuesData[occ.venue[0].ID.toString()].acf
+                  : ""
+                : {},
           })
       )
     );
@@ -112,7 +125,7 @@ export const generateSrcSet = (sizes) => {
   return `${sizes["thumbnail"]} ${sizes["thumbnail-width"]}w, ${sizes["medium"]} ${sizes["medium-width"]}w, ${sizes["medium_large"]} ${sizes["medium_large-width"]}w, ${sizes["large"]} ${sizes["large-width"]}w`;
 };
 
-export const loadEvents = async (setData) => {
+export const loadEvents = async (setData, venuesData) => {
   const response = await fetch(
     typeof window !== undefined &&
       `http://${window.location.hostname}${
@@ -125,23 +138,14 @@ export const loadEvents = async (setData) => {
   }
 
   const WPevents = await response.json();
-  const parsedWPEvents = parseEvents(WPevents);
-  const filterExpressionCities = jsonata(`$sort($distinct(*.city))`);
+  const parsedWPEvents = parseEvents(WPevents, venuesData);
+  //const filterExpressionCities = jsonata(`$sort($distinct(*.city))`);
 
   setData((prev) => ({
     ...prev,
     eventData: {
       initialEvents: parsedWPEvents,
       filteredEvents: parsedWPEvents,
-    },
-    taxonomies: {
-      ...prev.taxonomies,
-      cities: concat(
-        "alle Orte",
-        filterExpressionCities.evaluate(parsedWPEvents).filter((item) => {
-          return item !== "";
-        })
-      ),
     },
   }));
 };
@@ -160,9 +164,11 @@ export const loadVenues = async (setData) => {
 
   const WPvenues = await response.json();
 
+  let expression = jsonata("${$string(id):$}");
+
   setData((prev) => ({
     ...prev,
-    venuesData: WPvenues,
+    venuesData: expression.evaluate(WPvenues),
   }));
 };
 
