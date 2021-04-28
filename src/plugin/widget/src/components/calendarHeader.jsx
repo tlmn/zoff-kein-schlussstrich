@@ -231,7 +231,7 @@ export const CalendarHeader = () => {
                         },
                       }));
                     }}
-                    className="my-1 mx-2"
+                    className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black"
                     style={{ outline: 0 }}
                   >
                     {cities.map((item) => (
@@ -260,7 +260,7 @@ export const CalendarHeader = () => {
                         },
                       }));
                     }}
-                    className="my-1 mx-2"
+                    className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black"
                     style={{ outline: 0, width: "100px" }}
                   >
                     {divisionsNames.map((item) => (
@@ -272,22 +272,24 @@ export const CalendarHeader = () => {
                       </option>
                     ))}
                   </select>
-                  <button
-                    className="px-2 py-1 bg-black text-white rounded-full"
-                    onClick={() =>
-                      setData((prev) => ({
-                        ...prev,
-                        filters: {
-                          ...prev.filters,
-                          division: null,
-                          city: null,
-                        },
-                      }))
-                    }
-                    style={{ outline: 0, width: "100px" }}
-                  >
-                    clear
-                  </button>
+                  {(division !== null || city !== null) && (
+                    <button
+                      className="px-2 py-1 bg-black text-white rounded-full"
+                      onClick={() =>
+                        setData((prev) => ({
+                          ...prev,
+                          filters: {
+                            ...prev.filters,
+                            division: null,
+                            city: null,
+                          },
+                        }))
+                      }
+                      style={{ outline: 0, width: "100px" }}
+                    >
+                      clear
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
