@@ -98,7 +98,7 @@ function cpt_eventLocation()
         'has_archive'           => true,
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
-        'menu_icon'             => 'dashicons-calendar-alt'
+        'menu_icon'             => 'dashicons-admin-post'
     );
     register_post_type('eventLocation', $args);
 }
