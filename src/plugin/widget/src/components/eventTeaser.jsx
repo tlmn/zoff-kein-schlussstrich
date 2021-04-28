@@ -13,7 +13,6 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
           <div className="relative w-full ratio--3-2">
             <img
               srcSet={generateSrcSet(eventData.feature_image.image.sizes)}
-              style={{ maxHeight: "10rem" }}
               className="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover image-bw"
             />
           </div>
