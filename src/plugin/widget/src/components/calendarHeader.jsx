@@ -1,11 +1,10 @@
 import "react-dropdown/style.css";
 
-import React, { useEffect } from "react";
-import { getWeekDay, loadTaxonomies } from "../lib/lib";
-
 import ArrowCircle from "../assets/icons/arrowCircle";
 import Filter from "../assets/icons/filter";
 import { Range } from "react-range";
+import React from "react";
+import { getWeekDay } from "../lib/lib";
 import useCalendarContext from "../hooks/useCalendarContext";
 
 export const CalendarHeader = () => {
@@ -21,10 +20,6 @@ export const CalendarHeader = () => {
   } = data;
 
   const filteredDates = Object.keys(filteredEvents);
-
-  useEffect(() => {
-    loadTaxonomies(setData);
-  }, []);
 
   return (
     <div
