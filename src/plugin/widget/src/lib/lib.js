@@ -129,7 +129,9 @@ export const loadEvents = async (setData, venuesData) => {
   const response = await fetch(
     typeof window !== undefined &&
       `http://${window.location.hostname}${
-        (window.location.port !== "80" || "443") ? `:8000` : ``
+        window.location.port !== "80" || window.location.port !== "443"
+          ? `:8000`
+          : ``
       }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels`
   );
 
@@ -161,7 +163,9 @@ export const loadVenues = async (setData) => {
   const response = await fetch(
     typeof window !== undefined &&
       `http://${window.location.hostname}${
-        (window.location.port !== "80" || "443") ? `:8000` : ``
+        window.location.port !== "80" || window.location.port !== "443"
+          ? `:8000`
+          : ``
       }/wp-json/wp/v2/eventLocation?_fields=acf,id`
   );
 
@@ -196,7 +200,9 @@ export const loadTaxonomies = async (setData) => {
   const response = await fetch(
     typeof window !== undefined &&
       `http://${window.location.hostname}${
-        (window.location.port !== "80" || "443") ? `:8000` : ``
+        window.location.port !== "80" || window.location.port !== "443"
+          ? `:8000`
+          : ``
       }/wp-json/wp/v2/division?_fields=id,name`
   );
 
