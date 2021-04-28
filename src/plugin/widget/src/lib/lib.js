@@ -146,6 +146,26 @@ export const loadEvents = async (setData) => {
   }));
 };
 
+export const loadVenues = async (setData) => {
+  const response = await fetch(
+    typeof window !== undefined &&
+      `http://${window.location.hostname}${
+        window.location.port === "3000" ? `:8000` : ``
+      }/wp-json/wp/v2/eventLocation?_fields=acf,id`
+  );
+
+  if (!response.ok) {
+    return;
+  }
+
+  const WPvenues = await response.json();
+
+  setData((prev) => ({
+    ...prev,
+    venuesData: WPvenues,
+  }));
+};
+
 export const scrollToDate = (filteredDates, currentDate, listRef) => {
   const offsetTopID =
     filteredDates[currentDate] !== undefined
