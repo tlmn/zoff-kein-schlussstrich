@@ -34,7 +34,15 @@ export const CalendarHeader = () => {
               style={{ margin: "0 auto" }}
             >
               <div className="col-span-full z-50 grid-6 md:grid-16">
-                <div className="col-span-12 col-start-3 w-full flex justify-between items-center bg-black">
+                <div className="col-span-full flex justify-center md:hidden">
+                  <span
+                    className="block font-sans text-white text-m leading-snug"
+                  >
+                    {filteredDates[currentDate] !== undefined &&
+                      getWeekDay(filteredDates[currentDate])}
+                  </span>
+                </div>
+                <div className="col-span-full md:col-span-12 md:col-start-3 w-full flex justify-between items-center bg-black">
                   {filteredDates.length > 1 ? (
                     <button
                       onClick={() =>
@@ -61,13 +69,13 @@ export const CalendarHeader = () => {
 
                   <div className="flex items-center">
                     <span
-                      className="font-sans text-white inline-block text-m leading-snug"
+                      className="hidden md:inline-block font-sans text-white text-m leading-snug"
                       style={{ transform: "rotate(270deg)" }}
                     >
                       {filteredDates[currentDate] !== undefined &&
                         getWeekDay(filteredDates[currentDate])}
                     </span>
-                    <span className="font-sans font-normal text-7xl text-white leading-none">
+                    <span className="font-sans font-normal text-xl md:text-7xl text-white leading-none">
                       {filteredDates[currentDate] !== undefined
                         ? filteredDates[currentDate].slice(0, -4)
                         : `– . –`}
@@ -115,10 +123,10 @@ export const CalendarHeader = () => {
               className="container grid-6 md:grid-16"
               style={{ margin: "0 auto" }}
             >
-              <div className="col-start-2 col-span-8 flex items-center bg-white">
+              <div className="col-start-2 col-span-4 md:col-span-8 flex items-center bg-white">
                 {filteredDates.length > 1 ? (
                   <>
-                    <span className="mr-3 font-sans font-normal text-m">
+                    <span className="hidden md:block mr-3 font-sans font-normal text-m">
                       {filteredDates[0]}
                     </span>
                     <Range
@@ -162,13 +170,13 @@ export const CalendarHeader = () => {
                         />
                       )}
                     />
-                    <span className="ml-3 font-sans font-normal text-m">
+                    <span className="hidden md:block ml-3 font-sans font-normal text-m">
                       {filteredDates[filteredDates.length - 1]}
                     </span>
                   </>
                 ) : (
                   <>
-                    <span className="mr-3 font-sans font-normal text-m whitespace-no-wrap">
+                    <span className="hidden md:block mr-3 font-sans font-normal text-m whitespace-no-wrap">
                       –&nbsp;.&nbsp;–
                     </span>
                     <Range
@@ -203,8 +211,23 @@ export const CalendarHeader = () => {
                         />
                       )}
                     />
-                    <span className="ml-3 font-sans font-normal text-m  whitespace-no-wrap">
+                    <span className="hidden md:block ml-3 font-sans font-normal text-m  whitespace-no-wrap">
                       –&nbsp;.&nbsp;–
+                    </span>
+                  </>
+                )}
+              </div>
+              <div
+                className="col-span-6 md:hidden flex justify-between my-2 px-1 relative"
+                style={{ boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
+              >
+                {filteredDates.length > 1 && (
+                  <>
+                    <span className="font-sans font-normal text-m">
+                      {filteredDates[0]}
+                    </span>
+                    <span className="font-sans font-normal text-m">
+                      {filteredDates[filteredDates.length - 1]}
                     </span>
                   </>
                 )}
