@@ -23,7 +23,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         !eventData.feature_image.image ? `9` : `7`
       } ${
         !eventData.feature_image.image ? `col-start-1` : ``
-      } h-full flex flex-col mt-4 md:mt-0`}
+      } h-full flex flex-col pt-4 md:pt-0`}
     >
       <div className="font-sans font-medium text-sm md:text-base flex justify-between">
         <div>
@@ -62,7 +62,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         </span>
       </a>
     </div>
-    <div className="col-span-full md:hidden block mt-4 md:mt-0">
+    <div className="col-span-full md:hidden block pt-4 md:pt-0">
       {eventData.venue.name !== "" && (
         <a
           href={eventData.venue.url}
