@@ -148,7 +148,7 @@ export const generateSrcSet = (sizes) => {
 export const loadEvents = async (setData, venuesData, data) => {
   const response = await fetch(
     typeof window !== undefined &&
-      `http://${window.location.hostname}${
+      `https://${window.location.hostname}${
         window.location.port !== "" && window.location.port !== "443"
           ? `:8000`
           : ``
@@ -182,7 +182,7 @@ export const loadEvents = async (setData, venuesData, data) => {
 export const loadVenues = async (setData) => {
   const response = await fetch(
     typeof window !== undefined &&
-      `http://${window.location.hostname}${
+      `https://${window.location.hostname}${
         window.location.port !== "" && window.location.port !== "443"
           ? `:8000`
           : ``
@@ -219,7 +219,7 @@ export const scrollToDate = (filteredDates, currentDate, listRef) => {
 export const loadTaxonomies = async (setData) => {
   const response = await fetch(
     typeof window !== undefined &&
-      `http://${window.location.hostname}${
+      `https://${window.location.hostname}${
         window.location.port !== "" && window.location.port !== "443"
           ? `:8000`
           : ``
