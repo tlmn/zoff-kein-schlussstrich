@@ -249,7 +249,7 @@ export const CalendarHeader = () => {
                         },
                       }));
                     }}
-                    className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black"
+                    className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black calendar__select"
                     style={{ outline: 0 }}
                   >
                     {cities.map((item) => (
@@ -292,7 +292,7 @@ export const CalendarHeader = () => {
                   </select>
                   {(division !== null || city !== null) && (
                     <button
-                      className="px-2 py-1 bg-black text-white rounded-full"
+                      className="px-2 py-1 bg-black text-white rounded-full calendar__select"
                       onClick={() =>
                         setData((prev) => ({
                           ...prev,
