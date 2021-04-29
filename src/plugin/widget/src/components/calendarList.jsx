@@ -18,11 +18,11 @@ const CalendarList = () => {
 
   useEffect(() => {
     filterEvents(data, setData);
-  }, [division, city]);
+  }, [division, city, data, setData]);
 
   useEffect(() => {
     scrollToDate(filteredDates, currentDate, listRef);
-  }, [currentDate]);
+  }, [filteredDates, currentDate, listRef]);
 
   return (
     <div
