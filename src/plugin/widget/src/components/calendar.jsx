@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect } from "react";
 import { loadEvents, loadTaxonomies, loadVenues } from "../lib/lib";
 
@@ -13,11 +15,11 @@ const Calendar = () => {
   useEffect(() => {
     loadTaxonomies(setData);
     loadVenues(setData);
-  }, [setData]);
+  }, []);
 
   useEffect(() => {
     venuesData !== undefined && loadEvents(setData, venuesData);
-  }, [venuesData, setData]);
+  }, [venuesData]);
 
   return (
     <div className="max-h-screen" style={{ margin: "0 auto" }}>

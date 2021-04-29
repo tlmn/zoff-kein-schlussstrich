@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef } from "react";
 import { filterEvents, scrollToDate } from "../lib/lib";
 
@@ -18,11 +19,11 @@ const CalendarList = () => {
 
   useEffect(() => {
     filterEvents(data, setData);
-  }, [division, city, data, setData]);
+  }, [division, city]);
 
   useEffect(() => {
     scrollToDate(filteredDates, currentDate, listRef);
-  }, [filteredDates, currentDate, listRef]);
+  }, [currentDate]);
 
   return (
     <div
