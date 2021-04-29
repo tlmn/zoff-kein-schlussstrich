@@ -16,14 +16,14 @@ const ArrowCircle = ({ fillColor = "#fff", ...props }) => (
       transform="rotate(90 28 28)"
       fill={fillColor}
     />
-    <line x1="45" y1="28" x2="14" y2="28" stroke="black" stroke-width="2" />
+    <line x1="45" y1="28" x2="14" y2="28" stroke="black" strokeWidth={2} />
     <line
       x1="23.7071"
       y1="17.7071"
       x2="12.7071"
       y2="28.7071"
       stroke="black"
-      stroke-width="2"
+      strokeWidth={2}
     />
     <line
       x1="12.7071"
@@ -31,7 +31,7 @@ const ArrowCircle = ({ fillColor = "#fff", ...props }) => (
       x2="23.7071"
       y2="38.2929"
       stroke="black"
-      stroke-width="2"
+      strokeWidth={2}
     />
   </svg>
 );
