@@ -8,7 +8,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
   >
     {eventData.feature_image.sizes && (
       <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-3">
-        <div className="relative w-full ratio--3-2 z-0">
+        <div className="relative w-full ratio--16-9 md:ratio--3-2 z-0">
           <img
             srcSet={generateSrcSet(eventData.feature_image.sizes)}
             className="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover image-bw"
@@ -54,7 +54,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         </div>
       </div>
       <a className="flex flex-1 flex-col justify-end" href={eventData.link}>
-        <span className="block font-sans md:text-2xl md:leading-snug">
+        <span className="block font-sans text-xl md:text-2xl leading-snug">
           {eventData.time}h
         </span>
         <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
