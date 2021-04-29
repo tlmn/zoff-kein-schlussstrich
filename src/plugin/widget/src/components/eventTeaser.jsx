@@ -23,7 +23,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         !eventData.feature_image.image ? `9` : `7`
       } ${
         !eventData.feature_image.image ? `col-start-1` : ``
-      } h-full flex flex-col`}
+      } h-full flex flex-col mt-4 md:mt-0`}
     >
       <div className="font-sans flex justify-between">
         <div>

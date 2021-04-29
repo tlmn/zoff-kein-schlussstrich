@@ -75,7 +75,7 @@ export const CalendarHeader = () => {
                       {filteredDates[currentDate] !== undefined &&
                         getWeekDay(filteredDates[currentDate])}
                     </span>
-                    <span className="font-sans font-normal text-xl md:text-7xl text-white leading-none">
+                    <span className="font-sans font-normal text-6xl md:text-7xl text-white leading-none">
                       {filteredDates[currentDate] !== undefined
                         ? filteredDates[currentDate].slice(0, -4)
                         : `– . –`}
