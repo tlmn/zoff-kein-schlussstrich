@@ -232,7 +232,7 @@ export const CalendarHeader = () => {
                   </>
                 )}
               </div>
-              <div className="col-span-6 flex items-center justify-around">
+              <div className="px-2 col-span-6 flex items-center justify-around">
                 <Filter />
                 <div className="">
                   <select
@@ -278,7 +278,7 @@ export const CalendarHeader = () => {
                         },
                       }));
                     }}
-                    className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black"
+                    className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black calendar__select"
                     style={{ outline: 0, width: "100px" }}
                   >
                     {divisionsNames.map((item) => (
@@ -292,7 +292,7 @@ export const CalendarHeader = () => {
                   </select>
                   {(division !== null || city !== null) && (
                     <button
-                      className="px-2 py-1 bg-black text-white rounded-full calendar__select"
+                      className="px-2 py-1 bg-black text-white rounded-full"
                       onClick={() =>
                         setData((prev) => ({
                           ...prev,
