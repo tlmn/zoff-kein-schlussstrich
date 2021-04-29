@@ -1,6 +1,7 @@
 import { concat, remove } from "lodash";
 
 import jsonata from "jsonata";
+import useCalendarContext from "../hooks/useCalendarContext";
 
 export const generateLink = (link, datetime) => {
   let date = new Date(datetime);
@@ -70,7 +71,11 @@ const getLongDate = (datetime) => {
   return `${date.getUTCDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 };
 
-export const parseEvents = (eventsRaw, venuesData) => {
+export const parseEvents = (eventsRaw, venuesData, data) => {
+  const {
+    taxonomies: { divisions },
+  } = data;
+
   let eventsParsed = [];
 
   typeof eventsRaw != undefined &&
@@ -91,6 +96,17 @@ export const parseEvents = (eventsRaw, venuesData) => {
             },
             link: generateLink(item.link, new Date(occ.timestamp).toJSON()),
             short_description: item.acf.meta.short_description,
+            tags: concat(
+              divisions.divisions.filter(
+                (division) => division.id === item.division[0]
+              )[0].name,
+              occ.venue.length > 0
+                ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                  ? venuesData[occ.venue[0].ID.toString()].acf.name
+                  : ""
+                : null,
+              occ.labels.length > 0 && occ.labels
+            ),
             ticketlink: occ.ticketlink,
             time: getTime(new Date(occ.timestamp)),
             timestamp: new Date(occ.timestamp).getTime(),
@@ -125,7 +141,7 @@ export const generateSrcSet = (sizes) => {
   return `${sizes["thumbnail"]} ${sizes["thumbnail-width"]}w, ${sizes["medium"]} ${sizes["medium-width"]}w, ${sizes["medium_large"]} ${sizes["medium_large-width"]}w, ${sizes["large"]} ${sizes["large-width"]}w`;
 };
 
-export const loadEvents = async (setData, venuesData) => {
+export const loadEvents = async (setData, venuesData, data) => {
   const response = await fetch(
     typeof window !== undefined &&
       `http://${window.location.hostname}${
@@ -140,7 +156,7 @@ export const loadEvents = async (setData, venuesData) => {
   }
 
   const WPevents = await response.json();
-  const parsedWPEvents = parseEvents(WPevents, venuesData);
+  const parsedWPEvents = parseEvents(WPevents, venuesData, data);
   const filterExpressionCities = jsonata(`$sort($distinct(*.city))`);
 
   setData((prev) => ({

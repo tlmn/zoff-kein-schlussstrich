@@ -25,7 +25,34 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         !eventData.feature_image.image ? `col-start-1` : ``
       } h-full flex flex-col`}
     >
-      <div className="font-sans">#label</div>
+      <div className="font-sans flex justify-between">
+        <div>
+          {eventData.tags.map(
+            (item) => item && <span className="mr-1">#{item}</span>
+          )}
+        </div>
+        <div>
+          {eventData.venue.name !== "" && (
+            <a
+              href={eventData.venue.url}
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className="underline hover:no-underline"
+            >
+              {eventData.venue.name}
+            </a>
+          )}
+          {eventData.ticketlink !== "" && (
+            <a
+              href={eventData.ticketlink}
+              referrerPolicy="no-referrer"
+              className="underline hover:no-underline"
+            >
+              Tickets
+            </a>
+          )}
+        </div>
+      </div>
       <a className="flex flex-1 flex-col justify-end" href={eventData.link}>
         <span className="block font-sans md:text-2xl md:leading-snug">
           {eventData.time}h

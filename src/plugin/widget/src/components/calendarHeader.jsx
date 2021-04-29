@@ -59,9 +59,9 @@ export const CalendarHeader = () => {
                     </button>
                   )}
 
-                  <div>
+                  <div className="flex items-center">
                     <span
-                      className="font-sans text-white inline-block"
+                      className="font-sans text-white inline-block text-m leading-snug"
                       style={{ transform: "rotate(270deg)" }}
                     >
                       {filteredDates[currentDate] !== undefined &&

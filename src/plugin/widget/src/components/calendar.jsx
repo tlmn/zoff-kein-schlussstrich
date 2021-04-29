@@ -18,7 +18,7 @@ const Calendar = () => {
   }, []);
 
   useEffect(() => {
-    venuesData !== undefined && loadEvents(setData, venuesData);
+    venuesData !== undefined && loadEvents(setData, venuesData, data);
   }, [venuesData]);
 
   return (
