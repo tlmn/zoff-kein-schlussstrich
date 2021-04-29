@@ -53,6 +53,7 @@ module.exports = {
       "3xl": "3rem",
       "4xl": "3.5rem",
       "5xl": "4rem",
+      "6xl": "8.125rem",
       "7xl": "18rem",
     },
     screens: {
