@@ -25,7 +25,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         !eventData.feature_image.image ? `col-start-1` : ``
       } h-full flex flex-col mt-4 md:mt-0`}
     >
-      <div className="font-sans flex justify-between">
+      <div className="font-sans font-medium text-sm md:text-base flex justify-between">
         <div>
           {eventData.tags.map(
             (item) => item && <span className="mr-1">#{item}</span>
@@ -53,16 +53,16 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
           )}
         </div>
       </div>
-      <a className="flex flex-1 flex-col justify-end" href={eventData.link}>
-        <span className="block font-sans text-xl md:text-2xl leading-snug">
+      <a className="flex flex-1 flex-col justify-end mt-6 md:mt-0" href={eventData.link}>
+        <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
           {eventData.time}h
         </span>
-        <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
+        <span className="block font-sans font-medium text-xl md:text-2xl leading-snug mt-1 md:mt-2">
           {eventData.title}
         </span>
       </a>
     </div>
-    <div className="col-span-full md:hidden block">
+    <div className="col-span-full md:hidden block mt-4 md:mt-0">
       {eventData.venue.name !== "" && (
         <a
           href={eventData.venue.url}

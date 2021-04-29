@@ -2,7 +2,6 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/components";
 
-@import "./fonts.css";
 @import "./base.css";
 @import "./calendar.css";
 @import "./button.css";
