@@ -3,12 +3,12 @@ import { generateSrcSet } from "../lib/lib";
 
 const EventTeaser = ({ labels = "", ...eventData }) => (
   <div
-    className="col-span-full grid-6 md:grid-16 no-underline py-2 border-b-2"
+    className="col-span-full px-2 grid-6 md:grid-16 no-underline py-2 border-b-2"
     style={{ minHeight: "230px" }}
   >
     {eventData.feature_image.sizes && (
       <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-3">
-        <div className="relative w-full ratio--3-2">
+        <div className="relative w-full ratio--3-2 z-0">
           <img
             srcSet={generateSrcSet(eventData.feature_image.sizes)}
             className="w-full h-full absolute top-0 left-0 right-0 bottom-0 object-cover image-bw"
@@ -31,7 +31,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
             (item) => item && <span className="mr-1">#{item}</span>
           )}
         </div>
-        <div>
+        <div className="hidden md:block">
           {eventData.venue.name !== "" && (
             <a
               href={eventData.venue.url}
@@ -57,10 +57,31 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
         <span className="block font-sans md:text-2xl md:leading-snug">
           {eventData.time}h
         </span>
-        <span className="block font-sans md:text-2xl md:leading-snug">
+        <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
           {eventData.title}
         </span>
       </a>
+    </div>
+    <div className="col-span-full md:hidden block">
+      {eventData.venue.name !== "" && (
+        <a
+          href={eventData.venue.url}
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:no-underline"
+        >
+          {eventData.venue.name}
+        </a>
+      )}
+      {eventData.ticketlink !== "" && (
+        <a
+          href={eventData.ticketlink}
+          rel="noreferrer"
+          className="underline hover:no-underline"
+        >
+          Tickets
+        </a>
+      )}
     </div>
     <div className="col-span-3 flex justify-end">
       {eventData.ticketlink !== "" && (
