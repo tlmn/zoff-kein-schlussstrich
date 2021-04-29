@@ -101,9 +101,14 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
               )[0].name,
               occ.venue.length > 0
                 ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                  ? venuesData[occ.venue[0].ID.toString()].acf.address.city
+                  : ""
+                : "",
+              occ.venue.length > 0
+                ? venuesData[occ.venue[0].ID.toString()] !== undefined
                   ? venuesData[occ.venue[0].ID.toString()].acf.name
                   : ""
-                : null,
+                : "",
               occ.labels.length > 0 && occ.labels
             ),
             ticketlink: occ.ticketlink,
