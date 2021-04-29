@@ -4,7 +4,6 @@ const gulp = require("gulp");
 const postcss = require("gulp-postcss");
 const browserSync = require("browser-sync").create();
 const cleancss = require("gulp-clean-css");
-const sass = require("gulp-sass");
 const postCSSNesting = require("postcss-nesting");
 const run = require("gulp-run-command").default;
 
