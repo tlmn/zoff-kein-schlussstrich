@@ -35,7 +35,7 @@ add_action('init', function () {
             if (preg_match('@static/css/(.*)\.chunk\.css@', $key, $matches)) {
                 if ($matches && is_array($matches) && count($matches) == 2) {
                     $name = "ks-" . preg_replace('/[^A-Za-z0-9_]/', '-', $matches[1]);
-                    wp_enqueue_style($name, KSCAL_WIDGET_URL . "/build/" . $value, array('ks'), null);
+                    wp_enqueue_style($name, KSCAL_WIDGET_URL . "/build" . $value, array('ks'), null);
                 }
             }
         }
