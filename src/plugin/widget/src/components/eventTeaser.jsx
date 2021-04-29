@@ -36,7 +36,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
             <a
               href={eventData.venue.url}
               target="_blank"
-              referrerPolicy="no-referrer"
+              rel="noreferrer"
               className="underline hover:no-underline"
             >
               {eventData.venue.name}
@@ -45,7 +45,7 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
           {eventData.ticketlink !== "" && (
             <a
               href={eventData.ticketlink}
-              referrerPolicy="no-referrer"
+              rel="noreferrer"
               className="underline hover:no-underline"
             >
               Tickets

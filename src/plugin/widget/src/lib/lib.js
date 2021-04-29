@@ -1,7 +1,6 @@
 import { concat, remove } from "lodash";
 
 import jsonata from "jsonata";
-import useCalendarContext from "../hooks/useCalendarContext";
 
 export const generateLink = (link, datetime) => {
   let date = new Date(datetime);
