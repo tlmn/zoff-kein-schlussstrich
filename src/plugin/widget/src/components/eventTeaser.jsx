@@ -3,7 +3,7 @@ import { generateSrcSet } from "../lib/lib";
 
 const EventTeaser = ({ labels = "", ...eventData }) => (
   <div
-    className="col-span-full px-2 grid-6 md:grid-16 no-underline py-2 border-b-2"
+    className="col-span-full px-2 grid-6 md:grid-16 no-underline py-6 border-b-2"
     style={{ minHeight: "230px" }}
   >
     {eventData.feature_image.sizes && (

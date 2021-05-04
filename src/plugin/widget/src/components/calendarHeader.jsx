@@ -1,6 +1,7 @@
 import "react-dropdown/style.css";
 
 import ArrowCircle from "../assets/icons/arrowCircle";
+import ArrowCircleSmall from "../assets/icons/arrowCircle--small";
 import Filter from "../assets/icons/filter";
 import { Range } from "react-range";
 import React from "react";
@@ -35,9 +36,7 @@ export const CalendarHeader = () => {
             >
               <div className="col-span-full z-50 grid-6 md:grid-16 py-2">
                 <div className="col-span-full flex justify-center md:hidden">
-                  <span
-                    className="block font-sans text-white text-m leading-snug"
-                  >
+                  <span className="block font-sans text-white text-m leading-snug">
                     {filteredDates[currentDate] !== undefined &&
                       getWeekDay(filteredDates[currentDate])}
                   </span>
@@ -59,11 +58,24 @@ export const CalendarHeader = () => {
                     >
                       <ArrowCircle
                         fillColor={currentDate > 0 ? `#fff` : `#ccc`}
+                        className="hidden md:block"
+                      />
+                      <ArrowCircleSmall
+                        fillColor={currentDate > 0 ? `#fff` : `#ccc`}
+                        className="block md:hidden"
+                        style={{ transform: "rotate(180deg)" }}
                       />
                     </button>
                   ) : (
                     <button style={{ outline: 0 }}>
-                      <ArrowCircle fillColor="#ccc" />
+                      <ArrowCircle
+                        fillColor="#ccc"
+                        className="hidden md:block"
+                      />
+                      <ArrowCircleSmall
+                        fillColor="#ccc"
+                        className="block md:hidden"
+                      />
                     </button>
                   )}
 
@@ -75,7 +87,7 @@ export const CalendarHeader = () => {
                       {filteredDates[currentDate] !== undefined &&
                         getWeekDay(filteredDates[currentDate])}
                     </span>
-                    <span className="font-sans font-normal text-6xl md:text-7xl text-white leading-none">
+                    <span className="font-sans font-normal text-5xl md:text-7xl text-white leading-none">
                       {filteredDates[currentDate] !== undefined
                         ? filteredDates[currentDate].slice(0, -4)
                         : `– . –`}
@@ -103,6 +115,15 @@ export const CalendarHeader = () => {
                             ? `#fff`
                             : `#ccc`
                         }
+                        className="hidden md:block"
+                      />
+                      <ArrowCircleSmall
+                        fillColor={
+                          currentDate < filteredDates.length - 1
+                            ? `#fff`
+                            : `#ccc`
+                        }
+                        className="block md:hidden"
                       />
                     </button>
                   ) : (
@@ -110,6 +131,11 @@ export const CalendarHeader = () => {
                       <ArrowCircle
                         style={{ transform: "rotate(180deg)" }}
                         fillColor="#ccc"
+                        className="hidden md:block"
+                      />
+                      <ArrowCircleSmall
+                        fillColor="#ccc"
+                        className="block md:hidden"
                       />
                     </button>
                   )}
@@ -123,7 +149,7 @@ export const CalendarHeader = () => {
               className="container grid-6 md:grid-16"
               style={{ margin: "0 auto" }}
             >
-              <div className="col-start-2 col-span-4 md:col-span-8 flex items-center bg-white">
+              <div className="col-start-2 col-span-4 md:col-span-8 flex items-center bg-white mt-2">
                 {filteredDates.length > 1 ? (
                   <>
                     <span className="hidden md:block mr-3 font-sans font-normal text-m">
@@ -290,24 +316,26 @@ export const CalendarHeader = () => {
                       </option>
                     ))}
                   </select>
-                  {(division !== null || city !== null) && (
-                    <button
-                      className="px-2 py-1 bg-black text-white rounded-full"
-                      onClick={() =>
-                        setData((prev) => ({
-                          ...prev,
-                          filters: {
-                            ...prev.filters,
-                            division: null,
-                            city: null,
-                          },
-                        }))
-                      }
-                      style={{ outline: 0, width: "100px" }}
-                    >
-                      clear
-                    </button>
-                  )}
+                  <button
+                    className={`px-2 py-1 bg-${
+                      division !== null || city !== null ? `black` : `lightGray`
+                    } text-white rounded-full`}
+                    onClick={() =>
+                      setData((prev) => ({
+                        ...prev,
+                        filters: {
+                          ...prev.filters,
+                          division: null,
+                          city: null,
+                        },
+                      }))
+                    }
+                    style={{ outline: 0, width: "100px" }}
+                    type="button"
+                    disabled={division !== null || city !== null ? false : true}
+                  >
+                    clear
+                  </button>
                 </div>
               </div>
             </div>

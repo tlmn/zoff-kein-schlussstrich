@@ -64,10 +64,12 @@ const CalendarList = () => {
           </>
         ))}
       {filteredEvents && Object.keys(filteredEvents).length < 1 && (
-        <div className="w-full grid-16 border-b-2 bg-white">
-          <span className="text-black">
-            keine Veranstaltungen mit diesen Filtern
-          </span>
+        <div className="w-full grid-6 md:grid-16 border-b-2 bg-black">
+          <div className="col-span-full py-4 px-2">
+            <span className="text-white">
+              keine Veranstaltungen mit diesen Filtern
+            </span>
+          </div>
         </div>
       )}
       {!filteredEvents && `lade`}
