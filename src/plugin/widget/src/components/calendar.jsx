@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import React, { useEffect } from "react";
 import { loadEvents, loadTaxonomies, loadVenues } from "../lib/lib";
 

@@ -3,6 +3,7 @@ import "react-dropdown/style.css";
 import ArrowCircle from "../assets/icons/arrowCircle";
 import ArrowCircleSmall from "../assets/icons/arrowCircle--small";
 import Filter from "../assets/icons/filter";
+import PropTypes from "prop-types";
 import { Range } from "react-range";
 import React from "react";
 import { getWeekDay } from "../lib/lib";
@@ -278,10 +279,11 @@ export const CalendarHeader = () => {
                     className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black calendar__select"
                     style={{ outline: 0 }}
                   >
-                    {cities.map((item) => (
+                    {cities.map((item, index) => (
                       <option
                         value={item}
                         selected={item === "alle Orte" && city === null}
+                        key={index}
                       >
                         {item}
                       </option>
@@ -307,10 +309,11 @@ export const CalendarHeader = () => {
                     className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black calendar__select"
                     style={{ outline: 0, width: "100px" }}
                   >
-                    {divisionsNames.map((item) => (
+                    {divisionsNames.map((item, index) => (
                       <option
                         value={item}
                         selected={item === "alle Säulen" && division === null}
+                        key={index}
                       >
                         {item}
                       </option>
@@ -344,6 +347,10 @@ export const CalendarHeader = () => {
       )}
     </div>
   );
+};
+
+CalendarHeader.propTypes = {
+  style: PropTypes.object,
 };
 
 export default CalendarHeader;

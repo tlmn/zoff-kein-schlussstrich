@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef } from "react";
 import { filterEvents, scrollToDate } from "../lib/lib";
 
@@ -56,8 +55,8 @@ const CalendarList = () => {
               id={key.replace(/\./g, "")}
             >
               <div className="col-span-full grid-6 md:grid-16">
-                {filteredEvents[key].map((event) => (
-                  <EventTeaser {...event} />
+                {filteredEvents[key].map((event, index) => (
+                  <EventTeaser {...event} key={index} />
                 ))}
               </div>
             </div>

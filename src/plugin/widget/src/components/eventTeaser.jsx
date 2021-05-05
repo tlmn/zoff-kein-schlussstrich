@@ -1,10 +1,12 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { generateSrcSet } from "../lib/lib";
 
-const EventTeaser = ({ labels = "", ...eventData }) => (
+const EventTeaser = ({ key, ...eventData }) => (
   <div
     className="col-span-full px-2 grid-6 md:grid-16 no-underline py-6 border-b-2"
     style={{ minHeight: "230px" }}
+    key={key}
   >
     {eventData.feature_image.sizes && (
       <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-3">
@@ -53,7 +55,10 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
           )}
         </div>
       </div>
-      <a className="flex flex-1 flex-col justify-end mt-6 md:mt-0" href={eventData.link}>
+      <a
+        className="flex flex-1 flex-col justify-end mt-6 md:mt-0"
+        href={eventData.link}
+      >
         <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
           {eventData.time}h
         </span>
@@ -97,5 +102,8 @@ const EventTeaser = ({ labels = "", ...eventData }) => (
     </div>
   </div>
 );
+EventTeaser.propTypes = {
+  key: PropTypes.number,
+};
 
 export default EventTeaser;

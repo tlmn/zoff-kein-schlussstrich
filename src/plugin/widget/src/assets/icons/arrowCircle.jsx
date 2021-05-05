@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const ArrowCircle = ({ fillColor = "#fff", ...props }) => (
@@ -35,5 +36,9 @@ const ArrowCircle = ({ fillColor = "#fff", ...props }) => (
     />
   </svg>
 );
+
+ArrowCircle.propTypes = {
+  fillColor: PropTypes.string,
+};
 
 export default ArrowCircle;
