@@ -8,15 +8,20 @@
   }
 
   .ratio--2-1 {
-    padding-top: calc(1/2*100%);
+    padding-top: calc(1 / 2 * 100%);
   }
 
   .ratio--3-2 {
-    padding-top: calc(2/3*100%);
+    padding-top: calc(2 / 3 * 100%);
   }
 
   .ratio--16-9 {
-    padding-top: calc(9/16*100%);
+    padding-top: calc(9 / 16 * 100%);
+  }
+
+  .rotate--90 {
+    transform: translate(0, 10%) rotate(90deg);
+    transform-origin: top left;
   }
 
   .animated {
@@ -25,5 +30,10 @@
 
   .container {
     @apply mx-2;
+  }
+
+  .gap-collapse {
+    @apply -mx-3;
+    @apply px-3;
   }
 }
