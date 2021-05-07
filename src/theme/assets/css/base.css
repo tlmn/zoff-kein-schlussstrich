@@ -3,6 +3,10 @@
     @apply grid grid-cols-6 gap-x-2;
   }
 
+  .grid-10 {
+    @apply grid grid-cols-10 gap-x-2;
+  }
+
   .grid-16 {
     @apply grid grid-cols-16 gap-x-2;
   }
@@ -20,8 +24,17 @@
   }
 
   .rotate--90 {
-    transform: translate(0, 10%) rotate(90deg);
-    transform-origin: top left;
+    transform-origin: 0 0;
+    transform: rotate(270deg) translateX(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .rotate-center--90 {
+    transform: rotate(270deg) translateX(-50%);
+    position: absolute;
+    transform-origin: 0 0;
   }
 
   .animated {
@@ -31,9 +44,29 @@
   .container {
     @apply mx-2;
   }
+  
+  .gap-collapse--right {
+    @apply -mr-2;
+    @apply pr-2;
+  }
+
+  .gap-collapse--left {
+    @apply -ml-2;
+    @apply pl-2;
+  }
 
   .gap-collapse {
-    @apply -mx-3;
-    @apply px-3;
+    margin-left: calc(-1 * (theme("spacing.3") - 2px));
+    margin-right: calc(-1 * (theme("spacing.3") - 2px));
+    padding-left: calc(theme("spacing.3") - 2px);
+    padding-right: calc(theme("spacing.3") - 2px);
+  }
+
+  .shadow--left {
+    filter: drop-shadow(-4px 0px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .shadow--bottom-right {
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.25));
   }
 }

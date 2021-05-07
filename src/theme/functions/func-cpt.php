@@ -102,3 +102,55 @@ function cpt_eventLocation()
     );
     register_post_type('eventLocation', $args);
 }
+
+function cpt_generalBlock()
+{
+    $labels = array(
+        'name'                  => _x('allgemeine Blöcke', 'Post Type General Name', 'text_domain'),
+        'singular_name'         => _x('allgemeiner Block', 'Post Type Singular Name', 'text_domain'),
+        'menu_name'             => __('allgemeine Blöcke', 'text_domain'),
+        'name_admin_bar'        => __('allgemeine Blöcke', 'text_domain'),
+        'archives'              => __('Archiv', 'text_domain'),
+        'attributes'            => __('allgemeiner Block-Eigenschaften', 'text_domain'),
+        'parent_item_colon'     => __('Eltern-allgemeiner Block', 'text_domain'),
+        'all_items'             => __('Alle allgemeinen Blöcke', 'text_domain'),
+        'add_new_item'          => __('Neuer allgemeiner Block', 'text_domain'),
+        'add_new'               => __('Neuer allgemeiner Block', 'text_domain'),
+        'new_item'              => __('Neuer allgemeiner Block', 'text_domain'),
+        'edit_item'             => __('allgemeinen Block bearbeiten', 'text_domain'),
+        'update_item'           => __('allgemeinen Block aktualisieren', 'text_domain'),
+        'view_item'             => __('allgemeinen Block anzeigen', 'text_domain'),
+        'view_items'            => __('allgemeine Blöcke anzeigen', 'text_domain'),
+        'search_items'          => __('allgemeinen Block suchen', 'text_domain'),
+        'not_found'             => __('Nicht gefunden', 'text_domain'),
+        'not_found_in_trash'    => __('Nicht gefunden im Papierkorb', 'text_domain'),
+        'featured_image'        => __('Feature-Bild', 'text_domain'),
+        'set_featured_image'    => __('Feature-Bild setzen', 'text_domain'),
+        'remove_featured_image' => __('Feature-Bild entfernen', 'text_domain'),
+        'use_featured_image'    => __('Als Feature-Bild verwenden', 'text_domain'),
+        'insert_into_item'      => __('In allgemeinen Block einfügen', 'text_domain'),
+        'uploaded_to_this_item' => __('Zu diesem allgemeinen Block hochgeladen', 'text_domain'),
+        'items_list'            => __('allgemeine Blöcke auflisten', 'text_domain'),
+        'items_list_navigation' => __('allgemeine Blöcke-Navigation', 'text_domain'),
+        'filter_items_list'     => __('allgemeine Blöcke filtern', 'text_domain'),
+    );
+    $args = array(
+        'label'                 => __('allgemeiner Block', 'text_domain'),
+        'description'           => __('Post Type für allgemeiner Block-Seiten', 'text_domain'),
+        'labels'                => $labels,
+        'supports'              => array('title', 'editor', 'revisions'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'show_in_rest'          => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'menu_icon'             => 'dashicons-database'
+    );
+    register_post_type('generalBlock', $args);
+}

@@ -16,6 +16,11 @@ module.exports = {
         6: "repeat(6, minmax(0, 1fr))",
         16: "repeat(16, minmax(0, 1fr))",
       },
+      gridColumn: {
+        "span-13": "span 13 / span 13",
+        "span-14": "span 14 / span 14",
+        "span-15": "span 15 / span 15",
+      },
     },
     fontFamily: {
       sans: ["Silka Web", "Helvetica", "Arial", "sans-serif"],
@@ -97,6 +102,7 @@ module.exports = {
     100: 100,
     auto: "auto",
   },
+
   options: { important: true },
   plugins: [require("tailwindcss-hyphens")],
   future: {

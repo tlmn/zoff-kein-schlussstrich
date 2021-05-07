@@ -9,7 +9,7 @@ const EventTeaser = ({ key, ...eventData }) => (
     key={key}
   >
     {eventData.feature_image.sizes && (
-      <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-3">
+      <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-2">
         <div className="relative w-full ratio--16-9 md:ratio--3-2 z-0">
           <img
             srcSet={generateSrcSet(eventData.feature_image.sizes)}
@@ -22,9 +22,7 @@ const EventTeaser = ({ key, ...eventData }) => (
 
     <div
       className={`col-span-full md:col-span-${
-        !eventData.feature_image.image ? `9` : `7`
-      } ${
-        !eventData.feature_image.image ? `col-start-1` : ``
+        eventData.feature_image.sizes ? `11` : `13 md:col-start-2`
       } h-full flex flex-col pt-4 md:pt-0`}
     >
       <div className="font-sans font-medium text-sm md:text-base flex justify-between">

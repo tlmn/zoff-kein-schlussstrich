@@ -13,6 +13,7 @@ add_action('init', 'custom_taxonomy_labels', 0);
 add_action('init', 'custom_taxonomy_divisions', 0);
 add_action('init', 'cpt_event', 0);
 add_action('init', 'cpt_eventLocation', 0);
+add_action('init', 'cpt_generalBlock', 0);
 add_action('init', 'register_menus', 0);
 
 add_action('wp_enqueue_scripts', 'js_scripts_jquery', 0);
