@@ -152,7 +152,7 @@
 
         <div class="grid-6 border-b-2 px-4">
             <div class="col-span-full py-6">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_page_uri() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="font-medium underline hover:no-underline flex items-center text-lg">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="font-medium underline hover:no-underline flex items-center text-lg">
                     <span class="mr-2">
                         <?php
                         echo file_get_contents(get_template_directory() . '/assets/icons/fb-event.svg');
