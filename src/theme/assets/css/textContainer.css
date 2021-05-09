@@ -1,0 +1,72 @@
+.ks-container--constraint {
+  & > p {
+    @apply font-sans;
+  }
+
+  & > h1 {
+    @apply font-sans;
+  }
+
+  & > h2 {
+    @apply font-sans;
+  }
+
+  & > h3 {
+    @apply font-sans;
+  }
+
+  & > h4 {
+    @apply font-sans;
+  }
+
+  img {
+  }
+
+  .wp-block-button__link {
+    @apply py-3 px-4;
+    @apply bg-black;
+    @apply text-white font-medium leading-none;
+    @apply rounded-full;
+  }
+}
+
+@screen md {
+  .ks-container--constraint {
+    & p {
+      @apply text-m leading-normal py-2;
+      & a {
+        @apply font-medium underline;
+        &:hover {
+          @apply no-underline;
+        }
+      }
+    }
+
+    & h1 {
+    }
+
+    & h2 {
+    }
+
+    & h3 {
+      @apply text-3xl leading-snug mb-7;
+    }
+
+    & h4 {
+    }
+
+    & h5 {
+      @apply text-xl leading-snug mb-6;
+    }
+
+    img {
+    }
+
+    .wp-block-button__link {
+      @apply text-lg;
+    }
+  }
+  .textQuote-body {
+    @apply text-7xl;
+  }
+}

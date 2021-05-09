@@ -5,3 +5,22 @@
     @apply bg-sand;
   }
 }
+
+.wp-block-button__link {
+  @apply py-3 px-4;
+  @apply bg-black;
+  @apply font-sans text-white font-medium leading-none;
+  @apply rounded-full;
+  @apply text-lg;
+  @apply inline-block;
+  @apply cursor-pointer;
+  &::after {
+    content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjIiIGZpbGw9Im5vbmUiPjxwYXRoIHN0cm9rZT0iI0U1RTVFNSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNLjEzMyAxMWgyMk0xMS40MjYgMjEuMjkzbDExLTExTTIyLjQyNiAxMS43MDdsLTExLTExIi8+PC9zdmc+');
+  }
+}
+
+@screen md {
+  .wp-block-button {
+    @apply mt-7;
+  }
+}

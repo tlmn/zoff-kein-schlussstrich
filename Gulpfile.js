@@ -4,8 +4,15 @@ const gulp = require("gulp");
 const postcss = require("gulp-postcss");
 const browserSync = require("browser-sync").create();
 const cleancss = require("gulp-clean-css");
-const postCSSNesting = require("postcss-nesting");
+const nested = require("postcss-nested");
 const run = require("gulp-run-command").default;
+
+const config = (file) => ({
+  plugins: [
+    require("postcss-import")({ root: file.dirname }),
+    require("postcss-nested"),
+  ],
+});
 
 gulp.task("dev:theme:copy", function () {
   return gulp
@@ -30,12 +37,6 @@ gulp.task("dev:theme:copy:JS", function () {
 });
 
 gulp.task("dev:theme:postcss", function () {
-  const config = (file) => ({
-    plugins: [
-      require("postcss-import")({ root: file.dirname }),
-      require("postcss-nesting"),
-    ],
-  });
   return gulp
     .src("src/theme/assets/css/style.css")
     .pipe(postcss(config))
@@ -88,12 +89,6 @@ gulp.task("build:theme:copy", function () {
 });
 
 gulp.task("build:theme:postcss", function () {
-  const config = (file) => ({
-    plugins: [
-      require("postcss-import")({ root: file.dirname }),
-      require("postcss-nesting"),
-    ],
-  });
   return gulp
     .src("src/theme/assets/css/style.css")
     .pipe(postcss(config))

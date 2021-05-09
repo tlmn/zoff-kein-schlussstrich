@@ -1,13 +1,25 @@
 <?php
 
 /*
- * General Block Division Teaser
+ *  Division Teaser Container
  */
 
 $divisionNumber = get_field('divisionNumber') ?: '1';
-$title = get_field('title') ?: 'Titel der Säule';
-$teaserText = get_field('teaserText') ?: 'Teaser-Text';
 $featureImage = get_field('featureImage');
+
+$allowed_blocks = array('core/paragraph');
+
+$template = array(
+    array('core/heading', array(
+        'content'   => 'Beschreibung Theater',
+        'level'     => 2,
+        'className' => 'block md:mb-4 // font-medium md:text-5xl md:leading-tight'
+    )),
+    array('core/paragraph', array(
+        'content' => 'Beschreibung Theater',
+        'className' => 'block font-medium md:text-lg md:leading-wider'
+    )),
+);
 
 ?>
 <div class="border-black border-t-2 border-b-2 flex justify-center">
@@ -20,8 +32,7 @@ $featureImage = get_field('featureImage');
             </div>
         </div>
         <div class="md:col-span-7 md:p-7 border-l-2">
-            <span class="block md:mb-4 // font-medium md:text-5xl md:leading-tight"><?php echo $title; ?></span>
-            <span class="block font-medium md:text-lg md:leading-wider"><?php echo $teaserText; ?></span>
+            <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
         </div>
         <div class="md:col-span-8 border-r-2">
             <img srcset="<?php echo wp_get_attachment_image_srcset($featureImage) ?>" class="border-0 shadow--left" alt="" />
