@@ -26,7 +26,7 @@ const CalendarList = () => {
 
   return (
     <div
-      className="col-span-full max-h-screen overflow-scroll bg-black"
+      className="max-h-screen overflow-scroll bg-black flex flex-col items-center"
       ref={listRef}
     >
       {filteredEvents &&
@@ -35,7 +35,7 @@ const CalendarList = () => {
         Object.keys(filteredEvents).map((key, index) => (
           <>
             {index > 0 && (
-              <div className="w-full grid-16 border-b-2 bg-white">
+              <div className="container grid-16 border-b-2 bg-white">
                 <div className="col-span-full flex justify-center bg-black">
                   <h2
                     className="font-sans font-normal text-6xl md:text-7xl text-white"
@@ -49,15 +49,17 @@ const CalendarList = () => {
                 </div>
               </div>
             )}
-
             <div
-              className="w-full grid-16 border-b-2 bg-white"
-              id={key.replace(/\./g, "")}
+              className={`bg-white w-full flex justify-center ${
+                index + 1 < Object.keys(filteredEvents) ? `border-b-2` : ``
+              }`}
             >
-              <div className="col-span-full grid-6 md:grid-16">
-                {filteredEvents[key].map((event, index) => (
-                  <EventTeaser {...event} key={index} />
-                ))}
+              <div className="container grid-16" id={key.replace(/\./g, "")}>
+                <div className="col-span-full grid-6 md:grid-16">
+                  {filteredEvents[key].map((event, index) => (
+                    <EventTeaser {...event} key={index} />
+                  ))}
+                </div>
               </div>
             </div>
           </>
