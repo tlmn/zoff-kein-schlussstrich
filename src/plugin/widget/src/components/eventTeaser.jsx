@@ -2,13 +2,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import { generateSrcSet } from "../lib/lib";
 
-const EventTeaser = ({ key, ...eventData }) => (
+const EventTeaser = ({ key, borderBottom = false, ...eventData }) => (
   <div
-    className="col-span-full px-2 grid-6 md:grid-16 no-underline py-6"
+    className={`col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${borderBottom ? `border-b-2`: ``}`}
     style={{ minHeight: "230px" }}
     key={key}
   >
-    <div className=""></div>
     {eventData.feature_image.sizes && (
       <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-2">
         <div className="relative w-full ratio--16-9 md:ratio--3-2 z-0">
@@ -103,6 +102,7 @@ const EventTeaser = ({ key, ...eventData }) => (
 );
 EventTeaser.propTypes = {
   key: PropTypes.number,
+  borderBottom: PropTypes.bool,
 };
 
 export default EventTeaser;
