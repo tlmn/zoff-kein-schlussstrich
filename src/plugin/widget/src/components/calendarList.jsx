@@ -10,7 +10,7 @@ const CalendarList = () => {
   const { data, setData } = useCalendarContext();
 
   const {
-    eventData: { filteredEvents },
+    eventData: { filteredEvents, initialEvents },
     filters: { city, division, currentDate },
   } = data;
 
@@ -71,36 +71,48 @@ const CalendarList = () => {
             </div>
           </>
         ))}
-      {filteredEvents && Object.keys(filteredEvents).length < 1 && (
+      {filteredEvents &&
+        Object.keys(filteredEvents).length < 1 &&
+        initialEvents.length !== 0 && (
+          <div className="w-full flex justify-center border-b-2 bg-black">
+            <div className="container grid-6 md:grid-16">
+              <div className="col-span-full py-4 px-2 flex flex-col items-center">
+                <span className="text-white text-lg font-sans">
+                  Keine Veranstaltungen mit diesen Filtereinstellungen.
+                </span>
+                <button
+                  className={`my-3 px-2 py-1 bg-white hover:bg-lightGray animated text-black rounded-full whitespace-nowrap`}
+                  onClick={() =>
+                    setData((prev) => ({
+                      ...prev,
+                      filters: {
+                        ...prev.filters,
+                        division: null,
+                        city: null,
+                      },
+                    }))
+                  }
+                  style={{ outline: 0 }}
+                  type="button"
+                  disabled={division !== null || city !== null ? false : true}
+                >
+                  Filter zurücksetzen
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      {initialEvents.length === 0 && (
         <div className="w-full flex justify-center border-b-2 bg-black">
           <div className="container grid-6 md:grid-16">
             <div className="col-span-full py-4 px-2 flex flex-col items-center">
               <span className="text-white text-lg font-sans">
-                Keine Veranstaltungen mit diesen Filtereinstellungen.
+                Lade Kalender.
               </span>
-              <button
-                className={`my-3 px-2 py-1 bg-white hover:bg-lightGray animated text-black rounded-full whitespace-nowrap`}
-                onClick={() =>
-                  setData((prev) => ({
-                    ...prev,
-                    filters: {
-                      ...prev.filters,
-                      division: null,
-                      city: null,
-                    },
-                  }))
-                }
-                style={{ outline: 0 }}
-                type="button"
-                disabled={division !== null || city !== null ? false : true}
-              >
-                Filter zurücksetzen
-              </button>
             </div>
           </div>
         </div>
       )}
-      {!filteredEvents && `lade`}
     </div>
   );
 };
