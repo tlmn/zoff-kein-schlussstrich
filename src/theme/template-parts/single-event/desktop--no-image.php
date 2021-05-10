@@ -1,6 +1,6 @@
 <div class="relative hidden md:block">
     <div class="flex justify-center">
-        <div class="container grid-6 grid-16 relative z-10 text-white border-black gap-collapse border-l-2 border-r-2">
+        <div class="container grid-6 grid-16 relative z-10 text-white border-black gap-collapse border-l-2 border-r-2 border-b-2">
             <div class="col-span-1 bg-black gap-collapse border-black border-b-2">
                 <h3 class="rotate--90 text-white text-3xl pr-7">Kalender</h3>
             </div>
@@ -35,42 +35,48 @@
             <div class="col-span-6 text-black">
                 <?php
                 if ($currentEvent['general']['duration'] !== "") { ?>
-                    <div class="font-medium text-lg leading-wider py-6 border-b-2 gap-collapse">
-                        Dauer <?php print $currentEvent['general']['duration']; ?> Minuten
+                    <div class="font-medium text-lg leading-wider border-b-2 gap-collapse">
+                        <div class="p-5">
+                            Dauer <?php print $currentEvent['general']['duration']; ?> Minuten
+                        </div>
                     </div>
                 <?php
                 }
                 ?>
 
-                <div class="font-medium text-lg leading-wider py-6 border-b-2 gap-collapse">
-                    <?php
-                    $items = get_field("meta");
+                <div class="font-medium text-lg leading-wider border-b-2 gap-collapse">
+                    <div class="p-5">
+                        <?php
+                        $items = get_field("meta");
 
-                    while (have_rows("meta")) : the_row();
-                        if (have_rows("occurences")) :
-                    ?>
-                            <span class="uppercase">Weitere Termine</span>
-                            <?php
-                            while (have_rows("occurences")) : the_row();
-                                $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
-                            ?>
-                                <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
-                                    <?php
-                                    echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city'];
-                                    ?>
-                                </a>
-                    <?php
-                            endwhile;
-                        endif;
-                    endwhile; ?>
+                        while (have_rows("meta")) : the_row();
+                            if (have_rows("occurences")) :
+                        ?>
+                                <span class="uppercase">Weitere Termine</span>
+                                <?php
+                                while (have_rows("occurences")) : the_row();
+                                    $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
+                                ?>
+                                    <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
+                                        <?php
+                                        echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city'];
+                                        ?>
+                                    </a>
+                        <?php
+                                endwhile;
+                            endif;
+                        endwhile; ?>
+                    </div>
                 </div>
 
                 <?php
                 if ($currentVenue) { ?>
-                    <div class="font-medium text-lg leading-wider py-6 border-b-2 gap-collapse">
-                        <?php
-                        echo $currentVenue['name'] . "<br />" . $currentVenue['address']['street'] . " " . $currentVenue['address']['houseNumber'] . "<br />" . $currentVenue['address']['postleitzahl'] . " " . $currentVenue['address']['city'];
-                        ?>
+                    <div class="font-medium text-lg leading-wider border-b-2 gap-collapse">
+                        <div class="p-5">
+                            <?php
+                            echo $currentVenue['name'] . "<br />" . $currentVenue['address']['street'] . " " . $currentVenue['address']['houseNumber'] . "<br />" . $currentVenue['address']['postleitzahl'] . " " . $currentVenue['address']['city'];
+                            ?>
+                        </div>
                     </div>
                 <?php
                 }
@@ -79,10 +85,12 @@
 
                 <?php
                 if ($currentVenue['url'] !== "") { ?>
-                    <div class="font-medium text-lg leading-wider py-6 border-b-2 gap-collapse">
-                        <a href="<?php print $currentVenue['url'] ?>" target="_blank" class="underline hover:no-underline">
-                            <?php print explode("/", preg_replace('#^https?://#', '', rtrim($currentVenue['url'], '/')))[0]; ?>
-                        </a>
+                    <div class="font-medium text-lg leading-wider border-b-2 gap-collapse">
+                        <div class="p-5">
+                            <a href="<?php print $currentVenue['url'] ?>" target="_blank" class="underline hover:no-underline">
+                                <?php print explode("/", preg_replace('#^https?://#', '', rtrim($currentVenue['url'], '/')))[0]; ?>
+                            </a>
+                        </div>
                     </div>
                 <?php
                 }
@@ -90,15 +98,17 @@
 
 
 
-                <div class="font-medium text-lg leading-wider py-6 gap-collapse">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="underline hover:no-underline flex items-center">
-                        <span class="mr-2">
-                            <?php
-                            echo file_get_contents(get_template_directory() . '/assets/icons/fb-event.svg');
-                            ?>
-                        </span>
-                        <span>Event teilen</span>
-                    </a>
+                <div class="font-medium text-lg leading-wider gap-collapse">
+                    <div class="p-5">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="underline hover:no-underline flex items-center">
+                            <span class="mr-2">
+                                <?php
+                                echo file_get_contents(get_template_directory() . '/assets/icons/fb-event.svg');
+                                ?>
+                            </span>
+                            <span>Event teilen</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-span-8 col-start-3 border-r-2 border-black bg-white text-black relative">
