@@ -203,7 +203,10 @@ export const CalendarHeader = () => {
                   </>
                 ) : (
                   <>
-                    <span className="hidden md:block mr-3 font-sans font-normal text-m whitespace-no-wrap">
+                    <span
+                      className="hidden md:block mr-3 font-sans font-normal text-m"
+                      style={{ whiteSpace: "nowrap" }}
+                    >
                       –&nbsp;.&nbsp;–
                     </span>
                     <Range
@@ -238,7 +241,10 @@ export const CalendarHeader = () => {
                         />
                       )}
                     />
-                    <span className="hidden md:block ml-3 font-sans font-normal text-m  whitespace-no-wrap">
+                    <span
+                      className="hidden md:block ml-3 font-sans font-normal text-m"
+                      style={{ whiteSpace: "nowrap" }}
+                    >
                       –&nbsp;.&nbsp;–
                     </span>
                   </>
