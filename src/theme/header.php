@@ -26,5 +26,21 @@ if (get_field('themeColor', $post->ID)) {
 
 <body class="<?php print join(' ', get_body_class()); ?>'">
 
-	<div class="header">
+	<div class="header bg-white flex justify-center shadow--bottom py-2">
+		<div class="container grid-6 md:grid-16">
+			<div class="col-span-full flex justify-between items-center">
+				<a href="/">
+					<?php
+					echo file_get_contents(get_template_directory() . '/assets/icons/logo-header.svg');
+					?>
+				</a>
+				<div class="">
+					<div id="top-menu">
+						<?php
+						wp_nav_menu(array('theme_location' => 'top-menu'));
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
