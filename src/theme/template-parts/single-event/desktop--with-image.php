@@ -47,7 +47,7 @@
 </div>
 <div class="relative hidden md:block">
     <div class="flex justify-center">
-        <div class="container grid-16 border-l-2">
+        <div class="container grid-16 border-l-2 border-b-2">
             <div class="col-span-10 border-r-2 border-black bg-white text-black relative">
                 <?php
                 if ($feature_image_alt !== "") { ?>
@@ -154,7 +154,7 @@
 
 
                 <div class="font-medium text-lg leading-wider py-6 gap-collapse--left">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="underline hover:no-underline flex items-center">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink()    . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="underline hover:no-underline flex items-center">
                         <span class="mr-2">
                             <?php
                             echo file_get_contents(get_template_directory() . '/assets/icons/fb-event.svg');
