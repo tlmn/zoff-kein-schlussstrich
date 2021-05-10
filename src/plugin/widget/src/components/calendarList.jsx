@@ -53,8 +53,9 @@ const CalendarList = () => {
               className={`bg-white w-full flex justify-center ${
                 index + 1 < Object.keys(filteredEvents) ? `border-b-2` : ``
               }`}
+              id={key.replace(/\./g, "")}
             >
-              <div className="container grid-16" id={key.replace(/\./g, "")}>
+              <div className="container grid-16">
                 <div className="col-span-full grid-6 md:grid-16">
                   {filteredEvents[key].map((event, index) => (
                     <EventTeaser {...event} key={index} />
