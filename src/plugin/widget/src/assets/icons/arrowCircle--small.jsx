@@ -3,29 +3,28 @@ import React from "react";
 
 const ArrowCircleSmall = ({ fillColor = "#fff", ...props }) => (
   <svg width={32} height={32} viewBox={"0 0 32 32"} fill={"none"} {...props}>
-    <circle cx={16} cy={16} r={16} fill={fillColor} />
+    <circle
+      cx={16}
+      cy={16}
+      r={16}
+      transform={"rotate(90 16 16)"}
+      fill={fillColor}
+    />
+    <path d={"M7.71289 16L24.2843 16"} stroke={"black"} strokeWidth={2} />
     <line
-      x1={6.28613}
-      y1={15.5715}
-      x2={24.0004}
-      y2={15.5715}
-      stroke={"#000"}
+      x1={13.8497}
+      y1={10.4213}
+      x2={7.56397}
+      y2={16.7071}
+      stroke={"black"}
       strokeWidth={2}
     />
     <line
-      x1={18.1503}
-      y1={21.5787}
-      x2={24.436}
-      y2={15.2929}
-      stroke={"#000"}
-      strokeWidth={2}
-    />
-    <line
-      x1={24.4364}
-      y1={16.7071}
-      x2={18.1507}
-      y2={10.4214}
-      stroke={"#000"}
+      x1={7.56453}
+      y1={15.2929}
+      x2={13.8502}
+      y2={21.5786}
+      stroke={"black"}
       strokeWidth={2}
     />
   </svg>

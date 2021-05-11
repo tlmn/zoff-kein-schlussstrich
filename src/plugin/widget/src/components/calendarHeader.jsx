@@ -43,42 +43,29 @@ export const CalendarHeader = () => {
                   </span>
                 </div>
                 <div className="px-2 pb-2 col-span-full md:col-span-12 md:col-start-3 w-full flex justify-between items-center bg-black">
-                  {filteredDates.length > 1 ? (
-                    <button
-                      onClick={() =>
-                        currentDate > 0 &&
-                        setData((prev) => ({
-                          ...prev,
-                          filters: {
-                            ...prev.filters,
-                            currentDate: parseInt(prev.filters.currentDate) - 1,
-                          },
-                        }))
-                      }
-                      style={{ outline: 0 }}
-                    >
-                      <ArrowCircle
-                        fillColor={currentDate > 0 ? `#fff` : `#ccc`}
-                        className="hidden md:block"
-                      />
-                      <ArrowCircleSmall
-                        fillColor={currentDate > 0 ? `#fff` : `#ccc`}
-                        className="block md:hidden"
-                        style={{ transform: "rotate(180deg)" }}
-                      />
-                    </button>
-                  ) : (
-                    <button style={{ outline: 0 }}>
-                      <ArrowCircle
-                        fillColor="#ccc"
-                        className="hidden md:block"
-                      />
-                      <ArrowCircleSmall
-                        fillColor="#ccc"
-                        className="block md:hidden"
-                      />
-                    </button>
-                  )}
+                  <button
+                    onClick={() =>
+                      currentDate > 0 &&
+                      setData((prev) => ({
+                        ...prev,
+                        filters: {
+                          ...prev.filters,
+                          currentDate: parseInt(prev.filters.currentDate) - 1,
+                        },
+                      }))
+                    }
+                    style={{ outline: 0 }}
+                    disabled={filteredDates.length > 1 ? false : true}
+                  >
+                    <ArrowCircle
+                      fillColor={currentDate > 0 ? `#fff` : `#ccc`}
+                      className="hidden md:block"
+                    />
+                    <ArrowCircleSmall
+                      fillColor={currentDate > 0 ? `#fff` : `#ccc`}
+                      className="block md:hidden"
+                    />
+                  </button>
 
                   <div className="flex items-center">
                     <span
@@ -95,51 +82,35 @@ export const CalendarHeader = () => {
                     </span>
                   </div>
 
-                  {filteredDates.length > 1 ? (
-                    <button
-                      onClick={() =>
-                        currentDate < filteredDates.length - 1 &&
-                        setData((prev) => ({
-                          ...prev,
-                          filters: {
-                            ...prev.filters,
-                            currentDate: parseInt(prev.filters.currentDate) + 1,
-                          },
-                        }))
+                  <button
+                    onClick={() =>
+                      currentDate < filteredDates.length - 1 &&
+                      setData((prev) => ({
+                        ...prev,
+                        filters: {
+                          ...prev.filters,
+                          currentDate: parseInt(prev.filters.currentDate) + 1,
+                        },
+                      }))
+                    }
+                    style={{ outline: 0 }}
+                    disabled={filteredDates.length > 1 ? false : true}
+                  >
+                    <ArrowCircle
+                      style={{ transform: "rotate(180deg)" }}
+                      fillColor={
+                        currentDate < filteredDates.length - 1 ? `#fff` : `#ccc`
                       }
-                      style={{ outline: 0 }}
-                    >
-                      <ArrowCircle
-                        style={{ transform: "rotate(180deg)" }}
-                        fillColor={
-                          currentDate < filteredDates.length - 1
-                            ? `#fff`
-                            : `#ccc`
-                        }
-                        className="hidden md:block"
-                      />
-                      <ArrowCircleSmall
-                        fillColor={
-                          currentDate < filteredDates.length - 1
-                            ? `#fff`
-                            : `#ccc`
-                        }
-                        className="block md:hidden"
-                      />
-                    </button>
-                  ) : (
-                    <button style={{ outline: 0 }}>
-                      <ArrowCircle
-                        style={{ transform: "rotate(180deg)" }}
-                        fillColor="#ccc"
-                        className="hidden md:block"
-                      />
-                      <ArrowCircleSmall
-                        fillColor="#ccc"
-                        className="block md:hidden"
-                      />
-                    </button>
-                  )}
+                      className="hidden md:block"
+                    />
+                    <ArrowCircleSmall
+                      style={{ transform: "rotate(180deg)" }}
+                      fillColor={
+                        currentDate < filteredDates.length - 1 ? `#fff` : `#ccc`
+                      }
+                      className="block md:hidden"
+                    />
+                  </button>
                 </div>
               </div>
             </div>
