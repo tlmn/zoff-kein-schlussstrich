@@ -141,5 +141,18 @@ function acf_blocks()
             ),
             'render_template' => 'template-parts/blocks/programme/division-hero--no-image.php',
         ));
+
+        acf_register_block_type(array(
+            'name'              => 'programme/teaser',
+            'title'             => __('Progammteaser'),
+            'description'       => __('Progammteaser'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+                'jsx' => true
+            ),
+            'render_template' => 'template-parts/blocks/programme/teaser.php',
+        ));
     }
 }
