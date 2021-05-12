@@ -37,7 +37,7 @@ if (get_field('themeColor', $post->ID)) {
 				<div class="">
 					<div id="top-menu">
 						<?php
-						wp_nav_menu(array('theme_location' => 'top-menu'));
+						wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 1));
 						?>
 					</div>
 				</div>
