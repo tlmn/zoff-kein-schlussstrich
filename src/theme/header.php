@@ -44,3 +44,19 @@ if (get_field('themeColor', $post->ID)) {
 			</div>
 		</div>
 	</div>
+	<div class="header shadow--bottom relative bg-lightGray">
+		<div class="absolute flex h-full w-full z-10">
+			<div class="bg-yellow h-full flex-1"></div>
+		</div>
+		<div class="flex justify-center">
+			<div class="container grid-6 md:grid-16 z-20 relative">
+				<div class="col-span-full flex justify-end ">
+					<div class="bg-blue py-2 px-2" id="sub-menu">
+						<?php
+						wp_nav_menu(array('theme_location' => 'navigation-submenu', 'depth' => 1));
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
