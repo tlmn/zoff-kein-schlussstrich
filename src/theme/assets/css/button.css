@@ -7,7 +7,7 @@
 }
 
 .wp-block-button__link {
-  @apply py-3 px-4;
+  @apply py-3 ;
   @apply bg-black;
   @apply font-sans text-white font-medium leading-none;
   @apply rounded-full;

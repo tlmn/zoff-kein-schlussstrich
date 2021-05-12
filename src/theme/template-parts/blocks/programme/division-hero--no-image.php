@@ -18,22 +18,26 @@ $template = array(
 
 ?>
 <div class="w-full flex justify-center">
-    <div class="container grid-6 md:grid-16 border-black border-b-2 border-l-2 border-r-2">
-        <div class="md:col-span-2 bg-<?php echo $stripeColor; ?> shadow--bottom-right">
-            <div class="h-full flex items-center">
+    <div class="container grid-6 md:grid-16 border-2">
+        <div class="col-span-full md:col-span-2 bg-<?php echo $stripeColor; ?> md:shadow--bottom-right md:gap-collapse--right">
+            <div class="flex justify-center md:justify-start md:items-center leading-normal md:h-full py-4 md:py-0">
                 <div>
-                    <span class="font-sans rotate-center--90 text-3xl font-medium leading-wider" style="padding-top: 25%"><?php echo $title; ?></span>
+                    <span class="font-sans md:rotate-center--90 text-black text-3xl font-medium leading-snug md:leading-wider md:pt-1/4">
+                        <?php echo $title; ?>
+                    </span>
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:col-span-14 border-black">
-            <div class="grid-14 border-black border-b-2 gap-collapse--left">
-                <div class="font-sans md:col-span-10 md:col-start-2 md:py-8 md:text-5xl md:font-medium md:leading-tight ">
+
+        <div class="col-span-full md:col-span-14 flex flex-col">
+            <div class="grid-14 border-b-2 md:gap-collapse--left">
+                <div class="font-sans text-black col-span-full md:col-span-10 md:col-start-2 py-5 md:py-8 text-2xl md:text-5xl font-medium leading-snug md:leading-tight ">
                     <?php echo $subtitle; ?>
                 </div>
             </div>
+
             <div class="grid-14">
-                <div class="font-sans md:col-span-10 md:col-start-2 md:py-7 font-medium md:text-lg md:leading-wider">
+                <div class="col-span-full md:col-span-10 md:col-start-2 py-7 font-sans text-black font-medium text-lg leading-wider">
                     <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
                 </div>
             </div>

@@ -100,7 +100,7 @@ function acf_blocks()
                 'mode' => false,
                 'jsx' => true
             ),
-            'render_template' => 'template-parts/blocks/images/images-inline.php',
+            'render_template' => 'template-parts/blocks/images/image-inline.php',
         ));
 
         acf_register_block_type(array(

@@ -1,5 +1,5 @@
 <div class="block md:hidden">
-    <div class="grid-6 bg-black text-white px-4">
+    <div class="grid-6 bg-black text-white ">
         <div class="col-span-1">
             <button role="button" onclick="window.history.back()">
                 <?php
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="grid-6 px-4 bg-white text-black">
+    <div class="grid-6  bg-white text-black">
         <div class="col-span-full">
             <div class="mx-2 mt-3 mb-7">labels</div>
             <div class="mx-2 mb-3">
@@ -44,7 +44,7 @@
 
     <?php
     if ($feature_image_alt !== "") { ?>
-        <div class="grid-6 border-b-2 px-4">
+        <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-5 text-xs leading-snug">
                 <?php print $feature_image_alt; ?>
             </div>
@@ -53,7 +53,7 @@
     }
 
     if ($currentEvent['general']['credits'] !== "") { ?>
-        <div class="grid-6 border-b-2 px-4">
+        <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-6 text-lg font-medium leading-wider">
                 <?php print $currentEvent['general']['credits']; ?>
             </div>
@@ -61,7 +61,7 @@
     <?php
     }
     if ($currentEvent['general']['short_description'] !== "") { ?>
-        <div class="grid-6 border-b-2 px-4">
+        <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-6">
                 <span class="text-lg leading-wider font-medium">
                     <?php print $currentEvent['general']['short_description']; ?>
@@ -72,7 +72,7 @@
     }
     ?>
 
-    <div class="grid-6 border-b-2 px-4">
+    <div class="grid-6 border-b-2 ">
         <div class="col-span-full py-6">
             <span class="text-m leading-normal">
                 <?php
@@ -84,7 +84,7 @@
 
     <?php
     if ($currentEvent['general']['duration'] !== "") { ?>
-        <div class="grid-6 border-b-2 px-4">
+        <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-6">
                 <div class="font-medium text-lg leading-wider">
                     Dauer <?php print $currentEvent['general']['duration']; ?> Minuten
@@ -100,7 +100,7 @@
 
     while (have_rows("meta")) : the_row();
         if (have_rows("occurences")) : ?>
-            <div class="grid-6 border-b-2 px-4">
+            <div class="grid-6 border-b-2 ">
                 <div class="col-span-full py-6 text-lg font-medium">
                     <span class="uppercase">Weitere Termine</span>
                     <?php
@@ -124,7 +124,7 @@
     endwhile;
         ?>
 
-        <div class="grid-6 border-b-2 px-4">
+        <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-6 text-lg font-medium">
                 <span class="block uppercase">Ort der Veranstaltung</span>
                 <span class="block">
@@ -137,7 +137,7 @@
 
         <?php
         if ($currentVenue['url'] !== "") { ?>
-            <div class="grid-6 border-b-2 px-4">
+            <div class="grid-6 border-b-2 ">
                 <div class="col-span-full py-6">
                     <div class="font-medium text-lg leading-wider">
                         <a href="<?php print $currentVenue['url'] ?>" target="_blank" class="underline hover:no-underline">
@@ -150,7 +150,7 @@
         }
         ?>
 
-        <div class="grid-6 border-b-2 px-4">
+        <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-6">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="font-medium underline hover:no-underline flex items-center text-lg">
                     <span class="mr-2">

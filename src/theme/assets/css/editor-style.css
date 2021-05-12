@@ -10,3 +10,12 @@
 @import "./quote.css";
 @import "./typography.css";
 @import "./textContainer.css";
+
+.wp-block {
+  max-width: 1200px;
+}
+
+.wp-die-message, p {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}

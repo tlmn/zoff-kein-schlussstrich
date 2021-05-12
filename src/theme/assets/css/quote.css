@@ -1,14 +1,16 @@
 .textQuote-body {
-  @apply text-7xl;
+  @apply text-black font-sans text-3xl leading-tight font-black italic;
+}
+
+.textQuote-author {
+  @apply text-black font-sans text-base leading-normal;
+  @apply mt-6;
 }
 
 @screen md {
-  .textQuote-body {
-    @apply font-sans text-4xl font-black italic leading-tight;
-  }
-
-  .textQuote-author {
-    @apply font-sans text-base leading-normal;
-    @apply mt-6;
+  .textQuote {
+    .textQuote-body {
+      @apply text-4xl;
+    }
   }
 }

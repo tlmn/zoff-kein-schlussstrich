@@ -28,16 +28,16 @@ function remove_wp_block_styles()
     wp_dequeue_style('wp-block-style');
 }
 
-function remove_guten_wrapper_styles($settings)
-{
-    unset($settings['styles'][0]);
-    return $settings;
-}
-
 function remove_admin_menus()
 {
     remove_menu_page('edit-comments.php');
     remove_menu_page('edit.php');
+}
+
+function gutenberg_editor_assets()
+{
+    add_theme_support('editor-styles');
+    wp_enqueue_style('my-gutenberg-editor-styles', get_theme_file_uri('/style.css'), FALSE);
 }
 
 function remove_comment_support()
@@ -52,6 +52,3 @@ function admin_bar_render()
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('comments');
 }
-
-add_filter('block_editor_settings', 'remove_guten_wrapper_styles');
-add_action('wp_enqueue_scripts', 'remove_wp_block_styles');
