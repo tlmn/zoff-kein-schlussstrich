@@ -11,3 +11,16 @@
     }
   }
 }
+
+#sub-menu {
+  & ul {
+    & li {
+      @apply inline-block;
+      @apply mx-5;
+      & a {
+        @apply font-medium;
+        @apply text-base;
+      }
+    }
+  }
+}
