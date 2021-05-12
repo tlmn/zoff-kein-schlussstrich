@@ -6,6 +6,7 @@ const browserSync = require("browser-sync").create();
 const cleancss = require("gulp-clean-css");
 const nested = require("postcss-nested");
 const run = require("gulp-run-command").default;
+const replace = require("gulp-replace");
 
 const config = (file) => ({
   plugins: [
@@ -48,6 +49,23 @@ gulp.task("dev:theme:postcss", function () {
         require("autoprefixer"),
       ])
     )
+    .pipe(cleancss())
+    .pipe(gulp.dest("./wp-content/themes/ks-theme/"));
+});
+
+gulp.task("dev:theme:postcss:editor", function () {
+  return gulp
+    .src("src/theme/assets/css/editor-style.css")
+    .pipe(postcss(config))
+    .pipe(
+      postcss([
+        require("tailwindcss"),
+        require("postcss-import"),
+        require("tailwindcss"),
+        require("autoprefixer"),
+      ])
+    )
+    .pipe(replace(";", "!important;"))
     .pipe(cleancss())
     .pipe(gulp.dest("./wp-content/themes/ks-theme/"));
 });
@@ -104,6 +122,23 @@ gulp.task("build:theme:postcss", function () {
     .pipe(gulp.dest("./dist/theme/"));
 });
 
+gulp.task("build:theme:postcss:editor", function () {
+  return gulp
+    .src("src/theme/assets/css/editor-style.css")
+    .pipe(postcss(config))
+    .pipe(
+      postcss([
+        require("tailwindcss"),
+        require("postcss-import"),
+        require("tailwindcss"),
+        require("autoprefixer"),
+      ])
+    )
+    .pipe(replace(";", "!important;"))
+    .pipe(cleancss())
+    .pipe(gulp.dest("./dist/theme/"));
+});
+
 gulp.task("dev:watch", function () {
   browserSync.init({
     proxy: "localhost:8000",
@@ -113,10 +148,16 @@ gulp.task("dev:watch", function () {
     .watch("src/theme/assets/js/**/*.js", gulp.series(["dev:theme:copy:JS"]))
     .on("change", browserSync.reload);
   gulp
-    .watch("src/theme/assets/css/**/*.css", gulp.series(["dev:theme:postcss"]))
+    .watch(
+      "src/theme/assets/css/**/*.css",
+      gulp.series(["dev:theme:postcss", "dev:theme:postcss:editor"])
+    )
     .on("change", browserSync.reload);
   gulp
     .watch("src/theme/**/*.php", gulp.series(["dev:theme:copy"]))
+    .on("change", browserSync.reload);
+  gulp
+    .watch("src/theme/**/*.json", gulp.series(["dev:theme:copy"]))
     .on("change", browserSync.reload);
   gulp
     .watch(
@@ -130,6 +171,7 @@ gulp.task(
   "dev",
   gulp.series([
     "dev:theme:postcss",
+    "dev:theme:postcss:editor",
     "dev:theme:copy",
     "dev:plugin:copy",
     "dev:watch",
@@ -141,6 +183,7 @@ gulp.task(
   gulp.series([
     "build:clean",
     "build:theme:postcss",
+    "build:theme:postcss:editor",
     "build:theme:copy",
     "build:plugin:npmInstall",
     "build:plugin:build",
