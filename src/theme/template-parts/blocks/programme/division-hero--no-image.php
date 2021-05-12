@@ -4,7 +4,7 @@
  *  Programme Hero Container Without Image
  */
 
-$stripeColor = get_field('stripeColor') ?: 'red';
+$stripeColor = get_field('stripeColor') ?: 'yellow';
 $title = get_field('title') ?: 'Titel';
 $subtitle = get_field('subtitle') ?: 'Unterzeile';
 
