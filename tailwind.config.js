@@ -1,4 +1,5 @@
 module.exports = {
+  important: false,
   purge: {
     content: [
       "./src/**/*.js",
@@ -103,8 +104,6 @@ module.exports = {
     100: 100,
     auto: "auto",
   },
-
-  options: { important: true },
   plugins: [require("tailwindcss-hyphens")],
   future: {
     removeDeprecatedGapUtilities: true,
