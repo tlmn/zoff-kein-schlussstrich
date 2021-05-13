@@ -7,6 +7,9 @@
         @apply uppercase;
         @apply font-medium;
         @apply text-m;
+        &:hover {
+          @apply underline;
+        }
       }
     }
   }
@@ -20,6 +23,9 @@
       & a {
         @apply font-medium;
         @apply text-base;
+        &:hover {
+          @apply underline;
+        }
       }
     }
   }
