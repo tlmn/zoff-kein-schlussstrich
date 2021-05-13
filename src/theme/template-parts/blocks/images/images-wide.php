@@ -17,7 +17,7 @@ $count_images = count($images);
                 <img srcset="<?php echo wp_get_attachment_image_srcset($images[0]['image']['ID']); ?>" alt="<?php echo $images[0]['image']['alt']; ?>" />
             </div>
             <div class="col-span-full md:col-span-10 md:col-start-4">
-                <span class="mt-4 font-sans text-xs leading-snug"><?php echo $images[0]['image']['description']; ?></span>
+                <span class="px-2 md:px-0 mt-4 font-sans text-xs leading-snug"><?php echo $images[0]['image']['description']; ?></span>
             </div>
 
         <?php
