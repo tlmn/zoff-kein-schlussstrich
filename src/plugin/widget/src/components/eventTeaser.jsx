@@ -22,7 +22,7 @@ const EventTeaser = ({ key, borderBottom = false, ...eventData }) => (
 
     <div
       className={`col-span-full md:col-span-${
-        eventData.feature_image.sizes ? `11` : `13 md:col-start-2`
+        eventData.feature_image.sizes ? `11` : `14 md:col-start-2`
       } h-full flex flex-col pt-4 md:pt-0`}
     >
       <div className="font-sans font-medium text-sm md:text-base flex justify-between">
