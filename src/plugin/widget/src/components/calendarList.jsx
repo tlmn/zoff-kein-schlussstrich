@@ -38,7 +38,7 @@ const CalendarList = () => {
               <div className="container grid-16 bg-white">
                 <div className="col-span-full flex justify-center bg-black">
                   <h2
-                    className="font-sans font-normal text-6xl md:text-7xl text-white"
+                    className="font-sans font-normal text-6xl md:text-7xl text-white z-10"
                     style={{
                       marginTop: "-2px",
                       lineHeight: 0.7,
