@@ -20,7 +20,7 @@ $template = array(
 
 ?>
 <div class="w-full flex justify-center textQuote row-collapse">
-    <div class="container grid-6 md:grid-16 md:py-7 border-2">
+    <div class="container grid-6 md:grid-16 md:py-7 border-t-2 border-b-2 md:border-l-2 md:border-r-2">
         <div class="col-span-full md:col-span-14 md:col-start-2">
             <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
         </div>

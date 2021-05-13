@@ -19,11 +19,11 @@ $template = array(
 
 ?>
 <div class="w-full flex justify-center">
-    <div class="container grid-6 md:grid-16 border-2 border-black">
+    <div class="container grid-6 md:grid-16  border-t-2 border-b-2 md:border-l-2 md:border-r-2 border-black">
         <div class="col-span-full md:col-span-2 bg-<?php echo $stripeColor; ?> md:shadow--bottom-right md:gap-collapse--right">
             <div class="flex justify-center md:justify-start md:items-center leading-normal md:h-full py-4 md:py-0">
                 <div class="text-center md:text-left">
-                    <span class="font-sans md:rotate-center--90 text-black text-3xl font-medium leading-snug md:leading-wider md:pt-1/4  md:whitespace-nowrap">
+                    <span class="font-sans md:rotate-center--90 text-black text-3xl font-medium leading-snug md:leading-wider md:pt-1/4 md:whitespace-nowrap">
                         <?php echo $title; ?>
                     </span>
                 </div>
