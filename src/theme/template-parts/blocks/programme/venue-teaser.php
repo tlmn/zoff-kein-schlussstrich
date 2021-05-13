@@ -25,7 +25,7 @@ $template = array(
         </div>
 
         <div class="md:border-r-2 col-span-4 md:col-span-1 flex gap-collapse--right h-full items-center justify-center md:relative">
-            <span class="font-sans font-medium md:absolute md:rotate--270 text-xl leading-snug md:max-w-max md:whitespace-nowrap">
+            <span class="font-sans font-medium md:absolute md:rotate--270 text-xl leading-snug md:max-w-max md:whitespace-nowrap px-3 md:px-0">
                 <?php echo $venueName; ?>
             </span>
         </div>
