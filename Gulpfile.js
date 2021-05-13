@@ -7,12 +7,37 @@ const cleancss = require("gulp-clean-css");
 const nested = require("postcss-nested");
 const run = require("gulp-run-command").default;
 const replace = require("gulp-replace");
+const favicons = require("gulp-favicons");
 
 const config = (file) => ({
   plugins: [
     require("postcss-import")({ root: file.dirname }),
     require("postcss-nested"),
   ],
+});
+
+gulp.task("dev:theme:favicons", function () {
+  return gulp
+    .src("src/theme/assets/images/favicons/icon.png")
+    .pipe(
+      favicons({
+        appName: "Kein Schlussstrich",
+        appShortName: "Kein Schlussstrich",
+        appDescription: "Kein Schlussstrich",
+        path: "favicons/",
+        url: "https://www.keinschlussstrich.de/",
+        display: "standalone",
+        orientation: "portrait",
+        scope: "/",
+        start_url: "/?homescreen=1",
+        version: 1.0,
+        logging: false,
+        html: "index.html",
+        pipeHTML: true,
+        replace: true,
+      })
+    )
+    .pipe(gulp.dest("./wp-content/themes/ks-theme/assets/favicons/"));
 });
 
 gulp.task("dev:theme:copy", function () {
@@ -86,6 +111,30 @@ gulp.task("build:plugin:copy:build", function () {
   return gulp
     .src(["src/plugin/widget/build/**/*"])
     .pipe(gulp.dest("./dist/plugin/widget/build/"));
+});
+
+gulp.task("build:theme:favicons", function () {
+  return gulp
+    .src("src/theme/assets/images/favicons/icon.png")
+    .pipe(
+      favicons({
+        appName: "Kein Schlussstrich",
+        appShortName: "Kein Schlussstrich",
+        appDescription: "Kein Schlussstrich",
+        path: "favicons/",
+        url: "https://www.keinschlussstrich.de/",
+        display: "standalone",
+        orientation: "portrait",
+        scope: "/",
+        start_url: "/?homescreen=1",
+        version: 1.0,
+        logging: false,
+        html: "index.html",
+        pipeHTML: true,
+        replace: true,
+      })
+    )
+    .pipe(gulp.dest("./dist/theme/assets/favicons/"));
 });
 
 gulp.task("build:plugin:copy:includes", function () {
@@ -173,6 +222,7 @@ gulp.task(
     "dev:theme:postcss",
     "dev:theme:postcss:editor",
     "dev:theme:copy",
+    "dev:theme:favicons",
     "dev:plugin:copy",
     "dev:watch",
   ])
