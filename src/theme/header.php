@@ -25,7 +25,6 @@ if (get_field('themeColor', $post->ID)) {
 </head>
 
 <body class="<?php print join(' ', get_body_class()); ?>'">
-
 	<div class="header bg-white flex justify-center shadow--bottom py-2">
 		<div class="container grid-6 md:grid-16">
 			<div class="col-span-full flex justify-between items-center">
@@ -34,7 +33,7 @@ if (get_field('themeColor', $post->ID)) {
 					echo file_get_contents(get_template_directory() . '/assets/icons/logo-header.svg');
 					?>
 				</a>
-				<div class="">
+				<div class="hidden md:block">
 					<div id="top-menu">
 						<?php
 						wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 1));
@@ -44,6 +43,7 @@ if (get_field('themeColor', $post->ID)) {
 			</div>
 		</div>
 	</div>
+
 	<div class="header shadow--bottom relative bg-lightGray" id="sub-menu__container" style="display:none">
 		<div class="absolute flex h-full w-full z-10">
 			<div class="bg-yellow h-full flex-1"></div>
