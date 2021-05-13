@@ -256,15 +256,18 @@ export const CalendarHeader = () => {
                     className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black calendar__select"
                     style={{ outline: 0 }}
                   >
-                    {cities.map((item, index) => (
-                      <option
-                        value={item}
-                        selected={item === "alle Orte" && city === null}
-                        key={index}
-                      >
-                        {item}
-                      </option>
-                    ))}
+                    {cities.map(
+                      (item, index) =>
+                        item !== "" && (
+                          <option
+                            value={item}
+                            selected={item === "alle Orte" && city === null}
+                            key={index}
+                          >
+                            {item}
+                          </option>
+                        )
+                    )}
                   </select>
 
                   <select
@@ -286,15 +289,20 @@ export const CalendarHeader = () => {
                     className="my-1 mx-2 bg-lightGray rounded-full p-1 text-black calendar__select"
                     style={{ outline: 0, width: "100px" }}
                   >
-                    {divisionsNames.map((item, index) => (
-                      <option
-                        value={item}
-                        selected={item === "alle Säulen" && division === null}
-                        key={index}
-                      >
-                        {item}
-                      </option>
-                    ))}
+                    {divisionsNames.map(
+                      (item, index) =>
+                        item !== "" && (
+                          <option
+                            value={item}
+                            selected={
+                              item === "alle Säulen" && division === null
+                            }
+                            key={index}
+                          >
+                            {item}
+                          </option>
+                        )
+                    )}
                   </select>
                   <button
                     className={`px-2 py-1 bg-${
