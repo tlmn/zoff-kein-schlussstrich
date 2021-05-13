@@ -5,3 +5,5 @@ wp-content/
 .DS_Store
 src/plugin/widget/node_modules
 src/plugin/widget/build
+src/plugin/widget/src/App.css
+src/plugin/widget/src/assets/style.css
