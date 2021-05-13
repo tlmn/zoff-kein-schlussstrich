@@ -44,7 +44,7 @@ if (get_field('themeColor', $post->ID)) {
 			</div>
 		</div>
 	</div>
-	<div class="header shadow--bottom relative bg-lightGray">
+	<div class="header shadow--bottom relative bg-lightGray" id="sub-menu__container" style="display:none">
 		<div class="absolute flex h-full w-full z-10">
 			<div class="bg-yellow h-full flex-1"></div>
 		</div>
