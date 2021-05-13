@@ -27,8 +27,8 @@ $count_images = count($images);
                 <?php
                 foreach ($images as $image) {
                 ?>
-                    <div class="pb-4">
-                        <img class="border-0 shadow--bottom-right" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" />
+                    <div class="mb-4">
+                        <img class="border-0 shadow--bottom-right w-full h-full object-cover" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" />
                         <?php if ($image['image']['description'] !== "") { ?>
                             <span class="block m-4 font-sans md:text-xs md:leading-snug"><?php echo $image['image']['description']; ?></span>
                         <?php
