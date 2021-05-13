@@ -6,7 +6,7 @@
             </div>
 
             <div class="col-span-1 bg-black gap-collapse border-black border-b-2">
-                <button role="button" onclick="window.history.back()" class="mt-7">
+                <button role="button" onclick="window.history.back()" class="mt-7 outline-none">
                     <?php
                     echo file_get_contents(get_template_directory() . '/assets/icons/back--desktop.svg');
                     ?>
