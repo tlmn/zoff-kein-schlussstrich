@@ -54,7 +54,7 @@ const EventTeaser = ({ key, borderBottom = false, ...eventData }) => (
         </div>
       </div>
       <a
-        className="flex flex-1 flex-col justify-end mt-6 md:mt-0"
+        className="flex flex-1 flex-col justify-end mt-6 md:mt-0 z-20"
         href={eventData.link}
       >
         <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
