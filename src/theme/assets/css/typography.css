@@ -42,7 +42,7 @@ h7 {
   @apply mb-6;
 }
 
-.is-style-default, .is-style-text--running {
+p, .is-style-default, .is-style-text--running {
   @apply font-normal text-m leading-normal;
   @apply mb-5;
 }
