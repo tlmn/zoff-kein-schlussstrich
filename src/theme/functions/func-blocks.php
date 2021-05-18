@@ -48,7 +48,7 @@ function acf_blocks()
                 'mode' => false,
                 'jsx' => true
             ),
-            'render_template' => 'template-parts/blocks/general/container-constraint.php',
+            'render_template' => 'template-parts/blocks/general/container--constraint.php',
         ));
 
         acf_register_block_type(array(
@@ -61,7 +61,7 @@ function acf_blocks()
                 'mode' => false,
                 'jsx' => true
             ),
-            'render_template' => 'template-parts/blocks/general/container-wide.php',
+            'render_template' => 'template-parts/blocks/general/container--wide.php',
         ));
 
         acf_register_block_type(array(
