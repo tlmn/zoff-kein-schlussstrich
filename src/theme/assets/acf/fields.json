@@ -1,0 +1,1188 @@
+[
+  {
+    "key": "group_60a3ace849683",
+    "title": "Block: Container with Tab",
+    "fields": [
+      {
+        "key": "field_60a3acf092509",
+        "label": "Titel",
+        "name": "title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_60a3acf89250a",
+        "label": "Hintergrundfarbe",
+        "name": "bgColor",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "choices": {
+          "white": "weiß",
+          "sand": "Sand",
+          "lightSand": "Sand hell",
+          "darkSand": "Sand dunkel"
+        },
+        "default_value": false,
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/general-blocks-container-tab"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_605cac02a51e3",
+    "title": "Block: Feature",
+    "fields": [
+      {
+        "key": "field_605cac7ea6f6e",
+        "label": "Titel",
+        "name": "title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_605cac86a6f6f",
+        "label": "Bild",
+        "name": "image",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [{ "param": "block", "operator": "==", "value": "acf/feature" }]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_6097d339d51fc",
+    "title": "Block: Image inline",
+    "fields": [
+      {
+        "key": "field_6097d33f99f69",
+        "label": "Bild",
+        "name": "image",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/images-image-inline"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_6097d305853d7",
+    "title": "Block: Images wide",
+    "fields": [
+      {
+        "key": "field_6097d30d8f876",
+        "label": "Bilder",
+        "name": "images",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "collapsed": "",
+        "min": 0,
+        "max": 2,
+        "layout": "table",
+        "button_label": "",
+        "sub_fields": [
+          {
+            "key": "field_6097d31c8f877",
+            "label": "Bild",
+            "name": "image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/images-images-wide"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_609828a61942c",
+    "title": "Block: Programm Hero No Image",
+    "fields": [
+      {
+        "key": "field_609828a632cb2",
+        "label": "Farbe Streifen",
+        "name": "stripeColor",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "choices": { "yellow": "Gelb", "blue": "Blau" },
+        "default_value": false,
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_609828a632d82",
+        "label": "Titel",
+        "name": "title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Titel",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_609828c0c9bae",
+        "label": "Unterzeile",
+        "name": "subtitle",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "Unterzeile",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/programme-hero--no-image"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_609827a94d8c5",
+    "title": "Block: Programm Hero with Image",
+    "fields": [
+      {
+        "key": "field_609827bf1493d",
+        "label": "Farbe Streifen",
+        "name": "stripeColor",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "choices": { "yellow": "Gelb", "blue": "Blau" },
+        "default_value": false,
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_609828151493e",
+        "label": "Titel",
+        "name": "title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_609828251493f",
+        "label": "Bild",
+        "name": "image",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/programme-hero--with-image"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_609bf0cec7a17",
+    "title": "Block: Programme",
+    "fields": [
+      {
+        "key": "field_609bf0dfd0650",
+        "label": "Programm-Links",
+        "name": "programmeLinks",
+        "type": "repeater",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "",
+        "sub_fields": [
+          {
+            "key": "field_609bf0ebd0651",
+            "label": "Hintergrundfarbe",
+            "name": "bgColor",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "choices": {
+              "yellow": "gelb",
+              "blue": "blau",
+              "lightGray": "grau"
+            },
+            "default_value": "yellow",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+          },
+          {
+            "key": "field_609bf11bd0652",
+            "label": "Link",
+            "name": "link",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "post_type": ["page"],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+          }
+        ]
+      },
+      {
+        "key": "field_609bf13ed0653",
+        "label": "Feature-Bild",
+        "name": "featureImage",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": 0,
+        "min_height": 0,
+        "min_size": 0,
+        "max_width": 0,
+        "max_height": 0,
+        "max_size": 0,
+        "mime_types": ""
+      }
+    ],
+    "location": [
+      [{ "param": "block", "operator": "==", "value": "acf/programme-teaser" }]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_6097ded9b0031",
+    "title": "Block: Teaser Venue",
+    "fields": [
+      {
+        "key": "field_6097deeb3528e",
+        "label": "Nummer",
+        "name": "number",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "key": "field_6097dfc416bc3",
+        "label": "Name",
+        "name": "name",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/programme-venue-teaser"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_605a0d6ebb8e2",
+    "title": "Event",
+    "fields": [
+      {
+        "key": "field_605a0d721d843",
+        "label": "Meta",
+        "name": "meta",
+        "type": "group",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "layout": "row",
+        "sub_fields": [
+          {
+            "key": "field_605a0e463e946",
+            "label": "Untertitel",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_605a0eb33e94a",
+            "label": "Feature Bild",
+            "name": "feature_image",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layout": "block",
+            "sub_fields": [
+              {
+                "key": "field_605a0ec13e94b",
+                "label": "Bild",
+                "name": "image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "return_format": "array",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+              },
+              {
+                "key": "field_605a0ece3e94c",
+                "label": "Unterschrift",
+                "name": "caption",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+              }
+            ]
+          },
+          {
+            "key": "field_605a0e4f3e947",
+            "label": "Orte und Zeiten",
+            "name": "occurences",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+              {
+                "key": "field_605a0e953e949",
+                "label": "Datum und Zeit",
+                "name": "timestamp",
+                "type": "date_time_picker",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "display_format": "d.m.Y H:i",
+                "return_format": "Y/m/d H:i:s",
+                "first_day": 1
+              },
+              {
+                "key": "field_605a0e613e948",
+                "label": "Veranstaltungsort",
+                "name": "venue",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "post_type": ["eventlocation"],
+                "taxonomy": "",
+                "filters": ["search"],
+                "elements": "",
+                "min": "",
+                "max": "",
+                "return_format": "object"
+              },
+              {
+                "key": "field_605c79cc3aea1",
+                "label": "Ticketlink",
+                "name": "ticketlink",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "default_value": "",
+                "placeholder": ""
+              },
+              {
+                "key": "field_605c79dd3aea2",
+                "label": "Ort (Stadt)",
+                "name": "city",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+              },
+              {
+                "key": "field_6065b23e76d92",
+                "label": "hat Alarm?",
+                "name": "hasAlarm",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "default_value": 0,
+                "message": "",
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+              },
+              {
+                "key": "field_6062f96a59858",
+                "label": "Alarm",
+                "name": "alarm",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                  [
+                    {
+                      "field": "field_6065b23e76d92",
+                      "operator": "==",
+                      "value": "1"
+                    }
+                  ]
+                ],
+                "wrapper": { "width": "50", "class": "", "id": "" },
+                "default_value": "",
+                "tabs": "visual",
+                "toolbar": "basic",
+                "media_upload": 1,
+                "delay": 1
+              },
+              {
+                "key": "field_6062f9a05985a",
+                "label": "im Kalender angezeigt?",
+                "name": "show_in_calendar",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "message": "",
+                "default_value": 1,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+              },
+              {
+                "key": "field_607d7b98fb613",
+                "label": "Label",
+                "name": "labels",
+                "type": "taxonomy",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "taxonomy": "label",
+                "field_type": "checkbox",
+                "add_term": 1,
+                "save_terms": 0,
+                "load_terms": 0,
+                "return_format": "id",
+                "multiple": 0,
+                "allow_null": 0
+              }
+            ]
+          },
+          {
+            "key": "field_605c79fed7404",
+            "label": "Kurzbeschreibung (max. 300 Zeichen)",
+            "name": "short_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+          },
+          {
+            "key": "field_608a64d36d959",
+            "label": "Credits",
+            "name": "credits",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+          },
+          {
+            "key": "field_6062fdea0e019",
+            "label": "Dauer (in Minuten)",
+            "name": "duration",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+          }
+        ]
+      }
+    ],
+    "location": [
+      [{ "param": "post_type", "operator": "==", "value": "event" }]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_608973019825a",
+    "title": "Event Location",
+    "fields": [
+      {
+        "key": "field_608973060eef4",
+        "label": "Name",
+        "name": "name",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_6089730d0eef5",
+        "label": "Adresse",
+        "name": "address",
+        "type": "group",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_6089731c0eef6",
+            "label": "Straße",
+            "name": "street",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_608973250eef7",
+            "label": "Hausnummer",
+            "name": "houseNumber",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_6089732d0eef8",
+            "label": "Postleitzahl",
+            "name": "postleitzahl",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_608973400eef9",
+            "label": "Stadt",
+            "name": "city",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          },
+          {
+            "key": "field_6089734b0eefa",
+            "label": "Land",
+            "name": "country",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "Deutschland",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+          }
+        ]
+      },
+      {
+        "key": "field_608973610eefc",
+        "label": "Koordinaten",
+        "name": "coordinates",
+        "type": "group",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "sub_fields": [
+          {
+            "key": "field_60897374cf7ef",
+            "label": "Breitengrad",
+            "name": "latitude",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+          },
+          {
+            "key": "field_60897387cf7f0",
+            "label": "Längengrad",
+            "name": "longitude",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+          }
+        ],
+        "layout": "block"
+      },
+      {
+        "key": "field_6089739308131",
+        "label": "URL",
+        "name": "url",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": ""
+      },
+      {
+        "key": "field_6089739908132",
+        "label": "Ticket URL",
+        "name": "ticket_url",
+        "type": "url",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [{ "param": "post_type", "operator": "==", "value": "eventlocation" }]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_6094f1e8356e1",
+    "title": "General Block: Teaser Säule",
+    "fields": [
+      {
+        "key": "field_6094f2c4bc47e",
+        "label": "Säule Nummer",
+        "name": "divisionNumber",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "min": "",
+        "max": "",
+        "step": ""
+      },
+      {
+        "key": "field_6094f2dbbc47f",
+        "label": "Titel",
+        "name": "title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": "",
+        "maxlength": ""
+      },
+      {
+        "key": "field_6094f2ebbc480",
+        "label": "Teaser Text",
+        "name": "teaserText",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "default_value": "",
+        "placeholder": "",
+        "maxlength": "",
+        "rows": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_6094f309bc481",
+        "label": "Feature Bild",
+        "name": "featureImage",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "return_format": "id",
+        "preview_size": "medium",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": ""
+      },
+      {
+        "key": "field_6094f316ffa21",
+        "label": "Säule Taxonomie",
+        "name": "taxonomyDivision",
+        "type": "taxonomy",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "taxonomy": "division",
+        "field_type": "radio",
+        "allow_null": 0,
+        "add_term": 1,
+        "save_terms": 0,
+        "load_terms": 0,
+        "return_format": "id",
+        "multiple": 0
+      },
+      {
+        "key": "field_6094f475c717f",
+        "label": "Link zur Säule",
+        "name": "url",
+        "type": "page_link",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "post_type": ["page"],
+        "taxonomy": "",
+        "allow_null": 0,
+        "allow_archives": 1,
+        "multiple": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/general-blocks-division-teaser"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  },
+  {
+    "key": "group_609507929d3ed",
+    "title": "General Blocks",
+    "fields": [
+      {
+        "key": "field_609507986c61c",
+        "label": "Block-Typ",
+        "name": "blockType",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "choices": {
+          "teaserDivision": "Teaser Säule",
+          "teaserCalendar": "Teaser Kalender"
+        },
+        "default_value": false,
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_609507d26c61d",
+        "label": "Teaser Säule",
+        "name": "teaserDivision",
+        "type": "group",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_609507986c61c",
+              "operator": "==",
+              "value": "teaserDivision"
+            }
+          ]
+        ],
+        "wrapper": { "width": "", "class": "", "id": "" },
+        "layout": "block",
+        "sub_fields": [
+          {
+            "key": "field_609507ea6c61e",
+            "label": "Säule",
+            "name": "taxonomyDivision",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "taxonomy": "division",
+            "field_type": "radio",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+          }
+        ]
+      }
+    ],
+    "location": [
+      [{ "param": "post_type", "operator": "==", "value": "generalblock" }]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  }
+]
