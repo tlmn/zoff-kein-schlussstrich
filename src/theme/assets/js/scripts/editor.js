@@ -1,7 +1,7 @@
 wp.domReady(() => {
   wp.blocks.registerBlockStyle("core/paragraph", {
-    name: "default",
-    label: "Default",
+    name: "text--running",
+    label: "Running Text",
     isDefault: true,
   });
 
@@ -18,11 +18,6 @@ wp.domReady(() => {
   wp.blocks.registerBlockStyle("core/paragraph", {
     name: "text--medium",
     label: "Text Medium",
-  });
-
-  wp.blocks.registerBlockStyle("core/paragraph", {
-    name: "text--running",
-    label: "Running Text",
   });
 
   wp.blocks.registerBlockStyle("core/paragraph", {
