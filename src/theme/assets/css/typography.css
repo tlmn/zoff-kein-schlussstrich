@@ -22,7 +22,31 @@
   }
 
   h1 {
-    @apply font-bold text-5xl leading-tight;
+    @apply font-bold text-6xl leading-tight tracking-wide;
+  }
+
+  h2 {
+    @apply font-medium text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply font-medium text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply font-medium text-2xl leading-snug;
+  }
+
+  h5 {
+    @apply font-bold text-xl leading-snug tracking-wide;
+  }
+
+  h6 {
+    @apply font-medium text-lg leading-tight tracking-wider;
+  }
+
+  h7 {
+    @apply font-medium text-m leading-tight tracking-wide;
   }
 
   .is-style-default {
@@ -59,7 +83,7 @@
   .is-style-quote--small {
     @apply font-black italic text-lg leading-none;
   }
-  
+
   .is-style-author {
     @apply font-bold italic text-m leading-none;
   }
