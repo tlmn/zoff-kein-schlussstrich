@@ -65,6 +65,19 @@ function acf_blocks()
         ));
 
         acf_register_block_type(array(
+            'name'              => 'general-blocks/container-tab',
+            'title'             => __('Text-Container mit Lasche'),
+            'description'       => __('Text-Container mit Lasche'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+                'jsx' => true
+            ),
+            'render_template' => 'template-parts/blocks/general/container--with-tab.php',
+        ));
+
+        acf_register_block_type(array(
             'name'              => 'general-blocks/text-quote',
             'title'             => __('Fließtext-Zitat'),
             'description'       => __('Fließtext-Zitat'),
