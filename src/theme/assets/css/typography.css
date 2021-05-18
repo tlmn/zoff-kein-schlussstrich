@@ -23,26 +23,32 @@
 
   h1 {
     @apply font-bold text-6xl leading-tight tracking-wide;
+    @apply mb-5;
   }
 
   h2 {
     @apply font-medium text-5xl leading-tight;
+    @apply mb-5;
   }
 
   h3 {
     @apply font-medium text-3xl leading-snug;
+    @apply mb-4;
   }
 
   h4 {
     @apply font-medium text-2xl leading-snug;
+    @apply mb-4;
   }
 
   h5 {
     @apply font-bold text-xl leading-snug tracking-wide;
+    @apply mb-3;
   }
 
   h6 {
     @apply font-medium text-lg leading-tight tracking-wider;
+    @apply mb-2;
   }
 
   h7 {
@@ -54,22 +60,27 @@
 
   .is-style-text--large {
     @apply font-normal text-3xl leading-snug;
+    @apply mb-7;
   }
 
   .is-style-text--big {
     @apply font-medium text-2xl leading-wider;
+    @apply mb-6;
   }
 
   .is-style-text--medium {
     @apply font-medium text-lg leading-wider;
+    @apply mb-6;
   }
 
   .is-style-text--running {
     @apply font-normal text-m leading-normal;
+    @apply mb-5;
   }
 
   .is-style-text--small {
     @apply font-normal text-base leading-normal;
+    @apply mb-4;
   }
 
   .is-style-quote--large {
