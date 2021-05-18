@@ -79,7 +79,7 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
 
   typeof eventsRaw != undefined &&
     eventsRaw.map((item) =>
-      item.acf.meta.occurences.map(
+    item.acf.meta.occurences.length > 0 && item.acf.meta.occurences.map(
         (occ) =>
           occ.show_in_calendar === true &&
           eventsParsed.push({
