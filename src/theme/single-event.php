@@ -21,26 +21,41 @@ function occurences_where($where)
 
 add_filter('posts_where', 'occurences_where');
 
-$args = array(
-	'numberposts'	=> 1,
-	'post_type'		=> 'event',
-	'name'			=> $post->post_name,
-	'meta_query'	=> array(
-		array(
-			'key'		=> 'meta_occurences_$_timestamp',
-			'compare'	=> 'LIKE',
-			'value'		=> date_long($date, "-") . " " . time_long($time, ":"),
+
+if ($date !== 0  && $time !== 0) {
+	$args = array(
+		'numberposts'	=> 1,
+		'post_type'		=> 'event',
+		'name'			=> $post->post_name,
+		'meta_query'	=> array(
+			array(
+				'key'		=> 'meta_occurences_$_timestamp',
+				'compare'	=> 'LIKE',
+				'value'		=> date_long($date, "-") . " " . time_long($time, ":"),
+			)
 		)
-	)
-);
+	);
+} else {
+	$args = array(
+		'numberposts'	=> 1,
+		'post_type'		=> 'event',
+		'name'			=> $post->post_name,
+	);
+}
 
 $the_query = new WP_Query($args);
 
 
 
 if ($the_query->have_posts()) :
-	$occurrences = get_fields()['meta']['occurences'];
-	$currentEvent = $occurrences[array_search(date_long($date, "/") . " " . time_long($time, ":"), array_column($occurrences, 'timestamp'))];
+	if ($date !== 0  && $time !== 0) {
+		$occurrences = get_fields()['meta']['occurences'];
+		$currentEvent = $occurrences[array_search(date_long($date, "/") . " " . time_long($time, ":"), array_column($occurrences, 'timestamp'))];
+	} else {
+		$occurrences = get_fields()['meta']['occurences'];
+		$currentEvent = $occurrences[0];
+	}
+	
 	$currentEvent['date'] = explode(" ", $currentEvent['timestamp'])[0];
 	$currentEvent['time'] = explode(" ", $currentEvent['timestamp'])[1];
 	$currentEvent['general'] = get_fields()['meta'];
