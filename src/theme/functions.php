@@ -5,7 +5,6 @@ include('functions/func-acf.php');
 include('functions/func-cpt.php');
 include('functions/func-menus.php');
 include('functions/func-scripts.php');
-include('functions/func-editor.php');
 include('functions/func-blocks.php');
 include('functions/func-admin.php');
 include('functions/func-taxonomies.php');
@@ -24,23 +23,5 @@ add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 add_action('acf/init', 'acf_init_fields');
 add_action('acf/init', 'acf_blocks');
 
-add_action('after_setup_theme', function () {
-    remove_action('enqueue_block_editor_assets', 'generate_enqueue_backend_block_editor_assets');
-});
-
-
-function remove_gutenberg_blocks_style_css()
-{
-    wp_dequeue_style('wp-block-library');
-    wp_dequeue_style('wp-block-library-theme');
-}
-
-//add_action('wp_enqueue_scripts', 'add_editor_styles');
-
-add_filter( 'block_editor_settings' , 'remove_guten_wrapper_styles' );
- function remove_guten_wrapper_styles( $settings ) {
-    unset($settings['styles'][0]);
-
-    return $settings;
-}
-//add_action('wp_enqueue_scripts', 'remove_gutenberg_blocks_style_css', 99);
+add_action('wp_enqueue_scripts', 'wp_theme_styles');
+add_action('after_setup_theme', 'load_editor_styles');
