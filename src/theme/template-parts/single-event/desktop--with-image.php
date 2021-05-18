@@ -50,10 +50,10 @@
         <div class="container grid-16 border-l-2 border-b-2">
             <div class="col-span-10 border-r-2 border-black bg-white text-black relative">
                 <?php
-                if ($feature_image_alt !== "") { ?>
+                if ($feature_image_description !== "") { ?>
                     <div class="grid-10 border-b-2">
                         <div class="col-span-7 col-start-3 py-5 font-normal text-xs leading-snug">
-                            <?php print $feature_image_alt; ?>
+                            <?php print $feature_image_description; ?>
                         </div>
                     </div>
                 <?php
@@ -72,14 +72,6 @@
 
                 <div class="grid-10">
                     <div class="col-span-7 col-start-3 py-7 font-normal">
-                        <?php
-                        if ($currentEvent['general']['short_description'] !== "") { ?>
-                            <span class="text-lg font-medium">
-                                <?php print $currentEvent['general']['short_description']; ?>
-                            </span>
-                        <?php
-                        }
-                        ?>
                         <div class="font-normal text-m leading-normal">
                             <?php
 

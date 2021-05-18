@@ -60,7 +60,8 @@ if ($the_query->have_posts()) :
 	$currentEvent['time'] = explode(" ", $currentEvent['timestamp'])[1];
 	$currentEvent['general'] = get_fields()['meta'];
 	$currentVenue = get_fields($currentEvent['venue'][0]->ID);
-	$feature_image_alt = isset(get_fields()['meta']['feature_image']['image']['description']) ? get_fields()['meta']['feature_image']['image']['description'] : "";
+	$feature_image_alt = isset(get_fields()['meta']['feature_image']['image']['alt']) ? get_fields()['meta']['feature_image']['image']['alt'] : "";
+	$feature_image_description = isset(get_fields()['meta']['feature_image']['image']['description']) ? get_fields()['meta']['feature_image']['image']['description'] : "";
 
 	$args_teaser = array(
 		'numberposts'	=> 1,
