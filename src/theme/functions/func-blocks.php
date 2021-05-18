@@ -169,3 +169,31 @@ function acf_blocks()
         ));
     }
 }
+
+
+function page_allowed_block_types($allowed_blocks, $post)
+{
+
+    $allowed_blocks = array(
+        "core/paragraph",
+        "core/button",
+        "core/list",
+        "core/heading",
+        "acf/feature",
+        "acf/programme-division-teaser",
+        "acf/general-blocks-horizontal-line",
+        "acf/general-blocks-container-constraint",
+        "acf/general-blocks-container-tab",
+        "acf/general-blocks-text-quote",
+        "acf/programme-venue-teaser",
+        "acf/programme-hero--with-image",
+        "acf/programme-hero--no-image",
+        "acf/programme-teaser",
+    );
+
+    if ($post->post_type === 'page') {
+        $allowed_blocks[] = 'core/shortcode';
+    }
+
+    return $allowed_blocks;
+}
