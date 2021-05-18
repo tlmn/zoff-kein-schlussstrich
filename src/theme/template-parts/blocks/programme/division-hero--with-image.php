@@ -30,8 +30,8 @@ $template = array(
             </div>
         </div>
 
-        <div class="col-span-full md:col-span-7">
-            <img srcset="<?php echo wp_get_attachment_image_srcset($image['ID']) ?>" class="border-0 md:shadow--left md:shadow--bottom-right" alt="<?php echo array_key_exists('alt', $image) && $image['alt']; ?>" />
+        <div class="col-span-full md:col-span-7 relative h-full">
+            <img srcset="<?php echo wp_get_attachment_image_srcset($image['ID']) ?>" class="border-0 md:shadow--left md:shadow--bottom-right object-cover w-full h-full" alt="<?php echo array_key_exists('alt', $image) && $image['alt']; ?>" />
         </div>
 
         <div class="col-span-full md:col-span-7 py-7 px-2 md:px-7 font-sans text-black font-medium text-lg md:text-5xl leading-snug md:leading-tight">
