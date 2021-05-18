@@ -171,23 +171,6 @@ gulp.task("build:theme:postcss", function () {
     .pipe(gulp.dest("./dist/theme/"));
 });
 
-gulp.task("build:theme:postcss:editor", function () {
-  return gulp
-    .src("src/theme/assets/css/editor-style.css")
-    .pipe(postcss(config))
-    .pipe(
-      postcss([
-        require("tailwindcss"),
-        require("postcss-import"),
-        require("tailwindcss"),
-        require("autoprefixer"),
-      ])
-    )
-    .pipe(replace(";", "!important;"))
-    .pipe(cleancss())
-    .pipe(gulp.dest("./dist/theme/"));
-});
-
 gulp.task("dev:watch", function () {
   browserSync.init({
     proxy: "localhost:8000",
@@ -199,7 +182,7 @@ gulp.task("dev:watch", function () {
   gulp
     .watch(
       "src/theme/assets/css/**/*.css",
-      gulp.series(["dev:theme:postcss", "dev:theme:postcss:editor"])
+      gulp.series(["dev:theme:postcss"])
     )
     .on("change", browserSync.reload);
   gulp
@@ -220,7 +203,6 @@ gulp.task(
   "dev",
   gulp.series([
     "dev:theme:postcss",
-    "dev:theme:postcss:editor",
     "dev:theme:copy",
     "dev:theme:favicons",
     "dev:plugin:copy",
@@ -233,7 +215,6 @@ gulp.task(
   gulp.series([
     "build:clean",
     "build:theme:postcss",
-    "build:theme:postcss:editor",
     "build:theme:copy",
     "build:plugin:npmInstall",
     "build:plugin:build",
