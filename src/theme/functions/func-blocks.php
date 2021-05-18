@@ -9,7 +9,7 @@ function acf_blocks()
             'description'       => __('Feature'),
             'render_template'   => 'template-parts/blocks/feature.php',
             'category'          => 'formatting',
-            'icon'              => 'dashicons-format-quote',
+            'icon'              => 'format-quote',
             'is_preview'        => true,
             'keywords'          => array('feature'),
         ));
@@ -33,14 +33,14 @@ function acf_blocks()
             'description'       => __('Horizontale Linie'),
             'render_template'   => 'template-parts/blocks/general/horizontal-line.php',
             'category'          => 'formatting',
-            'icon'              => 'dashicons-minus',
+            'icon'              => 'minus',
             'is_preview'        => true,
             'keywords'          => array('horizonzal', 'linie'),
         ));
 
         acf_register_block_type(array(
             'name'              => 'general-blocks/container-constraint',
-            'title'             => __('Text-Container schmal'),
+            'title'             => __('Container schmal'),
             'description'       => __('Schmaler Container für Elemente wie Überschriften oder Absätze'),
             'category'          => 'formatting',
             'supports'          => array(
@@ -180,6 +180,7 @@ function page_allowed_block_types($allowed_blocks, $post)
         "core/list",
         "core/heading",
         "acf/feature",
+        "acf/images-images-wide",
         "acf/programme-division-teaser",
         "acf/general-blocks-horizontal-line",
         "acf/general-blocks-container-constraint",
