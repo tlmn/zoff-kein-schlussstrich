@@ -20,4 +20,47 @@
       }
     }
   }
+
+  h1 {
+    @apply font-bold text-5xl leading-tight;
+  }
+
+  .is-style-default {
+  }
+
+  .is-style-text--large {
+    @apply font-normal text-3xl leading-snug;
+  }
+
+  .is-style-text--big {
+    @apply font-medium text-2xl leading-wider;
+  }
+
+  .is-style-text--medium {
+    @apply font-medium text-lg leading-wider;
+  }
+
+  .is-style-text--running {
+    @apply font-normal text-m leading-normal;
+  }
+
+  .is-style-text--small {
+    @apply font-normal text-base leading-normal;
+  }
+
+  .is-style-quote--large {
+    @apply font-bold italic text-6xl leading-none;
+  }
+
+  .is-style-quote--medium {
+    @apply font-bold italic text-4xl leading-tight;
+  }
+
+  .is-style-quote--small {
+    @apply font-black italic text-lg leading-none;
+  }
+  
+  .is-style-author {
+    @apply font-bold italic text-m leading-none;
+  }
 }
