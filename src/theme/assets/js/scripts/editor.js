@@ -11,11 +11,6 @@ wp.domReady(() => {
   });
 
   wp.blocks.registerBlockStyle("core/paragraph", {
-    name: "text--big",
-    label: "Text Big",
-  });
-
-  wp.blocks.registerBlockStyle("core/paragraph", {
     name: "text--medium",
     label: "Text Medium",
   });
