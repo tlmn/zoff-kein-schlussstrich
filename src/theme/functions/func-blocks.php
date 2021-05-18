@@ -40,7 +40,7 @@ function acf_blocks()
 
         acf_register_block_type(array(
             'name'              => 'general-blocks/container-constraint',
-            'title'             => __('Container schmal'),
+            'title'             => __('Text-Container schmal'),
             'description'       => __('Schmaler Container für Elemente wie Überschriften oder Absätze'),
             'category'          => 'formatting',
             'supports'          => array(
@@ -53,7 +53,7 @@ function acf_blocks()
 
         acf_register_block_type(array(
             'name'              => 'general-blocks/container-wide',
-            'title'             => __('Container breit'),
+            'title'             => __('Text-Container breit'),
             'description'       => __('Breiter Container für Elemente wie Überschriften oder Absätze'),
             'category'          => 'formatting',
             'supports'          => array(
