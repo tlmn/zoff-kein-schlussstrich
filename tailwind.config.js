@@ -60,12 +60,18 @@ module.exports = {
       "3xl": "3rem",
       "4xl": "3.5rem",
       "5xl": "4rem",
-      "6xl": "8.125rem",
-      "7xl": "18rem",
+      "6xl": "6rem",
+      "7xl": "8.125rem",
+      "8xl": "18rem",
     },
     screens: {
       sm: "576px",
       md: "1280px",
+    },
+    letterSpacing: {
+      normal: "0",
+      wide: ".01em",
+      wider: ".03em",
     },
     colors: {
       transparent: "transparent",
