@@ -20,7 +20,6 @@ add_action('wp_enqueue_scripts', 'js_scripts_jquery', 0);
 add_action('wp_enqueue_scripts', 'js_scripts_custom', 1);
 
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
-add_action('acf/init', 'acf_init_fields');
 add_action('acf/init', 'acf_blocks');
 
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
