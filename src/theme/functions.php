@@ -25,3 +25,5 @@ add_action('acf/init', 'acf_blocks');
 
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
 add_action('after_setup_theme', 'load_editor_styles');
+
+add_action('enqueue_block_editor_assets', 'js_editor_block_styles');
