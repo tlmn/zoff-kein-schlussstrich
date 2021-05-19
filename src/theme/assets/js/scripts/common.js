@@ -8,4 +8,11 @@ $(document).ready(function () {
       $("#sub-menu__container").slideUp("slow", function () {});
     }
   });
+  
+  $("#marquee-cities-wrapper").marquee({
+    duration: 10000,
+    gap: 50,
+    delayBeforeStart: 0,
+    direction: "left",
+  });
 });
