@@ -18,10 +18,12 @@
             </div>
 
             <div class="col-span-8 shadow--bottom-right">
-                <?php
-                $feature_image_srcset = wp_get_attachment_image_srcset(get_fields()['meta']['feature_image']['image']['ID']);
-                ?>
-                <img srcset="<?php echo $feature_image_srcset; ?>" alt="<?php print $feature_image_alt; ?>" />
+                <div class="h-full w-full relative">
+                    <?php
+                    $feature_image_srcset = wp_get_attachment_image_srcset(get_fields()['meta']['feature_image']['image']['ID']);
+                    ?>
+                    <img srcset="<?php echo $feature_image_srcset; ?>" alt="<?php print $feature_image_alt; ?>" class="object-cover absolute top-0 left-0 h-full w-full" />
+                </div>
             </div>
 
             <div class="col-span-6 flex flex-col">
