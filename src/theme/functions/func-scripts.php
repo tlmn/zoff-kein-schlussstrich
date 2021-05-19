@@ -7,8 +7,8 @@ function js_scripts_jquery()
 
 function js_scripts_custom()
 {
+    wp_enqueue_script('marquee-jQuery', get_template_directory_uri() . '/assets/js/scripts/jquery.marquee.min.js', false);
     wp_enqueue_script('js-file', get_template_directory_uri() . '/assets/js/scripts/common.js', false);
-    wp_enqueue_script('js-file', get_template_directory_uri() . '/assets/js/scripts/jquery.marquee.min.js', false);
 }
 
 function js_editor_block_styles()
