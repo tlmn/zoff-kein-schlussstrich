@@ -2,6 +2,13 @@
   @apply font-sans;
 }
 
+a {
+  @apply underline;
+  &:hover {
+    @apply no-underline;
+  }
+}
+
 h1 {
   @apply font-bold text-6xl leading-tight tracking-wide;
   @apply mb-5;
@@ -68,6 +75,10 @@ p,
 
 .is-style-quote--small {
   @apply font-black italic text-lg leading-none;
+}
+
+.is-style-caption {
+  @apply font-normal text-xs leading-wider;
 }
 
 @screen md {
