@@ -35,7 +35,7 @@
                 </div>
                 <div class="bg-white flex flex-1 flex-col justify-between text-black gap-collapse">
                     <div class="mx-2 mt-3">labels</div>
-                    <div class="mx-2 mb-3">
+                    <div class="mx-2 mb-3 mt-7">
                         <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>
                             Uhr</span>
                         <span class="text-3xl font-medium leading-snug block"><?php the_title(); ?></span>
@@ -58,12 +58,11 @@
                     </div>
                 <?php
                 }
-                ?>
-                <?php
-                if ($currentEvent['general']['credits'] !== "") { ?>
-                    <div class="grid-10 border-b-2">
-                        <div class="col-span-7 col-start-3 py-7 font-medium text-lg leading-snug">
-                            <?php print $currentEvent['general']['credits']; ?>
+
+                if ($currentEvent['general']['subline'] !== "") { ?>
+                    <div class="grid-10 border-t-2">
+                        <div class="col-span-7 col-start-3 py-7">
+                            <h6><?php print $currentEvent['general']['subline']; ?></h6>
                         </div>
                     </div>
                 <?php
@@ -81,6 +80,17 @@
                         </div>
                     </div>
                 </div>
+
+                <?php
+                if ($currentEvent['general']['credits'] !== "") { ?>
+                    <div class="grid-10 border-t-2">
+                        <div class="col-span-7 col-start-3 py-7">
+                            <h6><?php print $currentEvent['general']['credits']; ?></h6>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
             <div class="col-span-6 text-black border-r-2">
                 <?php
@@ -90,39 +100,37 @@
                             Dauer <?php print $currentEvent['general']['duration']; ?> Minuten
                         </div>
                     </div>
-                <?php
+                    <?php
                 }
-                ?>
+                $items = get_field("meta");
+                while (have_rows("meta")) : the_row();
+                    if (have_rows("occurences") && count(get_field("meta")["occurences"]) > 1) :
+                    ?>
+                        <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
+                            <div class="p-5">
 
-                <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
-                    <div class="p-5">
-                        <?php
-                        $items = get_field("meta");
-
-                        while (have_rows("meta")) : the_row();
-                            if (have_rows("occurences")) :
-                        ?>
                                 <span class="uppercase">Weitere Termine</span>
                                 <?php
                                 while (have_rows("occurences")) : the_row();
                                     $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
+                                    if (get_sub_field('timestamp') !== $currentEvent['timestamp']) {
                                 ?>
-                                    <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
-                                        <?php
-                                        echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city'];
-                                        ?>
-                                    </a>
-                        <?php
-                                endwhile;
-                            endif;
-                        endwhile; ?>
-                    </div>
-                </div>
+                                        <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
+                                            <?php
+                                            echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city']; ?>
+                                        </a>
+                                <?php
+                                    }
+                                endwhile; ?>
 
+                            </div>
+                        </div>
+                    <?php
+                    endif;
+                endwhile;
 
-                <?php
                 if ($currentVenue['address']) {
-                ?>
+                    ?>
                     <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                         <div class="p-5">
                             <span class="block uppercase">Ort der Veranstaltung</span>
