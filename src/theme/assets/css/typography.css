@@ -1,3 +1,7 @@
+* {
+  @apply font-sans;
+}
+
 h1 {
   @apply font-bold text-6xl leading-tight tracking-wide;
   @apply mb-5;
@@ -42,7 +46,9 @@ span.h7 {
   @apply mb-6;
 }
 
-p, .is-style-default, .is-style-text--running {
+p,
+.is-style-default,
+.is-style-text--running {
   @apply font-normal text-m leading-normal;
   @apply mb-5;
 }
