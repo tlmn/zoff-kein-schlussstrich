@@ -78,57 +78,61 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
   let eventsParsed = [];
 
   typeof eventsRaw != undefined &&
-    eventsRaw.map((item) =>
-    item.acf.meta.occurences.length > 0 && item.acf.meta.occurences.map(
-        (occ) =>
-          occ.show_in_calendar === true &&
-          eventsParsed.push({
-            alarm: occ.alarm,
-            dateLong: getLongDate(new Date(occ.timestamp)),
-            dateShort: getShortDate(new Date(occ.timestamp)),
-            datetime: convertToDate(new Date(occ.timestamp)),
-            division: item.division.length !== 0 ? item.division[0] : 0,
-            duration: item.duration,
-            feature_image: {
-              sizes: item.acf.meta.feature_image.image.sizes,
-              alt: item.acf.meta.feature_image.image.alt,
-            },
-            link: generateLink(item.link, new Date(occ.timestamp).toJSON()),
-            short_description: item.acf.meta.short_description,
-            tags: concat(
-              divisions.divisions.filter(
-                (division) => division.id === item.division[0]
-              )[0].name,
-              occ.venue.length > 0
-                ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                  ? venuesData[occ.venue[0].ID.toString()].acf.address.city
-                  : ""
-                : "",
-              occ.venue.length > 0
-                ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                  ? venuesData[occ.venue[0].ID.toString()].acf.name
-                  : ""
-                : "",
-              occ.labels.length > 0 && occ.labels
-            ),
-            ticketlink: occ.ticketlink,
-            time: getTime(new Date(occ.timestamp)),
-            timestamp: new Date(occ.timestamp).getTime(),
-            title: item.title.rendered,
-            city:
-              occ.venue.length > 0
-                ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                  ? venuesData[occ.venue[0].ID.toString()].acf.address.city
-                  : ""
-                : null,
-            venue:
-              occ.venue.length > 0
-                ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                  ? venuesData[occ.venue[0].ID.toString()].acf
-                  : ""
-                : "",
-          })
-      )
+    eventsRaw.map(
+      (item) =>
+        item.acf.meta.occurences !== undefined &&
+        item.acf.meta.occurences.length > 0 &&
+        item.acf.meta.occurences.map(
+          (occ) =>
+            occ.show_in_calendar === true &&
+            eventsParsed.push({
+              alarm: occ.alarm,
+              dateLong: getLongDate(new Date(occ.timestamp)),
+              dateShort: getShortDate(new Date(occ.timestamp)),
+              datetime: convertToDate(new Date(occ.timestamp)),
+              division: item.division.length !== 0 ? item.division[0] : 0,
+              duration: item.duration,
+              feature_image: {
+                sizes: item.acf.meta.feature_image.image.sizes,
+                alt: item.acf.meta.feature_image.image.alt,
+              },
+              link: generateLink(item.link, new Date(occ.timestamp).toJSON()),
+              short_description: item.acf.meta.short_description,
+              tags: concat(
+                divisions.divisions !== undefined &&
+                  divisions.divisions.filter(
+                    (division) => division.id === item.division[0]
+                  )[0].name,
+                occ.venue !== undefined && occ.venue.length > 0
+                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                    ? venuesData[occ.venue[0].ID.toString()].acf.address.city
+                    : ""
+                  : "",
+                occ.venue !== undefined && occ.venue.length > 0
+                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                    ? venuesData[occ.venue[0].ID.toString()].acf.name
+                    : ""
+                  : "",
+                occ.labels !== undefined && occ.labels.length > 0 && occ.labels
+              ),
+              ticketlink: occ.ticketlink,
+              time: getTime(new Date(occ.timestamp)),
+              timestamp: new Date(occ.timestamp).getTime(),
+              title: item.title.rendered,
+              city:
+                occ.venue !== undefined && occ.venue.length > 0
+                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                    ? venuesData[occ.venue[0].ID.toString()].acf.address.city
+                    : ""
+                  : null,
+              venue:
+                occ.venue !== undefined && occ.venue.length > 0
+                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                    ? venuesData[occ.venue[0].ID.toString()].acf
+                    : ""
+                  : "",
+            })
+        )
     );
 
   let expression = jsonata("*^(timestamp){dateLong:[$]}");
