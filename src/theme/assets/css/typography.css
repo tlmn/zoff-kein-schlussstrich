@@ -28,8 +28,8 @@ h6 {
   @apply mb-2;
 }
 
-h7 {
-  @apply font-medium text-m leading-tight tracking-wide;
+span.h7 {
+  @apply font-medium text-m leading-tight tracking-wide uppercase;
 }
 
 .is-style-text--large {
