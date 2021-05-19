@@ -167,6 +167,18 @@ function acf_blocks()
             ),
             'render_template' => 'template-parts/blocks/programme/teaser.php',
         ));
+
+        acf_register_block_type(array(
+            'name'              => 'general/marquee',
+            'title'             => __('Laufband'),
+            'description'       => __('Laufband'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+            ),
+            'render_template' => 'template-parts/blocks/general/marquee.php',
+        ));
     }
 }
 
@@ -182,6 +194,7 @@ function page_allowed_block_types($allowed_blocks, $post)
         "acf/feature",
         "acf/images-images-wide",
         "acf/programme-division-teaser",
+        "acf/general-marquee",
         "acf/general-blocks-horizontal-line",
         "acf/general-blocks-container-constraint",
         "acf/general-blocks-container-tab",
