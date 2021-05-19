@@ -6,6 +6,11 @@
 @import "./base.css";
 @import "./menu.css";
 @import "./calendar.css";
+@import "./editor.css";
 @import "./button.css";
 @import "./quote.css";
 @import "./typography.css";
+
+.wp-block {
+  max-width: 1100px !important;
+}
