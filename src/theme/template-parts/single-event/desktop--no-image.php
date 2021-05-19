@@ -111,43 +111,36 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-10 border-r-2 border-black bg-white text-black relative">
+            <div class="col-span-10 border-r-2 border-black bg-white text-black relative gap-collapse-left--no-padding">
                 <?php
                 if ($feature_image_alt !== "") { ?>
-                    <div class="border-b-2 py-5 font-normal text-xs leading-snug">
-                        <?php print $feature_image_alt; ?>
-                    </div>
-                <?php
-                }
-                ?>
-
-                <?php
-                if ($currentEvent['general']['credits'] !== "") { ?>
-                    <div class="border-b-2 py-7 font-normal text-lg leading-snug">
-                        <?php print $currentEvent['general']['credits']; ?>
-                    </div>
-                <?php
-                }
-                ?>
-
-                <div class="py-7">
-                    <?php
-                    if ($currentEvent['general']['short_description'] !== "") { ?>
-                        <div class="font-medium text-lg leading-wider mb-7 border-b-2">
-                            <?php print $currentEvent['general']['short_description']; ?>
+                    <div class="pl-3 w-full grid-10 border-b-2 py-5">
+                        <div class="col-span-8 col-start-3 is-style-caption">
+                            <?php print $feature_image_alt; ?>
                         </div>
-                    <?php
-                    }
-                    ?>
+                    </div>
+                <?php
+                }
+                ?>
 
-                    <div class="font-normal text-m leading-normal">
+                <div class="pl-3 w-full grid-10 py-7 border-b-2">
+                    <div class="col-span-8 col-start-3">
                         <?php
-
                         the_content();
-
                         ?>
                     </div>
                 </div>
+
+                <?php
+                if ($currentEvent['general']['credits'] !== "") { ?>
+                    <div class="pl-3 w-full grid-10 py-7">
+                        <div class="col-span-8 col-start-3">
+                            <h6><?php print $currentEvent['general']['credits']; ?></h6>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
