@@ -18,7 +18,7 @@ $template = array(
 
 ?>
 <div class="w-full flex justify-center">
-    <div class="container grid-6 md:grid-16 border-t-2 border-b-2 md:border-l-2 md:border-r-2">
+    <div class="container grid-6 md:grid-16 border-b-2 md:border-l-2 md:border-r-2">
         <div class="col-span-full md:col-span-2 bg-<?php echo $stripeColor; ?> md:shadow--bottom-right md:gap-collapse--right">
             <div class="flex justify-center md:justify-start md:items-center leading-normal md:h-full py-4 md:py-0">
                 <div>
