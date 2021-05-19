@@ -112,5 +112,9 @@ a {
     .pt-1\/4 {
       padding-top: 25%;
     }
+
+    .min-h--big {
+      min-height: 28rem;
+    }
   }
 }
