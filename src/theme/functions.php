@@ -27,3 +27,7 @@ add_action('wp_enqueue_scripts', 'wp_theme_styles');
 add_action('after_setup_theme', 'load_editor_styles');
 
 add_action('enqueue_block_editor_assets', 'js_editor_block_styles');
+
+add_action('init', 'remove_comment_support', 100);
+add_action('admin_menu', 'remove_admin_menus');
+add_action('wp_before_admin_bar_render', 'admin_bar_render');

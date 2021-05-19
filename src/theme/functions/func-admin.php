@@ -42,7 +42,6 @@ function gutenberg_editor_assets()
 
 function remove_comment_support()
 {
-    remove_post_type_support('post');
     remove_post_type_support('post', 'comments');
     remove_post_type_support('page', 'comments');
 }
