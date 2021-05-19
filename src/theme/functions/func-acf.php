@@ -14,4 +14,4 @@ function KS_acf_register_json_fields()
         }
     }
 }
-add_action("init", "KS_acf_register_json_fields");
+// add_action("init", "KS_acf_register_json_fields");
