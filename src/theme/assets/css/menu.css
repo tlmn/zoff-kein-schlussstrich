@@ -1,32 +1,22 @@
-#top-menu {
-  & ul {
-    & li {
-      @apply inline-block;
-      @apply mx-5;
-      & a {
-        @apply uppercase;
-        @apply font-medium;
-        @apply text-m;
-        &:hover {
-          @apply underline;
-        }
-      }
-    }
-  }
+#top-menu ul li, #sub-menu ul li, #footer-menu ul li {
+  @apply inline-block;
+  @apply mx-5;
+}
+#top-menu ul li a {
+  @apply uppercase;
+  @apply font-medium;
+  @apply text-m;
 }
 
-#sub-menu {
-  & ul {
-    & li {
-      @apply inline-block;
-      @apply mx-5;
-      & a {
-        @apply font-medium;
-        @apply text-base;
-        &:hover {
-          @apply underline;
-        }
-      }
-    }
-  }
+#top-menu ul li a:hover {
+  @apply underline;
+}
+
+#sub-menu ul li a {
+  @apply font-medium;
+  @apply text-base;
+}
+
+#sub-menu ul li a:hover {
+  @apply underline;
 }
