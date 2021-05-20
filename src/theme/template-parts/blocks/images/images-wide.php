@@ -9,7 +9,7 @@ $count_images = count($images);
 
 ?>
 <div class="w-full flex justify-center">
-    <div class="container grid-6 md:grid-16 border-2">
+    <div class="container grid-6 md:grid-16 md:border-2 border-t-2 border-b-2">
         <?php
         if ($count_images === 1) {
         ?>
@@ -27,7 +27,7 @@ $count_images = count($images);
                 <?php
                 foreach ($images as $image) {
                 ?>
-                    <div <?php if ($image['image']['description'] !== "") { ?>class="mb-4"<?php } ?>>
+                    <div <?php if ($image['image']['description'] !== "") { ?>class="mb-4" <?php } ?>>
                         <div class="h-full relative">
                             <img class="border-0 shadow--bottom-right w-full h-full object-cover" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" />
                         </div>
