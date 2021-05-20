@@ -4,9 +4,10 @@
 
 a {
   @apply underline;
-  &:hover {
-    @apply no-underline;
-  }
+}
+
+a:hover {
+  @apply no-underline;
 }
 
 h1 {
