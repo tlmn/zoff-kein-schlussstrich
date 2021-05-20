@@ -1,6 +1,9 @@
 .calendar__select {
   max-width: 80px;
-  @screen md {
+}
+
+@screen md {
+  .calendar__select {
     max-width: none;
   }
 }
