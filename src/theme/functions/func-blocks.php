@@ -179,6 +179,31 @@ function acf_blocks()
             ),
             'render_template' => 'template-parts/blocks/general/marquee.php',
         ));
+
+        acf_register_block_type(array(
+            'name'              => 'general/logos',
+            'title'             => __('Partner / Logos'),
+            'description'       => __('Partner / Logos'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+            ),
+            'render_template' => 'template-parts/blocks/general/logos.php',
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'general/upcoming-teaser',
+            'title'             => __('Aktuelles Block'),
+            'description'       => __('Aktuelles Block'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+                'jsx' => true
+            ),
+            'render_template' => 'template-parts/blocks/general/upcoming-teaser.php',
+        ));
     }
 }
 
@@ -195,6 +220,9 @@ function page_allowed_block_types($allowed_blocks, $post)
         "acf/images-images-wide",
         "acf/programme-division-teaser",
         "acf/general-marquee",
+        "acf/general-logos",
+        "acf/images-image-inline",
+        "acf/general-upcoming-teaser",
         "acf/general-blocks-horizontal-line",
         "acf/general-blocks-container-constraint",
         "acf/general-blocks-container-tab",
