@@ -31,13 +31,13 @@ $template = array(
 
         <div class="col-span-full md:col-span-14 flex flex-col">
             <div class="grid-14 border-b-2 md:gap-collapse--left">
-                <div class="font-sans text-black col-span-full md:col-span-10 md:col-start-2 py-5 md:py-8 text-2xl md:text-5xl font-medium leading-snug md:leading-tight ">
+                <div class="px-2 md:px-0 font-sans text-black col-span-full md:col-span-10 md:col-start-2 py-5 md:py-8 text-2xl md:text-5xl font-medium leading-snug md:leading-tight ">
                     <?php echo $subtitle; ?>
                 </div>
             </div>
 
             <div class="grid-14">
-                <div class="col-span-full md:col-span-10 md:col-start-2 py-7 font-sans text-black font-medium text-lg leading-wider">
+                <div class="px-2 md:px-0 col-span-full md:col-span-10 md:col-start-2 py-7 font-sans text-black font-medium text-lg leading-wider">
                     <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
                 </div>
             </div>
