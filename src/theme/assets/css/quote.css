@@ -8,9 +8,7 @@
 }
 
 @screen md {
-  .textQuote {
-    .textQuote-body {
+  .textQuote .textQuote-body {
       @apply text-4xl;
-    }
   }
 }
