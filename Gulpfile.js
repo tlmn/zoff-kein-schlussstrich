@@ -204,7 +204,6 @@ gulp.task(
   gulp.series([
     "dev:theme:postcss",
     "dev:theme:copy",
-    "dev:theme:favicons",
     "dev:plugin:copy",
     "dev:watch",
   ])
