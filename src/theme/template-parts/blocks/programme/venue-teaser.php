@@ -18,14 +18,14 @@ $template = array(
 ?>
 <div class="w-full flex justify-center border-t-2 border-b-2  md:min-h--big" style="margin-top: -2px; margin-bottom: -2px;">
     <div class="container grid-6 md:grid-16 md:border-l-2 md:border-r-2">
-        <div class="col-span-2 h-full flex justify-center items-center border-r-2 gap-collapse">
+        <div class="col-span-2 h-full flex justify-center items-center border-r-2 md:gap-collapse">
             <span class="font-sans font-bold leading-tight py-3 text-5xl">
                 <?php echo $venueNumber; ?>
             </span>
         </div>
 
-        <div class="md:border-r-2 col-span-4 md:col-span-1 flex gap-collapse--right h-full items-center justify-center md:relative">
-            <span class="font-sans font-medium md:absolute md:rotate--270 text-xl leading-snug md:max-w-max md:whitespace-nowrap px-3 md:px-0">
+        <div class="md:border-r-2 col-span-4 md:col-span-1 flex md:gap-collapse--right h-full items-center justify-center md:relative">
+            <span class="font-sans font-medium md:absolute md:rotate--270 text-xl leading-snug md:max-w-max md:whitespace-nowrap">
                 <?php echo $venueName; ?>
             </span>
         </div>
