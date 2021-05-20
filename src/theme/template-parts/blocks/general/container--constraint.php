@@ -5,7 +5,7 @@
  */
 
 
-$allowed_blocks = array('core/heading', 'core/paragraph', 'core/button', 'acf/images-image-inline');
+$allowed_blocks = array('core/heading', 'core/paragraph', 'core/button', 'acf/images-image-inline', 'acf/general-logos');
 
 ?>
 <div class="w-full flex justify-center row-collapse">
