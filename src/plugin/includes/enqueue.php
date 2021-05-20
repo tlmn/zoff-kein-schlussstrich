@@ -16,7 +16,7 @@ add_action('init', function () {
 
         $asset_manifest = json_decode(file_get_contents(KSCAL_ASSET_MANIFEST), true)['files'];
 
-        if (isset($asset_manifest['main.css'])) {
+        if (isset($asset_manifest['main.css']) && is_page("kalender")) {
             wp_enqueue_style('ks', KSCAL_WIDGET_URL . "/build" . $asset_manifest['main.css']);
         }
 
