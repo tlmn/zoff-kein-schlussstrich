@@ -8,9 +8,11 @@
 @import "./footer.css";
 @import "./button.css";
 @import "./menu.css";
+@import "./logos.css";
 @import "./calendar.css";
 @import "./button.css";
 @import "./quote.css";
+@import "./quote-big.css";
 
 
 .wp-block {
