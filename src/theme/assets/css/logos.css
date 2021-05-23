@@ -1,0 +1,22 @@
+.wp-block-logos__title {
+  @apply mb-6;
+  @apply block;
+}
+
+.wp-block-logos__wrapper {
+  @apply inline-flex flex-wrap gap-4;
+}
+.wp-block-logos__item {
+  @apply inline-block;
+}
+
+.wp-block-logos__item {
+  max-height: theme("spacing.6");
+  width: unset;
+}
+
+@screen md {
+  .wp-block-logos__item {
+    max-height: theme("spacing.8");
+  }
+}
