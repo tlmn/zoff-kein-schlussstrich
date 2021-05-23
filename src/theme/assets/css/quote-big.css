@@ -1,5 +1,6 @@
 .wp-block-quote-big {
   @apply relative;
+  @apply border-t-2 border-b-2 border-black;
 }
 
 .wp-block-quote-big__author {
