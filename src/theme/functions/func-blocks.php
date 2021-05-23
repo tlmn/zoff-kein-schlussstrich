@@ -204,6 +204,19 @@ function acf_blocks()
             ),
             'render_template' => 'template-parts/blocks/general/upcoming-teaser.php',
         ));
+
+        acf_register_block_type(array(
+            'name'              => 'general/quote-big',
+            'title'             => __('Zitat groß'),
+            'description'       => __('Zitat groß'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+                'jsx' => true
+            ),
+            'render_template' => 'template-parts/blocks/general/quote-big.php',
+        ));
     }
 }
 
@@ -227,6 +240,7 @@ function page_allowed_block_types($allowed_blocks, $post)
         "acf/general-blocks-container-constraint",
         "acf/general-blocks-container-tab",
         "acf/general-blocks-text-quote",
+        "acf/general-quote-big",
         "acf/programme-venue-teaser",
         "acf/programme-hero--with-image",
         "acf/programme-hero--no-image",
