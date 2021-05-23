@@ -9,15 +9,19 @@ $title = get_field("title") ?: "Titel";
 $logos = get_field("logos") ?: [];
 
 ?>
-<div class="w-full">
-    <span class="h7">
+<div class="wp-block-logos">
+    <span class="h7 wp-block-logos__title">
         <?php echo $title; ?>
     </span>
-    <div class="">
+    <div class="wp-block-logos__wrapper">
         <?php
         foreach ($logos as $logo) {
         ?>
-            <img srcset="<?php echo wp_get_attachment_image_srcset($logo['image']['ID']); ?>" />
+            <a href="<?php echo $logo['url']; ?>" target="_blank" rel="noreferrer">
+                <?php
+                echo wp_get_attachment_image($logo['image']['ID'], '', "", ["class" => "wp-block-logos__item"]);
+                ?>
+            </a>
         <?php
         }
         ?>
