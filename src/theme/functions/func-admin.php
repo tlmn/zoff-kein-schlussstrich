@@ -37,7 +37,12 @@ function remove_admin_menus()
 function gutenberg_editor_assets()
 {
     add_theme_support('editor-styles');
-    wp_enqueue_style('my-gutenberg-editor-styles', get_theme_file_uri('/style.css'), FALSE);
+    wp_enqueue_style('gutenberg-editor-styles', get_theme_file_uri('/style.css'), FALSE);
+}
+
+function gutenberg_disable_custom_colors()
+{
+    add_theme_support('disable-custom-colors');
 }
 
 function remove_comment_support()

@@ -1,0 +1,15 @@
+.wp-block-landing-hero {
+  @apply container;
+}
+
+.wp-block-landing-hero__quote {
+  @apply px-2;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+  @apply absolute top-0 z-20 is-style-quote--large text-white overflow-hidden h-full;
+}
+
+@screen md {
+  .wp-block-landing-hero__quote {
+    @apply pl-8 pr-7;
+  }
+}

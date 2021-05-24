@@ -4,7 +4,7 @@
 }
 
 .wp-block-logos__wrapper {
-  @apply inline-flex flex-wrap gap-4;
+  @apply flex flex-col items-center gap-4;
   & a {
     @apply flex items-center;
   }
@@ -15,12 +15,16 @@
 }
 
 .wp-block-logos__item {
-  max-height: theme("spacing.6");
+  max-height: theme("spacing.7");
   width: unset;
 }
 
 @screen md {
   .wp-block-logos__item {
     max-height: theme("spacing.8");
+  }
+
+  .wp-block-logos__wrapper {
+    @apply inline-flex flex-row flex-wrap;
   }
 }

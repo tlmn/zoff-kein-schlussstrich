@@ -21,6 +21,8 @@ $template = array(
 );
 ?>
 
-<div class="wp-block-quote-big bg-<?php echo $bgColor; ?>">
-    <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
+<div class="wp-block-quote-big">
+    <div class="wp-block-quote-big__wrapper bg-<?php echo $bgColor; ?>">
+        <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
+    </div>
 </div>

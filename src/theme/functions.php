@@ -26,6 +26,7 @@ add_filter('allowed_block_types', 'page_allowed_block_types', 10, 2);
 
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
 add_action('after_setup_theme', 'load_editor_styles');
+add_action('after_setup_theme', 'gutenberg_disable_custom_colors');
 
 add_action('enqueue_block_editor_assets', 'js_editor_block_styles');
 

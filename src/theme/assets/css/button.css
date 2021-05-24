@@ -1,19 +1,35 @@
-
 .wp-block-button__link {
-  @apply py-3;
-  @apply bg-black;
-  @apply font-sans text-white font-medium leading-none;
-  @apply rounded-full;
-  @apply text-lg;
-  @apply inline-block;
-  @apply cursor-pointer;
+  @apply text-m leading-snug font-normal;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  @apply animated;
+  @apply bg-black text-white;
+  &:hover {
+    @apply bg-white text-black;
+  }
 }
-.wp-block-button__link::after {
-  content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjIiIGZpbGw9Im5vbmUiPjxwYXRoIHN0cm9rZT0iI0U1RTVFNSIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNLjEzMyAxMWgyMk0xMS40MjYgMjEuMjkzbDExLTExTTIyLjQyNiAxMS43MDdsLTExLTExIi8+PC9zdmc+");
+
+.is-style-button--blue {
+  & .wp-block-button__link {
+    @apply bg-blue text-white;
+    &:hover {
+      @apply bg-white text-blue;
+    }
+  }
+}
+
+.is-style-button--black {
+  & .wp-block-button__link {
+    @apply bg-black text-white;
+    &:hover {
+      @apply bg-white text-black;
+    }
+  }
 }
 
 @screen md {
-  .wp-block-button {
-    @apply mt-7;
+  .wp-block-button__link {
+    @apply text-lg leading-none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   }
 }

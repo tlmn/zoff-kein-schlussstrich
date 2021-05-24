@@ -32,7 +32,7 @@ $template = array(
             </span>
         </div>
         <div class="col-span-full md:col-span-15 grid-6 md:grid-15">
-            <div class="col-span-full md:col-span-8 p-2 md:p-7 order-last md:order-1">
+            <div class="col-span-full md:col-span-8 p-2 py-7 md:p-7 order-last md:order-1">
                 <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
             </div>
 

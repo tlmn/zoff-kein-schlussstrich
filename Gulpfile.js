@@ -180,16 +180,16 @@ gulp.task("dev:watch", function () {
     .watch("src/theme/assets/js/**/*.js", gulp.series(["dev:theme:copy:JS"]))
     .on("change", browserSync.reload);
   gulp
-    .watch(
-      "src/theme/assets/css/**/*.css",
-      gulp.series(["dev:theme:postcss"])
-    )
+    .watch("src/theme/assets/css/**/*.css", gulp.series(["dev:theme:postcss"]))
     .on("change", browserSync.reload);
   gulp
     .watch("src/theme/**/*.php", gulp.series(["dev:theme:copy"]))
     .on("change", browserSync.reload);
   gulp
     .watch("src/theme/**/*.json", gulp.series(["dev:theme:copy"]))
+    .on("change", browserSync.reload);
+  gulp
+    .watch("src/theme/**/*.svg", gulp.series(["dev:theme:copy"]))
     .on("change", browserSync.reload);
   gulp
     .watch(

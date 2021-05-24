@@ -5,13 +5,13 @@
  */
 
 
-$allowed_blocks = array('core/heading', 'core/paragraph', 'core/button');
+$allowed_blocks = array('core/heading', 'core/paragraph', 'core/button', 'acf/general-logos');
 
 $title = get_field('title') ?: 'Titel';
 $bgColor = get_field('bgColor') ?: 'white';
 
 ?>
-<div class="border-t-2 border-b-2 row-collapse flex justify-center bg-<?php echo $bgColor; ?>">
+<div class="border-t-2 border-b-2 row-collapse flex justify-center bg-<?php echo $bgColor; ?> z-10 relative">
     <div class="container grid-6 md:grid-16 md:border-l-2 md:border-r-2">
         <div class="md:border-r-2 col-span-full md:col-span-1 flex md:gap-collapse--right h-full items-center justify-center md:relative">
             <span class="font-sans font-medium md:absolute md:rotate--270 text-3xl md:text-xl py-3 md:py-0 leading-snug md:max-w-max md:whitespace-nowrap">

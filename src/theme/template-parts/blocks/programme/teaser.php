@@ -51,7 +51,7 @@ $template = array(
             </div>
         </div>
 
-        <div class="col-span-full md:col-span-9 py-7 md:p-7 px-2 md:px-0 ">
+        <div class="col-span-full md:col-span-9 py-7 md:p-7 px-2 ">
             <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
         </div>
     </div>

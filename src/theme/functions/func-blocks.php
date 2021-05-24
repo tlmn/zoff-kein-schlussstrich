@@ -217,6 +217,18 @@ function acf_blocks()
             ),
             'render_template' => 'template-parts/blocks/general/quote-big.php',
         ));
+
+        acf_register_block_type(array(
+            'name'              => 'general/landing-hero',
+            'title'             => __('Landing Hero'),
+            'description'       => __('Landing Hero'),
+            'category'          => 'formatting',
+            'supports'          => array(
+                'align' => true,
+                'mode' => false,
+            ),
+            'render_template' => 'template-parts/blocks/general/landing-hero.php',
+        ));
     }
 }
 
@@ -241,6 +253,7 @@ function page_allowed_block_types($allowed_blocks, $post)
         "acf/general-blocks-container-tab",
         "acf/general-blocks-text-quote",
         "acf/general-quote-big",
+        "acf/general-landing-hero",
         "acf/programme-venue-teaser",
         "acf/programme-hero--with-image",
         "acf/programme-hero--no-image",

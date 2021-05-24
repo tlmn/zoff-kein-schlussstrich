@@ -39,4 +39,21 @@ wp.domReady(() => {
     name: "author",
     label: "Autor:in",
   });
+
+  wp.blocks.registerBlockStyle("core/button", {
+    name: "button--blue",
+    label: "blau",
+  });
+
+  wp.blocks.registerBlockStyle("core/button", {
+    name: "button--yellow",
+    label: "gelb",
+  });
+
+  wp.blocks.registerBlockStyle("core/button", {
+    name: "button--black",
+    label: "schwarz",
+  });
+
+  wp.blocks.unregisterBlockStyle("core/button", ["outline", "squared", "fill"]);
 });

@@ -83,6 +83,18 @@ if (get_field('themeColor', $post->ID)) {
 					echo file_get_contents(get_template_directory() . '/assets/icons/logo-header.svg');
 					?>
 				</a>
+				<div class="block md:hidden">
+					<button id="hamburger--open">
+						<?php
+						echo file_get_contents(get_template_directory() . '/assets/images/svg/hamburger--open.svg');
+						?>
+					</button>
+					<button id="hamburger--close" class="hidden">
+						<?php
+						echo file_get_contents(get_template_directory() . '/assets/images/svg/hamburger--close.svg');
+						?>
+					</button>
+				</div>
 				<div class="hidden md:block">
 					<div id="top-menu">
 						<?php
@@ -94,7 +106,17 @@ if (get_field('themeColor', $post->ID)) {
 		</div>
 	</div>
 
-	<div class="header shadow--bottom relative bg-lightGray" id="sub-menu__container" style="display:none">
+	<div id="top-menu--mobile" class="relative hidden">
+		<div class="absolute right-0 flex flex-col justify-between bg-black text-white h-screen z-50 overflow-scroll">
+			<?php
+			wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 2));
+			wp_nav_menu(array('theme_location' => 'footer', 'depth' => 1, 'menu_class' => 'is-style-text-running', 'container_id' => 'footer-menu'));
+
+			?>
+		</div>
+	</div>
+
+	<div class="header shadow--bottom relative bg-lightGray z-50 overflow-hidden" id="sub-menu__container" style="display:none">
 		<div class="absolute flex h-full w-full z-10">
 			<div class="bg-yellow h-full flex-1"></div>
 		</div>
