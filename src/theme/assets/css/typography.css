@@ -16,17 +16,17 @@ h1 {
 }
 
 h2 {
-  @apply font-normal text-3xl leading-snug;
+  @apply font-medium text-3xl leading-snug;
   @apply mb-5;
 }
 
 h3 {
-  @apply font-normal text-2xl leading-snug;
+  @apply font-medium text-2xl leading-snug;
   @apply mb-4;
 }
 
 h4 {
-  @apply font-normal text-2xl leading-snug;
+  @apply font-medium text-2xl leading-snug;
   @apply mb-4;
 }
 
@@ -75,7 +75,7 @@ p,
 }
 
 .is-style-quote--small {
-  @apply font-black italic text-lg leading-none;
+  @apply font-bold italic text-lg leading-none;
 }
 
 .is-style-caption {
