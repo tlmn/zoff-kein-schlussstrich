@@ -14,7 +14,7 @@
   @apply inline-block;
 }
 
-.wp-block-logos__item img {
+.wp-block-logos__item {
   max-height: 50px;
   width: unset;
   max-width: 200px;
@@ -22,7 +22,7 @@
 }
 
 @screen md {
-  .wp-block-logos__item img {
+  .wp-block-logos__item {
     max-height: 50px;
     width: unset;
     max-width: 200px;
