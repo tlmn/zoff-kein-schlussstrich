@@ -1,5 +1,5 @@
 .wp-block-logos__title {
-  @apply mb-6;
+  @apply my-6;
   @apply block;
 }
 
@@ -14,13 +14,13 @@
   @apply inline-block;
 }
 
-.wp-block-logos__item {
+.wp-block-logos__item img {
   max-height: theme("spacing.7");
   width: unset;
 }
 
 @screen md {
-  .wp-block-logos__item {
+  .wp-block-logos__item img {
     max-height: theme("spacing.8");
   }
 
