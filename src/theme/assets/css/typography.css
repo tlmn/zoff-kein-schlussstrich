@@ -22,7 +22,7 @@ h2 {
 
 h3 {
   @apply font-medium text-2xl leading-snug;
-  @apply mb-4;
+  @apply mb-5;
 }
 
 h4, .h4 {
@@ -54,12 +54,13 @@ span.h7 {
   @apply mb-6;
 }
 
-p,
-.is-style-default,
-.is-style-text--running {
+p:not(:last-child),
+.is-style-default:not(:last-child),
+.is-style-text--running:not(:last-child) {
   @apply font-normal text-m leading-normal;
   @apply mb-5;
 }
+
 
 .is-style-text--small {
   @apply font-normal text-base leading-normal;
