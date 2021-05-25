@@ -12,6 +12,12 @@ module.exports = {
     },
   },
   theme: {
+    fontWeight: {
+      normal: 400,
+      medium: 500,
+      bold: 700,
+      black: 900,
+    },
     extend: {
       gridTemplateColumns: {
         6: "repeat(6, minmax(0, 1fr))",
