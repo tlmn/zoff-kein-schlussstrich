@@ -25,7 +25,7 @@ h3 {
   @apply mb-4;
 }
 
-h4 {
+h4, .h4 {
   @apply font-medium text-2xl leading-snug;
   @apply mb-4;
 }
@@ -84,7 +84,7 @@ p,
 
 @screen md {
   h2 {
-    @apply font-normal text-5xl leading-tight;
+    @apply text-5xl leading-tight;
     @apply mb-5;
   }
 
@@ -93,7 +93,7 @@ p,
   }
 
   h4 {
-    @apply font-medium text-2xl leading-snug;
+    @apply text-2xl leading-snug;
     @apply mb-4;
   }
 
