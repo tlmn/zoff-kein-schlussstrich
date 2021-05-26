@@ -1,5 +1,7 @@
 .wp-block-landing-hero {
   @apply container;
+  max-height: 80vh;
+  min-height: 800px;
 }
 
 .wp-block-landing-hero__quote {
