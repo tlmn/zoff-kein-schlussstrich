@@ -95,10 +95,15 @@ if (get_field('themeColor', $post->ID)) {
 						?>
 					</button>
 				</div>
-				<div class="hidden md:block">
+				<div class="hidden md:flex md:items-center">
 					<div id="top-menu">
 						<?php
 						wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 1));
+						?>
+					</div>
+					<div id="socialmedia-menu">
+						<?php
+						wp_nav_menu(array('theme_location' => 'social-media', 'depth' => 1));
 						?>
 					</div>
 				</div>

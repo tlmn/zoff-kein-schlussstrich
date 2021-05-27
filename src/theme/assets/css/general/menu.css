@@ -5,6 +5,15 @@
   @apply mx-5;
 }
 
+.menu-social-media-container ul li {
+  @apply inline-block;
+  @apply mx-2;
+}
+
+.menu-social-media-container ul li:last-child {
+  @apply mr-0;
+}
+
 #top-menu ul li a,
 #footer-menu ul li a,
 #menu-submenue li a {
