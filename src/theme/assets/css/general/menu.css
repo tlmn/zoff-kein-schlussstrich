@@ -1,0 +1,65 @@
+#top-menu ul li,
+#menu-submenue li,
+#footer-menu ul li {
+  @apply inline-block;
+  @apply mx-5;
+}
+
+#top-menu ul li a,
+#footer-menu ul li a,
+#menu-submenue li a {
+  @apply no-underline;
+  @apply font-medium;
+  @apply text-m;
+  letter-spacing: 0.03em;
+}
+
+#top-menu ul li a,
+#footer-menu ul li {
+  @apply uppercase;
+}
+
+#top-menu ul li a:hover,
+#footer-menu ul li a:hover,
+#menu-submenue li a:hover {
+  @apply underline;
+}
+
+#menu-submenue li a {
+  @apply font-medium;
+  @apply text-base;
+}
+
+.menu-top-menue-container > ul > li {
+  @apply border-white border-b-2;
+}
+
+.menu-top-menue-container > ul > li > a {
+  @apply h6;
+  @apply uppercase;
+  @apply no-underline;
+  @apply px-6;
+  @apply py-4;
+  @apply block;
+  @apply mb-0 !important;
+}
+
+.menu-top-menue-container .sub-menu > li {
+  @apply bg-blue shadow--bottom-right border-0;
+}
+
+.menu-top-menue-container .sub-menu > li > a  {
+  @apply no-underline;
+  @apply px-6;
+  @apply py-3;
+  @apply text-black;
+  @apply block;
+}
+
+.menu-top-menue-container #footer-menu ul li {
+  @apply block !important;
+}
+
+.current-menu-item {
+  @apply underline;
+}

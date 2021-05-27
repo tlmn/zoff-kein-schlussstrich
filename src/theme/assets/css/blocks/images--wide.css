@@ -1,0 +1,13 @@
+.wp-block-images--wide {
+  @apply w-full flex justify-center;
+}
+
+.wp-block-images--wide__wrapper {
+  @apply container grid-6 border-t-2 border-b-2;
+}
+
+@screen md {
+  .wp-block-images--wide__wrapper {
+    @apply grid-16 border-2;
+  }
+}

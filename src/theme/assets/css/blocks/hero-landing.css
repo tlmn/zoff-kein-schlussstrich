@@ -1,0 +1,73 @@
+.wp-block-hero-landing {
+  @apply container;
+  @apply relative;
+  @apply flex;
+}
+
+.wp-block-hero-landing__wrapper {
+  @apply container grid-6 border-b-2 border-black;
+}
+
+.wp-block-hero-landing__quote {
+  @apply px-2;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+  @apply absolute top-0 z-20 is-style-quote--large text-white overflow-hidden h-full;
+  @apply -mt-2 -ml-4;
+}
+
+.wp-block-hero-landing__tab-content--desktop {
+  @apply hidden flex-col flex-col-reverse items-end gap-5;
+}
+
+.wp-block-hero-landing__tab-content--mobile {
+  @apply w-full justify-start flex flex-col gap-5;
+  @apply p-3;
+}
+
+.wp-block-hero-landing__quote-wrapper {
+  @apply col-span-full relative h-full w-full;
+}
+
+.wp-block-hero-landing__quote-source__wrapper {
+  @apply absolute top-0 flex pl-2 items-end w-full h-full text-3xl pr-7;
+}
+
+.wp-block-hero-landing__quote-source {
+  @apply text-white italic text-m;
+}
+
+@screen md {
+  .wp-block-hero-landing {
+    max-height: 80vh;
+    min-height: 800px;
+  }
+
+  .wp-block-hero-landing__quote {
+    @apply pl-8 pr-7;
+    @apply mt-0 ml-0;
+  }
+
+  .wp-block-hero-landing__wrapper {
+    @apply border-l-2 border-r-2 grid-16;
+  }
+
+  .wp-block-hero-landing__tab-content--desktop {
+    @apply flex;
+  }
+
+  .wp-block-hero-landing__tab-content--mobile {
+    @apply hidden;
+  }
+
+  .wp-block-hero-landing__quote-wrapper {
+    @apply col-span-14;
+  }
+
+  .wp-block-hero-landing__quote-source__wrapper {
+    @apply pl-0 justify-end;
+  }
+
+  .wp-block-hero-landing__quote-source {
+    @apply rotate--90-landing;
+  }
+}

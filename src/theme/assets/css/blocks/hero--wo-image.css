@@ -1,0 +1,44 @@
+.wp-block-hero--wo-image {
+  min-height: 80vh;
+  @apply w-full flex justify-center;
+}
+
+.wp-block-hero--wo-image__wrapper {
+  @apply container grid-6 border-b-2;
+}
+
+.wp-block-hero--wo-image__content-wrapper {
+  @apply col-span-full flex flex-col;
+}
+
+.wp-block-hero--wo-image__subtitle-wrapper {
+  @apply px-2 py-5 col-span-full;
+}
+
+.wp-block-hero--wo-image__description-wrapper {
+  @apply px-2 col-span-full py-7;
+  @apply is-style-text--medium;
+}
+
+@screen md {
+  .wp-block-hero--wo-image {
+    max-height: 80vh;
+    min-height: 800px;
+  }
+
+  .wp-block-hero--wo-image__wrapper {
+    @apply border-l-2 border-r-2 grid-16;
+  }
+
+  .wp-block-hero--wo-image__content-wrapper {
+    @apply col-span-14;
+  }
+
+  .wp-block-hero--wo-image__subtitle-wrapper {
+    @apply col-span-10 col-start-2 py-8 px-0;
+  }
+
+  .wp-block-hero--wo-image__description-wrapper {
+    @apply col-span-10 col-start-2 px-0;
+  }
+}

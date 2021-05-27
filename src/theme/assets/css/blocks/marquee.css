@@ -1,0 +1,17 @@
+.wp-block-marquee {
+  @apply w-full flex justify-center;
+}
+
+.wp-block-marquee__wrapper {
+  @apply container py-3 shadow--bottom;
+}
+
+.wp-block-marquee__text {
+   @apply w-full h-full block h7 overflow-hidden;
+}
+
+@screen md {
+  .wp-block-marquee__wrapper {
+    @apply py-5 border-l-2 border-r-2;
+  }
+}

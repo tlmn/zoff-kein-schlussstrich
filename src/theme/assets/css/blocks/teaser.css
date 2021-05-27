@@ -1,0 +1,21 @@
+.teaser__tab {
+  @apply border-l-2;
+}
+
+.teaser__tab-text__wrapper {
+  @apply h-full flex items-center;
+}
+
+.teaser__tab-text {
+  @apply rotate-center--90 text-3xl font-medium leading-wider;
+}
+
+@screen md {
+  .teaser__tab {
+    @apply col-span-1;
+  }
+
+  .teaser__tab-text {
+    @apply pt-2;
+  }
+}

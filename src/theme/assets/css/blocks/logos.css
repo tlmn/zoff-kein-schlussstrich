@@ -1,0 +1,39 @@
+.wp-block-logos {
+  @apply my-4 pt-4;;
+}
+
+.wp-block-logos__title {
+  @apply my-6;
+  @apply block;
+}
+
+.wp-block-logos__wrapper {
+  @apply flex flex-col items-center gap-7;
+  & a {
+    @apply flex items-center;
+  }
+}
+
+.wp-block-logos__item {
+  @apply inline-block;
+}
+
+.wp-block-logos__item {
+  max-height: 50px;
+  width: unset;
+  max-width: 200px;
+  height: unset;
+}
+
+@screen md {
+  .wp-block-logos__item {
+    max-height: 50px;
+    width: unset;
+    max-width: 200px;
+    height: unset;
+  }
+
+  .wp-block-logos__wrapper {
+    @apply inline-flex flex-row flex-wrap;
+  }
+}

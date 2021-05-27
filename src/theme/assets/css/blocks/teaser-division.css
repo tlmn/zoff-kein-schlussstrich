@@ -1,0 +1,36 @@
+.wp-block-teaser-division {
+  @apply border-black border-t-2 border-b-2 flex justify-center;
+}
+
+.wp-block-teaser-division__wrapper {
+  @apply container grid-6;
+}
+
+.wp-block-teaser-division__content__wrapper {
+  @apply border-l-2;
+}
+
+.wp-block-teaser-division__image__wrapper {
+  @apply border-r-2;
+}
+
+.wp-block-teaser-division__image {
+  @apply border-0 shadow--left;
+}
+
+@screen md {
+  .wp-block-teaser-division {
+  }
+
+  .wp-block-teaser-division__wrapper {
+    @apply grid-16;
+  }
+
+  .wp-block-teaser-division__content__wrapper {
+    @apply col-span-7 p-7;
+  }
+
+  .wp-block-teaser-division__image__wrapper {
+    @apply col-span-8;
+  }
+}

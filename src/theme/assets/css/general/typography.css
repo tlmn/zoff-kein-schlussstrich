@@ -1,0 +1,11 @@
+* {
+  @apply font-sans;
+}
+
+a {
+  @apply underline;
+}
+
+a:hover {
+  @apply no-underline;
+}

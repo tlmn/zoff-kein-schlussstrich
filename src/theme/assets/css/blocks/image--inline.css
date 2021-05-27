@@ -1,0 +1,21 @@
+.wp-block-image--inline {
+  @apply w-full flex flex-col;
+}
+
+.wp-block-image--inline__image {
+  @apply border-0 shadow--bottom-right;
+}
+
+.wp-block-image--inline__caption {
+  @apply mt-6 is-style-caption;
+}
+
+@screen md {
+  .wp-block-image--inline {
+    @apply py-8;
+  }
+
+  .wp-block-image--inline__caption {
+    @apply mt-4;
+  }
+}

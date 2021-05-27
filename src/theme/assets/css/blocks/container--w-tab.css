@@ -1,0 +1,41 @@
+.wp-block-container--w-tab {
+  @apply border-b-2 row-collapse flex justify-center z-10 relative;
+}
+
+.wp-block-container--w-tab__wrapper {
+  @apply container grid-6;
+}
+
+.wp-block-container--w-tab__tab {
+  @apply border-b-2 border-t-2  col-span-full flex h-full items-center justify-center;
+}
+
+.wp-block-container--w-tab__tab-text {
+  @apply font-sans font-medium text-3xl py-3 leading-snug;
+}
+
+.wp-block-container--w-tab__content {
+  @apply col-span-full py-7 px-3;
+}
+
+@screen md {
+  .wp-block-container--w-tab {
+    @apply border-t-2;
+  }
+
+  .wp-block-container--w-tab__wrapper {
+    @apply grid-16 border-l-2 border-r-2;
+  }
+
+  .wp-block-container--w-tab__tab {
+    @apply border-b-0 border-t-0 border-r-2 col-span-1 gap-collapse--right relative;
+  }
+
+  .wp-block-container--w-tab__tab-text {
+    @apply absolute rotate--270 text-xl py-0 max-w-max whitespace-nowrap;
+  }
+
+  .wp-block-container--w-tab__content {
+    @apply col-span-11 col-start-4 py-8 px-0;
+  }
+}

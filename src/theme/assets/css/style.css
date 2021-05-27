@@ -2,19 +2,37 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/components";
 
-@import "./fonts.css";
-@import "./base.css";
-@import "./typography.css";
-@import "./footer.css";
-@import "./button.css";
-@import "./menu.css";
-@import "./logos.css";
-@import "./calendar.css";
-@import "./button.css";
-@import "./quote.css";
-@import "./quote-big.css";
-@import "./landing-hero.css";
+@import "./general/base.css";
+@import "./general/button.css";
+@import "./general/editor.css";
+@import "./general/fonts.css";
+@import "./general/footer.css";
+@import "./general/menu.css";
+@import "./general/shadows.css";
+@import "./general/typography/block-styles.css";
+@import "./general/typography/headings.css";
+@import "./general/typography.css";
 
+@import "./calendar/calendar.css";
+
+@import "./blocks/container--w-tab.css";
+@import "./blocks/container.css";
+@import "./blocks/hero--w-image.css";
+@import "./blocks/hero--wo-image.css";
+@import "./blocks/hero-landing.css";
+@import "./blocks/images--wide.css";
+@import "./blocks/image--inline.css";
+@import "./blocks/logos.css";
+@import "./blocks/marquee.css";
+@import "./blocks/quote.css";
+@import "./blocks/quote--big.css";
+@import "./blocks/teaser.css";
+@import "./blocks/teaser-division.css";
+@import "./blocks/teaser-upcoming.css";
+@import "./blocks/teaser-venue.css";
+
+@import "./event/single--w-image.css";
+@import "./event/single.css";
 
 .wp-block {
   max-width: 1100px !important;

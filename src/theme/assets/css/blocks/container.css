@@ -1,0 +1,21 @@
+.wp-block-container {
+  @apply w-full flex justify-center row-collapse;
+}
+
+.wp-block-container__wrapper {
+  @apply container grid-6  py-7 px-2 border-t-2 border-b-2;
+}
+
+.wp-block-container__content {
+  @apply col-span-full;
+}
+
+@screen md {
+  .wp-block-container__wrapper {
+    @apply px-0 grid-16 border-l-2 border-r-2;
+  }
+
+  .wp-block-container__content {
+    @apply col-span-10 col-start-4;
+  }
+}

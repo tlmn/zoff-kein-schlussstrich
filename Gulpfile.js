@@ -4,7 +4,6 @@ const gulp = require("gulp");
 const postcss = require("gulp-postcss");
 const browserSync = require("browser-sync").create();
 const cleancss = require("gulp-clean-css");
-const nested = require("postcss-nested");
 const run = require("gulp-run-command").default;
 const replace = require("gulp-replace");
 const favicons = require("gulp-favicons");
@@ -177,23 +176,44 @@ gulp.task("dev:watch", function () {
     notify: false,
   });
   gulp
-    .watch("src/theme/assets/js/**/*.js", gulp.series(["dev:theme:copy:JS"]))
+    .watch(
+      "src/theme/assets/js/**/*.js",
+      { interval: 750 },
+      gulp.series(["dev:theme:copy:JS"])
+    )
     .on("change", browserSync.reload);
   gulp
-    .watch("src/theme/assets/css/**/*.css", gulp.series(["dev:theme:postcss"]))
+    .watch(
+      "src/theme/assets/css/**/*.css",
+      { interval: 750 },
+      gulp.series(["dev:theme:postcss"])
+    )
     .on("change", browserSync.reload);
   gulp
-    .watch("src/theme/**/*.php", gulp.series(["dev:theme:copy"]))
+    .watch(
+      "src/theme/**/*.php",
+      { interval: 750 },
+      gulp.series(["dev:theme:copy"])
+    )
     .on("change", browserSync.reload);
   gulp
-    .watch("src/theme/**/*.json", gulp.series(["dev:theme:copy"]))
+    .watch(
+      "src/theme/**/*.json",
+      { interval: 750 },
+      gulp.series(["dev:theme:copy"])
+    )
     .on("change", browserSync.reload);
   gulp
-    .watch("src/theme/**/*.svg", gulp.series(["dev:theme:copy"]))
+    .watch(
+      "src/theme/**/*.svg",
+      { interval: 750 },
+      gulp.series(["dev:theme:copy"])
+    )
     .on("change", browserSync.reload);
   gulp
     .watch(
       ["src/plugin/*", "src/plugin/widget/build/*/**"],
+      { interval: 750 },
       gulp.series(["dev:plugin:copy"])
     )
     .on("change", browserSync.reload);

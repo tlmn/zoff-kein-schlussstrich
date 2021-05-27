@@ -1,267 +1,224 @@
 <?php
+$BLOCKS = array(
+    array(
+        'name'              => 'container',
+        'title'             => __('Container'),
+        'description'       => __('Container für Elemente wie Überschriften oder Absätze'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/container.php',
+    ),
 
-function acf_blocks()
+    array(
+        'name'              => 'container--w-tab',
+        'title'             => __('Container mit Lasche'),
+        'description'       => __('Container mit Lasche'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/container--w-tab.php',
+    ),
+
+    array(
+        'name'              => 'hero-landing',
+        'title'             => __('Hero Landing'),
+        'description'       => __('Hero Landing'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+        ),
+        'render_template' => 'template-parts/blocks/hero-landing.php',
+    ),
+
+    array(
+        'name'              => 'hero--w-image',
+        'title'             => __('Hero mit Bild'),
+        'description'       => __('Hero mit Bild'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/hero--w-image.php',
+    ),
+
+    array(
+        'name'              => 'hero--wo-image',
+        'title'             => __('Hero ohne Bild'),
+        'description'       => __('Hero ohne Bild'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/hero--wo-image.php',
+    ),
+
+    array(
+        'name'              => 'images--wide',
+        'title'             => __('Bilder breit'),
+        'description'       => __('Bilder breit'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/images--wide.php',
+    ),
+    array(
+        'name'              => 'image--inline',
+        'title'             => __('Bild inline'),
+        'description'       => __('Bild inline'),
+        'parent'            => ['acf/container', 'acf/container--w-tab'],
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/image--inline.php',
+    ),
+
+    array(
+        'name'              => 'logos',
+        'title'             => __('Partner / Logos'),
+        'description'       => __('Partner / Logos'),
+        'category'          => 'formatting',
+        'parent'            => ['acf/container', 'acf/container--w-tab'],
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+        ),
+        'render_template' => 'template-parts/blocks/logos.php',
+    ),
+
+    array(
+        'name'              => 'marquee',
+        'title'             => __('Laufband'),
+        'description'       => __('Laufband'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+        ),
+        'render_template' => 'template-parts/blocks/marquee.php',
+    ),
+
+    array(
+        'name'              => 'quote',
+        'title'             => __('Fließtext-Zitat'),
+        'description'       => __('Fließtext-Zitat'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/quote.php',
+    ),
+
+    array(
+        'name'              => 'quote--big',
+        'title'             => __('Zitat groß'),
+        'description'       => __('Zitat groß'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/quote--big.php',
+    ),
+    array(
+        'name'              => 'teaser-division',
+        'title'             => __('Teaser Säule'),
+        'description'       => __('Teaser Säule'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => false,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/teaser-division.php',
+    ),
+    array(
+        'name'              => 'teaser-programme',
+        'title'             => __('Teaser Programm'),
+        'description'       => __('Teaser Programm'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/teaser-programme.php',
+    ),
+    array(
+        'name'              => 'teaser-venue',
+        'title'             => __('Teaser Veranstaltungsort'),
+        'description'       => __('Teaser Veranstaltungsort'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/teaser-venue.php',
+    ),
+
+    array(
+        'name'              => 'teaser-upcoming',
+        'title'             => __('Aktuelles Block'),
+        'description'       => __('Aktuelles Block'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'align' => true,
+            'mode' => false,
+            'jsx' => true
+        ),
+        'render_template' => 'template-parts/blocks/teaser-upcoming.php',
+    ),
+
+
+);
+
+function register_acf_blocks()
 {
+    global $BLOCKS;
     if (function_exists('acf_register_block_type')) {
-        acf_register_block_type(array(
-            'name'              => 'feature',
-            'title'             => __('Feature'),
-            'description'       => __('Feature'),
-            'render_template'   => 'template-parts/blocks/feature.php',
-            'category'          => 'formatting',
-            'icon'              => 'format-quote',
-            'is_preview'        => true,
-            'keywords'          => array('feature'),
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'programme/division-teaser',
-            'title'             => __('Teaser Säule'),
-            'description'       => __('Teaser Säule'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => false,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/programme/division-teaser.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general-blocks/horizontal-line',
-            'title'             => __('Horizontale Linie'),
-            'description'       => __('Horizontale Linie'),
-            'render_template'   => 'template-parts/blocks/general/horizontal-line.php',
-            'category'          => 'formatting',
-            'icon'              => 'minus',
-            'is_preview'        => true,
-            'keywords'          => array('horizonzal', 'linie'),
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general-blocks/container-constraint',
-            'title'             => __('Container schmal'),
-            'description'       => __('Schmaler Container für Elemente wie Überschriften oder Absätze'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/general/container--constraint.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general-blocks/container-wide',
-            'title'             => __('Text-Container breit'),
-            'description'       => __('Breiter Container für Elemente wie Überschriften oder Absätze'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/general/container--wide.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general-blocks/container-tab',
-            'title'             => __('Text-Container mit Lasche'),
-            'description'       => __('Text-Container mit Lasche'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/general/container--with-tab.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general-blocks/text-quote',
-            'title'             => __('Fließtext-Zitat'),
-            'description'       => __('Fließtext-Zitat'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/general/text-quote.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'images/images-wide',
-            'title'             => __('Bilder breit'),
-            'description'       => __('Bilder breit'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/images/images-wide.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'images/image-inline',
-            'title'             => __('Bild inline'),
-            'description'       => __('Bild inline'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/images/image-inline.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'programme/venue-teaser',
-            'title'             => __('Teaser Veranstaltungsort'),
-            'description'       => __('Teaser Veranstaltungsort'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/programme/venue-teaser.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'programme/hero--with-image',
-            'title'             => __('Hero Säule mit Bild'),
-            'description'       => __('Hero Säule mit Bild'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/programme/division-hero--with-image.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'programme/hero--no-image',
-            'title'             => __('Hero Säule ohne Bild'),
-            'description'       => __('Hero Säule ohne Bild'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/programme/division-hero--no-image.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'programme/teaser',
-            'title'             => __('Progammteaser'),
-            'description'       => __('Progammteaser'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/programme/teaser.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general/marquee',
-            'title'             => __('Laufband'),
-            'description'       => __('Laufband'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-            ),
-            'render_template' => 'template-parts/blocks/general/marquee.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general/logos',
-            'title'             => __('Partner / Logos'),
-            'description'       => __('Partner / Logos'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-            ),
-            'render_template' => 'template-parts/blocks/general/logos.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general/upcoming-teaser',
-            'title'             => __('Aktuelles Block'),
-            'description'       => __('Aktuelles Block'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/general/upcoming-teaser.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general/quote-big',
-            'title'             => __('Zitat groß'),
-            'description'       => __('Zitat groß'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/blocks/general/quote-big.php',
-        ));
-
-        acf_register_block_type(array(
-            'name'              => 'general/landing-hero',
-            'title'             => __('Landing Hero'),
-            'description'       => __('Landing Hero'),
-            'category'          => 'formatting',
-            'supports'          => array(
-                'align' => true,
-                'mode' => false,
-            ),
-            'render_template' => 'template-parts/blocks/general/landing-hero.php',
-        ));
+        foreach ($BLOCKS as $BLOCK)
+            acf_register_block_type($BLOCK);
     }
 }
 
 
 function page_allowed_block_types($allowed_blocks, $post)
 {
-
+    global $BLOCKS;
     $allowed_blocks = array(
-        "core/paragraph",
-        "core/button",
-        "core/list",
-        "core/heading",
-        "acf/feature",
-        "acf/images-images-wide",
-        "acf/programme-division-teaser",
-        "acf/general-marquee",
-        "acf/general-logos",
-        "acf/images-image-inline",
-        "acf/general-upcoming-teaser",
-        "acf/general-blocks-horizontal-line",
-        "acf/general-blocks-container-constraint",
-        "acf/general-blocks-container-tab",
-        "acf/general-blocks-text-quote",
-        "acf/general-quote-big",
-        "acf/general-landing-hero",
-        "acf/programme-venue-teaser",
-        "acf/programme-hero--with-image",
-        "acf/programme-hero--no-image",
-        "acf/programme-teaser",
+        'core/paragraph',
+        'core/button',
+        'core/list',
+        'core/heading'
     );
 
+    foreach ($BLOCKS as $BLOCK) {
+        array_push($allowed_blocks, 'acf/' . $BLOCK['name']);
+    }
+
     if ($post->post_type === 'page') {
-        $allowed_blocks[] = 'core/shortcode';
+        array_push($allowed_blocks, 'core/shortcode');
     }
 
     return $allowed_blocks;
