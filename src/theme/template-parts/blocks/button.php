@@ -11,13 +11,13 @@ $buttonText = get_field("buttonText") ?: 'Buttontext';
 $link = get_field("link") ?: '';
 
 ?>
-<a class="wp-block-button wp-block-button--<?php echo $buttonColor; ?>" href="<?php echo $link ?>">
+<a class="wp-block-button wp-block-button--<?php echo $buttonColor; ?> <?php if ($arrowType === "left") { ?> flex-col-reverse <?php } ?>" href="<?php echo $link ?>">
     <div class="wp-block-button__text">
         <?php
         echo $buttonText;
         ?>
     </div>
-    <div class="ml-2">
+    <div class="<?php if ($arrowType === "left") { ?> ml-2 <?php } else { ?>mr-2<?php } ?>">
         <div style="transform: rotate(
             <?php
             if ($arrowType === "left") {
