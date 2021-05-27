@@ -51,8 +51,13 @@ wp.domReady(() => {
   });
 
   wp.blocks.registerBlockStyle("core/button", {
+    name: "button--black--arrow-right",
+    label: "schwarz: Pfeil rechts",
+  });
+
+  wp.blocks.registerBlockStyle("core/button", {
     name: "button--black",
-    label: "schwarz",
+    label: "schwarz: kein Pfeil",
   });
 
   wp.blocks.unregisterBlockStyle("core/button", ["outline", "squared", "fill"]);

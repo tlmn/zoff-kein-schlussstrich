@@ -10,7 +10,7 @@ $feature_image = get_field('featureImage') ?: 1;
 $allowed_blocks = array(
     'core/heading',
     'core/paragraph',
-    'core/button',
+    'acf/button',
 );
 
 $template = array(
@@ -22,7 +22,7 @@ $template = array(
         'content'   => 'Untertitel',
         'level'     => 4,
     )),
-    array('core/button', array(
+    array('acf/button', array(
         'content'   => 'Weiter',
     ))
 );

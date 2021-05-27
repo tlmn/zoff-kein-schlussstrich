@@ -1,6 +1,17 @@
 <?php
 $BLOCKS = array(
     array(
+        'name'              => 'button',
+        'title'             => __('Button'),
+        'description'       => __('Button'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'mode' => false,
+        ),
+        'render_template' => 'template-parts/blocks/button.php',
+    ),
+
+    array(
         'name'              => 'container',
         'title'             => __('Container'),
         'description'       => __('Container für Elemente wie Überschriften oder Absätze'),
@@ -208,7 +219,6 @@ function page_allowed_block_types($allowed_blocks, $post)
     global $BLOCKS;
     $allowed_blocks = array(
         'core/paragraph',
-        'core/button',
         'core/list',
         'core/heading'
     );

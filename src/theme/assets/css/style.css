@@ -3,7 +3,6 @@
 @import "tailwindcss/components";
 
 @import "./general/base.css";
-@import "./general/button.css";
 @import "./general/editor.css";
 @import "./general/fonts.css";
 @import "./general/footer.css";
@@ -15,6 +14,7 @@
 
 @import "./calendar/calendar.css";
 
+@import "./blocks/button.css";
 @import "./blocks/container--w-tab.css";
 @import "./blocks/container.css";
 @import "./blocks/hero--w-image.css";

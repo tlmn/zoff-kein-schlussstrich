@@ -8,7 +8,7 @@
 $allowed_blocks = array(
     'core/heading',
     'core/paragraph',
-    'core/button',
+    'acf/button',
     'acf/logos'
 );
 

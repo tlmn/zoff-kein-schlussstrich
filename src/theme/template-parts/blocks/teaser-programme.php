@@ -7,7 +7,7 @@
 $programmeLinks = get_field('programmeLinks') ?: '1';
 $featureImage = get_field('featureImage');
 
-$allowed_blocks = array('core/heading', 'core/paragraph', 'core/button');
+$allowed_blocks = array('core/heading', 'core/paragraph', 'acf/button');
 
 $template = array(
     array('core/heading', array(
@@ -17,7 +17,7 @@ $template = array(
     array('core/paragraph', array(
         'content' => 'Bundesweites & interdisziplinäres Theaterprojekt „Kein Schlussstrich!“ thematisiert künstlerisch die Taten und Hintergründe des NSU künstlerisch zu thematisieren. Mit dem Vorhaben sollen die Perspektiven der Familien der Opfer und der migrantischen Communities in den Fokus der Öffentlichkeit gebracht werden.',
     )),
-    array('core/button', array(
+    array('acf/button', array(
         'content' => 'About',
     )),
 );

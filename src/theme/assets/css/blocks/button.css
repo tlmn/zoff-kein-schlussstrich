@@ -1,0 +1,49 @@
+.wp-block-button {
+  @apply text-m leading-snug font-normal;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  @apply animated;
+  @apply relative;
+  @apply no-underline;
+  @apply inline-flex;
+  @apply px-3 py-2;
+}
+
+.wp-block-button--black svg {
+  stroke: white;
+  @apply animated;
+}
+
+.wp-block-button--black:hover svg {
+  stroke: black;
+}
+
+.wp-block-button--blue svg {
+  stroke: white;
+  @apply animated;
+}
+
+.wp-block-button--blue:hover svg {
+  stroke: theme("colors.blue");
+}
+
+.wp-block-button--blue {
+  @apply bg-blue text-white;
+  &:hover {
+    @apply bg-white text-blue;
+  }
+}
+
+.wp-block-button--black {
+  @apply bg-black text-white;
+  &:hover {
+    @apply bg-white text-black;
+  }
+}
+
+@screen md {
+  .wp-block-button {
+    @apply text-lg leading-none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+}
