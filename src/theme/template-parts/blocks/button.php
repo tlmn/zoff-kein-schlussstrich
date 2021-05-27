@@ -10,15 +10,25 @@ $buttonColor = get_field("buttonColor") ?: 'black';
 $buttonText = get_field("buttonText") ?: 'Buttontext';
 $link = get_field("link") ?: '';
 
+if ($is_preview === true) {
 ?>
-<a class="wp-block-button wp-block-button--<?php echo $buttonColor; ?> <?php if ($arrowType === "left") { ?> flex-col-reverse <?php } ?>" href="<?php echo $link ?>">
-    <div class="wp-block-button__text">
+    <div class="wp-block-button wp-block-button--<?php echo $buttonColor; ?> <?php if ($arrowType === "left") { ?> flex-row-reverse <?php } ?>" href="<?php echo $link ?>">
+    <?php
+} else {
+    ?>
+        <a class="wp-block-button wp-block-button--<?php echo $buttonColor; ?> <?php if ($arrowType === "left") { ?> flex-row-reverse <?php } ?>" href="<?php echo $link ?>">
         <?php
-        echo $buttonText;
+    } ?>
+        <div class="wp-block-button__text">
+            <?php
+            echo $buttonText;
+            ?>
+        </div>
+        <?php
+        if ($arrowType !== "none") {
         ?>
-    </div>
-    <div class="<?php if ($arrowType === "left") { ?> ml-2 <?php } else { ?>mr-2<?php } ?>">
-        <div style="transform: rotate(
+            <div class="<?php if ($arrowType === "left") { ?> mr-2 <?php } else { ?>ml-2<?php } ?>">
+                <div style="transform: rotate(
             <?php
             if ($arrowType === "left") {
                 echo "180deg";
@@ -29,9 +39,16 @@ $link = get_field("link") ?: '';
             }
             ?>
                                         )">
-            <?php
-            echo file_get_contents(get_template_directory() . '/assets/icons/arrow.svg');
-            ?>
-        </div>
-    </div>
-</a>
+                    <?php
+                    echo file_get_contents(get_template_directory() . '/assets/icons/arrow.svg');
+                    ?>
+                </div>
+            </div>
+        <?php
+        }
+        if ($is_preview === true) {
+        ?>
+    </div><?php
+        } else {
+            ?></a><?php
+                } ?>
