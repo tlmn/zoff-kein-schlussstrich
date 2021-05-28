@@ -16,7 +16,7 @@ h3,
 
 h4,
 .h4 {
-  @apply font-medium text-2xl leading-snug;
+  @apply font-medium text-2xl leading-wide;
 }
 
 h4 {
@@ -50,7 +50,7 @@ span.h7 {
 
   h4,
   .h4 {
-    @apply text-2xl leading-snug;
+    @apply text-2xl leading-wide;
   }
 
   h4 {
