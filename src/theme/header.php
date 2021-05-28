@@ -116,7 +116,7 @@ if (get_field('themeColor', $post->ID)) {
 			<?php
 			wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 2));
 			wp_nav_menu(array('theme_location' => 'footer', 'depth' => 1, 'menu_class' => 'is-style-text-running', 'container_id' => 'footer-menu'));
-			wp_nav_menu(array('theme_location' => 'social-media', 'depth' => 1));
+			wp_nav_menu(array('theme_location' => 'social-media--white', 'depth' => 1));
 
 			?>
 		</div>
