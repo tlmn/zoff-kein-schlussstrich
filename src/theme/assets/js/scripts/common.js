@@ -1,8 +1,12 @@
 var $ = jQuery;
 $(document).ready(function () {
+  const regex = new RegExp("programm");
+
   var submenuHeight = 40;
   $("#sub-menu__container").css("display", "block");
-  $("#sub-menu__container").height(5);
+  $("#sub-menu__container").height(
+    regex.test(window.location.pathname) ? submenuHeight : 5
+  );
 
   $(".menu-item__programme > a").click(function (event) {
     event.preventDefault();

@@ -16,8 +16,8 @@ $template = array(
 );
 
 ?>
-<div class="w-full flex justify-center border-t-2 border-b-2  md:min-h--big" style="margin-top: -2px; margin-bottom: -2px;">
-    <div class="container grid-6 md:grid-16 md:border-l-2 md:border-r-2">
+<div class="w-full flex justify-center md:min-h--big" style="margin-top: -2px; margin-bottom: -2px;">
+    <div class="container grid-6 md:grid-16 md:border-l-2 md:border-r-2 border-t-2 border-b-2">
         <div class="col-span-2 h-full flex justify-center items-center border-r-2 md:gap-collapse">
             <span class="font-sans font-bold leading-tight py-3 text-5xl">
                 <?php echo $venueNumber; ?>
@@ -31,7 +31,7 @@ $template = array(
         </div>
 
         <div class="col-span-full border-t-2 md:border-t-0 md:col-span-10 md:grid-10">
-            <div class="md:col-span-8 md:col-start-2 md:flex md:items-center py-7 md:py-0 px-2 md:px-0">
+            <div class="md:col-span-8 md:col-start-2 md:flex md:items-center py-7 md:py-3 px-2 md:px-0">
                 <div class="body-text">
                     <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
                 </div>

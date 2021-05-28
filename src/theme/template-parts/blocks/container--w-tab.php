@@ -16,8 +16,8 @@ $title = get_field('title') ?: 'Titel';
 $bgColor = get_field('bgColor') ?: 'white';
 
 ?>
-<div class="wp-block-container--w-tab bg-<?php echo $bgColor; ?>">
-    <div class="wp-block-container--w-tab__wrapper">
+<div class="wp-block-container--w-tab">
+    <div class="wp-block-container--w-tab__wrapper bg-<?php echo $bgColor; ?>">
         <div class="wp-block-container--w-tab__tab">
             <span class="wp-block-container--w-tab__tab-text">
                 <?php echo $title; ?>

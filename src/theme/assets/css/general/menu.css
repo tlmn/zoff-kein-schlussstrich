@@ -7,7 +7,7 @@
 
 .menu-social-media-container ul li {
   @apply inline-block;
-  @apply mx-2;
+  @apply mx-3;
 }
 
 .menu-social-media-container ul li:last-child {
@@ -47,7 +47,6 @@
   @apply h6;
   @apply uppercase;
   @apply no-underline;
-  
   @apply py-4;
   @apply block;
   @apply mb-0 !important;

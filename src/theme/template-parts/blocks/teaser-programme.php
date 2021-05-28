@@ -24,8 +24,8 @@ $template = array(
 
 ?>
 
-<div class="border-t-2 border-b-2 row-collapse flex justify-center">
-    <div class="container grid-6 md:grid-16 md:border-l-2 md:border-r-2">
+<div class="row-collapse flex justify-center">
+    <div class="container grid-6 md:grid-16 md:border-l-2 md:border-r-2 border-t-2 border-b-2">
         <div class="md:border-r-2 col-span-full md:col-span-1 flex md:gap-collapse--right h-full items-center justify-center md:relative">
             <span class="font-sans font-medium md:absolute md:rotate--270 text-3xl md:text-xl py-3 md:py-0 leading-snug md:max-w-max md:whitespace-nowrap">
                 Programm

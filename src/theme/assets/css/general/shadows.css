@@ -2,4 +2,8 @@
   .shadow--left {
     filter: drop-shadow(-4px 0px 4px rgba(0, 0, 0, 0.25));
   }
+
+  .shadow--right {
+    filter: drop-shadow(6px 0px 4px rgba(0, 0, 0, 0.25));
+  }
 }

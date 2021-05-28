@@ -1,9 +1,9 @@
 .wp-block-container--w-tab {
-  @apply border-b-2 row-collapse flex justify-center z-10 relative;
+  @apply row-collapse flex justify-center z-10 relative;
 }
 
 .wp-block-container--w-tab__wrapper {
-  @apply container grid-6;
+  @apply border-b-2 container grid-6;
 }
 
 .wp-block-container--w-tab__tab {
@@ -19,12 +19,8 @@
 }
 
 @screen md {
-  .wp-block-container--w-tab {
-    @apply border-t-2;
-  }
-
   .wp-block-container--w-tab__wrapper {
-    @apply grid-16 border-l-2 border-r-2;
+    @apply grid-16 border-l-2 border-r-2 border-t-2;
   }
 
   .wp-block-container--w-tab__tab {

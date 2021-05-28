@@ -28,22 +28,26 @@ $count_images = count($images);
                 <?php
                 foreach ($images as $image) {
                 ?>
-                    <div <?php if ($image['image']['description'] !== "") { ?>class="mb-4" <?php } ?>>
-                        <div class="h-full relative">
-                            <img class="border-0 shadow--bottom-right w-full h-full object-cover" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" />
-                        </div>
-                        <?php if ($image['image']['description'] !== "") { ?>
-                            <span class="block m-4 font-sans md:text-xs md:leading-snug"><?php echo $image['image']['description']; ?></span>
-                        <?php
-                        }
-                        ?>
+                    <div class="h-full relative">
+                        <img class="border-0 shadow--bottom-right w-full h-full object-cover" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" />
                     </div>
                 <?php
                 }
                 ?>
             </div>
-        <?php
-        }
-        ?>
+
+            <div class="col-span-full flex flex-col md:flex-row">
+                <?php
+                foreach ($images as $image) {
+                ?>
+                    <span class="flex-1 p-2 is-style-caption"><?php echo $image['image']['description']; ?></span>
+                <?php
+                }
+                ?>
+            </div>
     </div>
+<?php
+        }
+?>
+</div>
 </div>

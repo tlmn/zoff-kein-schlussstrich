@@ -1,5 +1,5 @@
 .wp-block-hero--w-image {
-  min-height: 80vh;
+  min-height: 70vh;
   @apply w-full flex justify-center;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .wp-block-hero--w-image__tab {
-  @apply col-span-full;
+  @apply shadow--right z-50;
 }
 
 .wp-block-hero--w-image__tab-text-wrapper {
@@ -43,7 +43,7 @@
   }
 
   .wp-block-hero--w-image__tab {
-    @apply col-span-2 shadow--bottom-right gap-collapse--right;
+    @apply col-span-2 shadow--right gap-collapse--right;
   }
 
   .wp-block-hero--w-image__tab-text-wrapper {
@@ -59,7 +59,7 @@
   }
 
   .wp-block-hero--w-image__image {
-    @apply shadow--left shadow--bottom-right;
+    @apply shadow--left shadow--right
   }
 
   .wp-block-hero--w-image__content-wrapper {

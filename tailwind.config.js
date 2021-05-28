@@ -114,7 +114,19 @@ module.exports = {
     100: 100,
     auto: "auto",
   },
-  plugins: [require("tailwindcss-hyphens")],
+  plugins: [
+    require("tailwindcss-hyphens"),
+    ({ addComponents }) => {
+      addComponents({
+        ".container": {
+          maxWidth: "100%",
+          "@screen md": {
+            maxWidth: "1200px",
+          },
+        },
+      });
+    },
+  ],
   future: {
     removeDeprecatedGapUtilities: true,
   },

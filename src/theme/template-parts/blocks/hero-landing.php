@@ -11,7 +11,7 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
 ?>
 <div class="wp-block-hero-landing">
     <div class="wp-block-hero-landing__wrapper">
-        <div class="wp-block-hero--w-image__tab bg-<?php echo $stripeColor; ?> flex items-end">
+        <div class="wp-block-hero--w-image__tab bg-<?php echo $stripeColor; ?> flex items-end shadow--right z-20">
             <div class="wp-block-hero-landing__tab-content--desktop">
                 <div class="mt-6">
                     <?php
@@ -43,7 +43,7 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
                     <?php echo $quote["author"]; ?>
                 </span>
             </div>
-            <div class="absolute h-full w-full top-0 left-0 z-30" style="background: #979797; mix-blend-mode: color-burn;"></div>
+            <div class="absolute h-full w-full top-0 left-0 z-30" style="background: #979797; mix-blend-mode: multiply;"></div>
             <img srcset="<?php echo wp_get_attachment_image_srcset($quote['image']['ID']) ?>" class="image-bg" alt="<?php echo array_key_exists('alt', $quote['image']) && $quote['image']['alt']; ?>" />
             <div class="hidden md:block  absolute w-full h-full top-0 left-0 z-50">
                 <div class="wp-block-hero-landing__quote" id="marquee-landing-wrapper">
