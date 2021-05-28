@@ -13,12 +13,12 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
     <div class="wp-block-hero-landing__wrapper">
         <div class="wp-block-hero--w-image__tab bg-<?php echo $stripeColor; ?> flex items-end">
             <div class="wp-block-hero-landing__tab-content--desktop">
-                <div class="">
+                <div class="mt-6">
                     <?php
                     echo file_get_contents(get_template_directory() . '/assets/images/svg/hero-date.svg');
                     ?>
                 </div>
-                <div class="mt-6">
+                <div class="">
                     <?php
                     echo file_get_contents(get_template_directory() . '/assets/images/svg/hero-description.svg');
                     ?>
@@ -48,7 +48,6 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
             <div class="hidden md:block  absolute w-full h-full top-0 left-0 z-50">
                 <div class="wp-block-hero-landing__quote" id="marquee-landing-wrapper">
                     <?php echo $quote['text']; ?>
-
                 </div>
                 <div class="wp-block-hero-landing__quote-source__wrapper">
                     <span class="wp-block-hero-landing__quote-source">

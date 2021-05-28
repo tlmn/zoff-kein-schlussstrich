@@ -16,7 +16,7 @@
 }
 
 .wp-block-hero-landing__tab-content--desktop {
-  @apply hidden flex-col flex-col-reverse items-end gap-5;
+  @apply hidden flex-col flex-col-reverse items-end;
 }
 
 .wp-block-hero-landing__tab-content--mobile {
