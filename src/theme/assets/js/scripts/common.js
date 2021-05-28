@@ -25,7 +25,6 @@ $(document).ready(function () {
     gap: 50,
     delayBeforeStart: 0,
     direction: "up",
-    duplicated: true,
   });
 
   $("#hamburger--open").click((event) => {
