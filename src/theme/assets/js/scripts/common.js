@@ -26,7 +26,6 @@ $(document).ready(function () {
 
   $("#marquee-landing-wrapper").marquee({
     duration: 10000,
-    gap: 50,
     delayBeforeStart: 0,
     direction: "up",
   });

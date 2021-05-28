@@ -112,10 +112,11 @@ if (get_field('themeColor', $post->ID)) {
 	</div>
 
 	<div id="top-menu--mobile" class="relative hidden">
-		<div class="absolute right-0 flex flex-col justify-between bg-black text-white h-screen z-50 overflow-scroll">
+		<div class="absolute right-0 flex flex-col bg-black text-white h-screen overflow-scroll" style="z-index: 100;">
 			<?php
 			wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 2));
 			wp_nav_menu(array('theme_location' => 'footer', 'depth' => 1, 'menu_class' => 'is-style-text-running', 'container_id' => 'footer-menu'));
+			wp_nav_menu(array('theme_location' => 'social-media', 'depth' => 1));
 
 			?>
 		</div>

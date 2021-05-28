@@ -50,7 +50,7 @@ $template = array(
             </div>
         </div>
 
-        <div class="col-span-full md:col-span-9 md:col-start-7 py-2 md:py-7 px-2 md:px-0 md:py-">
+        <div class="col-span-full md:col-span-9 md:col-start-7 py-7 px-2 md:px-0 ">
             <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
         </div>
     </div>
