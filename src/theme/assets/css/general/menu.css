@@ -81,6 +81,9 @@
   @apply my-3;
 }
 
+.footer .menu-social-media-container ul li {
+  @apply mx-5;
+}
 
 #top-menu--mobile ul#menu-footer {
   @apply my-4 mx-6;
