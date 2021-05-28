@@ -38,6 +38,7 @@ module.exports = {
       none: 1,
       tight: 1.05,
       snug: 1.1,
+      wide: 1.15,
       wider: 1.3,
       normal: 1.6,
     },
