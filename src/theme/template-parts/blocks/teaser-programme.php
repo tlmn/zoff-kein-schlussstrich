@@ -38,9 +38,10 @@ $template = array(
             <div class="self-end w-full flex flex-col">
                 <?php
                 $i = 1;
+
                 foreach ($programmeLinks as $programmeLink) {
                 ?>
-                    <a href="<?php echo get_permalink($programmeLink['link']->ID); ?>" class="no-underline w-full px-2 py-1 h4 mb-0 text-black shadow--bottom z-20 bg-<?php echo $programmeLink['bgColor'] ?>" style="z-index: <?php echo 100 - ($i * 10); ?>">
+                    <a href="<?php echo get_permalink($programmeLink['link']->ID); ?>" class="no-underline w-full px-2 py-1 h4 mb-0 text-black <?php if (count($programmeLinks) !== $i) { ?>shadow--bottom<?php } ?> z-20 bg-<?php echo $programmeLink['bgColor'] ?>" style="z-index: <?php echo 100 - ($i * 10); ?>">
                         <?php echo $programmeLink['link']->post_title ?>
                     </a>
                 <?php
