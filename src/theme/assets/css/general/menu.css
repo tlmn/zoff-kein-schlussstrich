@@ -9,8 +9,30 @@
   @apply inline-block;
   @apply mx-3;
 }
+#top-menu--mobile .menu-footer-container ul {
+  @apply mt-7 !important;
+  @apply mb-4 !important;
 
-.menu-social-media-container ul li:last-child {
+}
+.menu-social-media-weiss-container ul {
+  @apply flex justify-start;
+  @apply mx-6;
+  & li {
+    @apply mx-1;
+    &:first-of-type {
+      @apply ml-0;
+      & a {
+        @apply pl-0 !important;
+      }
+    }
+    & a {
+      @apply px-2 !important;
+    }
+  }
+}
+
+.menu-social-media-container ul li:last-child,
+.menu-social-media-weiss-container ul li:last-child {
   @apply mr-0;
 }
 

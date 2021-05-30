@@ -3,3 +3,11 @@
   box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.25);
   @apply py-6;
 }
+
+.footer ul li:first-of-type {
+  @apply ml-0 !important;
+}
+
+.footer ul li:last-of-type {
+  @apply mr-0 !important;
+}

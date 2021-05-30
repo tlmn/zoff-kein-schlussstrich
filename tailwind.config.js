@@ -74,7 +74,7 @@ module.exports = {
     },
     screens: {
       sm: "576px",
-      md: "1280px",
+      md: "900px",
     },
     letterSpacing: {
       normal: "0",

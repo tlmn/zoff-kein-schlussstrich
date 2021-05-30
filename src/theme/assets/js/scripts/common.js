@@ -1,12 +1,22 @@
 var $ = jQuery;
+
+$(window).resize(() => {
+  $(window).width() < 900 && $("#sub-menu__container").hide();
+});
+
 $(document).ready(function () {
   const regex = new RegExp("programm");
 
   var submenuHeight = 40;
   $("#sub-menu__container").css("display", "block");
-  $("#sub-menu__container").height(
-    regex.test(window.location.pathname) ? submenuHeight : 5
-  );
+
+  if ($(window).width() > 900) {
+    $("#sub-menu__container").height(
+      regex.test(window.location.pathname) ? submenuHeight : 5
+    );
+  } else {
+    $("#sub-menu__container").height(0);
+  }
 
   $(".menu-item__programme > a").click(function (event) {
     event.preventDefault();
@@ -33,7 +43,7 @@ $(document).ready(function () {
   $("#hamburger--open").click((event) => {
     event.preventDefault();
     $("#hamburger--close").toggle();
-    $("#top-menu--mobile").toggle();
+    $("#top-menu--mobile").toggleClass("hidden").toggleClass("flex");
     $("html, body").css("overflowY", "hidden");
     $(event.currentTarget).toggle();
   });
@@ -41,7 +51,7 @@ $(document).ready(function () {
   $("#hamburger--close").click((event) => {
     event.preventDefault();
     $("#hamburger--open").toggle();
-    $("#top-menu--mobile").toggle();
+    $("#top-menu--mobile").toggleClass("hidden").toggleClass("flex");
     $("html, body").css("overflowY", "auto");
     $(event.currentTarget).toggle();
   });

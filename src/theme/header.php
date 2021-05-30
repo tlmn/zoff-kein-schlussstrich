@@ -112,19 +112,18 @@ if (get_field('themeColor', $post->ID)) {
 	</div>
 
 	<div id="top-menu--mobile" class="relative hidden">
-		<div class="absolute right-0 flex flex-col bg-black text-white h-screen overflow-scroll" style="z-index: 100;">
+		<div class="bg-yellow flex-1"></div>
+		<div class="flex flex-col bg-black text-white h-screen overflow-scroll shadow--left" style="z-index: 1000;">
 			<?php
 			wp_nav_menu(array('theme_location' => 'navigation-menu', 'depth' => 2));
 			wp_nav_menu(array('theme_location' => 'footer', 'depth' => 1, 'menu_class' => 'is-style-text-running', 'container_id' => 'footer-menu'));
 			wp_nav_menu(array('theme_location' => 'social-media--white', 'depth' => 1));
-
 			?>
 		</div>
 	</div>
 
 	<div class="header shadow--bottom relative bg-lightGray z-50 overflow-hidden" id="sub-menu__container" style="display:none">
 		<div class="absolute flex h-full w-full z-10">
-			<div class="bg-yellow h-full flex-1"></div>
 		</div>
 		<div class="flex justify-center">
 			<div class="container grid-6 md:grid-16 z-20 relative">

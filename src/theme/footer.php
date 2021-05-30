@@ -1,5 +1,5 @@
 <div class="footer">
-    <div class="container flex md:flew-row flex-col md:justify-end md:items-center">
+    <div class="container flex md:flew-col flex-row md:justify-between md:items-center">
         <?php
         wp_nav_menu(array('theme_location' => 'footer', 'depth' => 1, 'menu_class' => 'is-style-text-running', 'container_id' => 'footer-menu'));
         ?>
