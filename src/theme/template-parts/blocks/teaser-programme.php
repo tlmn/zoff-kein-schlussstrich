@@ -35,7 +35,7 @@ $template = array(
             <div class="flex-1 w-full shadow--bottom" style="z-index: 100">
                 <img srcset="<?php echo wp_get_attachment_image_srcset($featureImage['ID']); ?>" alt="<?php echo $featureImage['alt']; ?>" class="w-full h-full object-cover" />
             </div>
-            <div class="self-end w-full flex flex-col">
+            <div class="self-end w-full flex flex-col border-b-2 md:border-0">
                 <?php
                 $i = 1;
 
