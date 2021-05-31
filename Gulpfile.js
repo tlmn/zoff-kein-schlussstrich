@@ -234,6 +234,7 @@ gulp.task(
   gulp.series([
     "build:clean",
     "build:theme:postcss",
+    "build:theme:favicons",
     "build:theme:copy",
     "build:plugin:npmInstall",
     "build:plugin:build",
