@@ -11,3 +11,8 @@
 .footer ul li:last-of-type {
   @apply mr-0 !important;
 }
+
+
+.footer ul {
+  @apply flex justify-center flex-wrap;
+}
