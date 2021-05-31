@@ -123,7 +123,7 @@ if (get_field('themeColor', $post->ID)) {
 	</div>
 
 	<div class="header shadow--bottom relative bg-lightGray z-50 overflow-hidden" id="sub-menu__container" style="display:none">
-		<div class="absolute flex h-full w-full z-10">
+		<div class="absolute flex h-full w-full z-10 bg-yellow">
 		</div>
 		<div class="flex justify-center">
 			<div class="container grid-6 md:grid-16 z-20 relative">
