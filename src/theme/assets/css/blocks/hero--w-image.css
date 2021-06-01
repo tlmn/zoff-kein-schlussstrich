@@ -36,7 +36,7 @@
 
 @screen md {
   .wp-block-hero--w-image {
-    max-height: 80vh;
+    max-height: 70vh;
     min-height: 800px;
   }
 
