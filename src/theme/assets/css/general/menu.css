@@ -13,6 +13,10 @@
   @apply mt-7 !important;
   @apply mb-4 !important;
 }
+
+.menu-top-menue-container {
+  @apply w-screen;
+}
 .menu-social-media-weiss-container ul {
   @apply flex justify-start;
   @apply mx-6;
@@ -53,6 +57,10 @@
 #footer-menu ul li a:hover,
 #menu-submenue li a:hover {
   @apply underline;
+}
+
+#top-menu--mobile ul#menu-footer {
+  @apply flex flex-col;
 }
 
 #menu-submenue li a {
