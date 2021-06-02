@@ -39,9 +39,11 @@ $count_images = count($images);
             <div class="col-span-full flex flex-col md:flex-row">
                 <?php
                 foreach ($images as $image) {
+                    if ($image['image']['description'] !== "") {
                 ?>
-                    <span class="flex-1 p-2 is-style-caption"><?php echo $image['image']['description']; ?></span>
+                        <span class="flex-1 p-2 is-style-caption"><?php echo $image['image']['description']; ?></span>
                 <?php
+                    }
                 }
                 ?>
             </div>
