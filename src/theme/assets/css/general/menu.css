@@ -17,6 +17,12 @@
 .menu-top-menue-container {
   @apply w-screen;
 }
+
+@screen md {
+  .menu-top-menue-container {
+    @apply w-auto;
+  }
+}
 .menu-social-media-weiss-container ul {
   @apply flex justify-start;
   @apply mx-6;
