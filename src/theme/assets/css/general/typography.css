@@ -9,3 +9,9 @@ a {
 a:hover {
   @apply no-underline;
 }
+
+@screen md {
+  * {
+    @apply hyphens-none !important;
+  }
+}

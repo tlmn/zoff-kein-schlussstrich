@@ -11,7 +11,7 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
 ?>
 <div class="wp-block-hero-landing">
     <div class="wp-block-hero-landing__wrapper">
-        <div class="wp-block-hero--w-image__tab bg-<?php echo $stripeColor; ?> flex items-end shadow--right z-20">
+        <div class="wp-block-hero-landing__tab bg-<?php echo $stripeColor; ?> flex items-end z-20">
             <div class="wp-block-hero-landing__tab-content--desktop">
                 <div class="mt-6">
                     <?php
@@ -35,7 +35,7 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
         </div>
 
         <div class="wp-block-hero-landing__quote-wrapper">
-            <div class="block md:hidden wp-block-hero-landing__quote">
+            <div class="block md:hidden wp-block-hero-landing__quote" id="marquee-landing-wrapper--mobile">
                 <?php echo $quote['text']; ?>
             </div>
             <div class="wp-block-hero-landing__quote-source__wrapper">
@@ -43,10 +43,10 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
                     <?php echo $quote["author"]; ?>
                 </span>
             </div>
-            <div class="absolute h-full w-full top-0 left-0 z-30 opacity-60" style="background: #979797; mix-blend-mode: multiply;"></div>
+            <div class="absolute h-full w-full top-0 left-0 z-30 opacity-60" style="background: linear-gradient(90deg, rgb(255 255 255 / 0%) 0%, rgb(89 89 89) 100%); mix-blend-mode: multiply;"></div>
             <img srcset="<?php echo wp_get_attachment_image_srcset($quote['image']['ID']) ?>" class="image-bg" alt="<?php echo array_key_exists('alt', $quote['image']) && $quote['image']['alt']; ?>" />
             <div class="hidden md:block absolute w-full h-full top-0 left-0 z-50">
-                <div class="wp-block-hero-landing__quote" id="marquee-landing-wrapper">
+                <div class="wp-block-hero-landing__quote" id="marquee-landing-wrapper--desktop">
                     <?php echo $quote['text']; ?>
                 </div>
                 <div class="wp-block-hero-landing__quote-source__wrapper">

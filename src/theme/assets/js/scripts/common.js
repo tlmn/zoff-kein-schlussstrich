@@ -34,7 +34,13 @@ $(document).ready(function () {
     duplicated: true,
   });
 
-  $("#marquee-landing-wrapper").marquee({
+  $("#marquee-landing-wrapper--desktop").marquee({
+    duration: 10000,
+    delayBeforeStart: 0,
+    direction: "up",
+  });
+
+  $("#marquee-landing-wrapper--mobile").marquee({
     duration: 10000,
     delayBeforeStart: 0,
     direction: "up",

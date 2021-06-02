@@ -8,7 +8,7 @@
 }
 
 .wp-block-hero--w-image__tab {
-  @apply shadow--right z-50;
+  @apply shadow--right z-20;
   @apply col-span-full;
 }
 

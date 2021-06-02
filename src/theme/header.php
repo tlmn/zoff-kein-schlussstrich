@@ -75,7 +75,7 @@ if (get_field('themeColor', $post->ID)) {
 </head>
 
 <body class="<?php print join(' ', get_body_class()); ?>'">
-	<div class="header bg-white flex justify-center shadow--bottom py-2 px-2 md:px-0 relative" style="z-index: 100">
+	<div class="bg-white flex header justify-center md:px-0 pb-2 pt-3 px-3 relative shadow--bottom" style="z-index: 100">
 		<div class="container grid-6 md:grid-16">
 			<div class="col-span-full flex justify-between items-center">
 				<a href="/">

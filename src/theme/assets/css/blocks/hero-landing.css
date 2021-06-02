@@ -4,6 +4,12 @@
   @apply flex;
 }
 
+
+.wp-block-hero-landing__tab {
+  @apply z-20;
+  @apply col-span-full gap-collapse;
+}
+
 .wp-block-hero-landing__wrapper {
   @apply container grid-6 border-b-2 border-black;
 }
@@ -13,7 +19,7 @@
   @apply px-2;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
   @apply absolute top-0 z-20 is-style-quote--large text-white overflow-hidden h-full;
-  @apply -mt-2 -ml-4;
+  @apply uppercase;
   z-index: 90;
 }
 
@@ -28,7 +34,7 @@
 
 .wp-block-hero-landing__quote-wrapper {
   @apply col-span-full relative h-full w-full;
-  min-height: 60vh;
+  min-height: 45vh;
 }
 
 .wp-block-hero-landing__quote-source__wrapper {
@@ -41,13 +47,18 @@
 
 @screen md {
   .wp-block-hero-landing {
-    max-height: 80vh;
-    min-height: 800px;
+    max-height: 60vh;
+    min-height: 620px;
   }
 
   .wp-block-hero-landing__quote {
-    @apply pl-8 pr-7;
-    @apply mt-0 ml-0;
+    padding-left: 20%;
+    padding-right: 10%;
+  }
+
+  .wp-block-hero-landing__tab {
+    @apply col-span-2;
+
   }
 
   .wp-block-hero-landing__wrapper {

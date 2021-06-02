@@ -12,7 +12,6 @@
 #top-menu--mobile .menu-footer-container ul {
   @apply mt-7 !important;
   @apply mb-4 !important;
-
 }
 .menu-social-media-weiss-container ul {
   @apply flex justify-start;
@@ -84,6 +83,8 @@
   @apply py-3;
   @apply text-black;
   @apply block;
+  @apply text-m;
+  @apply font-medium;
 }
 
 .menu-top-menue-container #footer-menu ul li {
