@@ -1,5 +1,11 @@
 .wp-block-images--wide {
-  @apply w-full flex justify-center;
+  @apply w-full;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
 }
 
 .wp-block-images--wide__wrapper {

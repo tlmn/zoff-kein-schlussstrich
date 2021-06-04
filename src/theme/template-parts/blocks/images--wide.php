@@ -28,8 +28,10 @@ $count_images = count($images);
                 <?php
                 foreach ($images as $image) {
                 ?>
-                    <div class="h-full relative">
-                        <img class="border-0 shadow--bottom-right w-full h-full object-cover" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" />
+                    <div class="flex">
+                        <div class="h-full relative">
+                            <img class="border-0 shadow--bottom-right w-full h-full object-cover" srcset="<?php echo wp_get_attachment_image_srcset($image['image']['ID']); ?>" alt="<?php echo $image['image']['alt']; ?>" style="height: 100%;" />
+                        </div>
                     </div>
                 <?php
                 }
