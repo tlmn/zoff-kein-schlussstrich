@@ -7,7 +7,7 @@
 
 .wp-block-hero-landing__tab {
   @apply z-20;
-  @apply col-span-full gap-collapse;
+  @apply col-span-full gap-collapse--right;
 }
 
 .wp-block-hero-landing__wrapper {
