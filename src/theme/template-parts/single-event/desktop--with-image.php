@@ -36,7 +36,6 @@
                     </span>
                 </div>
                 <div class="bg-white flex flex-1 flex-col justify-between text-black gap-collapse">
-                    <div class="mx-2 mt-3">labels</div>
                     <div class="mx-2 mb-3 mt-7">
                         <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>
                             Uhr</span>
@@ -62,7 +61,7 @@
                 }
 
                 if ($currentEvent['general']['subline'] !== "") { ?>
-                    <div class="grid-10 border-t-2">
+                    <div class="grid-10">
                         <div class="col-span-7 col-start-3 py-7">
                             <h6><?php print $currentEvent['general']['subline']; ?></h6>
                         </div>
@@ -131,7 +130,7 @@
                     endif;
                 endwhile;
 
-                if ($currentVenue['address']) {
+                if (array_key_exists("address", $currentVenue) && $currentVenue['address']) {
                     ?>
                     <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                         <div class="p-5">
@@ -150,7 +149,7 @@
 
 
                 <?php
-                if ($currentVenue['url'] !== "") { ?>
+                if (array_key_exists("url", $currentVenue) && $currentVenue['url'] !== "") { ?>
                     <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                         <div class="p-5">
                             <a href="<?php print $currentVenue['url'] ?>" target="_blank" class="underline hover:no-underline">
@@ -177,10 +176,11 @@
                 </div>
             </div>
         </div>
-        <?php
-        while ($the_query_teaser->have_posts()) : $the_query_teaser->the_post();
-            the_content();
-        endwhile;
-        wp_reset_query();
-        ?>
     </div>
+    <?php
+    while ($the_query_teaser->have_posts()) : $the_query_teaser->the_post();
+        the_content();
+    endwhile;
+    wp_reset_query();
+    ?>
+</div>

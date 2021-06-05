@@ -55,7 +55,7 @@ if ($the_query->have_posts()) :
 		$occurrences = get_fields()['meta']['occurences'];
 		$currentEvent = $occurrences[0];
 	}
-	
+
 	$currentEvent['date'] = explode(" ", $currentEvent['timestamp'])[0];
 	$currentEvent['time'] = explode(" ", $currentEvent['timestamp'])[1];
 	$currentEvent['general'] = get_fields()['meta'];

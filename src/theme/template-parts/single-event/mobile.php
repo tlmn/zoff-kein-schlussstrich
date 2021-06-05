@@ -1,5 +1,5 @@
 <div class="block md:hidden">
-    <div class="grid-6 bg-black text-white ">
+    <div class="grid-6 bg-black text-white px-3 py-2">
         <div class="col-span-1">
             <button role="button" onclick="window.history.back()">
                 <?php
@@ -22,8 +22,8 @@
 
     <div class="grid-6  bg-white text-black">
         <div class="col-span-full">
-            <div class="mx-2 mt-3 mb-7">labels</div>
-            <div class="mx-2 mb-3">
+            <!-- <div class="mx-2 mt-3 mb-7">labels</div> -->
+            <div class="mx-2 my-3">
                 <span class="text-xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>
                     Uhr</span>
                 <span class="text-xl font-medium leading-snug block"><?php the_title(); ?></span>
@@ -45,24 +45,24 @@
     <?php
     if ($feature_image_alt !== "") { ?>
         <div class="grid-6 border-b-2 ">
-            <div class="col-span-full py-5 text-xs leading-snug">
+            <div class="col-span-full py-5 px-3 text-xs leading-snug">
                 <?php print $feature_image_alt; ?>
             </div>
         </div>
     <?php
     }
 
-    if ($currentEvent['general']['credits'] !== "") { ?>
+    if (array_key_exists('credits', $currentEvent) && $currentEvent['general']['credits'] !== "") { ?>
         <div class="grid-6 border-b-2 ">
-            <div class="col-span-full py-6 text-lg font-medium leading-wider">
+            <div class="col-span-full py-6 px-3 text-lg font-medium leading-wider">
                 <?php print $currentEvent['general']['credits']; ?>
             </div>
         </div>
     <?php
     }
-    if ($currentEvent['general']['short_description'] !== "") { ?>
+    if (array_key_exists('short_description', $currentEvent) && $currentEvent['general']['short_description'] !== "") { ?>
         <div class="grid-6 border-b-2 ">
-            <div class="col-span-full py-6">
+            <div class="col-span-full py-6 px-3">
                 <span class="text-lg leading-wider font-medium">
                     <?php print $currentEvent['general']['short_description']; ?>
                 </span>
@@ -73,7 +73,7 @@
     ?>
 
     <div class="grid-6 border-b-2 ">
-        <div class="col-span-full py-6">
+        <div class="col-span-full py-6 px-3">
             <span class="text-m leading-normal">
                 <?php
                 echo the_content();
@@ -85,7 +85,7 @@
     <?php
     if ($currentEvent['general']['duration'] !== "") { ?>
         <div class="grid-6 border-b-2 ">
-            <div class="col-span-full py-6">
+            <div class="col-span-full py-6 px-3">
                 <div class="font-medium text-lg leading-wider">
                     Dauer <?php print $currentEvent['general']['duration']; ?> Minuten
                 </div>
@@ -101,7 +101,7 @@
     while (have_rows("meta")) : the_row();
         if (have_rows("occurences")) : ?>
             <div class="grid-6 border-b-2 ">
-                <div class="col-span-full py-6 text-lg font-medium">
+                <div class="col-span-full py-6 px-3 text-lg font-medium">
                     <span class="uppercase">Weitere Termine</span>
                     <?php
                     while (have_rows("occurences")) : the_row();
@@ -122,23 +122,24 @@
             </div>
         <?php
     endwhile;
+    if (array_key_exists('address', $currentVenue)) {
         ?>
-
-        <div class="grid-6 border-b-2 ">
-            <div class="col-span-full py-6 text-lg font-medium">
-                <span class="block uppercase">Ort der Veranstaltung</span>
-                <span class="block">
-                    <?php echo $currentVenue['name']; ?><br />
-                    <?php echo $currentVenue['address']['street'] . " " . $currentVenue['address']['houseNumber']; ?><br />
-                    <?php echo $currentVenue['address']['postleitzahl'] . " " . $currentVenue['address']['city']; ?><br />
-                </span>
+            <div class="grid-6 border-b-2 ">
+                <div class="col-span-full py-6 px-3 text-lg font-medium">
+                    <span class="block uppercase">Ort der Veranstaltung</span>
+                    <span class="block">
+                        <?php echo $currentVenue['name']; ?><br />
+                        <?php echo $currentVenue['address']['street'] . " " . $currentVenue['address']['houseNumber']; ?><br />
+                        <?php echo $currentVenue['address']['postleitzahl'] . " " . $currentVenue['address']['city']; ?><br />
+                    </span>
+                </div>
             </div>
-        </div>
 
         <?php
-        if ($currentVenue['url'] !== "") { ?>
+    }
+    if (array_key_exists('url', $currentVenue) && $currentVenue['url'] !== "") { ?>
             <div class="grid-6 border-b-2 ">
-                <div class="col-span-full py-6">
+                <div class="col-span-full px-3 py-6">
                     <div class="font-medium text-lg leading-wider">
                         <a href="<?php print $currentVenue['url'] ?>" target="_blank" class="underline hover:no-underline">
                             <?php print explode("/", preg_replace('#^https?://#', '', rtrim($currentVenue['url'], '/')))[0]; ?>
@@ -147,11 +148,11 @@
                 </div>
             </div>
         <?php
-        }
+    }
         ?>
 
         <div class="grid-6 border-b-2 ">
-            <div class="col-span-full py-6">
+            <div class="col-span-full py-6 px-3">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() . "/?date=" . $date . "&time=" . $time; ?>" target="_blank" class="font-medium underline hover:no-underline flex items-center text-lg">
                     <span class="mr-2">
                         <?php
