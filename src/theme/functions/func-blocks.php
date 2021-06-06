@@ -1,6 +1,41 @@
 <?php
 $BLOCKS = array(
     array(
+        'name'              => 'background-container',
+        'title'             => __('Hintergrund Container'),
+        'description'       => __('Hintergrund Container'),
+        'category'          => 'formatting',
+        'render_template' => 'template-parts/blocks/background-container.php',
+        'supports'          => array(
+            'jsx' => true
+        ),
+    ),
+
+    array(
+        'name'              => 'background-teaser',
+        'title'             => __('Hintergrund Teaser'),
+        'description'       => __('Hintergrund Teaser'),
+        'category'          => 'formatting',
+        'parent'            => ['acf/background-container'],
+        'render_template' => 'template-parts/blocks/background-teaser.php',
+        'supports'          => array(
+            'jsx' => true
+        ),
+    ),
+
+    array(
+        'name'              => 'background-readmore',
+        'title'             => __('Hintergrund mehr lesen'),
+        'description'       => __('Hintergrund mehr lesen'),
+        'category'          => 'formatting',
+        'parent'            => ['acf/background-container'],
+        'render_template' => 'template-parts/blocks/background-readmore.php',
+        'supports'          => array(
+            'jsx' => true
+        ),
+    ),
+
+    array(
         'name'              => 'button',
         'title'             => __('Button'),
         'description'       => __('Button'),
