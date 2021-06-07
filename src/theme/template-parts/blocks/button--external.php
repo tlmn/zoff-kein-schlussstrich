@@ -9,6 +9,7 @@ $arrowType = get_field("arrowType") ?: 'right';
 $buttonColor = get_field("buttonColor") ?: 'black';
 $buttonText = get_field("buttonText") ?: 'Buttontext';
 $link = get_field("link") ?: '';
+$target = get_field("openNewTab") ?: false;
 
 if ($is_preview === true) {
 ?>
@@ -16,7 +17,7 @@ if ($is_preview === true) {
     <?php
 } else {
     ?>
-        <a class="wp-block-button wp-block-button--<?php echo $buttonColor; ?> <?php if ($arrowType === "left") { ?> flex-row-reverse <?php } ?>" href="<?php echo $link ?>">
+        <a class="wp-block-button wp-block-button--<?php echo $buttonColor; ?> <?php if ($arrowType === "left") { ?> flex-row-reverse <?php } ?>" href="<?php echo $link ?>" target="<?php if($target=== true){ echo "_blank"; }?>">
         <?php
     } ?>
         <div class="wp-block-button__text">
