@@ -7,7 +7,7 @@
 $programmeLinks = get_field('programmeLinks') ?: '1';
 $featureImage = get_field('featureImage');
 
-$allowed_blocks = array('core/heading', 'core/paragraph', 'acf/button');
+$allowed_blocks = array('core/heading', 'core/paragraph', 'acf/button', 'acf/button--external');
 
 $template = array(
     array('core/heading', array(

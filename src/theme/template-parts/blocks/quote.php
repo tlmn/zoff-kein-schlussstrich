@@ -5,7 +5,9 @@
  */
 
 
-$allowed_blocks = array('core/heading', 'core/paragraph', 'acf/button');
+$allowed_blocks = array(
+    'core/heading', 'core/paragraph', 'acf/button', 'acf/button--external',
+);
 
 $template = array(
     array('core/paragraph', array(
