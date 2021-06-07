@@ -47,6 +47,17 @@ $BLOCKS = array(
     ),
 
     array(
+        'name'              => 'button--external',
+        'title'             => __('Button (externer Link)'),
+        'description'       => __('Button (externer Link)'),
+        'category'          => 'formatting',
+        'supports'          => array(
+            'mode' => false,
+        ),
+        'render_template' => 'template-parts/blocks/button--external.php',
+    ),
+
+    array(
         'name'              => 'container',
         'title'             => __('Container'),
         'description'       => __('Container für Elemente wie Überschriften oder Absätze'),
