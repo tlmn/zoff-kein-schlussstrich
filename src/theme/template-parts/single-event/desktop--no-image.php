@@ -45,14 +45,14 @@
 
                 $items = get_field("meta");
                 while (have_rows("meta")) : the_row();
-                    if (have_rows("occurences") && count(get_field("meta")["occurences"]) > 1) :
+                    if (have_rows("occurrences") && count(get_field("meta")["occurrences"]) > 1) :
                     ?>
                         <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                             <div class="p-5">
 
                                 <span class="uppercase">Weitere Termine</span>
                                 <?php
-                                while (have_rows("occurences")) : the_row();
+                                while (have_rows("occurrences")) : the_row();
                                     $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
                                     if (get_sub_field('timestamp') !== $currentEvent['timestamp']) {
                                 ?>

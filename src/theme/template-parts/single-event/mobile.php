@@ -99,12 +99,12 @@
     $items = get_field("meta");
 
     while (have_rows("meta")) : the_row();
-        if (have_rows("occurences")) : ?>
+        if (have_rows("occurrences")) : ?>
             <div class="grid-6 border-b-2 ">
                 <div class="col-span-full py-6 px-3 text-lg font-medium">
                     <span class="uppercase">Weitere Termine</span>
                     <?php
-                    while (have_rows("occurences")) : the_row();
+                    while (have_rows("occurrences")) : the_row();
                         $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
                     ?>
                         <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">

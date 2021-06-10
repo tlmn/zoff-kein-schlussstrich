@@ -590,7 +590,7 @@
           {
             "key": "field_605a0e4f3e947",
             "label": "Orte und Zeiten",
-            "name": "occurences",
+            "name": "occurrences",
             "type": "repeater",
             "instructions": "",
             "required": 0,

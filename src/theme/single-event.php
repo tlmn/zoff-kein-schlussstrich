@@ -13,13 +13,13 @@ $post_slug = $post->post_name;
 isset($_GET['date']) ? $date = $_GET['date'] : $date = 0;
 isset($_GET['time']) ? $time = $_GET['time'] : $time = 0;
 
-function occurences_where($where)
+function occurrences_where($where)
 {
-	$where = str_replace("meta_key = 'meta_occurences_$", "meta_key LIKE 'meta_occurences_%", $where);
+	$where = str_replace("meta_key = 'meta_occurrences_$", "meta_key LIKE 'meta_occurrences_%", $where);
 	return $where;
 }
 
-add_filter('posts_where', 'occurences_where');
+add_filter('posts_where', 'occurrences_where');
 
 
 if ($date !== 0  && $time !== 0) {
@@ -29,7 +29,7 @@ if ($date !== 0  && $time !== 0) {
 		'name'			=> $post->post_name,
 		'meta_query'	=> array(
 			array(
-				'key'		=> 'meta_occurences_$_timestamp',
+				'key'		=> 'meta_occurrences_$_timestamp',
 				'compare'	=> 'LIKE',
 				'value'		=> date_long($date, "-") . " " . time_long($time, ":"),
 			)
@@ -49,10 +49,10 @@ $the_query = new WP_Query($args);
 
 if ($the_query->have_posts()) :
 	if ($date !== 0  && $time !== 0) {
-		$occurrences = get_fields()['meta']['occurences'];
+		$occurrences = get_fields()['meta']['occurrences'];
 		$currentEvent = $occurrences[array_search(date_long($date, "/") . " " . time_long($time, ":"), array_column($occurrences, 'timestamp'))];
 	} else {
-		$occurrences = get_fields()['meta']['occurences'];
+		$occurrences = get_fields()['meta']['occurrences'];
 		$currentEvent = $occurrences[0];
 	}
 
