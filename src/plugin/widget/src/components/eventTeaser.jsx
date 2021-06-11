@@ -2,9 +2,15 @@ import PropTypes from "prop-types";
 import React from "react";
 import { generateSrcSet } from "../lib/lib";
 
-const EventTeaser = ({ key, borderBottom = false, ...eventData }) => (
+const EventTeaser = ({
+  key,
+  borderBottom = false,
+  ...eventData
+}) => (
   <div
-    className={`col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${borderBottom ? `border-b-2`: ``}`}
+    className={`col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${
+      borderBottom ? `border-b-2` : ``
+    }`}
     style={{ minHeight: "230px" }}
     key={key}
   >
@@ -86,22 +92,10 @@ const EventTeaser = ({ key, borderBottom = false, ...eventData }) => (
         </a>
       )}
     </div>
-    <div className="col-span-3 flex justify-end">
-      {eventData.ticketlink !== "" && (
-        <a
-          href={eventData.ticketlink}
-          className="block font-sans underline hover:no-underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Tickets
-        </a>
-      )}
-    </div>
   </div>
 );
 EventTeaser.propTypes = {
-  key: PropTypes.number,
+  key: PropTypes.string,
   borderBottom: PropTypes.bool,
 };
 

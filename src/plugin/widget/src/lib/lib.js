@@ -98,23 +98,29 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
               },
               link: generateLink(item.link, new Date(occ.timestamp).toJSON()),
               short_description: item.acf.meta.short_description,
-              tags: concat(
-                divisions.divisions !== undefined &&
-                  divisions.divisions.filter(
-                    (division) => division.id === item.division[0]
-                  )[0].name,
-                occ.venue !== undefined && occ.venue.length > 0
-                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                    ? venuesData[occ.venue[0].ID.toString()].acf.address.city
-                    : ""
-                  : "",
-                occ.venue !== undefined && occ.venue.length > 0
-                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                    ? venuesData[occ.venue[0].ID.toString()].acf.name
-                    : ""
-                  : "",
-                occ.labels !== undefined && occ.labels.length > 0 && occ.labels
-              ),
+              tags:
+                item.division.length > 0
+                  ? concat(
+                      divisions.divisions !== undefined &&
+                        divisions.divisions.filter(
+                          (division) => division.id === item.division[0]
+                        )[0].name,
+                      occ.venue !== undefined && occ.venue.length > 0
+                        ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                          ? venuesData[occ.venue[0].ID.toString()].acf.address
+                              .city
+                          : ""
+                        : "",
+                      occ.venue !== undefined && occ.venue.length > 0
+                        ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                          ? venuesData[occ.venue[0].ID.toString()].acf.name
+                          : ""
+                        : "",
+                      occ.labels !== undefined &&
+                        occ.labels.length > 0 &&
+                        occ.labels
+                    )
+                  : [],
               ticketlink: occ.ticketlink,
               time: getTime(new Date(occ.timestamp)),
               timestamp: new Date(occ.timestamp).getTime(),
@@ -156,7 +162,8 @@ export const loadEvents = async (setData, venuesData, data) => {
         window.location.port !== "" && window.location.port !== "443"
           ? `:8000`
           : ``
-      }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels`
+      }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels
+      `
   );
 
   if (!response.ok) {
@@ -165,7 +172,9 @@ export const loadEvents = async (setData, venuesData, data) => {
 
   const WPevents = await response.json();
   const parsedWPEvents = parseEvents(WPevents, venuesData, data);
-  const filterExpressionCities = jsonata(`$sort($distinct(*.city))`);
+  const filterExpressionCities = jsonata(
+    `$sort($distinct(*.venue.address.city))`
+  );
 
   setData((prev) => ({
     ...prev,
