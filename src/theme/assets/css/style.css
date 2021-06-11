@@ -4,7 +4,6 @@
 
 @import "./general/base.css";
 @import "./general/editor.css";
-@import "./general/fonts.css";
 @import "./general/footer.css";
 @import "./general/menu.css";
 @import "./general/shadows.css";
@@ -13,6 +12,7 @@
 @import "./general/typography.css";
 
 @import "./calendar/calendar.css";
+@import "./calendar/loading-spinner.css";
 
 @import "./blocks/button.css";
 @import "./blocks/background-container.css";
