@@ -1,5 +1,6 @@
 <?php
 
+include('functions/func-api.php');
 include('functions/func-style.php');
 include('functions/func-acf.php');
 include('functions/func-cpt.php');
@@ -9,6 +10,7 @@ include('functions/func-blocks.php');
 include('functions/func-admin.php');
 include('functions/func-taxonomies.php');
 
+add_action('init', 'add_cors_http_header');
 add_action('init', 'custom_taxonomy_labels', 0);
 add_action('init', 'custom_taxonomy_divisions', 0);
 add_action('init', 'custom_taxonomy_tags', 0);
