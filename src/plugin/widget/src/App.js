@@ -6,8 +6,6 @@ import Calendar from "./components/calendar";
 import { Provider as CalendarContextProvider } from "./hooks/useCalendarContext";
 
 const App = () => {
-  const urlParams = new URLSearchParams(window.location.search);
-
   const [data, setData] = useState({
     eventData: {
       initialEvents: [],
@@ -21,8 +19,8 @@ const App = () => {
       cities: [],
     },
     filters: {
-      division: urlParams.get("saeule") && urlParams.get("saeule"),
-      city: urlParams.get("ort") && urlParams.get("ort"),
+      division: null,
+      city: null,
       currentDate: 0,
     },
   });
