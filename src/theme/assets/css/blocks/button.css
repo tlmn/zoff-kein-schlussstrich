@@ -34,6 +34,13 @@
   }
 }
 
+.wp-block-button--yellow {
+  @apply bg-yellow text-white;
+  &:hover {
+    @apply bg-white text-yellow;
+  }
+}
+
 .wp-block-button--black {
   @apply bg-black text-white;
   &:hover {
