@@ -266,7 +266,8 @@ function page_allowed_block_types($allowed_blocks, $post)
     $allowed_blocks = array(
         'core/paragraph',
         'core/list',
-        'core/heading'
+        'core/heading',
+        'core/video'
     );
 
     foreach ($BLOCKS as $BLOCK) {
