@@ -5,7 +5,7 @@ h1 {
 }
 
 h2 {
-  @apply font-medium text-5xl leading-snug;
+  @apply font-medium text-4xl leading-snug;
   @apply mb-5;
   @apply hyphens-none !important;
 }
@@ -44,7 +44,7 @@ span.h7 {
 
 @screen md {
   h2 {
-    @apply text-5xl leading-tight;
+    @apply leading-tight;
     @apply mb-5;
   }
 
