@@ -18,12 +18,12 @@
                     <span class="text-6xl font-light mt-2 leading-none">
                         <?php echo date_short($currentEvent['date'], "."); ?>
                     </span>
-                    <span class="text-base font-normal">
+                    <span class="text-base font-normal mt-2 mr-2">
                         <?php echo $l_weekdays[date("N", strtotime(($currentEvent['date']))) - 1]; ?>
                     </span>
                 </div>
                 <div class="bg-white flex flex-1 flex-col justify-between text-black">
-                    <div class="mx-2 mt-3">labels</div>
+                    <div class="mx-2 mt-3">LABELS</div>
                     <div class="mx-2 mb-3">
                         <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?> Uhr</span>
                         <span class="text-3xl font-medium leading-snug block"><?php the_title(); ?></span>
@@ -49,12 +49,11 @@
                     ?>
                         <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                             <div class="p-5">
-
                                 <span class="uppercase">Weitere Termine</span>
                                 <?php
                                 while (have_rows("occurrences")) : the_row();
                                     $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
-                                    if (get_sub_field('timestamp') !== $currentEvent['timestamp']) {
+                                    if (get_sub_field('timestamp') !== $currentEvent['timestamp'] && isset(get_sub_field('venue')[0])) {
                                 ?>
                                         <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
                                             <?php
@@ -63,7 +62,6 @@
                                 <?php
                                     }
                                 endwhile; ?>
-
                             </div>
                         </div>
                     <?php
@@ -135,7 +133,7 @@
                 ?>
 
                 <div class="pl-3 w-full grid-10 py-7 border-b-2">
-                    <div class="col-span-8 col-start-3">
+                    <div class="col-span-7 col-start-3">
                         <?php
                         the_content();
                         ?>
@@ -145,7 +143,7 @@
                 <?php
                 if ($currentEvent['general']['credits'] !== "") { ?>
                     <div class="pl-3 w-full grid-10 py-7">
-                        <div class="col-span-8 col-start-3">
+                        <div class="col-span-7 col-start-3">
                             <h6><?php print $currentEvent['general']['credits']; ?></h6>
                         </div>
                     </div>

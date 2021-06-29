@@ -45,8 +45,6 @@ if ($date !== 0  && $time !== 0) {
 
 $the_query = new WP_Query($args);
 
-
-
 if ($the_query->have_posts()) :
 	if ($date !== 0  && $time !== 0) {
 		$occurrences = get_fields()['meta']['occurrences'];
@@ -59,7 +57,9 @@ if ($the_query->have_posts()) :
 	$currentEvent['date'] = explode(" ", $currentEvent['timestamp'])[0];
 	$currentEvent['time'] = explode(" ", $currentEvent['timestamp'])[1];
 	$currentEvent['general'] = get_fields()['meta'];
-	$currentVenue = get_fields($currentEvent['venue'][0]->ID);
+	if (count($currentEvent['venue']) > 0) {
+		$currentVenue = get_fields($currentEvent['venue'][0]->ID);
+	}
 	$feature_image_alt = isset(get_fields()['meta']['feature_image']['image']['alt']) ? get_fields()['meta']['feature_image']['image']['alt'] : "";
 	$feature_image_description = isset(get_fields()['meta']['feature_image']['image']['description']) ? get_fields()['meta']['feature_image']['image']['description'] : "";
 
@@ -70,7 +70,7 @@ if ($the_query->have_posts()) :
 			array(
 				'key'		=> 'teaserDivision_taxonomyDivision',
 				'compare'	=> 'LIKE',
-				'value'		=> get_the_terms(get_the_ID(), "division")[0]->term_id,
+				'value'		=> isset(get_the_terms(get_the_ID(), "division")[0]) && get_the_terms(get_the_ID(), "division")[0]->term_id,
 			)
 		)
 	);
