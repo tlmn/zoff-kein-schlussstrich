@@ -12,7 +12,7 @@ const DivisionsFilter = () => {
   } = data;
 
   return (
-    <div className="select">
+    <div className="select__wrapper">
       <select
         onChange={(event) => {
           setData((prev) => ({
