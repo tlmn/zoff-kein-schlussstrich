@@ -41,7 +41,7 @@ $template = array(
                 <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
             </div>
 
-            <div class="col-span-full md:col-span-7 order-1 md:order-last h-full w-full relative">
+            <div class="col-span-full md:col-span-7 order-1 md:order-last h-full w-full relative ratio--16-9 md:ratio--none">
                 <img srcset="<?php echo wp_get_attachment_image_srcset($feature_image['ID']); ?>" class="absolute top-0 left-0 h-full w-full object-cover shadow--left" />
             </div>
         </div>
