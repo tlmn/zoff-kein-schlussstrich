@@ -35,7 +35,7 @@
 }
 
 .wp-block-button--yellow {
-  @apply bg-yellow text-white;
+  @apply bg-yellow text-black;
   &:hover {
     @apply bg-white text-yellow;
   }
