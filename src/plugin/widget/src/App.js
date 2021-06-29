@@ -1,4 +1,5 @@
 import "./assets/style.css";
+import "./assets/select.css";
 
 import React, { useState } from "react";
 
