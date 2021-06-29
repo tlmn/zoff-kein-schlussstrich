@@ -13,6 +13,6 @@ $template = array(
 
 ?>
 
-<div>
+<div id="wp-blocks-background-container">
     <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
 </div>

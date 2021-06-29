@@ -61,4 +61,11 @@ $(document).ready(function () {
     $("html, body").css("overflowY", "auto");
     $(event.currentTarget).toggle();
   });
+
+  $(".readmore-button").each((index, value) => {
+    $(value).click(() => {
+      $(value).parent().siblings().toggle();
+      $(value).html($(value).parent().siblings().css('display') === "none" ? "mehr lesen" : "weniger lesen")
+    });
+  })
 });
