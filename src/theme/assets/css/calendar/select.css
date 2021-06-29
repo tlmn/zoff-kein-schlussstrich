@@ -1,0 +1,36 @@
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  @apply w-full;
+  outline: none;
+}
+.select__wrapper {
+  @apply w-full;
+  @apply rounded-3xl;
+  @apply py-2 px-3;
+  font-size: 1.25rem;
+  @apply cursor-pointer;
+  line-height: 1.1;
+  @apply bg-white;
+  @apply shadow--bottom;
+  grid-template-areas: "select";
+  @apply items-center;
+}
+
+select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #000;
+  clip-path: polygon(0% 0%, 10% 0%, 50% 50%, 90% 0%, 100% 0%, 50% 100%);
+  justify-self: end;
+  display: block;
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
