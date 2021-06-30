@@ -66,9 +66,8 @@ const EventTeaser = ({
           <span className="block font-sans font-medium text-xl md:text-2xl leading-snug">
             {time}h
           </span>
-          <span className="block font-sans font-medium text-xl md:text-2xl leading-snug mt-1 md:mt-2">
-            {title}
-          </span>
+          <span className="block font-sans font-medium text-xl md:text-2xl leading-snug mt-1 md:mt-2"
+            dangerouslySetInnerHTML={{ __html: title }} />
         </a>
       </div>
       {venue.name !== "" && ticketlink !== "" &&
