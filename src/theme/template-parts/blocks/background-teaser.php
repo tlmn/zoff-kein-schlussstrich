@@ -23,8 +23,8 @@ $template = array(
 
 ?>
 
-<div class="container bg-black text-white grid-6 md:grid-16 relative">
-    <div class="col-span-full md:col-span-11 md:col-start-4 py-7 md:py-8 relative">
+<div class="container md:col-start-4 px-2 md:px-0 py-7 md:py-8 bg-black text-white grid-6 md:grid-16 relative">
+    <div class="col-span-full md:col-span-11 relative ">
         <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" templateLock="all" />
     </div>
 </div>
