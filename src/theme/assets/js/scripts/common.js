@@ -65,7 +65,7 @@ $(document).ready(function () {
   $(".readmore-button").each((index, value) => {
     $(value).click(() => {
       $(value).parent().siblings().toggle();
-      $(value).html($(value).parent().siblings().css('display') === "none" ? "mehr lesen" : "weniger lesen")
+      $(value).html($(value).parent().siblings().css('display') === "none" ? "Mehr lesen" : "Weniger lesen")
     });
   })
 });
