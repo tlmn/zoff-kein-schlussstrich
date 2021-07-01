@@ -63,7 +63,7 @@ export const CalendarHeader = () => {
       </div>
 
       <div
-        className="container grid-6 md:grid-16 shadow--bottom pt-3 pb-2 md:py-3 border-l-2 border-r-2"
+        className="container grid-6 md:grid-16 shadow--bottom pt-3 pb-2 md:py-3 md:border-l-2 md:border-r-2"
       >
         <div
           className="col-span-6 md:hidden flex flex-col py-3 px-2 relative shadow--bottom"

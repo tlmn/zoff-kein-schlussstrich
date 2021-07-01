@@ -44,7 +44,7 @@ const CalendarList = () => {
               id={singleKey.replace(/\./g, "")}
             >
               <div className="container grid-16">
-                <div className="col-span-full grid-6 md:grid-16 border-l-2 border-r-2">
+                <div className="col-span-full grid-6 md:grid-16 md:border-l-2 md:border-r-2">
                   {filteredEvents[singleKey].map((event, index) => (
                     <EventTeaser
                       {...event}
