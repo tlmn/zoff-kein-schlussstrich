@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const ArrowCircle = ({ strokeColor = "#000", ...props }) => (
+const ArrowCircle = ({ strokeColor = "#000", backgroundColor = "#fff", ...props }) => (
   <svg
     width="56"
     height="56"
@@ -10,7 +10,7 @@ const ArrowCircle = ({ strokeColor = "#000", ...props }) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle cx="28" cy="28" r="28" transform="rotate(90 28 28)" fill="#fff" />
+    <circle cx="28" cy="28" r="28" transform="rotate(90 28 28)" fill={backgroundColor} />
     <line x1="45" y1="28" x2="14" y2="28" stroke={strokeColor} strokeWidth={2} />
     <line
       x1="23.7071"
@@ -33,6 +33,7 @@ const ArrowCircle = ({ strokeColor = "#000", ...props }) => (
 
 ArrowCircle.propTypes = {
   strokeColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 export default ArrowCircle;

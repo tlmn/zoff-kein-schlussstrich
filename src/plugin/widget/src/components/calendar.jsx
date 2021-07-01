@@ -8,7 +8,7 @@ import useCalendarContext from "../hooks/useCalendarContext";
 const Calendar = () => {
   const { setData, data } = useCalendarContext();
 
-  const { venuesData } = data;
+  const { venuesData, calendarRef } = data;
 
   useEffect(() => {
     loadTaxonomies(setData);
@@ -20,7 +20,7 @@ const Calendar = () => {
   }, [venuesData]);
 
   return (
-    <div className="max-h-screen" style={{ margin: "0 auto" }}>
+    <div className="max-h-screen" style={{ margin: "0 auto" }} ref={calendarRef}>
       <CalendarHeader />
       <CalendarList />
     </div>

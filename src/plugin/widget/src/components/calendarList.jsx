@@ -5,6 +5,7 @@ import DateSeparator from "./list/dateSeparator";
 import EventTeaser from "./eventTeaser";
 import LoadingSpinner from "./list/loadingSpinner";
 import ModalNoEvents from "./list/modalNoEvents";
+import ToTopButton from "./list/toTopButton";
 import useCalendarContext from "../hooks/useCalendarContext";
 
 const CalendarList = () => {
@@ -26,6 +27,7 @@ const CalendarList = () => {
   useEffect(() => {
     scrollToDate(filteredDates, currentDate, listRef);
   }, [currentDate]);
+
 
   return (
     <div
@@ -67,6 +69,8 @@ const CalendarList = () => {
         initialEvents.length !== 0 && <ModalNoEvents />}
 
       {initialEvents.length === 0 && <LoadingSpinner />}
+      {initialEvents.length !== 0 && listRef.current.scrollTop > 200 && <ToTopButton listRef={listRef} />}
+      <ToTopButton listRef={listRef} />
     </div>
   );
 };
