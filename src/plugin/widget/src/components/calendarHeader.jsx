@@ -56,7 +56,7 @@ export const CalendarHeader = () => {
               <NavigationArrows type="next" />
             </div>
             <div className="hidden md:flex items-center">
-              {filteredDates.length > 1 && <NavigationRange />}
+              {filteredDates.length > 1 && <NavigationRange className="md:mx-3 w-full" />}
             </div>
           </div>
         </div>
@@ -66,16 +66,16 @@ export const CalendarHeader = () => {
         className="container grid-6 md:grid-16 shadow--bottom pt-3 pb-2 md:py-3 border-l-2 border-r-2"
       >
         <div
-          className="col-span-6 md:hidden flex flex-col my-2 px-2 relative"
+          className="col-span-6 md:hidden flex flex-col py-3 px-2 relative shadow--bottom"
         >
-          <NavigationRange />
-          <div className="flex justify-between">
+          {filteredDates.length > 1 && <NavigationRange controlsColor="#000" className="md:mx-3 w-full p-2 px-4" />}
+          <div className="flex justify-between mt-2">
             {filteredDates.length > 1 && (
               <>
-                <span className="font-sans font-normal text-m">
+                <span className="font-sans font-normal text-xs">
                   {filteredDates[0]}
                 </span>
-                <span className="font-sans font-normal text-m">
+                <span className="font-sans font-normal text-xs">
                   {filteredDates[filteredDates.length - 1]}
                 </span>
               </>
