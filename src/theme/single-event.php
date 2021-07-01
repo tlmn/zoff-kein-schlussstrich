@@ -57,7 +57,7 @@ if ($the_query->have_posts()) :
 	$currentEvent['date'] = explode(" ", $currentEvent['timestamp'])[0];
 	$currentEvent['time'] = explode(" ", $currentEvent['timestamp'])[1];
 	$currentEvent['general'] = get_fields()['meta'];
-	if (count($currentEvent['venue']) > 0) {
+	if (array_key_exists('venue', $currentEvent) && count($currentEvent['venue']) > 0) {
 		$currentVenue = get_fields($currentEvent['venue'][0]->ID);
 	}
 	$feature_image_alt = isset(get_fields()['meta']['feature_image']['image']['alt']) ? get_fields()['meta']['feature_image']['image']['alt'] : "";
