@@ -23,27 +23,7 @@ export const pad = (num, size) => {
 };
 
 export const getWeekDay = (dateLong) => {
-  const weekDays = [
-    "Sonntag",
-    "Montag",
-    "Dienstag",
-    "Mittwoch",
-    "Donnerstag",
-    "Freitag",
-    "Samstag",
-  ];
-
-  let dateElements = dateLong.split(".");
-  let dateLongFormatted =
-    dateElements[2] +
-    "-" +
-    pad(parseInt(dateElements[1]), 2) +
-    "-" +
-    pad(parseInt(dateElements[0]), 2);
-
-  let date = new Date(dateLongFormatted);
-
-  return weekDays[date.getDay()];
+  return DateTime.fromFormat(dateLong, "dd.MM.yyyy").setLocale("de").toFormat("cccc");
 };
 
 export const parseEvents = (eventsRaw, venuesData, data) => {
