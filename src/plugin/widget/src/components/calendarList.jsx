@@ -37,11 +37,10 @@ const CalendarList = () => {
         filteredEvents.constructor === Object &&
         Object.keys(filteredEvents).map((singleKey, index) => (
           <>
-            <DateSeparator date={singleKey} />
+            {index !== 0 && <DateSeparator date={singleKey} />}
             <div
-              className={`bg-white w-full flex justify-center ${
-                index + 1 < Object.keys(filteredEvents) ? `border-b-2` : ``
-              }`}
+              className={`bg-white w-full flex justify-center ${index + 1 < Object.keys(filteredEvents) ? `border-b-2` : ``
+                }`}
               id={singleKey.replace(/\./g, "")}
             >
               <div className="container grid-16">
