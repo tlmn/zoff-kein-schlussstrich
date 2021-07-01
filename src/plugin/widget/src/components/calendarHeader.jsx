@@ -36,7 +36,7 @@ export const CalendarHeader = () => {
                 getWeekDay(filteredDates[currentDate])}
             </span>
           </div>
-          <div className="px-2 pb-2 col-span-full md:col-span-12 md:col-start-3 w-full flex flex-col justify-center bg-black">
+          <div className="px-2 col-span-full md:col-span-12 md:col-start-3 w-full flex flex-col justify-center bg-black">
             <div className="flex justify-between w-full">
               <NavigationArrows type="prev" />
               <div className="flex items-center">
@@ -82,7 +82,7 @@ export const CalendarHeader = () => {
             )}
           </div>
         </div>
-        <div className="px-2 col-span-full flex justify-center">
+        <div className="px-2 py-3 col-span-full flex justify-center">
           <div className="flex items-center gap-3">
             <FilterIcon style={{ width: "30px" }} />
             <CitiesFilter />
