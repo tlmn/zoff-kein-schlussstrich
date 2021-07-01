@@ -7,10 +7,16 @@ const DateSeparator = ({ date }) => {
   const luxon = DateTime.fromFormat(date, "dd.MM.yyyy").setLocale("de");
   return (
     <div className="container grid-16 bg-white">
-      <div className="col-span-full flex justify-center bg-black text-white">
+      <div className="col-span-full flex flex-col items-center md:justify-center md:flex-row bg-black text-white">
         <span
           className="hidden md:inline-block font-sans text-white text-base leading-snug"
           style={{ transform: "rotate(270deg)" }}
+        >
+          {getWeekDay(date)}
+        </span>
+
+        <span
+          className="block md:hidden font-sans text-white text-base leading-snug my-2"
         >
           {getWeekDay(date)}
         </span>
