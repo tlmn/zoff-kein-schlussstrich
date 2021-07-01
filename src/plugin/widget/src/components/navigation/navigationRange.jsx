@@ -3,7 +3,7 @@ import { Range } from "react-range";
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
 
-const NavigationRange = () => {
+const NavigationRange = ({ controlsColor = "#fff", ...props }) => {
   const { data, setData } = useCalendarContext();
 
   const {
@@ -20,8 +20,8 @@ const NavigationRange = () => {
           {filteredDates[0]}
         </span>
       )}
-      
-      <div className="md:mx-3 w-full">
+
+      <div {...props}>
         <Range
           step={1}
           min={0}
@@ -44,7 +44,7 @@ const NavigationRange = () => {
                 ...props.style,
                 height: "2px",
                 width: "100%",
-                backgroundColor: "#fff",
+                backgroundColor: controlsColor,
               }}
             >
               {children}
@@ -77,6 +77,7 @@ const NavigationRange = () => {
 
 NavigationRange.propTypes = {
   style: PropTypes.object,
+  controlsColor: PropTypes.string,
 };
 
 export default NavigationRange;
