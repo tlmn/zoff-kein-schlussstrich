@@ -42,7 +42,6 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
           (occ) => {
             const { timestamp } = occ;
             const luxonTimestamp = DateTime.fromFormat(timestamp, "yyyy/MM/dd HH:mm:ss");
-            console.log(luxonTimestamp)
             return occ.show_in_calendar === true &&
               eventsParsed.push({
                 alarm: occ.alarm,
