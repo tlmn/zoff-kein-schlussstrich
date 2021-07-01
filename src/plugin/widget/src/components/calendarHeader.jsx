@@ -84,7 +84,7 @@ export const CalendarHeader = () => {
         </div>
         <div className="px-2 col-span-full flex justify-center">
           <div className="flex items-center gap-3">
-            <FilterIcon style={{ width: "90px" }} />
+            <FilterIcon style={{ width: "30px" }} />
             <CitiesFilter />
             <DivisionsFilter />
             <ResetButton />
