@@ -268,7 +268,7 @@ function page_allowed_block_types($allowed_blocks, $post)
         'core/list',
         'core/heading',
         'core/video',
-        'core/youtube'
+        'core/embed'
     );
 
     foreach ($BLOCKS as $BLOCK) {
