@@ -1,16 +1,16 @@
 <div class="relative hidden md:block">
     <div class="flex justify-center">
         <div class="container grid-6 grid-16 relative z-10 text-white border-black gap-collapse border-l-2 border-r-2 border-b-2">
-            <div class="col-span-1 bg-black gap-collapse border-black border-b-2">
+            <div class="col-span-1 bg-black gap-collapse-left--no-padding border-black border-b-2">
                 <h3 class="rotate--90 text-white text-3xl pr-7">Kalender</h3>
             </div>
 
             <div class="col-span-1 bg-black gap-collapse border-black border-b-2">
-                <button role="button" onclick="window.history.back()" class="mt-7 outline-none">
+                <a href="/kalender" class="mt-7 block outline-none">
                     <?php
                     echo file_get_contents(get_template_directory() . '/assets/icons/back--desktop.svg');
                     ?>
-                </button>
+                </a>
             </div>
 
             <div class="col-span-8 border-black border-b-2 border-r-2 gap-collapse-right flex flex-col">
@@ -18,7 +18,7 @@
                     <span class="text-6xl font-light mt-2 leading-none">
                         <?php echo date_short($currentEvent['date'], "."); ?>
                     </span>
-                    <span class="text-base font-normal mt-2 mr-2">
+                    <span class="block text-base font-normal mt-2 mr-2">
                         <?php echo $l_weekdays[date("N", strtotime(($currentEvent['date']))) - 1]; ?>
                     </span>
                 </div>
@@ -124,7 +124,7 @@
                 <?php
                 if ($currentEvent['general']['subline'] !== "") { ?>
                     <div class="pl-3 w-full grid-10 border-b-2 py-5">
-                        <div class="col-span-8 col-start-3 is-style-text-medium">
+                        <div class="col-span-7 col-start-3 is-style-text-medium">
                             <?php print $currentEvent['general']['credits']; ?>
                         </div>
                     </div>

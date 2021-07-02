@@ -1,11 +1,11 @@
 <div class="block md:hidden">
     <div class="grid-6 bg-black text-white px-3 py-2">
         <div class="col-span-1">
-            <button role="button" onclick="window.history.back()">
+            <a href="/kalender" class="hover:fill--blue">
                 <?php
                 echo file_get_contents(get_template_directory() . '/assets/icons/back--mobile.svg');
                 ?>
-            </button>
+            </a>
         </div>
         <div class="col-span-5 flex items-center">
             <span class="text-m leading-snug font-normal">Kalender</span>

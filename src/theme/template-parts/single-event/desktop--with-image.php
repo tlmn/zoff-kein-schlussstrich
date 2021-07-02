@@ -1,20 +1,20 @@
 <div class="relative hidden md:block">
     <div class="flex justify-center">
         <div class="container grid-16 relative z-10 text-white border-b-2 border-black gap-collapse border-l-2 border-r-2">
-            <div class="col-span-1 bg-black shadow--bottom-right">
+            <div class="col-span-1 bg-black shadow--bottom-right gap-collapse-left--no-padding">
                 <h3 class="rotate--90 text-white text-3xl pr-7">Kalender</h3>
             </div>
 
-            <div class="col-span-1">
-                <button role="button" onclick="window.history.back()" class="mt-7 outline-none">
+            <div class="col-span-1 bg-black gap-collapse">
+                <a href="/kalender" class="mt-7 block outline-none">
                     <?php
                     echo file_get_contents(get_template_directory() . '/assets/icons/back--desktop.svg');
                     ?>
-                </button>
+                </a>
             </div>
 
             <div class="col-span-8 shadow--bottom-right -mr-1">
-                <div class="h-full w-full relative">
+                <div class="ratio--1-1 w-full relative">
                     <?php
                     $feature_image_srcset = wp_get_attachment_image_srcset(get_fields()['meta']['feature_image']['image']['ID']);
                     ?>
@@ -27,7 +27,7 @@
                     <span class="text-6xl font-light mt-2 leading-none">
                         <?php echo date_short($currentEvent['date'], "."); ?>
                     </span>
-                    <span class="text-base font-normal">
+                    <span class="text-base font-normal mt-2 mr-2">
                         <?php echo $l_weekdays[date("N", strtotime(($currentEvent['date']))) - 1]; ?>
                     </span>
                 </div>
@@ -57,7 +57,7 @@
 
                 if ($currentEvent['general']['subline'] !== "") { ?>
                     <div class="grid-10">
-                        <div class="col-span-7 col-start-3 py-7">
+                        <div class="col-span-7 col-start-3 pt-7 font-medium">
                             <h6><?php print $currentEvent['general']['subline']; ?></h6>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                 <?php
                 if ($currentEvent['general']['credits'] !== "") { ?>
                     <div class="grid-10 border-t-2">
-                        <div class="col-span-7 col-start-3 py-7">
+                        <div class="col-span-6 col-start-3 pt-7 font-medium">
                             <h6><?php print $currentEvent['general']['credits']; ?></h6>
                         </div>
                     </div>
