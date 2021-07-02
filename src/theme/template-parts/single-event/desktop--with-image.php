@@ -1,8 +1,4 @@
 <div class="relative hidden md:block">
-    <div class="flex absolute top-0 left-0 w-full h-full z-0">
-        <div class="bg-black flex-1"></div>
-        <div class="bg-white flex-1"></div>
-    </div>
     <div class="flex justify-center">
         <div class="container grid-16 relative z-10 text-white border-b-2 border-black gap-collapse border-l-2 border-r-2">
             <div class="col-span-1 bg-black shadow--bottom-right">
