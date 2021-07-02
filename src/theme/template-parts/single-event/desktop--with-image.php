@@ -80,7 +80,7 @@
                 <?php
                 if ($currentEvent['general']['credits'] !== "") { ?>
                     <div class="grid-10 border-t-2">
-                        <div class="col-span-6 col-start-3 pt-7 font-medium">
+                        <div class="col-span-6 col-start-3 py-7 font-medium">
                             <h6><?php print $currentEvent['general']['credits']; ?></h6>
                         </div>
                     </div>

@@ -125,7 +125,7 @@
                 if ($currentEvent['general']['subline'] !== "") { ?>
                     <div class="pl-3 w-full grid-10 border-b-2 py-5">
                         <div class="col-span-7 col-start-3 is-style-text-medium">
-                            <?php print $currentEvent['general']['credits']; ?>
+                            <?php print $currentEvent['general']['subline']; ?>
                         </div>
                     </div>
                 <?php
