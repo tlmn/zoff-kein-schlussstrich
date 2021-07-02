@@ -37,6 +37,7 @@ const NavigationArrows = ({ type = "prev" }) => {
       }
       style={{ outline: 0 }}
       disabled={isDisabled()}
+      className="hover:fill--blue"
     >
       <ArrowCircle
         strokeColor={isDisabled() ? `#fff` : `#000`}

@@ -113,5 +113,10 @@ a {
         .image-bg {
             @apply absolute top-0 left-0 object-cover w-full h-full;
         }
+        .fill
     }
+}
+
+.hover\:fill--blue:hover svg circle {
+    fill: theme("colors.blue");
 }
