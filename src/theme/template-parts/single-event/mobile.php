@@ -24,8 +24,7 @@
         <div class="col-span-full">
             <!-- <div class="mx-2 mt-3 mb-7">labels</div> -->
             <div class="mx-2 my-3">
-                <span class="text-xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>
-                    Uhr</span>
+                <span class="text-xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>h</span>
                 <span class="text-xl font-medium leading-snug block"><?php the_title(); ?></span>
             </div>
         </div>

@@ -37,8 +37,7 @@
                 </div>
                 <div class="bg-white flex flex-1 flex-col justify-between text-black gap-collapse">
                     <div class="mx-2 mb-3 mt-7">
-                        <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>
-                            Uhr</span>
+                        <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>h</span>
                         <span class="text-3xl font-medium leading-snug block"><?php the_title(); ?></span>
                     </div>
                 </div>
