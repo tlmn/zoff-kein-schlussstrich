@@ -42,11 +42,13 @@ const NavigationArrows = ({ type = "prev" }) => {
         strokeColor={isDisabled() ? `#fff` : `#000`}
         style={{ transform: type === "prev" ? `` : `rotate(180deg)` }}
         className="hidden md:block"
+        isDisabled={isDisabled()}
       />
       <ArrowCircleSmall
         strokeColor={isDisabled() ? `#fff` : `#000`}
         style={{ transform: type === "prev" ? `` : `rotate(180deg)` }}
         className="block md:hidden"
+        isDisabled={isDisabled()}
       />
     </button>
   );
