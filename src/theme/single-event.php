@@ -63,6 +63,22 @@ if ($the_query->have_posts()) :
 	$feature_image_alt = isset(get_fields()['meta']['feature_image']['image']['alt']) ? get_fields()['meta']['feature_image']['image']['alt'] : "";
 	$feature_image_description = isset(get_fields()['meta']['feature_image']['image']['description']) ? get_fields()['meta']['feature_image']['image']['description'] : "";
 
+
+	$labels = [];
+	if (isset(get_the_terms(get_the_ID(), 'division')[0])) {
+		foreach (get_the_terms(get_the_ID(), 'division') as $term) {
+			array_push($labels, $term->name);
+		}
+	}
+	array_push($labels, $currentEvent['venue'][0]->post_title);
+	array_push($labels, get_fields($currentEvent['venue'][0]->ID)['address']['city']);
+
+	$tags = [];
+	if (array_key_exists('tags', $currentEvent) && is_array($currentEvent['tags'])) {
+		foreach ($currentEvent['tags'] as $tag) {
+			array_push($tags, get_term($tag)->name);
+		}
+	}
 	$args_teaser = array(
 		'numberposts'	=> 1,
 		'post_type'		=> 'generalBlock',

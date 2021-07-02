@@ -22,10 +22,40 @@
 
     <div class="grid-6  bg-white text-black">
         <div class="col-span-full">
-            <!-- <div class="mx-2 mt-3 mb-7">labels</div> -->
             <div class="mx-2 my-3">
+                <?php
+                foreach ($labels as $label) {
+                    echo "#" . $label . " ";
+                }
+                ?>
+            </div>
+            <div class="mx-2 my-3">
+                <?php
+                if ($currentEvent['alarm'] !== "") {
+                ?>
+                    <span class="bg-yellow text-black rounded-lg px-3 py-2">
+                        <?php echo $currentEvent['alarm']; ?>
+                    </span>
+                <?php
+                }
+                ?>
                 <span class="text-xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>h</span>
                 <span class="text-xl font-medium leading-snug block"><?php the_title(); ?></span>
+                <div class="flex gap-2">
+                    <a href="<?php echo get_fields($currentEvent['venue'][0]->ID)['url']; ?>" target="_blank">
+                        <?php
+                        echo $currentEvent['venue'][0]->post_title;
+                        ?>
+                    </a>
+                    <?php
+                    if (array_key_exists('ticketlink', $currentEvent) && $currentEvent['ticketlink'] !== "") {
+                    ?>
+                        <a href="<?php $currentEvent['ticketlink']; ?>" target="_blank">
+                            Tickets
+                        </a>
+                    <?php
+                    } ?>
+                </div>
             </div>
         </div>
         <?php

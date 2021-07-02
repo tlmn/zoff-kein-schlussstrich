@@ -32,9 +32,40 @@
                     </span>
                 </div>
                 <div class="bg-white flex flex-1 flex-col justify-between text-black gap-collapse">
+                    <div class="mt-2">
+                        <?php
+                        foreach ($labels as $label) {
+                            echo "#" . $label . " ";
+                        }
+                        ?>
+                    </div>
                     <div class="mx-2 mb-3 mt-7">
+                        <?php
+                        if ($currentEvent['alarm'] !== "") {
+                        ?>
+                            <span class="bg-yellow text-black rounded-lg px-3 py-2">
+                                <?php echo $currentEvent['alarm']; ?>
+                            </span>
+                        <?php
+                        }
+                        ?>
                         <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>h</span>
                         <span class="text-3xl font-medium leading-snug block"><?php the_title(); ?></span>
+                        <div class="flex gap-2">
+                            <a href="<?php echo get_fields($currentEvent['venue'][0]->ID)['url']; ?>" target="_blank">
+                                <?php
+                                echo $currentEvent['venue'][0]->post_title;
+                                ?>
+                            </a>
+                            <?php
+                            if (array_key_exists('ticketlink', $currentEvent) && $currentEvent['ticketlink'] !== "") {
+                            ?>
+                                <a href="<?php $currentEvent['ticketlink']; ?>" target="_blank">
+                                    Tickets
+                                </a>
+                            <?php
+                            } ?>
+                        </div>
                     </div>
                 </div>
             </div>
