@@ -36,8 +36,13 @@
 
 .wp-block-button--yellow {
   @apply bg-yellow text-black;
+  @apply border-2 border-transparent;
   &:hover {
-    @apply bg-white text-yellow;
+    @apply bg-black text-yellow;
+  }
+  &:focus {
+    @apply bg-yellow text-black;
+    @apply border-black;
   }
 }
 
