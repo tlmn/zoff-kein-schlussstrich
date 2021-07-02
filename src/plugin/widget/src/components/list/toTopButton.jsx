@@ -8,7 +8,7 @@ const ToTopButton = ({ listRef }) => {
         window.scrollTo(0, 0);
     }
     return (
-        <button type="button" className="fixed bottom-0 right-0 z-20 m-2" onClick={() => handleClick()}>
+        <button type="button" className="fixed bottom-0 right-0 z-20 m-2 hover:fill--blue" onClick={() => handleClick()}>
             <ArrowCircle
                 strokeColor="#fff"
                 backgroundColor="#000"
