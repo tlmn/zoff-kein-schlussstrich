@@ -25,7 +25,7 @@ const DateSeparator = ({ date }) => {
           className="font-sans font-normal text-6xl md:text-7xl z-10 mx-0"
           style={{
             marginTop: "-2px",
-            marginBotton: "-2px",
+            marginBottom: "-2px",
             lineHeight: 0.7,
           }}
         >
