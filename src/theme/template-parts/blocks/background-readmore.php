@@ -22,7 +22,7 @@ $template = array(
                 Mehr lesen
             </button>
         </div>
-        <div class="py-5 md:py-6" <?php if (!$is_preview) { ?>style="display: none"<?php } ?>>
+        <div class="py-5 md:pt-6 md:pb-8" <?php if (!$is_preview) { ?>style="display: none"<?php } ?>>
             <InnerBlocks allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
         </div>
     </div>
