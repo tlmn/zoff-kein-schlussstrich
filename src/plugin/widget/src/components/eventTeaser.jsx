@@ -12,7 +12,7 @@ const EventTeaser = ({
     <div
       className={`col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${borderBottom ? `border-b-2` : ``
         }`}
-      style={{ minHeight: "230px" }}
+      style={{ height: "215px" }}
       key={key}
     >
       {feature_image.sizes && (
@@ -20,7 +20,7 @@ const EventTeaser = ({
           <div className="ratio--4-3 relative">
             <img
               srcSet={generateSrcSet(feature_image.sizes)}
-              className="absolute top-0 left-0 right-0 bottom-0 object-cover image-bw"
+              className="w-full h-full absolute top-0 left-0 object-cover"
               alt={feature_image.alt}
             />
           </div>
