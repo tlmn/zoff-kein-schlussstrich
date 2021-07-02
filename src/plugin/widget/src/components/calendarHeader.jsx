@@ -41,13 +41,13 @@ export const CalendarHeader = () => {
               <NavigationArrows type="prev" />
               <div className="flex items-center">
                 <span
-                  className="hidden md:inline-block font-sans text-white text-m leading-snug"
+                  className="hidden md:inline-block font-sans font-normal text-white text-m leading-snug"
                   style={{ transform: "rotate(270deg)" }}
                 >
                   {filteredDates[currentDate] !== undefined &&
                     getWeekDay(filteredDates[currentDate])}
                 </span>
-                <span className="font-sans text-5xl md:text-7xl text-white leading-none">
+                <span className="font-sans text-5xl md:text-7xl font-normal text-white leading-none">
                   {filteredDates[currentDate] !== undefined
                     ? filteredDates[currentDate].slice(0, -4)
                     : `– . –`}
