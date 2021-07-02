@@ -22,7 +22,7 @@ const DateSeparator = ({ date }) => {
         </span>
 
         <h2
-          className="font-sans font-normal text-6xl md:text-7xl z-10"
+          className="font-sans font-normal text-6xl md:text-7xl z-10 m-0"
           style={{
             marginTop: "-2px",
             lineHeight: 0.7,
