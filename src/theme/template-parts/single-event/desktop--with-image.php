@@ -6,7 +6,7 @@
             </div>
 
             <div class="col-span-1 bg-black gap-collapse">
-                <a href="/kalender" class="mt-7 block outline-none">
+                <a href="/kalender" class="mt-7 block outline-none hover:fill--blue">
                     <?php
                     echo file_get_contents(get_template_directory() . '/assets/icons/back--desktop.svg');
                     ?>
