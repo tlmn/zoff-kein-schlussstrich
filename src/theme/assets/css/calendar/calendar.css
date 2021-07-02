@@ -6,4 +6,7 @@
   .calendar__select {
     max-width: none;
   }
+  .calendar_eventTeaser {
+    height: 214px;
+  }
 }

@@ -10,9 +10,8 @@ const EventTeaser = ({
   const { feature_image, tags, venue, ticketlink, link, time, title } = eventData;
   return (
     <div
-      className={`col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${borderBottom ? `border-b-2` : ``
+      className={`eventTeaser col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${borderBottom ? `border-b-2` : ``
         }`}
-      style={{ height: "215px" }}
       key={key}
     >
       {feature_image.sizes && (
