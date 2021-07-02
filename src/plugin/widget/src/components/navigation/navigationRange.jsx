@@ -16,7 +16,7 @@ const NavigationRange = ({ controlsColor = "#fff", ...props }) => {
   return (
     <>
       {filteredDates.length > 1 && (
-        <span className="hidden md:block mr-3 font-sans font-normal text-m text-white">
+        <span className="hidden md:block mr-3 font-sans font-medium text-m text-white">
           {filteredDates[0]}
         </span>
       )}
@@ -67,7 +67,7 @@ const NavigationRange = ({ controlsColor = "#fff", ...props }) => {
       </div>
 
       {filteredDates.length > 1 && (
-        <span className="hidden md:block ml-3 font-sans font-normal text-m text-white">
+        <span className="hidden md:block ml-3 font-sans font-medium text-m text-white">
           {filteredDates[filteredDates.length - 1]}
         </span>
       )}
