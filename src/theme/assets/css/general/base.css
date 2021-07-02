@@ -47,6 +47,9 @@ a {
         .ratio--16-9 {
             padding-top: calc(9 / 16 * 100%);
         }
+        .ratio--1-1 {
+            padding-top: calc(1 / 1 * 100%);
+        }
         .rotate--90 {
             transform-origin: 0 0;
             transform: rotate(270deg) translateX(-100%);
