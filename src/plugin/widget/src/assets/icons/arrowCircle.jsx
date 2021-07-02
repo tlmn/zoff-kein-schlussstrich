@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-const ArrowCircle = ({ strokeColor = "#000", backgroundColor = "#fff", ...props }) => (
+const ArrowCircle = ({ strokeColor = "#000", backgroundColor = "#fff", hasShadow = false, ...props }) => (
   <svg
     width="56"
     height="56"
@@ -10,7 +10,18 @@ const ArrowCircle = ({ strokeColor = "#000", backgroundColor = "#fff", ...props 
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <circle cx="28" cy="28" r="28" transform="rotate(90 28 28)" fill={backgroundColor} />
+    <filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="-2" dy="-2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <circle cx="28" cy="28" r="28" transform="rotate(90 28 28)" fill={backgroundColor} style={{ filter: hasShadow && `url(#dropshadow)` }} />
     <line x1="45" y1="28" x2="14" y2="28" stroke={strokeColor} strokeWidth={2} />
     <line
       x1="23.7071"
@@ -34,6 +45,7 @@ const ArrowCircle = ({ strokeColor = "#000", backgroundColor = "#fff", ...props 
 ArrowCircle.propTypes = {
   strokeColor: PropTypes.string,
   backgroundColor: PropTypes.string,
+  hasShadow: PropTypes.boolean,
 };
 
 export default ArrowCircle;

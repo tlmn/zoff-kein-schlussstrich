@@ -13,6 +13,7 @@ const ToTopButton = ({ listRef }) => {
                 strokeColor="#fff"
                 backgroundColor="#000"
                 style={{ transform: `rotate(90deg)` }}
+                hasShadow
             />
         </button>)
 };
