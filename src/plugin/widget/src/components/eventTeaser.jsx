@@ -17,7 +17,7 @@ const EventTeaser = ({
     >
       {feature_image.sizes && (
         <div className="col-span-6 md:col-span-3 col-start-1 md:col-start-2">
-          <div className="ratio--4-3 relative">
+          <div className="ratio--16-9 md:ratio--4-3 relative">
             <img
               srcSet={generateSrcSet(feature_image.sizes)}
               className="w-full h-full absolute top-0 left-0 object-cover"
