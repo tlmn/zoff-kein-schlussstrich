@@ -17,7 +17,7 @@
                 </button>
             </div>
 
-            <div class="col-span-8 shadow--bottom-right">
+            <div class="col-span-8 shadow--bottom-right -mr-1">
                 <div class="h-full w-full relative">
                     <?php
                     $feature_image_srcset = wp_get_attachment_image_srcset(get_fields()['meta']['feature_image']['image']['ID']);
