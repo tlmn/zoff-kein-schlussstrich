@@ -9,10 +9,10 @@ const DateSeparator = ({ date }) => {
     <div className="container grid-16 bg-white">
       <div className="col-span-full flex flex-col items-center md:justify-center md:flex-row bg-black text-white">
         <span
-          className="hidden md:inline-block font-sans text-white text-base leading-snug"
+          className="hidden md:inline-block font-sans uppercase text-white text-m leading-snug"
           style={{ transform: "rotate(270deg)" }}
         >
-          {getWeekDay(date)}
+          {getWeekDay(date).substring(0,2)}
         </span>
 
         <span
@@ -22,9 +22,10 @@ const DateSeparator = ({ date }) => {
         </span>
 
         <h2
-          className="font-sans font-normal text-6xl md:text-7xl z-10 m-0"
+          className="font-sans font-normal text-6xl md:text-7xl z-10 mx-0"
           style={{
             marginTop: "-2px",
+            marginBotton: "-2px",
             lineHeight: 0.7,
           }}
         >
