@@ -120,7 +120,7 @@ export const loadEvents = async (setData, venuesData, data) => {
     `${window.location.protocol}//${window.location.hostname}${window.location.port !== "" && window.location.port !== "443"
       ? `:8000`
       : ``
-    }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels
+    }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels&per_page=100
       `
   );
 
@@ -156,7 +156,7 @@ export const loadVenues = async (setData) => {
     `${window.location.protocol}//${window.location.hostname}${window.location.port !== "" && window.location.port !== "443"
       ? `:8000`
       : ``
-    }/wp-json/wp/v2/eventLocation?_fields=acf,id`
+    }/wp-json/wp/v2/eventLocation?_fields=acf,id&per_page=100`
   );
 
   if (!response.ok) {
@@ -192,7 +192,7 @@ export const loadTaxonomies = async (setData) => {
     `${window.location.protocol}//${window.location.hostname}${window.location.port !== "" && window.location.port !== "443"
       ? `:8000`
       : ``
-    }/wp-json/wp/v2/division?_fields=id,name`
+    }/wp-json/wp/v2/division?_fields=id,name&per_page=100`
   );
 
   if (!response.ok) {
