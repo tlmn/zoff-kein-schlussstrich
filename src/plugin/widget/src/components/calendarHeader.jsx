@@ -23,7 +23,7 @@ export const CalendarHeader = () => {
 
   return (
     <div
-      className="relative z-20"
+      className="relative z-20 font-medium"
     >
       <div
         className="container grid-6 md:grid-16"
@@ -47,7 +47,7 @@ export const CalendarHeader = () => {
                   {filteredDates[currentDate] !== undefined &&
                     getWeekDay(filteredDates[currentDate])}
                 </span>
-                <span className="font-sans font-normal text-5xl md:text-7xl text-white leading-none">
+                <span className="font-sans text-5xl md:text-7xl text-white leading-none">
                   {filteredDates[currentDate] !== undefined
                     ? filteredDates[currentDate].slice(0, -4)
                     : `– . –`}
@@ -72,10 +72,10 @@ export const CalendarHeader = () => {
           <div className="flex justify-between mt-2">
             {filteredDates.length > 1 && (
               <>
-                <span className="font-sans font-normal text-xs">
+                <span className="font-sans text-xs">
                   {filteredDates[0]}
                 </span>
-                <span className="font-sans font-normal text-xs">
+                <span className="font-sans text-xs">
                   {filteredDates[filteredDates.length - 1]}
                 </span>
               </>
