@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { filterEvents, scrollToDate } from "../lib/lib";
 
 import DateSeparator from "./list/dateSeparator";
@@ -12,6 +12,8 @@ const CalendarList = () => {
   const listRef = useRef(null);
 
   const { data, setData } = useCalendarContext();
+
+  const [offsetY, setOffsetY] = useState(0);
 
   const {
     eventData: { filteredEvents, initialEvents },
@@ -28,6 +30,17 @@ const CalendarList = () => {
     scrollToDate(filteredDates, currentDate, listRef);
   }, [currentDate]);
 
+  useEffect(() => {
+    const updateScrollPosition = () => {
+      setOffsetY(listRef.current.scrollTop);
+    }
+    if (listRef && listRef.current) {
+      listRef.current.addEventListener("scroll", updateScrollPosition, false);
+      return function cleanup() {
+        listRef.current.removeEventListener("scroll", updateScrollPosition, false);
+      };
+    }
+  }, []);
 
   return (
     <div
@@ -69,8 +82,7 @@ const CalendarList = () => {
         initialEvents.length !== 0 && <ModalNoEvents />}
 
       {initialEvents.length === 0 && <LoadingSpinner />}
-      {initialEvents.length !== 0 && listRef.current.scrollTop > 200 && <ToTopButton listRef={listRef} />}
-      <ToTopButton listRef={listRef} />
+      {initialEvents.length !== 0 && offsetY > 300 && <ToTopButton listRef={listRef} />}
     </div>
   );
 };
