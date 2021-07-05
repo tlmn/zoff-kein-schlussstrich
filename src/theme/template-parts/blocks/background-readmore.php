@@ -4,7 +4,7 @@
  * Background Read More
  */
 
-$allowed_blocks = array('core/paragraph', 'core/heading', 'acf/image--inline');
+$allowed_blocks = array('core/paragraph', 'core/heading');
 
 $template = array(
     array('core/paragraph', array(
