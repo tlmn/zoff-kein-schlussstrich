@@ -39,8 +39,13 @@
                             </span>
                         <?php
                         }
+
+                        if (time_short($currentEvent["time"], ":") !== "00:00") {
                         ?>
-                        <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>h</span>
+                            <span class="text-3xl font-medium leading-snug block"><?php print time_short($currentEvent["time"], ":"); ?>h</span>
+                        <?php
+                        }
+                        ?>
                         <span class="text-3xl font-medium leading-snug block"><?php the_title(); ?></span>
                         <div class="flex gap-2">
                             <a href="<?php echo get_fields($currentEvent['venue'][0]->ID)['url']; ?>" target="_blank">
