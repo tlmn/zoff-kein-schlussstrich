@@ -115,20 +115,27 @@ export const generateSrcSet = (sizes) => {
 };
 
 export const loadEvents = async (setData, venuesData, data) => {
-  const response = await fetch(
-    typeof window !== undefined &&
-    `${window.location.protocol}//${window.location.hostname}${window.location.port !== "" && window.location.port !== "443"
-      ? `:8000`
-      : ``
-    }/wp-json/wp/v2/event?_fields=acf,link,title,division,labels&per_page=100
-      `
-  );
+  const perPage = 99;
+  const url = `https://kein-schlussstrich.de/wp-json/wp/v2/event?_fields=acf,link,title,division,labels`;
 
-  if (!response.ok) {
-    return;
+  const requestTotalNumber = await fetch(`${url}&per_page=${perPage}`);
+
+  const dataTotalNumber = await requestTotalNumber.headers.get("x-wp-total")
+
+  const calls = Math.floor(dataTotalNumber / perPage) + 1
+  const urls = [];
+
+  for (let i = 1; i < calls + 1; i++) {
+    urls.push(`${url}&per_page=${perPage}&page=${i}`);
   }
 
-  const WPevents = await response.json();
+  const response = await Promise.all(
+    urls.map((url) => fetch(url).then((res) => res.json()))
+  ).then(value =>
+    [].concat.apply([], value));
+
+
+  const WPevents = await response;
   const parsedWPEvents = parseEvents(WPevents, venuesData, data);
   const filterExpressionCities = jsonata(
     `$sort($distinct(*.venue.address.city))`
