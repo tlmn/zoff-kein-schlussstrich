@@ -120,9 +120,9 @@ export const loadEvents = async (setData, venuesData, data) => {
 
   const requestTotalNumber = await fetch(`${url}&per_page=${perPage}`);
 
-  const dataTotalNumber = await requestTotalNumber.headers.get("x-wp-total")
+  const dataTotalNumber = await requestTotalNumber.headers.get("x-wp-total");
 
-  const calls = Math.floor(dataTotalNumber / perPage) + 1
+  const calls = Math.floor(dataTotalNumber / perPage) + 1;
   const urls = [];
 
   for (let i = 1; i < calls + 1; i++) {
@@ -132,8 +132,8 @@ export const loadEvents = async (setData, venuesData, data) => {
   const response = await Promise.all(
     urls.map((url) => fetch(url).then((res) => res.json()))
   ).then(value =>
-    [].concat.apply([], value));
-
+    [].concat.apply([], value)
+  );
 
   const WPevents = await response;
   const parsedWPEvents = parseEvents(WPevents, venuesData, data);
