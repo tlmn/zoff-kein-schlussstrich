@@ -118,7 +118,7 @@ export const loadEvents = async (setData, venuesData, data) => {
   const perPage = 99;
   const url = `https://kein-schlussstrich.de/wp-json/wp/v2/event?_fields=acf,link,title,division,labels`;
 
-  const requestTotalNumber = await fetch(`${url}&per_page=${perPage}`);
+  const requestTotalNumber = await fetch(`${url}&per_page=1`);
 
   const dataTotalNumber = await requestTotalNumber.headers.get("x-wp-total");
 
