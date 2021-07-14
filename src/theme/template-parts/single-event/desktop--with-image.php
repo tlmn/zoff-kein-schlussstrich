@@ -189,7 +189,7 @@
                 while (have_rows("meta")) : the_row();
                     if (have_rows("occurrences") && count(get_field("meta")["occurrences"]) > 1) :
                 ?>
-                <div class="font-medium text-lg leading-wider border-t-2 gap-collapse--left">
+                <div class="font-medium text-lg leading-wider gap-collapse--left">
                     <div class="p-5">
 
                         <span class="uppercase">Weitere Termine</span>
