@@ -137,36 +137,9 @@
                 </div>
                 <?php
                 }
-                $items = get_field("meta");
-                while (have_rows("meta")) : the_row();
-                    if (have_rows("occurrences") && count(get_field("meta")["occurrences"]) > 1) :
-                    ?>
-                <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
-                    <div class="p-5">
-
-                        <span class="uppercase">Weitere Termine</span>
-                        <?php
-                                while (have_rows("occurrences")) : the_row();
-                                    $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
-                                    if (get_sub_field('timestamp') !== $currentEvent['timestamp']) {
-                                ?>
-                        <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>"
-                            class="block underline hover:no-underline">
-                            <?php
-                                            echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city']; ?>
-                        </a>
-                        <?php
-                                    }
-                                endwhile; ?>
-
-                    </div>
-                </div>
-                <?php
-                    endif;
-                endwhile;
 
                 if (array_key_exists("address", $currentVenue) && $currentVenue['address']) {
-                    ?>
+                ?>
                 <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                     <div class="p-5">
                         <span class="block uppercase">Ort der Veranstaltung</span>
@@ -211,6 +184,36 @@
                         </a>
                     </div>
                 </div>
+                <?php
+                $items = get_field("meta");
+                while (have_rows("meta")) : the_row();
+                    if (have_rows("occurrences") && count(get_field("meta")["occurrences"]) > 1) :
+                ?>
+                <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
+                    <div class="p-5">
+
+                        <span class="uppercase">Weitere Termine</span>
+                        <?php
+                                while (have_rows("occurrences")) : the_row();
+                                    $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
+                                    if (get_sub_field('timestamp') !== $currentEvent['timestamp']) {
+                                ?>
+                        <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>"
+                            class="block underline hover:no-underline">
+                            <?php
+                                            echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city']; ?>
+                        </a>
+                        <?php
+                                    }
+                                endwhile; ?>
+
+                    </div>
+                </div>
+                <?php
+                    endif;
+                endwhile;
+
+                ?>
             </div>
         </div>
     </div>
