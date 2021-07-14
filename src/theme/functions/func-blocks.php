@@ -235,7 +235,7 @@ $BLOCKS = array(
     ),
 
     array(
-        'name'              => 'teaser-upcoming',
+        'name'              => 'teaser-latest',
         'title'             => __('Aktuelles Block'),
         'description'       => __('Aktuelles Block'),
         'category'          => 'formatting',
@@ -244,7 +244,7 @@ $BLOCKS = array(
             'mode' => false,
             'jsx' => true
         ),
-        'render_template' => 'template-parts/blocks/teaser-upcoming.php',
+        'render_template' => 'template-parts/blocks/teaser-latest.php',
     ),
 
 
