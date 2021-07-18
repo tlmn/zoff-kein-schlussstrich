@@ -2,6 +2,10 @@
   max-width: 80px;
 }
 
+.calenderList::-webkit-scrollbar {
+  display: none;
+}
+
 @screen md {
   .calendar__select {
     max-width: none;

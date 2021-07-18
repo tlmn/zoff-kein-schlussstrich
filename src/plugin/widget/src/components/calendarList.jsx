@@ -44,7 +44,7 @@ const CalendarList = () => {
 
   return (
     <div
-      className="max-h-screen overflow-scroll flex flex-col items-center"
+      className="max-h-screen overflow-scroll flex flex-col items-center calenderList"
       ref={listRef}
     >
       {filteredEvents &&
