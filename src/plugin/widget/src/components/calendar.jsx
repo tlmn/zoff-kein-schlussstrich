@@ -20,7 +20,7 @@ const Calendar = () => {
   }, [venuesData]);
 
   return (
-    <div className="max-h-screen" style={{ margin: "0 auto" }} ref={calendarRef}>
+    <div style={{ margin: "0 auto" }} ref={calendarRef}>
       <CalendarHeader />
       <CalendarList />
     </div>
