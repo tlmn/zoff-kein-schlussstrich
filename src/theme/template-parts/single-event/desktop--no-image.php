@@ -14,7 +14,7 @@
                 </a>
             </div>
 
-            <div class="col-span-8 border-black border-b-2 border-r-2 gap-collapse-right pl-5 flex flex-col">
+            <div class="col-span-8 border-black border-b-2 border-r-2 gap-collapse--left pl-5 flex flex-col">
                 <div class="bg-black text-white flex justify-between">
                     <span class="text-6xl font-light mt-2 leading-none">
                         <?php echo date_short($currentEvent['date'], "."); ?>
