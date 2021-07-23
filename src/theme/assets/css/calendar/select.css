@@ -21,6 +21,14 @@
   @apply px-3 py-1;
 }
 
+.select-filter__base-option:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.select-filter__base-option:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
 .select-filter__base-option[aria-selected="true"] {
   @apply bg-yellow;
   @apply text-black;
