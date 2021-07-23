@@ -1,5 +1,7 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
+import Dropdown from "react-dropdown";
+
 
 const DivisionsFilter = () => {
   const { data, setData } = useCalendarContext();
@@ -12,36 +14,29 @@ const DivisionsFilter = () => {
   } = data;
 
   return (
-    <div className="select__wrapper">
-      <select
+    <div className="relative z-50">
+      <Dropdown
+        options={divisionsNames}
+        value={divisionsNames[division]}
+        className="select-filter"
+        controlClassName="select-filter__control"
+        menuClassName="select-filter__menu"
+        baseClassName="select-filter__base"
+        placeholder="Säule auswählen"
         onChange={(event) => {
           setData((prev) => ({
             ...prev,
             filters: {
               ...prev.filters,
               division:
-                event.target.value === "alle Säulen"
+                event.value === "alle Säulen"
                   ? null
-                  : divisions.filter(
-                      (item) => item.name === event.target.value
-                    )[0].id,
+                  : divisions.filter((item) => item.name === event.value)[0].id,
               currentDate: 0,
             },
           }));
         }}
-        className=" text-black"
-        style={{ outline: 0 }}
-        value={division !== null ? divisions[division] : `alle Säulen`}
-      >
-        {divisionsNames.map(
-          (item, index) =>
-            item !== "" && (
-              <option value={item} key={index}>
-                {item}
-              </option>
-            )
-        )}
-      </select>
+      />
     </div>
   );
 };
