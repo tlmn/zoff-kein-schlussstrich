@@ -23,7 +23,7 @@ export const CalendarHeader = () => {
 
   return (
     <div
-      className="relative z-20 font-medium"
+      className="relative z-30 font-medium"
     >
       <div
         className="container grid-6 md:grid-16"
