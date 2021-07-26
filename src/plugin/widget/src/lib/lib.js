@@ -25,16 +25,6 @@ export const pad = (num, size) => {
   return num;
 };
 
-export const removeFalsy = (obj) => {
-  let newObj = {};
-  Object.keys(obj).forEach((prop) => {
-    if (obj[prop]) {
-      newObj[prop] = obj[prop];
-    }
-  });
-  return newObj;
-};
-
 export const getWeekDay = (dateLong) => {
   return DateTime.fromFormat(dateLong, "dd.MM.yyyy")
     .setLocale("de")
