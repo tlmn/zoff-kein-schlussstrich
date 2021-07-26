@@ -3,6 +3,9 @@
   @apply px-3 py-1;
   @apply shadow--bottom;
   @apply cursor-pointer;
+  @apply flex;
+  @apply items-center;
+  @apply gap-2;
 }
 
 .select-filter__base {
@@ -40,4 +43,23 @@
 }
 
 .select-filter {
+}
+
+.select-filter__arrow-open,
+.select-filter__arrow-closed {
+  @apply block;
+  width: 12px;
+  height: 12px;
+  border-right: 2px theme("colors.black") solid;
+  border-bottom: 2px theme("colors.black") solid;
+}
+
+.select-filter__arrow-open {
+  transform: rotate(45deg);
+  margin-top: 3px;
+}
+
+.select-filter__arrow-closed {
+  transform: rotate(-135deg);
+  margin-top: -8px;
 }
