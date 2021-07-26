@@ -1,6 +1,7 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
 import Filter from "./filter";
+import { removeFalsy } from "../../lib/lib";
 
 const CitiesFilter = () => {
   const { data, setData } = useCalendarContext();
@@ -9,10 +10,10 @@ const CitiesFilter = () => {
     taxonomies: { cities },
     filters: { city },
   } = data;
-
+  
   return (
     <Filter
-      options={cities}
+      options={removeFalsy(cities)}
       value={city}
       placeholder="Ort auswählen"
       onChange={(event) => {
