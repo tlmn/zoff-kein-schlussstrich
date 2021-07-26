@@ -4,16 +4,19 @@ import { DateTime } from "luxon";
 import jsonata from "jsonata";
 
 export const generateLink = (link, luxonTimestamp) => {
-  return `${link}?date=${luxonTimestamp.toFormat("ddMMyyyy")}&time=${luxonTimestamp.toFormat("HHmm")}`;
+  return `${link}?date=${luxonTimestamp.toFormat(
+    "ddMMyyyy"
+  )}&time=${luxonTimestamp.toFormat("HHmm")}`;
 };
 
 export const convertToDate = (datetime) => {
   let date = new Date(datetime);
-  return `${date.getUTCDate()}.${date.getMonth() + 1
-    }.${date.getFullYear()} ${pad(date.getHours(), 2)}:${pad(
-      date.getMinutes(),
-      2
-    )} Uhr`;
+  return `${date.getUTCDate()}.${
+    date.getMonth() + 1
+  }.${date.getFullYear()} ${pad(date.getHours(), 2)}:${pad(
+    date.getMinutes(),
+    2
+  )} Uhr`;
 };
 
 export const pad = (num, size) => {
@@ -22,8 +25,20 @@ export const pad = (num, size) => {
   return num;
 };
 
+export const removeFalsy = (obj) => {
+  let newObj = {};
+  Object.keys(obj).forEach((prop) => {
+    if (obj[prop]) {
+      newObj[prop] = obj[prop];
+    }
+  });
+  return newObj;
+};
+
 export const getWeekDay = (dateLong) => {
-  return DateTime.fromFormat(dateLong, "dd.MM.yyyy").setLocale("de").toFormat("cccc");
+  return DateTime.fromFormat(dateLong, "dd.MM.yyyy")
+    .setLocale("de")
+    .toFormat("cccc");
 };
 
 export const parseEvents = (eventsRaw, venuesData, data) => {
@@ -38,35 +53,38 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
       (item) =>
         item.acf.meta.occurrences !== undefined &&
         item.acf.meta.occurrences.length > 0 &&
-        item.acf.meta.occurrences.map(
-          (occ) => {
-            const { timestamp } = occ;
-            const luxonTimestamp = DateTime.fromFormat(timestamp, "yyyy/MM/dd HH:mm:ss");
-            return occ.show_in_calendar === true &&
-              eventsParsed.push({
-                alarm: occ.alarm,
-                dateLong: luxonTimestamp.toFormat("dd.MM.yyyy"),
-                dateShort: luxonTimestamp.toFormat("dd.MM."),
-                datetime: luxonTimestamp.toFormat("dd.MM.yyyy HH:mm"),
-                division: item.division.length !== 0 ? item.division[0] : 0,
-                duration: item.duration,
-                feature_image: {
-                  sizes: item.acf.meta.feature_image.image.sizes,
-                  alt: item.acf.meta.feature_image.image.alt,
-                },
-                link: generateLink(item.link, luxonTimestamp),
-                short_description: item.acf.meta.short_description,
-                tags:
-                  item.division.length > 0
-                    ? concat(
+        item.acf.meta.occurrences.map((occ) => {
+          const { timestamp } = occ;
+          const luxonTimestamp = DateTime.fromFormat(
+            timestamp,
+            "yyyy/MM/dd HH:mm:ss"
+          );
+          return (
+            occ.show_in_calendar === true &&
+            eventsParsed.push({
+              alarm: occ.alarm,
+              dateLong: luxonTimestamp.toFormat("dd.MM.yyyy"),
+              dateShort: luxonTimestamp.toFormat("dd.MM."),
+              datetime: luxonTimestamp.toFormat("dd.MM.yyyy HH:mm"),
+              division: item.division.length !== 0 ? item.division[0] : 0,
+              duration: item.duration,
+              feature_image: {
+                sizes: item.acf.meta.feature_image.image.sizes,
+                alt: item.acf.meta.feature_image.image.alt,
+              },
+              link: generateLink(item.link, luxonTimestamp),
+              short_description: item.acf.meta.short_description,
+              tags:
+                item.division.length > 0
+                  ? concat(
                       divisions.divisions !== undefined &&
-                      divisions.divisions.filter(
-                        (division) => division.id === item.division[0]
-                      )[0].name,
+                        divisions.divisions.filter(
+                          (division) => division.id === item.division[0]
+                        )[0].name,
                       occ.venue !== undefined && occ.venue.length > 0
                         ? venuesData[occ.venue[0].ID.toString()] !== undefined
                           ? venuesData[occ.venue[0].ID.toString()].acf.address
-                            .city
+                              .city
                           : ""
                         : "",
                       occ.venue !== undefined && occ.venue.length > 0
@@ -75,29 +93,29 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
                           : ""
                         : "",
                       occ.labels !== undefined &&
-                      occ.labels.length > 0 &&
-                      occ.labels
+                        occ.labels.length > 0 &&
+                        occ.labels
                     )
-                    : [],
-                ticketlink: occ.ticketlink,
-                time: luxonTimestamp.toFormat("HH:mm"),
-                timestamp: luxonTimestamp.toFormat("X"),
-                title: item.title.rendered,
-                city:
-                  occ.venue !== undefined && occ.venue.length > 0
-                    ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                      ? venuesData[occ.venue[0].ID.toString()].acf.address.city
-                      : ""
-                    : null,
-                venue:
-                  occ.venue !== undefined && occ.venue.length > 0
-                    ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                      ? venuesData[occ.venue[0].ID.toString()].acf
-                      : ""
-                    : "",
-              })
-          }
-        )
+                  : [],
+              ticketlink: occ.ticketlink,
+              time: luxonTimestamp.toFormat("HH:mm"),
+              timestamp: luxonTimestamp.toFormat("X"),
+              title: item.title.rendered,
+              city:
+                occ.venue !== undefined && occ.venue.length > 0
+                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                    ? venuesData[occ.venue[0].ID.toString()].acf.address.city
+                    : ""
+                  : null,
+              venue:
+                occ.venue !== undefined && occ.venue.length > 0
+                  ? venuesData[occ.venue[0].ID.toString()] !== undefined
+                    ? venuesData[occ.venue[0].ID.toString()].acf
+                    : ""
+                  : "",
+            })
+          );
+        })
     );
 
   let expression = jsonata("*^(timestamp){dateLong:[$]}");
@@ -131,9 +149,7 @@ export const loadEvents = async (setData, venuesData, data) => {
 
   const response = await Promise.all(
     urls.map((url) => fetch(url).then((res) => res.json()))
-  ).then(value =>
-    [].concat.apply([], value)
-  );
+  ).then((value) => [].concat.apply([], value));
 
   const WPevents = await response;
   const parsedWPEvents = parseEvents(WPevents, venuesData, data);
@@ -160,10 +176,11 @@ export const loadEvents = async (setData, venuesData, data) => {
 export const loadVenues = async (setData) => {
   const response = await fetch(
     typeof window !== undefined &&
-    `${window.location.protocol}//${window.location.hostname}${window.location.port !== "" && window.location.port !== "443"
-      ? `:8000`
-      : ``
-    }/wp-json/wp/v2/eventLocation?_fields=acf,id&per_page=100`
+      `${window.location.protocol}//${window.location.hostname}${
+        window.location.port !== "" && window.location.port !== "443"
+          ? `:8000`
+          : ``
+      }/wp-json/wp/v2/eventLocation?_fields=acf,id&per_page=100`
   );
 
   if (!response.ok) {
@@ -184,8 +201,8 @@ export const scrollToDate = (filteredDates, currentDate, listRef) => {
   const offsetTopID =
     filteredDates[currentDate] !== undefined
       ? [...listRef.current.childNodes].filter((node) => {
-        return node.id === filteredDates[currentDate].replace(/\./g, "");
-      })[0].offsetTop
+          return node.id === filteredDates[currentDate].replace(/\./g, "");
+        })[0].offsetTop
       : 0;
 
   const offsetTopList = listRef.current.offsetTop;
@@ -196,10 +213,11 @@ export const scrollToDate = (filteredDates, currentDate, listRef) => {
 export const loadTaxonomies = async (setData) => {
   const response = await fetch(
     typeof window !== undefined &&
-    `${window.location.protocol}//${window.location.hostname}${window.location.port !== "" && window.location.port !== "443"
-      ? `:8000`
-      : ``
-    }/wp-json/wp/v2/division?_fields=id,name&per_page=100`
+      `${window.location.protocol}//${window.location.hostname}${
+        window.location.port !== "" && window.location.port !== "443"
+          ? `:8000`
+          : ``
+      }/wp-json/wp/v2/division?_fields=id,name&per_page=100`
   );
 
   if (!response.ok) {
@@ -234,35 +252,38 @@ export const filterEvents = (data, setData) => {
     window.history.replaceState(
       null,
       "Veranstaltungskalender",
-      `${currentDate || (division !== null ? `?` : ``)}${currentDate !== null ? `date=${currentDate}` : ``
-      }${division !== null
-        ? `${currentDate !== null ? `&` : ``}saeule=${division}`
-        : ``
+      `${currentDate || (division !== null ? `?` : ``)}${
+        currentDate !== null ? `date=${currentDate}` : ``
+      }${
+        division !== null
+          ? `${currentDate !== null ? `&` : ``}saeule=${division}`
+          : ``
       }`
     );
 
   const filterExpression = jsonata(
     division !== null || city !== null
       ? `($filter(*, function($v) {
-         ${division !== null ? `$v."division" = ${division}` : ``} ${division !== null && city !== null ? `and` : ``
-      } ${city !== null ? `$v."city" = "${city}"` : ``}
+         ${division !== null ? `$v."division" = ${division}` : ``} ${
+          division !== null && city !== null ? `and` : ``
+        } ${city !== null ? `$v."city" = "${city}"` : ``}
        }))^(timestamp){dateLong:[$]}`
       : `$`
   );
 
   division !== "" && city !== ""
     ? setData((prev) => ({
-      ...prev,
-      eventData: {
-        ...prev.eventData,
-        filteredEvents: filterExpression.evaluate(initialEvents),
-      },
-    }))
+        ...prev,
+        eventData: {
+          ...prev.eventData,
+          filteredEvents: filterExpression.evaluate(initialEvents),
+        },
+      }))
     : setData((prev) => ({
-      ...prev,
-      eventData: {
-        ...prev.eventData,
-        filteredEvents: prev.initialEvents,
-      },
-    }));
+        ...prev,
+        eventData: {
+          ...prev.eventData,
+          filteredEvents: prev.initialEvents,
+        },
+      }));
 };
