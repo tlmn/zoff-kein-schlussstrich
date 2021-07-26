@@ -12,27 +12,25 @@ const CitiesFilter = () => {
   } = data;
 
   return (
-    <div className="z-50">
-      <Dropdown
-        options={cities}
-        value={city}
-        placeholder="Ort auswählen"
-        className="select-filter"
-        controlClassName="select-filter__control"
-        menuClassName="select-filter__menu"
-        baseClassName="select-filter__base"
-        onChange={(event) => {
-          setData((prev) => ({
-            ...prev,
-            filters: {
-              ...prev.filters,
-              city: event.value === "alle Orte" ? null : event.value,
-              currentDate: 0,
-            },
-          }));
-        }}
-      />
-    </div>
+    <Dropdown
+      options={cities}
+      value={city}
+      placeholder="Ort auswählen"
+      className="select-filter"
+      controlClassName="select-filter__control"
+      menuClassName="select-filter__menu"
+      baseClassName="select-filter__base"
+      onChange={(event) => {
+        setData((prev) => ({
+          ...prev,
+          filters: {
+            ...prev.filters,
+            city: event.value === "alle Orte" ? null : event.value,
+            currentDate: 0,
+          },
+        }));
+      }}
+    />
   );
 };
 
