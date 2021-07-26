@@ -6,6 +6,7 @@
   @apply flex;
   @apply items-center;
   @apply gap-2;
+  @apply text-m;
 }
 
 .select-filter__base {
@@ -55,11 +56,11 @@
 }
 
 .select-filter__arrow-open {
-  transform: rotate(45deg);
-  margin-top: 3px;
+  transform: rotate(-135deg);
+  margin-top: 6px;
 }
 
 .select-filter__arrow-closed {
-  transform: rotate(-135deg);
-  margin-top: -8px;
+  transform: rotate(45deg);
+  margin-top: -6px;
 }
