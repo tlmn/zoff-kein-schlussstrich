@@ -1,6 +1,6 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
-import Dropdown from "react-dropdown";
+import Filter from "./filter";
 
 const DivisionsFilter = () => {
   const { data, setData } = useCalendarContext();
@@ -13,13 +13,9 @@ const DivisionsFilter = () => {
   } = data;
 
   return (
-    <Dropdown
+    <Filter
       options={divisionsNames}
-      value={divisionsNames[division]}
-      className="select-filter"
-      controlClassName="select-filter__control"
-      menuClassName="select-filter__menu"
-      baseClassName="select-filter__base"
+      value={divisionsNames[division === null ? 0 : division]}
       placeholder="Säule auswählen"
       onChange={(event) => {
         setData((prev) => ({

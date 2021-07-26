@@ -1,7 +1,6 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
+import Filter from "./filter";
 
 const CitiesFilter = () => {
   const { data, setData } = useCalendarContext();
@@ -12,14 +11,10 @@ const CitiesFilter = () => {
   } = data;
 
   return (
-    <Dropdown
+    <Filter
       options={cities}
       value={city}
       placeholder="Ort auswählen"
-      className="select-filter"
-      controlClassName="select-filter__control"
-      menuClassName="select-filter__menu"
-      baseClassName="select-filter__base"
       onChange={(event) => {
         setData((prev) => ({
           ...prev,
