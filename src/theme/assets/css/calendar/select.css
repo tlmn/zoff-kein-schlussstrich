@@ -1,36 +1,65 @@
-select {
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 0;
-  @apply w-full;
-  outline: none;
-}
-.select__wrapper {
-  @apply w-full;
-  @apply rounded-3xl;
-  @apply py-2 px-3;
-  font-size: 1.25rem;
-  @apply cursor-pointer;
-  line-height: 1.1;
-  @apply bg-white;
+.select-filter__control {
+  @apply rounded-2xl;
+  @apply px-3 py-1;
   @apply shadow--bottom;
-  grid-template-areas: "select";
+  @apply cursor-pointer;
+  @apply flex;
   @apply items-center;
+  @apply gap-2;
 }
 
-select::after {
-  content: "";
-  width: 0.8em;
-  height: 0.5em;
-  background-color: #000;
-  clip-path: polygon(0% 0%, 10% 0%, 50% 50%, 90% 0%, 100% 0%, 50% 100%);
-  justify-self: end;
-  display: block;
+.select-filter__base {
 }
 
-select,
-.select:after {
-  grid-area: select;
+.select-filter__menu {
+  @apply absolute z-50;
+  @apply rounded-2xl;
+  @apply shadow--bottom;
+  @apply cursor-pointer;
+  @apply bg-white;
+  @apply mt-1;
+}
+
+.select-filter__base-option {
+  @apply px-3 py-1;
+}
+
+.select-filter__base-option:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.select-filter__base-option:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.select-filter__base-option[aria-selected="true"] {
+  @apply bg-yellow;
+  @apply text-black;
+}
+
+.select-filter__base-option:hover {
+  @apply bg-blue;
+  @apply text-white;
+}
+
+.select-filter {
+}
+
+.select-filter__arrow-open,
+.select-filter__arrow-closed {
+  @apply block;
+  width: 12px;
+  height: 12px;
+  border-right: 2px theme("colors.black") solid;
+  border-bottom: 2px theme("colors.black") solid;
+}
+
+.select-filter__arrow-open {
+  transform: rotate(45deg);
+  margin-top: 3px;
+}
+
+.select-filter__arrow-closed {
+  transform: rotate(-135deg);
+  margin-top: -8px;
 }

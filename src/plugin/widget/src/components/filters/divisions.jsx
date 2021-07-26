@@ -1,5 +1,6 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
+import Filter from "./filter";
 
 const DivisionsFilter = () => {
   const { data, setData } = useCalendarContext();
@@ -12,37 +13,24 @@ const DivisionsFilter = () => {
   } = data;
 
   return (
-    <div className="select__wrapper">
-      <select
-        onChange={(event) => {
-          setData((prev) => ({
-            ...prev,
-            filters: {
-              ...prev.filters,
-              division:
-                event.target.value === "alle Säulen"
-                  ? null
-                  : divisions.filter(
-                      (item) => item.name === event.target.value
-                    )[0].id,
-              currentDate: 0,
-            },
-          }));
-        }}
-        className=" text-black"
-        style={{ outline: 0 }}
-        value={division !== null ? divisions[division] : `alle Säulen`}
-      >
-        {divisionsNames.map(
-          (item, index) =>
-            item !== "" && (
-              <option value={item} key={index}>
-                {item}
-              </option>
-            )
-        )}
-      </select>
-    </div>
+    <Filter
+      options={divisionsNames}
+      value={divisionsNames[division === null ? 0 : division]}
+      placeholder="Säule auswählen"
+      onChange={(event) => {
+        setData((prev) => ({
+          ...prev,
+          filters: {
+            ...prev.filters,
+            division:
+              event.value === "alle Säulen"
+                ? null
+                : divisions.filter((item) => item.name === event.value)[0].id,
+            currentDate: 0,
+          },
+        }));
+      }}
+    />
   );
 };
 

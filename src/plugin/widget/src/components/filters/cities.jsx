@@ -1,5 +1,6 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
+import Filter from "./filter";
 
 const CitiesFilter = () => {
   const { data, setData } = useCalendarContext();
@@ -10,36 +11,21 @@ const CitiesFilter = () => {
   } = data;
 
   return (
-    <div className="select__wrapper">
-      <select
-        onChange={(event) => {
-          setData((prev) => ({
-            ...prev,
-            filters: {
-              ...prev.filters,
-              city:
-                event.target.value === "alle Orte" ? null : event.target.value,
-              currentDate: 0,
-            },
-          }));
-        }}
-        className="text-black text-center"
-        style={{ outline: 0 }}
-      >
-        {cities.map(
-          (item, index) =>
-            item !== "" && (
-              <option
-                value={item}
-                selected={item === "alle Orte" && city === null}
-                key={index}
-              >
-                {item}
-              </option>
-            )
-        )}
-      </select>
-    </div>
+    <Filter
+      options={cities}
+      value={city}
+      placeholder="Ort auswählen"
+      onChange={(event) => {
+        setData((prev) => ({
+          ...prev,
+          filters: {
+            ...prev.filters,
+            city: event.value === "alle Orte" ? null : event.value,
+            currentDate: 0,
+          },
+        }));
+      }}
+    />
   );
 };
 
