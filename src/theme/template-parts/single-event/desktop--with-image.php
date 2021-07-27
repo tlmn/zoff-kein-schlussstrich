@@ -171,7 +171,7 @@
                 ?>
 
 
-                <div class="font-medium text-lg leading-wider gap-collapse--left">
+                <div class="font-medium text-lg leading-wider gap-collapse--left border-b-2">
                     <div class="p-5">
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink()    . "/?date=" . $date . "&time=" . $time; ?>"
                             target="_blank" class="underline hover:no-underline flex items-center">
