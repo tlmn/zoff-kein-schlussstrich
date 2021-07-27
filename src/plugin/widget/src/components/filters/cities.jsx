@@ -14,7 +14,7 @@ const CitiesFilter = () => {
     <Filter
       options={cities.filter((item) => item)}
       value={city}
-      placeholder="Ort auswählen"
+      placeholder="alle Orte"
       onChange={(event) => {
         setData((prev) => ({
           ...prev,
