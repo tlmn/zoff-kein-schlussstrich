@@ -46,6 +46,19 @@
   }
 }
 
+.wp-block-button--disabled {
+  @apply bg-lightGray text-black;
+  @apply border-2 border-transparent;
+  @apply cursor-not-allowed;
+  &:hover {
+    @apply bg-sand text-black;
+  }
+  &:focus {
+    @apply bg-sand text-black;
+    @apply border-black;
+  }
+}
+
 .wp-block-button--black {
   @apply bg-black text-white;
   &:hover {
