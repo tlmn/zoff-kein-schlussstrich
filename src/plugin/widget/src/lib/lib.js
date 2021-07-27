@@ -165,12 +165,7 @@ export const loadEvents = async (setData, venuesData, data) => {
 
 export const loadVenues = async (setData) => {
   const response = await fetch(
-    typeof window !== undefined &&
-      `${window.location.protocol}//${window.location.hostname}${
-        window.location.port !== "" && window.location.port !== "443"
-          ? `:8000`
-          : ``
-      }/wp-json/wp/v2/eventLocation?_fields=acf,id&per_page=100`
+    `https://kein-schlussstrich.de/wp-json/wp/v2/eventLocation?_fields=acf,id&per_page=100`
   );
 
   if (!response.ok) {
@@ -202,12 +197,7 @@ export const scrollToDate = (filteredDates, currentDate, listRef) => {
 
 export const loadTaxonomies = async (setData) => {
   const response = await fetch(
-    typeof window !== undefined &&
-      `${window.location.protocol}//${window.location.hostname}${
-        window.location.port !== "" && window.location.port !== "443"
-          ? `:8000`
-          : ``
-      }/wp-json/wp/v2/division?_fields=id,name&per_page=100`
+    `https://kein-schlussstrich.de/wp-json/wp/v2/division?_fields=id,name&per_page=100`
   );
 
   if (!response.ok) {
