@@ -104,8 +104,7 @@
                 ?>
 
 
-                <?php
-                if ($currentVenue['url'] !== '') { ?>
+                <?php if ($currentVenue['url'] !== '') { ?>
                 <div class="font-medium text-lg leading-wider border-b-2 gap-collapse">
                     <div class="p-5">
                         <a href="<?php print $currentVenue[
@@ -123,8 +122,26 @@
                         </a>
                     </div>
                 </div>
-                <?php }
-
+                <?php } ?>
+                <div class="font-medium text-lg leading-wider gap-collapse border-b-2">
+                    <div class="p-5">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() .
+                            '/?date=' .
+                            $date .
+                            '&time=' .
+                            $time; ?>"
+                            target="_blank" class="underline hover:no-underline flex items-center">
+                            <span class="mr-2">
+                                <?php echo file_get_contents(
+                                    get_template_directory() .
+                                        '/assets/icons/fb-event.svg'
+                                ); ?>
+                            </span>
+                            <span>Event teilen</span>
+                        </a>
+                    </div>
+                </div>
+                <?php
                 $items = get_field('meta');
                 while (have_rows('meta')):
                     the_row();
@@ -132,7 +149,7 @@
                         have_rows('occurrences') &&
                         count(get_field('meta')['occurrences']) > 1
                     ): ?>
-                <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
+                <div class="font-medium text-lg leading-wider gap-collapse--left">
                     <div class="p-5">
                         <span class="uppercase">Weitere Termine</span>
                         <?php while (have_rows('occurrences')):
@@ -168,25 +185,6 @@
                 <?php endif;
                 endwhile;
                 ?>
-
-                <div class="font-medium text-lg leading-wider gap-collapse">
-                    <div class="p-5">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() .
-                            '/?date=' .
-                            $date .
-                            '&time=' .
-                            $time; ?>"
-                            target="_blank" class="underline hover:no-underline flex items-center">
-                            <span class="mr-2">
-                                <?php echo file_get_contents(
-                                    get_template_directory() .
-                                        '/assets/icons/fb-event.svg'
-                                ); ?>
-                            </span>
-                            <span>Event teilen</span>
-                        </a>
-                    </div>
-                </div>
             </div>
             <div class="col-span-10 border-r-2 border-black bg-white text-black relative gap-collapse-left--no-padding">
                 <?php if ($feature_image_alt !== '') { ?>
