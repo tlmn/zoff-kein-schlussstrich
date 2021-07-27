@@ -140,7 +140,7 @@
                     while (have_rows("occurrences")) : the_row();
                         $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
                     ?>
-                        <a href="<?php echo get_page_uri(); ?>/?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
+                        <a href="<?php echo get_permalink(); ?>?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
                             <?php
                             echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city'];
                             ?>
