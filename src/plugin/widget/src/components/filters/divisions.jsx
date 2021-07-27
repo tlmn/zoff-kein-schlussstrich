@@ -15,7 +15,10 @@ const DivisionsFilter = () => {
   return (
     <Filter
       options={divisionsNames}
-      value={divisionsNames[division === null ? 0 : division]}
+      value={
+        typeof divisions !== undefined &&
+        divisions?.filter((item) => item.id === division)[0]?.name
+      }
       placeholder="Säule auswählen"
       onChange={(event) => {
         setData((prev) => ({
