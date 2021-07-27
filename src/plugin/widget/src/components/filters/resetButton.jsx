@@ -10,8 +10,8 @@ const ResetButton = () => {
 
   return (
     <button
-      className={`wp-block-button wp-block-button--yellow bg-${
-        division !== null || city !== null ? `yellow` : `lightGray`
+      className={`wp-block-button wp-block-button--${
+        division !== null || city !== null ? `yellow` : `disabled`
       } whitespace-nowrap`}
       onClick={() =>
         setData((prev) => ({
