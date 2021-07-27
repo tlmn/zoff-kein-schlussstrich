@@ -95,9 +95,6 @@ if ($the_query->have_posts()):
         }
     }
 
-    $currentEvent['venue'][0]->post_title !== '' &&
-        array_push($labels, $currentEvent['venue'][0]->post_title);
-
     get_fields($currentEvent['venue'][0]->ID)['address']['city'] !== '' &&
         array_push(
             $labels,
@@ -105,6 +102,7 @@ if ($the_query->have_posts()):
         );
 
     $tags = [];
+
     if (
         array_key_exists('tags', $currentEvent) &&
         is_array($currentEvent['tags'])
