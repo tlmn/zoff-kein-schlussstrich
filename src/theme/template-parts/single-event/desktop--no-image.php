@@ -26,7 +26,7 @@
                         ]; ?>
                     </span>
                 </div>
-                <div class="bg-white flex flex-1 flex-col justify-between text-black">
+                <div class="bg-white flex flex-1 flex-col justify-between text-black" style="min-height: 60vh;">
                     <div class="mt-2 ml-2">
                         <?php foreach ($labels as $label) {
                             echo '#' . $label . ' ';
