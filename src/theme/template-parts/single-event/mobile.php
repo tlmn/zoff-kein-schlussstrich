@@ -33,7 +33,7 @@
                 <?php
                 if ($currentEvent['alarm'] !== "") {
                 ?>
-                    <span class="bg-yellow text-black uppercase font-medium rounded-3xl px-3 py-2 mb-6">
+                    <span class="inline-block bg-yellow text-black uppercase font-medium rounded-3xl px-3 py-2 mb-6">
                         <?php echo $currentEvent['alarm']; ?>
                     </span>
                 <?php
