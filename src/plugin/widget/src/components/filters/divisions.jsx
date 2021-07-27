@@ -19,7 +19,7 @@ const DivisionsFilter = () => {
         typeof divisions !== undefined &&
         divisions?.filter((item) => item.id === division)[0]?.name
       }
-      placeholder="alle Säule"
+      placeholder="alle Säulen"
       onChange={(event) => {
         setData((prev) => ({
           ...prev,
