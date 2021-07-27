@@ -104,8 +104,6 @@ if ($the_query->have_posts()):
             get_fields($currentEvent['venue'][0]->ID)['address']['city']
         );
 
-    print_r($labels);
-
     $tags = [];
     if (
         array_key_exists('tags', $currentEvent) &&
