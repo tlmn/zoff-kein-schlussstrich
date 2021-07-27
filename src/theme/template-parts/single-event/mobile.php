@@ -131,30 +131,6 @@
     <?php
     $items = get_field("meta");
 
-    while (have_rows("meta")) : the_row();
-        if (have_rows("occurrences")) : ?>
-            <div class="grid-6 border-b-2 ">
-                <div class="col-span-full py-6 px-3 text-lg font-medium">
-                    <span class="uppercase">Weitere Termine</span>
-                    <?php
-                    while (have_rows("occurrences")) : the_row();
-                        $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
-                    ?>
-                        <a href="<?php echo get_permalink(); ?>?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
-                            <?php
-                            echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city'];
-                            ?>
-                        </a>
-                    <?php
-                    endwhile;
-                    ?>
-                </div>
-            <?php
-        endif;
-            ?>
-            </div>
-        <?php
-    endwhile;
     if (array_key_exists('address', $currentVenue)) {
         ?>
             <div class="grid-6 border-b-2 ">
@@ -170,6 +146,7 @@
 
         <?php
     }
+
     if (array_key_exists('url', $currentVenue) && $currentVenue['url'] !== "") { ?>
             <div class="grid-6 border-b-2 ">
                 <div class="col-span-full px-3 py-6">
@@ -196,4 +173,32 @@
                 </a>
             </div>
         </div>
+
+        <?php
+        
+        while (have_rows("meta")) : the_row();
+        if (have_rows("occurrences")) : ?>
+            <div class="grid-6">
+                <div class="col-span-full py-6 px-3 text-lg font-medium">
+                    <span class="uppercase">Weitere Termine</span>
+                    <?php
+                    while (have_rows("occurrences")) : the_row();
+                        $timestamp = strtotime(str_replace('/', '-', get_sub_field('timestamp')));
+                    ?>
+                        <a href="<?php echo get_permalink(); ?>?date=<?php echo date("dmY", $timestamp); ?>&time=<?php echo date("Hi", $timestamp); ?>" class="block underline hover:no-underline">
+                            <?php
+                            echo date("j.n.y", $timestamp) . " in " . get_field('address', get_sub_field('venue')[0]->ID)['city'];
+                            ?>
+                        </a>
+                    <?php
+                    endwhile;
+                    ?>
+                </div>
+            <?php
+        endif;
+            ?>
+            </div>
+        <?php
+    endwhile;
+        ?>
 </div>
