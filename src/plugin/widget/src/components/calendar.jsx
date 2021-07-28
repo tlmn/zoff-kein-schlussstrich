@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { loadEvents, loadDivisions, loadVenues } from "../lib/lib";
+import { loadEvents, loadDivisions, loadVenues, loadLabels } from "../lib/lib";
 
 import CalendarHeader from "./calendarHeader";
 import CalendarList from "./calendarList";
@@ -12,6 +12,7 @@ const Calendar = () => {
 
   useEffect(() => {
     loadDivisions(setData);
+    loadLabels(setData);
     loadVenues(setData);
   }, []);
 
