@@ -33,7 +33,7 @@ export const getWeekDay = (dateLong) => {
 
 export const parseEvents = (eventsRaw, venuesData, data) => {
   const {
-    taxonomies: { divisions },
+    taxonomies: { divisions, labels },
   } = data;
 
   let eventsParsed = [];
@@ -64,29 +64,16 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
               },
               link: generateLink(item.link, luxonTimestamp),
               short_description: item.acf.meta.short_description,
-              tags:
-                item.division.length > 0
-                  ? concat(
-                      divisions.divisions !== undefined &&
-                        divisions.divisions.filter(
-                          (division) => division.id === item.division[0]
-                        )[0].name,
-                      occ.venue !== undefined && occ.venue.length > 0
-                        ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                          ? venuesData[occ.venue[0].ID.toString()].acf.address
-                              .city
-                          : ""
-                        : "",
-                      occ.venue !== undefined && occ.venue.length > 0
-                        ? venuesData[occ.venue[0].ID.toString()] !== undefined
-                          ? venuesData[occ.venue[0].ID.toString()].acf.name
-                          : ""
-                        : "",
-                      occ.labels !== undefined &&
-                        occ.labels.length > 0 &&
-                        occ.labels
-                    )
-                  : [],
+              tags: concat(
+                divisions?.divisions?.filter(
+                  (division) => division.id === item.division[0]
+                )[0]?.name,
+                labels,
+                occ?.venue
+                  ? venuesData[occ.venue[0].ID.toString()]?.acf?.address?.city
+                  : "",
+                occ?.labels
+              ),
               ticketlink: occ.ticketlink,
               time: luxonTimestamp.toFormat("HH:mm"),
               timestamp: luxonTimestamp.toFormat("X"),
@@ -195,7 +182,7 @@ export const scrollToDate = (filteredDates, currentDate, listRef) => {
   listRef.current.scrollTop = offsetTopID - offsetTopList;
 };
 
-export const loadTaxonomies = async (setData) => {
+export const loadDivisions = async (setData) => {
   const response = await fetch(
     `https://kein-schlussstrich.de/wp-json/wp/v2/division?_fields=id,name&per_page=100`
   );
