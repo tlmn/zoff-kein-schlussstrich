@@ -2,7 +2,15 @@
 #menu-submenue li,
 #footer-menu ul li {
   @apply inline-block;
-  @apply mx-5;
+  @apply mx-1;
+}
+
+@screen lg {
+  #top-menu ul li,
+  #menu-submenue li,
+  #footer-menu ul li {
+    @apply mx-5;
+  }
 }
 
 .menu-social-media-container ul li {
