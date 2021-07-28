@@ -6,7 +6,7 @@
   @apply flex;
   @apply items-center;
   @apply gap-2;
-  @apply text-m;
+  @apply text-lg;
 }
 
 .select-filter__base {
