@@ -65,14 +65,16 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
               link: generateLink(item.link, luxonTimestamp),
               short_description: item.acf.meta.short_description,
               tags: concat(
-                divisions?.divisions?.filter(
-                  (division) => division.id === item.division[0]
-                )[0]?.name,
-                labels,
+                divisions?.divisions
+                  ?.filter((division) => item.division.includes(division.id))
+                  ?.map((divisionItem) => divisionItem.name),
                 occ?.venue
                   ? venuesData[occ.venue[0].ID.toString()]?.acf?.address?.city
                   : "",
-                occ?.labels
+                "Inszenierung",
+                labels?.labels
+                  ?.filter((label) => item.label.includes(label.id))
+                  ?.map((labelItem) => labelItem.name)
               ),
               ticketlink: occ.ticketlink,
               time: luxonTimestamp.toFormat("HH:mm"),
@@ -111,7 +113,7 @@ export const generateSrcSet = (sizes) => {
 
 export const loadEvents = async (setData, venuesData, data) => {
   const perPage = 99;
-  const url = `https://kein-schlussstrich.de/wp-json/wp/v2/event?_fields=acf,link,title,division,labels`;
+  const url = `https://kein-schlussstrich.de/wp-json/wp/v2/event?_fields=acf,link,title,division,label`;
 
   const requestTotalNumber = await fetch(`${url}&per_page=1`);
 
@@ -205,6 +207,32 @@ export const loadDivisions = async (setData) => {
           "alle Säulen",
           filterDivisionNames.evaluate(WPDivisions)
         ),
+      },
+    },
+  }));
+};
+
+export const loadLabels = async (setData) => {
+  const response = await fetch(
+    `https://kein-schlussstrich.de/wp-json/wp/v2/label?_fields=id,name&per_page=100`
+  );
+
+  if (!response.ok) {
+    return;
+  }
+
+  const WPLabels = await response.json();
+
+  const filterLabelsNames = jsonata(WPLabels.length > 0 ? `$.name` : `$`);
+  console.log(WPLabels);
+
+  setData((prev) => ({
+    ...prev,
+    taxonomies: {
+      ...prev.taxonomies,
+      labels: {
+        labels: WPLabels,
+        labelsNames: filterLabelsNames.evaluate(WPLabels),
       },
     },
   }));
