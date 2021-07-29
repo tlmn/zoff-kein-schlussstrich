@@ -1,6 +1,17 @@
 <?php
 $BLOCKS = array(
     array(
+        'name'              => 'upcoming-events',
+        'title'             => __('Nächste Veranstaltungen'),
+        'description'       => __('Nächste Veranstaltungen'),
+        'category'          => 'formatting',
+        'render_template' => 'template-parts/blocks/upcoming-events.php',
+        'supports'          => array(
+            'jsx' => true
+        ),
+    ),
+
+    array(
         'name'              => 'background-container',
         'title'             => __('Hintergrund Container'),
         'description'       => __('Hintergrund Container'),
@@ -260,7 +271,7 @@ function register_acf_blocks()
 }
 
 
-function page_allowed_block_types($allowed_blocks, $post)
+function page_allowed_block_types_all($allowed_blocks, $post)
 {
     global $BLOCKS;
     $allowed_blocks = array(
