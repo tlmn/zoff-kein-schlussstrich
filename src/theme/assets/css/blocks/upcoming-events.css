@@ -1,0 +1,108 @@
+.wp-block-upcoming-events {
+  min-height: 70vh;
+  @apply w-full flex justify-center;
+}
+
+.wp-block-upcoming-events__wrapper {
+  @apply container grid-6 border-b-2 border-black;
+}
+
+.wp-block-upcoming-events__tab {
+  @apply shadow--right z-20;
+  @apply col-span-full;
+}
+
+.wp-block-upcoming-events__tab-text-wrapper {
+  @apply flex justify-center leading-normal py-4;
+}
+
+.wp-block-upcoming-events__tab-text {
+  @apply font-sans text-black text-3xl font-medium leading-snug hyphens-none;
+}
+
+.wp-block-upcoming-events__image-wrapper {
+  @apply col-span-full relative shadow--bottom;
+  height: 50vh;
+}
+
+.wp-block-upcoming-events__image {
+  @apply image-bg;
+  @apply border-0;
+  @apply absolute;
+  @apply top-0;
+}
+
+.wp-block-upcoming-events__image--1 {
+  height: calc(100% - 6rem);
+  z-index: 50;
+}
+
+.wp-block-upcoming-events__image--2 {
+  height: calc(100% - 3rem);
+  z-index: 40;
+  @apply cursor-pointer;
+}
+.wp-block-upcoming-events__image--3 {
+  z-index: 30;
+  @apply cursor-pointer;
+}
+
+.wp-block-upcoming-events__tab {
+  @apply flex flex-col-reverse justify-start;
+}
+
+.wp-block-hero-landing__tab-content--mobile {
+  @apply w-full justify-start flex flex-col gap-5;
+  @apply p-3;
+}
+
+@screen md {
+  .wp-block-upcoming-events__image--1 {
+    width: calc(100% - 6rem);
+    height: 100%;
+    z-index: 50;
+  }
+
+  .wp-block-upcoming-events__image--2 {
+    width: calc(100% - 3rem);
+    z-index: 40;
+    height: 100%;
+    @apply cursor-pointer;
+  }
+  .wp-block-upcoming-events__image--3 {
+    z-index: 30;
+    height: 100%;
+    @apply cursor-pointer;
+  }
+}
+.wp-block-upcoming-events__content-wrapper {
+  @apply col-span-full py-7 px-2;
+}
+
+@screen md {
+  .wp-block-upcoming-events {
+    max-height: 70vh;
+    min-height: 800px;
+  }
+  .wp-block-upcoming-events__wrapper {
+    @apply border-l-2 border-r-2 grid-16;
+  }
+  .wp-block-upcoming-events__tab {
+    @apply col-span-2 shadow--right gap-collapse--right;
+  }
+  .wp-block-upcoming-events__tab-text-wrapper {
+    @apply py-0 justify-start h-full;
+  }
+  .wp-block-upcoming-events__tab-text-wrapper {
+    @apply leading-wider whitespace-nowrap pr-3 rotate-left--90;
+  }
+  .wp-block-upcoming-events__image-wrapper {
+    @apply col-span-7 h-full;
+  }
+  .wp-block-upcoming-events__image {
+    @apply shadow--left shadow--right;
+  }
+  .wp-block-upcoming-events__content-wrapper {
+    @apply col-span-7 px-7;
+  }
+}
