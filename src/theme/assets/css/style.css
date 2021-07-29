@@ -32,8 +32,10 @@
 @import "./blocks/teaser-division.css";
 @import "./blocks/teaser-latest.css";
 @import "./blocks/teaser-venue.css";
+@import "./blocks/upcoming-events.css";
 @import "./event/single--w-image.css";
 @import "./event/single.css";
+
 .wp-block {
     max-width: 1100px !important;
 }
