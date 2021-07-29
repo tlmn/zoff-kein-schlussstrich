@@ -6,6 +6,24 @@ $(window).resize(() => {
 
 $(document).ready(function () {
   const regex = new RegExp("programm");
+  $(".wp-block-upcoming-events__image").click((event) => {
+    var currentClass = $(event.currentTarget).attr("class").match(/[0-9]/)[0];
+
+    $(".wp-block-upcoming-events__image--1")
+      .toggleClass("wp-block-upcoming-events__image--1")
+      .toggleClass("wp-block-upcoming-events__image--helper");
+
+    $(".wp-block-upcoming-events__image--" + currentClass)
+      .toggleClass("wp-block-upcoming-events__image--" + currentClass)
+      .toggleClass("wp-block-upcoming-events__image--1");
+
+    $(".wp-block-upcoming-events__image--helper")
+      .toggleClass("wp-block-upcoming-events__image--helper")
+      .toggleClass("wp-block-upcoming-events__image--" + currentClass);
+
+    $(".wp-block-upcoming-events__content").hide();
+    $(".wp-block-upcoming-events__content--" + currentClass).show();
+  });
 
   var submenuHeight = 40;
   $("#sub-menu__container").css("display", "block");
@@ -65,8 +83,16 @@ $(document).ready(function () {
   $(".readmore-button").each((index, value) => {
     $(value).click(() => {
       $(value).parent().siblings().toggle();
-      $(value).toggleClass("bg-white").toggleClass("bg-black").toggleClass("text-white").toggleClass("text-black");
-      $(value).html($(value).parent().siblings().css('display') === "none" ? "Mehr lesen" : "Weniger lesen");
+      $(value)
+        .toggleClass("bg-white")
+        .toggleClass("bg-black")
+        .toggleClass("text-white")
+        .toggleClass("text-black");
+      $(value).html(
+        $(value).parent().siblings().css("display") === "none"
+          ? "Mehr lesen"
+          : "Weniger lesen"
+      );
     });
-  })
+  });
 });
