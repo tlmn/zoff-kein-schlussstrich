@@ -70,7 +70,7 @@
   }
 
   .wp-block-hero-landing__tab-content--mobile {
-    @apply hidden;
+    @apply hidden !important;
   }
 
   .wp-block-hero-landing__quote-wrapper {
