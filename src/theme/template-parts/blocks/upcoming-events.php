@@ -16,23 +16,30 @@ foreach ($upcomingEvents as $upcomingEvent) {
         ]['image']['url'],
         'date' => $datetime[0],
         'time' => $datetime[1],
+        'hashtags' => $upcomingEvent['hashtags'],
     ]);
 }
 ?>
 <div class="wp-block-upcoming-events">
     <div class="wp-block-upcoming-events__wrapper">
         <div class="wp-block-upcoming-events__tab bg-yellow">
-            <div class="mt-6">
+            <div class="mt-6 hidden md:block">
                     <?php echo file_get_contents(
                         get_template_directory() .
                             '/assets/images/svg/hero-date.svg'
                     ); ?>
             </div>
-            <div class="">
+            <div class="hidden md:block">
                     <?php echo file_get_contents(
                         get_template_directory() .
                             '/assets/images/svg/hero-description.svg'
                     ); ?>
+            </div>
+            <div class="block md:hidden py-4 px-4">
+            <?php echo file_get_contents(
+                get_template_directory() .
+                    '/assets/images/svg/upcoming-date--straight.svg'
+            ); ?>
             </div>
         </div>
 
@@ -42,7 +49,7 @@ foreach ($upcomingEvents as $upcomingEvent) {
             foreach ($eventsParsed as $event) { ?>
                 <img src="<?php echo $event[
                     'featureImage'
-                ]; ?>" class="wp-block-upcoming-events__image wp-block-upcoming-events__image--<?php echo $index; ?>">
+                ]; ?>" class="wp-block-upcoming-events__image shadow--bottom md:shadow--right wp-block-upcoming-events__image--<?php echo $index; ?>">
                 
                 <?php $index++;}
             ?>
@@ -75,7 +82,7 @@ foreach ($upcomingEvents as $upcomingEvent) {
                 <a class="wp-block-button wp-block-button--black" href="<?php echo $event[
                     'permalink'
                 ] .
-                    '?date' .
+                    '?date=' .
                     str_replace('.', '', $event['date']) .
                     '2021&time=' .
                     $event['time']; ?>00" target="">
@@ -92,7 +99,10 @@ foreach ($upcomingEvents as $upcomingEvent) {
                     </div>
                 </a>
             </div>
-               <?php  ?>
+            <span class="flex flex-1 items-end mt-3 text-s">
+                <?php echo $event['hashtags']; ?>
+            </span>
+
             </div>
                 <?php $index++;}
         ?> 

@@ -24,7 +24,7 @@ add_action('wp_enqueue_scripts', 'js_scripts_custom', 1);
 
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 add_action('acf/init', 'register_acf_blocks');
-add_filter('allowed_block_types', 'page_allowed_block_types', 10, 2);
+add_filter('allowed_block_types_all', 'page_allowed_block_types_all', 10, 2);
 
 add_action('wp_enqueue_scripts', 'wp_theme_styles');
 add_action('after_setup_theme', 'load_editor_styles');
