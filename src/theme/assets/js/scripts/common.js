@@ -4,7 +4,7 @@ $(window).resize(() => {
   $(window).width() < 900 && $("#sub-menu__container").hide();
 });
 
-$(document).ready(function () {
+$(document).ready(() => {
   const regex = new RegExp("programm");
   $(".wp-block-upcoming-events__image").click((event) => {
     var currentClass = $(event.currentTarget).attr("class").match(/[0-9]/)[0];
@@ -36,7 +36,7 @@ $(document).ready(function () {
     $("#sub-menu__container").height(0);
   }
 
-  $(".menu-item__programme > a").click(function (event) {
+  $(".menu-item-has-children > a").click((event) => {
     event.preventDefault();
     if ($("#sub-menu__container").css("height") === "5px") {
       $("#sub-menu__container").animate({ height: submenuHeight }, 500);
