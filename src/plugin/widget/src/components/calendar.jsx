@@ -22,6 +22,7 @@ const Calendar = () => {
 
   return (
     <div style={{ margin: "0 auto" }} ref={calendarRef}>
+      {data.currentLanguage}
       <CalendarHeader />
       <CalendarList />
     </div>
