@@ -32,12 +32,12 @@ const CalendarList = () => {
 
   useEffect(() => {
     const updateScrollPosition = () => {
-      setOffsetY(listRef.current.scrollTop);
+      setOffsetY(listRef?.current?.scrollTop);
     }
     if (listRef && listRef.current) {
-      listRef.current.addEventListener("scroll", updateScrollPosition, false);
+      listRef?.current?.addEventListener("scroll", updateScrollPosition, false);
       return function cleanup() {
-        listRef.current.removeEventListener("scroll", updateScrollPosition, false);
+        listRef?.current?.removeEventListener("scroll", updateScrollPosition, false);
       };
     }
   }, []);
