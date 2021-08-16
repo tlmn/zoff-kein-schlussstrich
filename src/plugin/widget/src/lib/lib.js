@@ -224,7 +224,6 @@ export const loadLabels = async (setData) => {
   const WPLabels = await response.json();
 
   const filterLabelsNames = jsonata(WPLabels.length > 0 ? `$.name` : `$`);
-  console.log(WPLabels);
 
   setData((prev) => ({
     ...prev,
