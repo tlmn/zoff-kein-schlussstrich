@@ -11,6 +11,7 @@
   "dependencies": {
     "babel": "^6.23.0",
     "gulp-postcss": "^9.0.0",
+    "js-cookie": "^3.0.0",
     "json-query": "^2.2.2",
     "jsonata": "^1.8.4",
     "lodash": "^4.17.21",
