@@ -25,9 +25,9 @@ export const pad = (num, size) => {
   return num;
 };
 
-export const getWeekDay = (dateLong) => {
+export const getWeekDay = (dateLong, locale = "de") => {
   return DateTime.fromFormat(dateLong, "dd.MM.yyyy")
-    .setLocale("de")
+    .setLocale(locale)
     .toFormat("cccc");
 };
 

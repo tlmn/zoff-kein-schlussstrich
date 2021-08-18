@@ -15,6 +15,7 @@ export const CalendarHeader = () => {
   const { data } = useCalendarContext();
 
   const {
+    currentLocale,
     eventData: { filteredEvents },
     filters: { currentDate },
   } = data;
@@ -22,18 +23,13 @@ export const CalendarHeader = () => {
   const filteredDates = Object.keys(filteredEvents);
 
   return (
-    <div
-      className="relative z-30 font-medium"
-    >
-      <div
-        className="container grid-6 md:grid-16"
-        style={{ margin: "0 auto" }}
-      >
+    <div className="relative z-30 font-medium">
+      <div className="container grid-6 md:grid-16" style={{ margin: "0 auto" }}>
         <div className="col-span-full z-50 grid-6 md:grid-16 py-2 bg-black">
           <div className="col-span-full flex justify-center md:hidden">
             <span className="block font-sans text-white text-m leading-snug">
               {filteredDates[currentDate] !== undefined &&
-                getWeekDay(filteredDates[currentDate])}
+                getWeekDay(filteredDates[currentDate], currentLocale)}
             </span>
           </div>
           <div className="px-2 col-span-full md:col-span-12 md:col-start-3 w-full flex flex-col justify-center bg-black">
@@ -45,7 +41,7 @@ export const CalendarHeader = () => {
                   style={{ transform: "rotate(270deg)" }}
                 >
                   {filteredDates[currentDate] !== undefined &&
-                    getWeekDay(filteredDates[currentDate])}
+                    getWeekDay(filteredDates[currentDate], currentLocale)}
                 </span>
                 <span className="font-sans text-5xl md:text-7xl font-normal text-white leading-none">
                   {filteredDates[currentDate] !== undefined
@@ -56,25 +52,26 @@ export const CalendarHeader = () => {
               <NavigationArrows type="next" />
             </div>
             <div className="hidden md:flex items-center">
-              {filteredDates.length > 1 && <NavigationRange className="md:mx-3 w-full" />}
+              {filteredDates.length > 1 && (
+                <NavigationRange className="md:mx-3 w-full" />
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      <div
-        className="container grid-6 md:grid-16 shadow--bottom pt-3 pb-2 md:py-3 md:border-l-2 md:border-r-2"
-      >
-        <div
-          className="col-span-6 md:hidden flex flex-col py-3 px-2 relative shadow--bottom"
-        >
-          {filteredDates.length > 1 && <NavigationRange controlsColor="#000" className="md:mx-3 w-full p-2 px-4" />}
+      <div className="container grid-6 md:grid-16 shadow--bottom pt-3 pb-2 md:py-3 md:border-l-2 md:border-r-2">
+        <div className="col-span-6 md:hidden flex flex-col py-3 px-2 relative shadow--bottom">
+          {filteredDates.length > 1 && (
+            <NavigationRange
+              controlsColor="#000"
+              className="md:mx-3 w-full p-2 px-4"
+            />
+          )}
           <div className="flex justify-between mt-2">
             {filteredDates.length > 1 && (
               <>
-                <span className="font-sans text-xs">
-                  {filteredDates[0]}
-                </span>
+                <span className="font-sans text-xs">{filteredDates[0]}</span>
                 <span className="font-sans text-xs">
                   {filteredDates[filteredDates.length - 1]}
                 </span>

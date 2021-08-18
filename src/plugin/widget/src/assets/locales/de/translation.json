@@ -1,0 +1,21 @@
+{
+  "common.loading": "Lade Kalender",
+  "common.weekdays.monday": "Montag",
+  "common.weekdays.tuesday": "Dienstag",
+  "common.weekdays.wednesday": "Mittwoch",
+  "common.weekdays.thursday": "Donnerstag",
+  "common.weekdays.friday": "Freitag",
+  "common.weekdays.saturday": "Samstag",
+  "common.weekdays.sunday": "Sonntag",
+  "common.weekdays.monday.short": "Mo",
+  "common.weekdays.tuesday.short": "Di",
+  "common.weekdays.wednesday.short": "Mi",
+  "common.weekdays.thursday.short": "Do",
+  "common.weekdays.friday.short": "Fr",
+  "common.weekdays.saturday.short": "Sa",
+  "common.weekdays.sunday.short": "So",
+  "filters.cities.allCities": "alle Orte",
+  "filters.divisions.allDivisions": "alle Säulen",
+  "filters.reset": "zurücksetzen",
+  "filters.noResults": "Keine Veranstaltungen mit diesen Filtereinstellungen."
+}

@@ -1,0 +1,21 @@
+{
+  "common.loading": "Loading calenddar",
+  "common.weekdays.monday": "Montag",
+  "common.weekdays.tuesday": "Dienstag",
+  "common.weekdays.wednesday": "Mittwoch",
+  "common.weekdays.thursday": "Donnerstag",
+  "common.weekdays.friday": "Freitag",
+  "common.weekdays.saturday": "Samstag",
+  "common.weekdays.sunday": "Sonntag",
+  "common.weekdays.monday.short": "Mo",
+  "common.weekdays.tuesday.short": "Di",
+  "common.weekdays.wednesday.short": "Mi",
+  "common.weekdays.thursday.short": "Do",
+  "common.weekdays.friday.short": "Fr",
+  "common.weekdays.saturday.short": "Sa",
+  "common.weekdays.sunday.short": "So",
+  "filters.cities.allCities": "all places",
+  "filters.divisions.allDivisions": "all divisions",
+  "filters.reset": "reset",
+  "filters.noResults": "There are no events with your filter settings."
+}

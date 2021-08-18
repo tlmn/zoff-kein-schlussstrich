@@ -1,7 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import useCalendarContext from "../../hooks/useCalendarContext";
 
-const ResetButton = () => {
+import { withNamespaces } from "react-i18next";
+
+const ResetButton = ({ t }) => {
   const { data, setData } = useCalendarContext();
 
   const {
@@ -27,9 +30,13 @@ const ResetButton = () => {
       type="button"
       disabled={division !== null || city !== null ? false : true}
     >
-      zurücksetzen
+      {t('filters.reset')}
     </button>
   );
 };
 
-export default ResetButton;
+ResetButton.propTypes = {
+  t: PropTypes.func,
+};
+
+export default withNamespaces()(ResetButton);
