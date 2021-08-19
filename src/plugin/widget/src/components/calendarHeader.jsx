@@ -12,13 +12,13 @@ import { getWeekDay } from "../lib/lib";
 import useCalendarContext from "../hooks/useCalendarContext";
 
 export const CalendarHeader = () => {
-  const { data } = useCalendarContext();
-
   const {
-    currentLocale,
-    eventData: { filteredEvents },
-    filters: { currentDate },
-  } = data;
+    data: {
+      currentLocale,
+      eventData: { filteredEvents },
+      filters: { currentDate },
+    },
+  } = useCalendarContext();
 
   const filteredDates = Object.keys(filteredEvents);
 

@@ -5,11 +5,12 @@ import useCalendarContext from "../../hooks/useCalendarContext";
 import { withNamespaces } from "react-i18next";
 
 const ResetButton = ({ t }) => {
-  const { data, setData } = useCalendarContext();
-
   const {
-    filters: { city, division },
-  } = data;
+    data: {
+      filters: { city, division },
+    },
+    setData,
+  } = useCalendarContext();
 
   return (
     <button
@@ -30,7 +31,7 @@ const ResetButton = ({ t }) => {
       type="button"
       disabled={division !== null || city !== null ? false : true}
     >
-      {t('filters.reset')}
+      {t("filters.reset")}
     </button>
   );
 };
