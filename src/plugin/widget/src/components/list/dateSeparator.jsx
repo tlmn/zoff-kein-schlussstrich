@@ -12,12 +12,10 @@ const DateSeparator = ({ date }) => {
           className="hidden md:inline-block font-sans uppercase text-white text-m leading-snug"
           style={{ transform: "rotate(270deg)" }}
         >
-          {getWeekDay(date).substring(0,2)}
+          {getWeekDay(date).substring(0, 2)}
         </span>
 
-        <span
-          className="block md:hidden font-sans text-white text-base leading-snug my-2"
-        >
+        <span className="block md:hidden font-sans text-white text-base leading-snug my-2">
           {getWeekDay(date)}
         </span>
 
