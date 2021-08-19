@@ -13,7 +13,8 @@
   }
 }
 
-.menu-social-media-container ul li {
+.menu-social-media-container ul li,
+.menu-social-media-englisch-container ul li {
   @apply inline-block;
   @apply mx-3;
 }
@@ -126,7 +127,8 @@
   @apply my-3;
 }
 
-.footer .menu-social-media-container ul li {
+.footer .menu-social-media-container ul li,
+.footer .menu-social-media-englisch-container ul li {
   @apply mx-5;
 }
 
