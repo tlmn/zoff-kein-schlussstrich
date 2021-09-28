@@ -51,7 +51,7 @@ const EventTeaser = ({
               <a
                 href={ticketlink}
                 rel="noreferrer"
-                className="underline hover:no-underline"
+                className="underline hover:no-underline ml-2"
               >
                 Tickets
               </a>
