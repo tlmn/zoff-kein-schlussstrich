@@ -242,6 +242,7 @@ export const filterEvents = (data, setData) => {
     eventData: { initialEvents },
     filters: { division, city, currentDate },
   } = data;
+
   division !== null &&
     window.history.replaceState(
       null,
@@ -280,4 +281,26 @@ export const filterEvents = (data, setData) => {
           filteredEvents: prev.initialEvents,
         },
       }));
+};
+
+export const setToday = (initialEvents, setData) => {
+  const today = DateTime.now();
+  const keys = Object.keys(initialEvents);
+  const indexToday = keys.indexOf(
+    keys.find(
+      (date) =>
+        today.diff(
+          DateTime.fromFormat(date, "dd.MM.yyyy").setLocale("de"),
+          "days"
+        ).days < 0
+    )
+  );
+
+  setData((prev) => ({
+    ...prev,
+    filters: {
+      ...prev.filters,
+      currentDate: indexToday >= 0 ? indexToday : 0,
+    },
+  }));
 };
