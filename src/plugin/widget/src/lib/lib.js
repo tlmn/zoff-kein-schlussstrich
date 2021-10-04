@@ -71,7 +71,6 @@ export const parseEvents = (eventsRaw, venuesData, data) => {
                 occ?.venue
                   ? venuesData[occ.venue[0].ID.toString()]?.acf?.address?.city
                   : "",
-                "Inszenierung",
                 labels?.labels
                   ?.filter((label) => item.label.includes(label.id))
                   ?.map((labelItem) => labelItem.name)
