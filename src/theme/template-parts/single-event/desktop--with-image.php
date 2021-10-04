@@ -1,4 +1,5 @@
 <div class="relative hidden md:block">
+    <?php print_r($currentEvent);?>
     <div class="flex justify-center">
         <div
             class="container grid-16 relative z-10 text-white border-b-2 border-black gap-collapse border-l-2 border-r-2">
