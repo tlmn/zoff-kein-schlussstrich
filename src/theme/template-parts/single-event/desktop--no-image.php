@@ -62,7 +62,7 @@
                                 array_key_exists('ticketlink', $currentEvent) &&
                                 $currentEvent['ticketlink'] !== ''
                             ) { ?>
-                            <a href="<?php $currentEvent[
+                            <a href="<?php echo $currentEvent[
                                 'ticketlink'
                             ]; ?>" target="_blank">
                                 Tickets
