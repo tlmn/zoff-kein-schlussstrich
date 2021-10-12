@@ -14,4 +14,10 @@
 <?php wp_footer(); ?>
 </body>
 
+<div id="language-menu">
+						<?php 
+						print_r(icl_get_languages());
+						?>
+					</div>
+
 </html>
