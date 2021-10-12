@@ -8,7 +8,7 @@ import NavigationRange from "./navigation/navigationRange";
 import PropTypes from "prop-types";
 import React from "react";
 import ResetButton from "./filters/resetButton";
-import { getWeekDay } from "../lib/lib";
+import { getWeekDay, formatDate } from "../lib/lib";
 import useCalendarContext from "../hooks/useCalendarContext";
 
 export const CalendarHeader = () => {
@@ -45,7 +45,11 @@ export const CalendarHeader = () => {
                 </span>
                 <span className="font-sans text-5xl md:text-7xl font-normal text-white leading-none">
                   {filteredDates[currentDate] !== undefined
-                    ? filteredDates[currentDate].slice(0, -4)
+                    ? formatDate(
+                        filteredDates[currentDate],
+                        currentLocale,
+                        false
+                      )
                     : `– . –`}
                 </span>
               </div>
@@ -71,9 +75,15 @@ export const CalendarHeader = () => {
           <div className="flex justify-between mt-2">
             {filteredDates.length > 1 && (
               <>
-                <span className="font-sans text-xs">{filteredDates[0]}</span>
                 <span className="font-sans text-xs">
-                  {filteredDates[filteredDates.length - 1]}
+                  {formatDate(filteredDates[0], currentLocale, true)}
+                </span>
+                <span className="font-sans text-xs">
+                  {formatDate(
+                    filteredDates[filteredDates.length - 1],
+                    currentLocale,
+                    true
+                  )}
                 </span>
               </>
             )}
