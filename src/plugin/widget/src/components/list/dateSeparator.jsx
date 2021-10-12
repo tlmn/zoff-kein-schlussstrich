@@ -1,15 +1,13 @@
-import { DateTime } from "luxon";
 import PropTypes from "prop-types";
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
-import { getWeekDay } from "../../lib/lib";
+import { formatDate, getWeekDay } from "../../lib/lib";
 
 const DateSeparator = ({ date }) => {
   const {
     data: { currentLocale },
   } = useCalendarContext();
 
-  const luxon = DateTime.fromFormat(date, "dd.MM.yyyy").setLocale("de");
   return (
     <div className="container grid-16 bg-white">
       <div className="col-span-full flex flex-col items-center md:justify-center md:flex-row bg-black text-white">
@@ -35,7 +33,7 @@ const DateSeparator = ({ date }) => {
             lineHeight: 0.7,
           }}
         >
-          {luxon.toFormat("dd.MM.")}
+          {formatDate(date, currentLocale, false)}
         </h2>
       </div>
     </div>
