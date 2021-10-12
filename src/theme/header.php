@@ -147,14 +147,14 @@ if (get_field('themeColor', $post->ID)) {
 					<div id="socialmedia-menu">
 						<?php wp_nav_menu(['theme_location' => 'social-media', 'depth' => 1]); ?>
 					</div>
-					<ul id="language-menu">
+					<ul id="language-menu" class="flex gap-1 mx-2">
 						<?php
       $languages = icl_get_languages();
       foreach ($languages as $language) { ?>
 							<li>
 								<a href="<?php echo $language['url']; ?>" class="uppercase <?php if (
     $language['active'] === 1
-) { ?>underline<?php } ?>">
+) { ?>underline<?php } else { ?>no-underline<?php } ?>">
 								<?php echo $language['code']; ?>
 								</a>
 							</li>
