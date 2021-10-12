@@ -106,6 +106,20 @@ if (get_field('themeColor', $post->ID)) {
 						wp_nav_menu(array('theme_location' => 'social-media', 'depth' => 1));
 						?>
 					</div>
+					<ul id="language-menu">
+						<?php
+						$languages = icl_get_languages();
+						foreach($languages as $language) {
+							?>
+							<li>
+								<a href="<?php echo $language["url"];?>" class="uppercase <?php ?>">
+								<?php echo $language["code"];?>
+								</a>
+							</li>
+							<?php
+						}
+						?>
+					</ul>
 				</div>
 			</div>
 		</div>
