@@ -18,11 +18,13 @@ const resources = {
   },
 };
 
+console.log(Cookies.get("wp-wpml_current_language"));
+
 i18n.use(reactI18nextModule).init({
   resources,
   lng: ["de", "en", "dels"].includes(Cookies.get("wp-wpml_current_language"))
     ? Cookies.get("wp-wpml_current_language")
-    : `de`,
+    : `en`,
   keySeparator: true,
   interpolation: {
     escapeValue: false,
