@@ -2,6 +2,7 @@ import { concat, remove } from "lodash";
 
 import { DateTime } from "luxon";
 import jsonata from "jsonata";
+import i18n from "../i18n";
 
 export const generateLink = (link, luxonTimestamp) => {
   return `${link}?date=${luxonTimestamp.toFormat(
@@ -29,6 +30,14 @@ export const getWeekDay = (dateLong, locale = "de") => {
   return DateTime.fromFormat(dateLong, "dd.MM.yyyy")
     .setLocale(locale)
     .toFormat("cccc");
+};
+
+export const formatDate = (datetime, locale = "de", long = true) => {
+  return DateTime.fromFormat(datetime, "dd.MM.yyyy").toFormat(
+    locale === ("de" || "dels")
+      ? `dd.MM${long ? `.yyyy` : ``}`
+      : `MM/dd${long ? `/yyyy` : ``}`
+  );
 };
 
 export const parseEvents = (eventsRaw, venuesData, data) => {
@@ -144,7 +153,7 @@ export const loadEvents = async (setData, venuesData, data) => {
     taxonomies: {
       ...prev.taxonomies,
       cities: concat(
-        "alle Orte",
+        i18n.t("filters.cities.allCities"),
         filterExpressionCities.evaluate(parsedWPEvents)
       ),
     },
@@ -195,15 +204,17 @@ export const loadDivisions = async (setData) => {
   const WPDivisions = await response.json();
 
   const filterDivisionNames = jsonata(WPDivisions.length > 0 ? `$.name` : `$`);
-
   setData((prev) => ({
     ...prev,
     taxonomies: {
       ...prev.taxonomies,
       divisions: {
-        divisions: concat({ id: 0, name: "alle Säulen" }, WPDivisions),
+        divisions: concat(
+          { id: 0, name: i18n.t("filters.divisions.allDivisions") },
+          WPDivisions
+        ),
         divisionsNames: concat(
-          "alle Säulen",
+          i18n.t("filters.divisions.allDivisions"),
           filterDivisionNames.evaluate(WPDivisions)
         ),
       },
