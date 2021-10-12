@@ -1,8 +1,10 @@
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
 import Filter from "./filter";
+import { withNamespaces } from "react-i18next";
+import PropTypes from "prop-types";
 
-const CitiesFilter = () => {
+const CitiesFilter = ({ t }) => {
   const { data, setData } = useCalendarContext();
 
   const {
@@ -14,13 +16,16 @@ const CitiesFilter = () => {
     <Filter
       options={cities.filter((item) => item)}
       value={city}
-      placeholder="alle Orte"
+      placeholder={t("filters.cities.allCities")}
       onChange={(event) => {
         setData((prev) => ({
           ...prev,
           filters: {
             ...prev.filters,
-            city: event.value === "alle Orte" ? null : event.value,
+            city:
+              event.value === t("filters.cities.allCities")
+                ? null
+                : event.value,
             currentDate: 0,
           },
         }));
@@ -29,4 +34,8 @@ const CitiesFilter = () => {
   );
 };
 
-export default CitiesFilter;
+CitiesFilter.propTypes = {
+  t: PropTypes.func,
+};
+
+export default withNamespaces()(CitiesFilter);
