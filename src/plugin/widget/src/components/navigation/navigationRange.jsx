@@ -2,11 +2,13 @@ import PropTypes from "prop-types";
 import { Range } from "react-range";
 import React from "react";
 import useCalendarContext from "../../hooks/useCalendarContext";
+import { formatDate } from "../../lib/lib";
 
 const NavigationRange = ({ controlsColor = "#fff", ...props }) => {
   const { data, setData } = useCalendarContext();
 
   const {
+    currentLocale,
     eventData: { filteredEvents },
     filters: { currentDate },
   } = data;
@@ -17,7 +19,7 @@ const NavigationRange = ({ controlsColor = "#fff", ...props }) => {
     <>
       {filteredDates.length > 1 && (
         <span className="hidden md:block mr-3 font-sans font-medium text-m text-white">
-          {filteredDates[0]}
+          {formatDate(filteredDates[0], currentLocale, true)}
         </span>
       )}
 
@@ -68,7 +70,11 @@ const NavigationRange = ({ controlsColor = "#fff", ...props }) => {
 
       {filteredDates.length > 1 && (
         <span className="hidden md:block ml-3 font-sans font-medium text-m text-white">
-          {filteredDates[filteredDates.length - 1]}
+          {formatDate(
+            filteredDates[filteredDates.length - 1],
+            currentLocale,
+            true
+          )}
         </span>
       )}
     </>
