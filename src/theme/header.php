@@ -147,7 +147,7 @@ if (get_field('themeColor', $post->ID)) {
 					<div id="socialmedia-menu">
 						<?php wp_nav_menu(['theme_location' => 'social-media', 'depth' => 1]); ?>
 					</div>
-					<ul id="language-menu hidden" class="flex gap-1 mx-2">
+					<ul id="language-menu" class="hidden gap-1 mx-2">
 						<?php
       $languages = icl_get_languages();
       foreach ($languages as $language) { ?>
