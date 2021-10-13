@@ -1,17 +1,21 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { generateSrcSet } from "../lib/lib";
+import useCalendarContext from "../hooks/useCalendarContext";
 
-const EventTeaser = ({
-  key,
-  borderBottom = false,
-  ...eventData
-}) => {
-  const { feature_image, tags, venue, ticketlink, link, time, title } = eventData;
+const EventTeaser = ({ key, borderBottom = false, ...eventData }) => {
+  const { feature_image, tags, venue, ticketlink, link, time, title } =
+    eventData;
+
+  const {
+    data: { currentLocale },
+  } = useCalendarContext();
+
   return (
     <div
-      className={`eventTeaser col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${borderBottom ? `border-b-2` : ``
-        }`}
+      className={`eventTeaser col-span-full px-2 grid-6 md:grid-16 no-underline py-6 ${
+        borderBottom ? `border-b-2` : ``
+      }`}
       key={key}
     >
       {feature_image.sizes && (
@@ -27,14 +31,13 @@ const EventTeaser = ({
       )}
 
       <div
-        className={`col-span-full md:col-span-${feature_image.sizes ? `11` : `14 md:col-start-2`
-          } h-full flex flex-col pt-4 md:pt-0 md:ml-2`}
+        className={`col-span-full md:col-span-${
+          feature_image.sizes ? `11` : `14 md:col-start-2`
+        } h-full flex flex-col pt-4 md:pt-0 md:ml-2`}
       >
         <div className="font-sans font-medium text-sm md:text-base flex justify-between">
           <div>
-            {tags.map(
-              (item) => item && <span className="mr-1">#{item}</span>
-            )}
+            {tags.map((item) => item && <span className="mr-1">#{item}</span>)}
           </div>
           <div className="hidden md:block">
             {venue.name !== "" && (
@@ -60,19 +63,21 @@ const EventTeaser = ({
         </div>
         <a
           className="flex flex-1 flex-col justify-end z-20 no-underline hover:underline"
-          href={link}
+          href={link?.replace("/event", `/${currentLocale}/event`)}
         >
-          {time !== "00:00" &&
+          {time !== "00:00" && (
             <span className="block font-sans font-medium text-xl md:text-xl leading-snug">
               {time}h
             </span>
-          }
+          )}
 
-          <span className="block font-sans font-medium text-xl md:text-xl leading-snug mt-1 md:mt-2"
-            dangerouslySetInnerHTML={{ __html: title }} />
+          <span
+            className="block font-sans font-medium text-xl md:text-xl leading-snug mt-1 md:mt-2"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
         </a>
       </div>
-      {venue.name !== "" && ticketlink !== "" &&
+      {venue.name !== "" && ticketlink !== "" && (
         <div className="col-span-full md:hidden block pt-4 md:pt-0">
           {venue.name !== "" && (
             <a
@@ -93,10 +98,10 @@ const EventTeaser = ({
               Tickets
             </a>
           )}
-        </div>}
-
+        </div>
+      )}
     </div>
-  )
+  );
 };
 
 EventTeaser.propTypes = {
