@@ -8,15 +8,16 @@
 @screen lg {
   #top-menu ul li,
   #menu-submenue li,
-  #footer-menu ul li {
-    @apply mx-5;
+  #footer-menu ul li,
+  #language-menu li {
+    @apply mx-2;
   }
 }
 
 .menu-social-media-container ul li,
 .menu-social-media-englisch-container ul li {
   @apply inline-block;
-  @apply mx-3;
+  @apply mx-2;
 }
 #top-menu--mobile .menu-footer-container ul {
   @apply mt-7 !important;
