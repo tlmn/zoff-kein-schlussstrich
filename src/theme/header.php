@@ -160,12 +160,14 @@ if (get_field('themeColor', $post->ID)) {
 								<?php echo $language['code']; ?>
 								</a>
 							</li>
-							<?php if ($index !== 1 && $index !== $length) { ?>
+							<?php
+       if ($index !== 1 && $index !== $length) { ?>
 								<li>
 									|
 								</li>
-								<?php } ?>
-							<?php }
+								<?php }
+       $index++;
+       }
       ?>
 					</ul>
 				</div>
