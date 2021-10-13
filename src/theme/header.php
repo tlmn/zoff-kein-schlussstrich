@@ -150,6 +150,8 @@ if (get_field('themeColor', $post->ID)) {
 					<ul id="language-menu" class="hidden gap-1 mx-2">
 						<?php
       $languages = icl_get_languages();
+      $length = count($languages);
+      $index = 1;
       foreach ($languages as $language) { ?>
 							<li>
 								<a href="<?php echo $language['url']; ?>" class="uppercase <?php if (
@@ -158,6 +160,11 @@ if (get_field('themeColor', $post->ID)) {
 								<?php echo $language['code']; ?>
 								</a>
 							</li>
+							<?php if ($index !== 1 && $index !== $length) { ?>
+								<li>
+									|
+								</li>
+								<?php } ?>
 							<?php }
       ?>
 					</ul>
