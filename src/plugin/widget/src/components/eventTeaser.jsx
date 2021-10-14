@@ -63,7 +63,7 @@ const EventTeaser = ({ key, borderBottom = false, ...eventData }) => {
         </div>
         <a
           className="flex flex-1 flex-col justify-end z-20 no-underline hover:underline"
-          href={link?.replace("/event", `/${currentLocale}/event`)}
+          href={link}
         >
           {time !== "00:00" && (
             <span className="block font-sans font-medium text-xl md:text-xl leading-snug">
