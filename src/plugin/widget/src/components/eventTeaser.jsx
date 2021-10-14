@@ -1,15 +1,10 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { generateSrcSet } from "../lib/lib";
-import useCalendarContext from "../hooks/useCalendarContext";
 
 const EventTeaser = ({ key, borderBottom = false, ...eventData }) => {
   const { feature_image, tags, venue, ticketlink, link, time, title } =
     eventData;
-
-  const {
-    data: { currentLocale },
-  } = useCalendarContext();
 
   return (
     <div
