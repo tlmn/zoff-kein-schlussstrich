@@ -24,7 +24,7 @@ i18n.use(reactI18nextModule).init({
   resources,
   lng: ["de", "en", "dels"].includes(Cookies.get("wp-wpml_current_language"))
     ? Cookies.get("wp-wpml_current_language")
-    : `en`,
+    : `de`,
   keySeparator: true,
   interpolation: {
     escapeValue: false,
