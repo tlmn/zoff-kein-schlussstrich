@@ -34,13 +34,13 @@ const EventTeaser = ({ key, borderBottom = false, ...eventData }) => {
           <div>
             {tags.map((item) => item && <span className="mr-1">#{item}</span>)}
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:flex">
             {venue.name !== "" && (
               <a
                 href={venue.url}
                 target="_blank"
                 rel="noreferrer"
-                className="underline hover:no-underline"
+                className="underline hover:no-underline text-right"
               >
                 {venue.name}
               </a>
