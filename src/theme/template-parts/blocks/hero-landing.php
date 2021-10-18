@@ -40,14 +40,27 @@ $quote = $quotes[rand(0, count($quotes) - 1)];
                 </div>
             </div>
             <div class="wp-block-hero-landing__tab-content--mobile">
-                <?php echo file_get_contents(
-                    get_template_directory() .
-                        '/assets/images/svg/hero-date--straight.svg'
-                ); ?>
-                <?php echo file_get_contents(
-                    get_template_directory() .
-                        '/assets/images/svg/hero-description--straight.svg'
-                ); ?>
+
+
+                <?php if (ICL_LANGUAGE_CODE === 'en') {
+                    echo file_get_contents(
+                        get_template_directory() .
+                            '/assets/images/svg/hero-date--straight-en.svg'
+                    ); ?>
+                    <?php echo file_get_contents(
+                        get_template_directory() .
+                            '/assets/images/svg/hero-description--straight-en.svg'
+                    );
+                } else {
+                    echo file_get_contents(
+                        get_template_directory() .
+                            '/assets/images/svg/hero-date--straight.svg'
+                    ); ?>
+                    <?php echo file_get_contents(
+                        get_template_directory() .
+                            '/assets/images/svg/hero-description--straight.svg'
+                    );
+                } ?>
             </div>
         </div>
 
