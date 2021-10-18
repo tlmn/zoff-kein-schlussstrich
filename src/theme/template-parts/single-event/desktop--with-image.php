@@ -28,7 +28,10 @@
             <div class="col-span-6 flex flex-col">
                 <div class="bg-black text-white flex justify-between gap-collapse">
                     <span class="text-6xl font-light mt-2 leading-none">
-                        <?php echo date_short($currentEvent['date'], '.'); ?>
+                        <?php echo date_short(
+                            $currentEvent['date'],
+                            ICL_LANGUAGE_CODE
+                        ); ?>
                     </span>
                     <span class="text-base font-normal mt-2 mr-2">
                         <?php echo $l_weekdays[
@@ -132,9 +135,12 @@
                 if ($currentEvent['general']['duration'] !== '') { ?>
                 <div class="font-medium text-lg leading-wider border-b-2 gap-collapse--left">
                     <div class="p-5">
-                        Dauer <?php print $currentEvent['general'][
-                            'duration'
-                        ]; ?> Minuten
+                        <?php _e(
+                            'Duration',
+                            'calendar-duration'
+                        ); ?> <?php print $currentEvent['general'][
+     'duration'
+ ]; ?> <?php _e('minutes', 'calendar-minutes'); ?>
                     </div>
                 </div>
                 <?php }
@@ -243,12 +249,19 @@
     $timestamp
 ); ?>&time=<?php echo date('Hi', $timestamp); ?>"
                             class="block underline hover:no-underline">
-                            <?php echo date('j.n.y', $timestamp) .
-                                ' in ' .
+                            <?php
+                            if (ICL_LANGUAGE_CODE === 'en') {
+                                date('n/j/y', $timestamp);
+                            } else {
+                                date('j.n.y', $timestamp);
+                            }
+
+                            echo ' in ' .
                                 get_field(
                                     'address',
                                     get_sub_field('venue')[0]->ID
-                                )['city']; ?>
+                                )['city'];
+                            ?>
                         </a>
                         <?php }
                         endwhile; ?>

@@ -14,7 +14,7 @@
             <div class="flex justify-between">
                 <span class="text-4xl leading-none"><?php echo date_short(
                     $currentEvent['date'],
-                    '.'
+                    ICL_LANGUAGE_CODE
                 ); ?></span>
                 <div class="flex h-full items-center">
                     <span><?php echo $l_weekdays[
@@ -125,9 +125,12 @@
         <div class="grid-6 border-b-2 ">
             <div class="col-span-full py-6 px-3">
                 <div class="font-medium text-lg leading-wider">
-                    Dauer <?php print $currentEvent['general'][
-                        'duration'
-                    ]; ?> Minuten
+                    <?php _e(
+                        'Duration',
+                        'calendar-duration'
+                    ); ?> <?php print $currentEvent['general'][
+     'duration'
+ ]; ?> <?php _e('minutes', 'calendar-minutes'); ?>
                 </div>
             </div>
         </div>

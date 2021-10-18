@@ -18,7 +18,10 @@
             <div class="col-span-8 border-black border-b-2 border-r-2 gap-collapse--left pl-5 flex flex-col">
                 <div class="bg-black text-white flex justify-between">
                     <span class="text-6xl font-light mt-2 leading-none">
-                        <?php echo date_short($currentEvent['date'], '.'); ?>
+                        <?php echo date_short(
+                            $currentEvent['date'],
+                            ICL_LANGUAGE_CODE
+                        ); ?>
                     </span>
                     <span class="block text-base font-normal mt-2 mr-2">
                         <?php echo $l_weekdays[
@@ -79,9 +82,12 @@
                 if ($currentEvent['general']['duration'] !== '') { ?>
                 <div class="font-medium text-lg leading-wider border-b-2 gap-collapse">
                     <div class="p-5">
-                        Dauer <?php print $currentEvent['general'][
-                            'duration'
-                        ]; ?> Minuten
+                        <?php _e(
+                            'Duration',
+                            'calendar-duration'
+                        ); ?> <?php print $currentEvent['general'][
+     'duration'
+ ]; ?> <?php _e('minutes', 'calendar-minutes'); ?>
                     </div>
                 </div>
                 <?php }
