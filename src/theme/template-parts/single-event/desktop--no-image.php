@@ -138,7 +138,7 @@
                                 ); ?>
                             </span>
                             <span><?php _e(
-                                'Event teilen',
+                                'Share Event',
                                 'calendar-share-event'
                             ); ?></span>
                         </a>
@@ -155,7 +155,7 @@
                 <div class="font-medium text-lg leading-wider gap-collapse--left">
                     <div class="p-5">
                         <span class="uppercase"><?php _e(
-                            'Weitere Termine',
+                            'More Events',
                             'calendar-more-dates'
                         ); ?></span>
                         <?php while (have_rows('occurrences')):
