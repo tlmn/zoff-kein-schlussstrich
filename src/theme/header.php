@@ -161,8 +161,8 @@ if (get_field('themeColor', $post->ID)) {
 								</a>
 							</li>
 							<?php
-       if ($index !== 1 && $index !== $length) { ?>
-								<li>
+       if ($index !== $length) { ?>
+								<li class="m-0">
 									|
 								</li>
 								<?php }
@@ -187,6 +187,27 @@ if (get_field('themeColor', $post->ID)) {
        'container_id' => 'footer-menu',
    ]);
    wp_nav_menu(['theme_location' => 'social-media--white', 'depth' => 1]);
+   ?>
+   <?php
+   $languages = icl_get_languages();
+   $length = count($languages);
+   $index = 1;
+   foreach ($languages as $language) { ?>
+							<li>
+								<a href="<?php echo $language['url']; ?>" class="uppercase <?php if (
+    $language['active'] === 1
+) { ?>underline<?php } else { ?>no-underline<?php } ?>">
+								<?php echo $language['code']; ?>
+								</a>
+							</li>
+							<?php
+       if ($index !== $length) { ?>
+								<li class="m-0">
+									|
+								</li>
+								<?php }
+       $index++;
+       }
    ?>
 		</div>
 	</div>
