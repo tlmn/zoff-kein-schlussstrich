@@ -8,7 +8,10 @@
             </a>
         </div>
         <div class="col-span-5 flex items-center">
-            <span class="text-m leading-snug font-normal">Kalender</span>
+            <span class="text-m leading-snug font-normal"><?php _e(
+                'Calendar',
+                'calendar-calendar'
+            ); ?></span>
         </div>
         <div class="col-span-5 col-start-2">
             <div class="flex justify-between">

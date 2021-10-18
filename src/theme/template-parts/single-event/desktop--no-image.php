@@ -3,7 +3,10 @@
         <div
             class="container grid-6 grid-16 relative z-10 text-white border-black gap-collapse border-l-2 border-r-2 border-b-2">
             <div class="col-span-1 bg-black gap-collapse-left--no-padding border-black border-b-2">
-                <h3 class="rotate--90 text-white text-3xl pr-7">Kalender</h3>
+                <h3 class="rotate--90 text-white text-3xl pr-7"><?php _e(
+                    'Calendar',
+                    'calendar-calendar'
+                ); ?></h3>
             </div>
 
             <div class="col-span-1 bg-black gap-collapse border-black border-b-2">
