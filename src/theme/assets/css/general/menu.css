@@ -56,6 +56,7 @@
 }
 
 #top-menu ul li a,
+#language-menu li a,
 #footer-menu ul li a,
 #menu-submenue li a {
   @apply no-underline;
