@@ -137,7 +137,10 @@
                                         '/assets/icons/fb-event.svg'
                                 ); ?>
                             </span>
-                            <span>Event teilen</span>
+                            <span><?php _e(
+                                'Event teilen',
+                                'calendar-share-event'
+                            ); ?></span>
                         </a>
                     </div>
                 </div>
@@ -151,7 +154,10 @@
                     ): ?>
                 <div class="font-medium text-lg leading-wider gap-collapse--left">
                     <div class="p-5">
-                        <span class="uppercase">Weitere Termine</span>
+                        <span class="uppercase"><?php _e(
+                            'Weitere Termine',
+                            'calendar-more-dates'
+                        ); ?></span>
                         <?php while (have_rows('occurrences')):
                             the_row();
                             $timestamp = strtotime(
