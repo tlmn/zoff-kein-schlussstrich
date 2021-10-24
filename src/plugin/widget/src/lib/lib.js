@@ -302,7 +302,7 @@ export const setToday = (initialEvents, setData) => {
         today.diff(
           DateTime.fromFormat(date, "dd.MM.yyyy").setLocale("de"),
           "days"
-        ).days < 0
+        ).days < 1
     )
   );
 
