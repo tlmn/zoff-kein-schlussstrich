@@ -35,8 +35,8 @@ export const getWeekDay = (dateLong, locale = "de") => {
 export const formatDate = (datetime, locale = "de", long = true) => {
   return DateTime.fromFormat(datetime, "dd.MM.yyyy").toFormat(
     locale === ("de" || "dels")
-      ? `dd.MM${long ? `.yyyy` : ``}`
-      : `MM/dd${long ? `/yyyy` : ``}`
+      ? `dd.MM${long ? `.yyyy` : `.`}`
+      : `MM/dd${long ? `/yyyy` : `.`}`
   );
 };
 
