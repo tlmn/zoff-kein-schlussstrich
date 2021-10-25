@@ -88,7 +88,7 @@ const EventTeaser = ({ key, borderBottom = false, ...eventData }) => {
             <a
               href={ticketlink}
               rel="noreferrer"
-              className="underline hover:no-underline bg-black rounded-xl py-1 px-3"
+              className="underline hover:no-underline py-1 px-3"
             >
               Tickets
             </a>
