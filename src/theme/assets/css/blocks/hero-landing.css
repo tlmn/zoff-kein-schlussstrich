@@ -4,7 +4,6 @@
   @apply flex;
 }
 
-
 .wp-block-hero-landing__tab {
   @apply z-20;
   @apply col-span-full;
@@ -58,7 +57,7 @@
 
   .wp-block-hero-landing__tab {
     @apply col-span-2;
-    @apply gap-collapse--right
+    @apply gap-collapse--right;
   }
 
   .wp-block-hero-landing__wrapper {

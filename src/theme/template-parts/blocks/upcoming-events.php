@@ -22,24 +22,53 @@ foreach ($upcomingEvents as $upcomingEvent) {
 ?>
 <div class="wp-block-upcoming-events">
     <div class="wp-block-upcoming-events__wrapper">
-        <div class="wp-block-upcoming-events__tab bg-yellow">
-            <div class="mt-6 hidden md:block">
+        <div class="wp-block-upcoming-events__tab bg-yellow flex z-20">
+        <div class="wp-block-hero-landing__tab-content--desktop">
+                <div class="mt-6">
+                    <?php if (ICL_LANGUAGE_CODE === 'en') {
+                        echo file_get_contents(
+                            get_template_directory() .
+                                '/assets/images/svg/hero-date-en.svg'
+                        );
+                    } else {
+                        echo file_get_contents(
+                            get_template_directory() .
+                                '/assets/images/svg/hero-date.svg'
+                        );
+                    } ?>
+                </div>
+                <div class="">
+                    <?php if (ICL_LANGUAGE_CODE === 'en') {
+                        echo file_get_contents(
+                            get_template_directory() .
+                                '/assets/images/svg/hero-description-en.svg'
+                        );
+                    } else {
+                        echo file_get_contents(
+                            get_template_directory() .
+                                '/assets/images/svg/hero-description.svg'
+                        );
+                    } ?>
+                </div>
+            </div>
+            <div class="wp-block-hero-landing__tab-content--mobile">
+
+
+                <?php if (ICL_LANGUAGE_CODE === 'en') {
+                    echo file_get_contents(
+                        get_template_directory() .
+                            '/assets/images/svg/hero-date--straight-en.svg'
+                    ); ?>
                     <?php echo file_get_contents(
                         get_template_directory() .
-                            '/assets/images/svg/hero-date.svg'
-                    ); ?>
-            </div>
-            <div class="hidden md:block">
-                    <?php echo file_get_contents(
+                            '/assets/images/svg/hero-description--straight-en.svg'
+                    );
+                } else {
+                    echo file_get_contents(
                         get_template_directory() .
-                            '/assets/images/svg/hero-description.svg'
-                    ); ?>
-            </div>
-            <div class="block md:hidden py-4 px-4">
-            <?php echo file_get_contents(
-                get_template_directory() .
-                    '/assets/images/svg/upcoming-date--straight.svg'
-            ); ?>
+                            '/assets/images/svg/upcoming-date--straight.svg'
+                    );
+                } ?>
             </div>
         </div>
 
@@ -65,9 +94,9 @@ foreach ($upcomingEvents as $upcomingEvent) {
     echo 'style="display:none;"';
 } ?>>
             <div>
-                <span class="">
+                <h2>
                     Aktuelles
-                </span>
+                </h2>
                 <h3>
                     <?php echo $event['date']; ?>
                     <br/>
