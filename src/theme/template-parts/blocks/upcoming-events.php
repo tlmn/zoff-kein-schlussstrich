@@ -24,7 +24,7 @@ foreach ($upcomingEvents as $upcomingEvent) {
     <div class="wp-block-upcoming-events__wrapper">
         <div class="wp-block-upcoming-events__tab bg-yellow flex z-20">
         <div class="wp-block-hero-landing__tab-content--desktop">
-                <div class="mt-6">
+                <div class="mt-6 self-start">
                     <?php if (ICL_LANGUAGE_CODE === 'en') {
                         echo file_get_contents(
                             get_template_directory() .
@@ -37,7 +37,7 @@ foreach ($upcomingEvents as $upcomingEvent) {
                         );
                     } ?>
                 </div>
-                <div class="">
+                <div class="self-start">
                     <?php if (ICL_LANGUAGE_CODE === 'en') {
                         echo file_get_contents(
                             get_template_directory() .
