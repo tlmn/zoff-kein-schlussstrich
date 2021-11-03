@@ -8,21 +8,22 @@ $(document).ready(() => {
   const regex = new RegExp("programm");
   $(".wp-block-upcoming-events__image").click((event) => {
     var currentClass = $(event.currentTarget).attr("class").match(/[0-9]/)[0];
+    if (currentClass !== "1") {
+      $(".wp-block-upcoming-events__image--1")
+        .toggleClass("wp-block-upcoming-events__image--1")
+        .toggleClass("wp-block-upcoming-events__image--helper");
 
-    $(".wp-block-upcoming-events__image--1")
-      .toggleClass("wp-block-upcoming-events__image--1")
-      .toggleClass("wp-block-upcoming-events__image--helper");
+      $(".wp-block-upcoming-events__image--" + currentClass)
+        .toggleClass("wp-block-upcoming-events__image--" + currentClass)
+        .toggleClass("wp-block-upcoming-events__image--1");
 
-    $(".wp-block-upcoming-events__image--" + currentClass)
-      .toggleClass("wp-block-upcoming-events__image--" + currentClass)
-      .toggleClass("wp-block-upcoming-events__image--1");
+      $(".wp-block-upcoming-events__image--helper")
+        .toggleClass("wp-block-upcoming-events__image--helper")
+        .toggleClass("wp-block-upcoming-events__image--" + currentClass);
 
-    $(".wp-block-upcoming-events__image--helper")
-      .toggleClass("wp-block-upcoming-events__image--helper")
-      .toggleClass("wp-block-upcoming-events__image--" + currentClass);
-
-    $(".wp-block-upcoming-events__content").hide();
-    $(".wp-block-upcoming-events__content--" + currentClass).show();
+      $(".wp-block-upcoming-events__content").hide();
+      $(".wp-block-upcoming-events__content--" + currentClass).show();
+    }
   });
 
   var submenuHeight = 40;
