@@ -178,21 +178,13 @@ if (get_field('themeColor', $post->ID)) {
 	<div id="top-menu--mobile" class="relative hidden">
 		<div class="bg-yellow flex-1"></div>
 		<div class="flex flex-col bg-black text-white h-screen overflow-scroll shadow--left" style="z-index: 1000;">
-			<?php
-   wp_nav_menu(['theme_location' => 'navigation-menu', 'depth' => 2]);
-   wp_nav_menu([
-       'theme_location' => 'footer',
-       'depth' => 1,
-       'menu_class' => 'is-style-text-running',
-       'container_id' => 'footer-menu',
-   ]);
-   wp_nav_menu(['theme_location' => 'social-media--white', 'depth' => 1]);
-   ?>
-   <?php
-   $languages = icl_get_languages();
-   $length = count($languages);
-   $index = 1;
-   foreach ($languages as $language) { ?>
+			<?php wp_nav_menu(['theme_location' => 'navigation-menu', 'depth' => 2]); ?>
+ <ul id="language-menu" class="flex gap-1 mx-2">
+						<?php
+      $languages = icl_get_languages();
+      $length = count($languages);
+      $index = 1;
+      foreach ($languages as $language) { ?>
 							<li>
 								<a href="<?php echo $language['url']; ?>" class="uppercase <?php if (
     $language['active'] === 1
@@ -208,6 +200,16 @@ if (get_field('themeColor', $post->ID)) {
 								<?php }
        $index++;
        }
+      ?>
+					</ul>  
+   <?php
+   wp_nav_menu([
+       'theme_location' => 'footer',
+       'depth' => 1,
+       'menu_class' => 'is-style-text-running',
+       'container_id' => 'footer-menu',
+   ]);
+   wp_nav_menu(['theme_location' => 'social-media--white', 'depth' => 1]);
    ?>
 		</div>
 	</div>
