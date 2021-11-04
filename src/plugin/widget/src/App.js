@@ -1,4 +1,3 @@
-import "./assets/style.css";
 import "./assets/select.css";
 
 import React, { useState } from "react";
@@ -9,7 +8,7 @@ import { Provider as CalendarContextProvider } from "./hooks/useCalendarContext"
 
 const App = () => {
   const [data, setData] = useState({
-    currentLocale: ["de", "en", "dels"].includes(
+    currentLocale: ["de", "en"].includes(
       Cookies.get("wp-wpml_current_language")
     )
       ? Cookies.get("wp-wpml_current_language")
