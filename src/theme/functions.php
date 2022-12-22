@@ -1,4 +1,5 @@
 <?php
+define('ALLOW_UNFILTERED_UPLOADS', true);
 
 include('functions/func-api.php');
 include('functions/func-style.php');
