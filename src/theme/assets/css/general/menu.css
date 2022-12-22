@@ -1,5 +1,5 @@
 #top-menu ul li,
-[id^="menu-submenue-"] li,
+[id^="menu-submenue"] li,
 #footer-menu ul li {
   @apply inline-block;
   @apply mx-1;
@@ -7,7 +7,7 @@
 
 @screen lg {
   #top-menu ul li,
-  [id^="menu-submenue-"] li,
+  [id^="menu-submenue"] li,
   #footer-menu ul li,
   #language-menu li {
     @apply mx-2;
@@ -58,7 +58,7 @@
 #top-menu ul li a,
 #language-menu li a,
 #footer-menu ul li a,
-[id^="menu-submenue-"] li a {
+[id^="menu-submenue"] li a {
   @apply no-underline;
   @apply font-medium;
   @apply text-m;
@@ -72,7 +72,7 @@
 
 #top-menu ul li a:hover,
 #footer-menu ul li a:hover,
-[id^="menu-submenue-"] li a:hover {
+[id^="menu-submenue"] li a:hover {
   @apply underline;
 }
 
@@ -80,7 +80,7 @@
   @apply flex flex-col;
 }
 
-[id^="menu-submenue-"] li a {
+[id^="menu-submenue"] li a {
   @apply font-medium;
   @apply text-base;
 }
